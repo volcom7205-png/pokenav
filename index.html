@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokeNav</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- HEADER -->
+    <header class="app-header">
+      <h1>🔴 PokeNav</h1>
+      <p class="subtitle">Your Cobblemon Companion</p>
+    </header>
+
+    <!-- LAYOUT WRAPPER -->
+    <div class="app-body">
+
+      <!-- SIDEBAR NAVIGATION -->
+      <nav class="sidebar">
+        <ul>
+          <li class="nav-item active" data-panel="pokedex">📖 Pokédex</li>
+          <li class="nav-item" data-panel="caught">✅ Caught Tracker</li>
+          <li class="nav-item" data-panel="items">🎒 Item Tracker</li>
+          <li class="nav-item" data-panel="biome">🌿 Biome Search</li>
+          <li class="nav-item" data-panel="battle">⚔️ Battle Optimizer</li>
+          <li class="nav-item" data-panel="moves">💡 Move Examiner</li>
+          <li class="nav-item" data-panel="types">🔥 Type Chart</li>
+        </ul>
+      </nav>
+
+      <!-- MAIN CONTENT AREA -->
+      <main class="main-content">
+
+        <div class="panel active" id="panel-pokedex">
+          <h2>📖 Pokédex</h2>
+          <p>Search for any Pokémon and view its stats, types, and spawn locations.</p>
+          <p class="coming-soon">Coming in Stage 3</p>
+        </div>
+
+        <div class="panel" id="panel-caught">
+          <h2>✅ Caught Tracker</h2>
+          <p>Log and manage all the Pokémon you've caught.</p>
+          <p class="coming-soon">Coming in Stage 4</p>
+        </div>
+
+        <div class="panel" id="panel-items">
+          <h2>🎒 Item Tracker</h2>
+          <p>Keep track of your TMs, HMs, and key items.</p>
+          <p class="coming-soon">Coming in Stage 5</p>
+        </div>
+
+        <div class="panel" id="panel-biome">
+          <h2>🌿 Biome Search</h2>
+          <p>Find out which Pokémon spawn in a specific biome.</p>
+          <p class="coming-soon">Coming in Stage 3</p>
+        </div>
+
+        <div class="panel" id="panel-battle">
+          <h2>⚔️ Battle Optimizer</h2>
+          <p>Input an opponent's team and get your best counter party.</p>
+          <p class="coming-soon">Coming in Stage 6</p>
+        </div>
+
+        <div class="panel" id="panel-moves">
+          <h2>💡 Move Examiner</h2>
+          <p>View learnable moves and best moves for your current level cap.</p>
+          <p class="coming-soon">Coming in Stage 6</p>
+        </div>
+
+        <div class="panel" id="panel-types">
+          <h2>🔥 Type Chart</h2>
+          <p>Full type effectiveness chart with Pokémon name lookup.</p>
+          <p class="coming-soon">Coming in Stage 7</p>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
