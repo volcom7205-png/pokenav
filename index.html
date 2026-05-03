@@ -9,103 +9,149 @@
 <body>
   <div class="app-container">
 
-    <!-- HEADER -->
-    <header class="app-header">
-      <h1>🔴 PokeNav</h1>
-      <p class="subtitle">Your Cobblemon Companion</p>
-    </header>
+    <!-- TOP NAVIGATION -->
+    <nav class="top-nav">
+      <div class="nav-zone nav-zone--left">
+        <button id="back-btn" class="back-btn">BACK</button>
+        <div class="nav-logo">
+          <span class="nav-logo-title">POKENAV</span>
+          <span class="nav-logo-subtitle">TEAM DICKIE</span>
+        </div>
+      </div>
 
-    <!-- LAYOUT WRAPPER -->
-    <div class="app-body">
+      <div class="nav-zone nav-zone--center">
+        <button class="nav-tab active" data-panel="pokedex">Pokédex</button>
+        <button class="nav-tab" data-panel="party" id="tab-party">TRAINER'S PC</button>
+        <button class="nav-tab" data-panel="items">Poké Drops</button>
+        <button class="nav-tab" data-panel="battle">Stadium</button>
+        <button class="nav-tab" data-panel="types">Type Chart</button>
+        <div class="nav-tab nav-tab--placeholder">—</div>
+        <div class="nav-tab nav-tab--placeholder">—</div>
+        <button class="nav-tab" data-panel="settings">Settings</button>
+      </div>
 
-      <!-- SIDEBAR NAVIGATION -->
-      <nav class="sidebar">
-        <ul>
-          <li class="nav-item active" data-panel="pokedex">📖 Pokédex</li>
-          <li class="nav-item" data-panel="party">📟 Party / Storage</li>
-          <li class="nav-item" data-panel="items">🎒 Item Search</li>
-          <li class="nav-item" data-panel="biome">🌿 Biome Search</li>
-          <li class="nav-item" data-panel="battle">⚔️ Battle Optimizer</li>
-          <li class="nav-item" data-panel="moves">💡 Move Examiner</li>
-          <li class="nav-item" data-panel="types">🔥 Type Chart</li>
-        </ul>
-      </nav>
+      <div class="nav-zone nav-zone--right">
+        <div id="trainer-display">TRAINER</div>
+      </div>
+    </nav>
 
-      <!-- MAIN CONTENT AREA -->
-      <main class="main-content">
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content">
 
-        <div class="panel active" id="panel-pokedex"></div>
+      <div class="panel active" id="panel-pokedex">
+        <div class="pokedex-search-row">
+          <input type="text" id="pokedex-search" placeholder="Search by name or number..." autocomplete="off" />
+          <button id="pokedex-element-btn" class="pokedex-element-btn" type="button">◆ ELEMENTS ◀</button>
+        </div>
 
-        <div id="panel-party" class="panel">
-          <div class="party-storage-layout">
+        <div id="pokedex-active-filters" class="pokedex-active-filters hidden"></div>
 
-            <!-- LEFT: Party (6 slots) -->
-            <div class="party-column">
-              <h2 class="panel-title">Party</h2>
-              <div class="party-slots" id="party-slots">
-                <!-- 6 slots rendered by JS -->
-              </div>
+        <div class="pokedex-main">
+          <div id="pokedex-grid" class="pokedex-grid"></div>
+
+          <aside id="pokedex-element-panel" class="pokedex-element-panel hidden">
+            <div class="element-panel-header">
+              <span class="element-panel-title">◆ ELEMENTS</span>
+              <span id="pokedex-filter-count" class="element-panel-count">0 active</span>
             </div>
 
-            <!-- RIGHT: Storage -->
-            <div class="storage-column">
-              <h2 class="panel-title">Storage</h2>
-              <div class="storage-search-bar">
-                <input type="text" id="storage-search" placeholder="Search by name, #, type, or move..." />
-                <div class="storage-filter-pills" id="storage-filter-pills">
-                  <button class="pill active" data-filter="all">All</button>
-                  <button class="pill" data-filter="fire">🔥 Fire</button>
-                  <button class="pill" data-filter="water">💧 Water</button>
-                  <button class="pill" data-filter="grass">🌿 Grass</button>
-                  <button class="pill" data-filter="electric">⚡ Electric</button>
-                  <button class="pill" data-filter="psychic">🔮 Psychic</button>
-                  <button class="pill" data-filter="normal">⬜ Normal</button>
-                </div>
-              </div>
-              <button class="add-poke-btn" id="add-poke-btn">＋ Add Pokémon</button>
-              <div class="storage-grid" id="storage-grid">
-                <!-- tiles rendered by JS -->
-              </div>
+            <div class="element-icon-grid">
+              <div class="element-item" data-type="normal"><img src="assets/types/normal.png" alt="normal"><span class="element-item-label">Normal</span></div>
+              <div class="element-item" data-type="fire"><img src="assets/types/fire.png" alt="fire"><span class="element-item-label">Fire</span></div>
+              <div class="element-item" data-type="water"><img src="assets/types/water.png" alt="water"><span class="element-item-label">Water</span></div>
+              <div class="element-item" data-type="grass"><img src="assets/types/grass.png" alt="grass"><span class="element-item-label">Grass</span></div>
+              <div class="element-item" data-type="electric"><img src="assets/types/electric.png" alt="electric"><span class="element-item-label">Electric</span></div>
+              <div class="element-item" data-type="ice"><img src="assets/types/ice.png" alt="ice"><span class="element-item-label">Ice</span></div>
+              <div class="element-item" data-type="fighting"><img src="assets/types/fighting.png" alt="fighting"><span class="element-item-label">Fighting</span></div>
+              <div class="element-item" data-type="poison"><img src="assets/types/poison.png" alt="poison"><span class="element-item-label">Poison</span></div>
+              <div class="element-item" data-type="ground"><img src="assets/types/ground.png" alt="ground"><span class="element-item-label">Ground</span></div>
+              <div class="element-item" data-type="flying"><img src="assets/types/flying.png" alt="flying"><span class="element-item-label">Flying</span></div>
+              <div class="element-item" data-type="psychic"><img src="assets/types/psychic.png" alt="psychic"><span class="element-item-label">Psychic</span></div>
+              <div class="element-item" data-type="bug"><img src="assets/types/bug.png" alt="bug"><span class="element-item-label">Bug</span></div>
+              <div class="element-item" data-type="rock"><img src="assets/types/rock.png" alt="rock"><span class="element-item-label">Rock</span></div>
+              <div class="element-item" data-type="ghost"><img src="assets/types/ghost.png" alt="ghost"><span class="element-item-label">Ghost</span></div>
+              <div class="element-item" data-type="dragon"><img src="assets/types/dragon.png" alt="dragon"><span class="element-item-label">Dragon</span></div>
+              <div class="element-item" data-type="dark"><img src="assets/types/dark.png" alt="dark"><span class="element-item-label">Dark</span></div>
+              <div class="element-item" data-type="steel"><img src="assets/types/steel.png" alt="steel"><span class="element-item-label">Steel</span></div>
+              <div class="element-item" data-type="fairy"><img src="assets/types/fairy.png" alt="fairy"><span class="element-item-label">Fairy</span></div>
             </div>
 
+            <div class="element-panel-footer">
+              <button id="pokedex-clear-types" class="element-clear-all" type="button">Clear all</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div id="panel-party" class="panel">
+        <div class="party-storage-layout">
+
+          <!-- LEFT: Party (6 slots) -->
+          <div class="party-column">
+            <h2 class="panel-title">Party</h2>
+            <div class="party-slots" id="party-slots">
+              <!-- 6 slots rendered by JS -->
+            </div>
           </div>
-        </div>
 
-        <!-- Pokédex Card Modal -->
-        <div id="pokedex-card-overlay" class="pokedex-overlay hidden">
-          <div id="pokedex-card" class="pokedex-card">
-            <button class="card-close-btn" id="card-close-btn">✕</button>
-            <!-- card content rendered by JS -->
+          <!-- RIGHT: Storage -->
+          <div class="storage-column">
+            <h2 class="panel-title">Storage</h2>
+            <div class="storage-search-bar">
+              <input type="text" id="storage-search" placeholder="Search by name, #, type, or move..." />
+              <div class="storage-filter-pills" id="storage-filter-pills">
+                <button class="pill active" data-filter="all">All</button>
+                <button class="pill" data-filter="fire">🔥 Fire</button>
+                <button class="pill" data-filter="water">💧 Water</button>
+                <button class="pill" data-filter="grass">🌿 Grass</button>
+                <button class="pill" data-filter="electric">⚡ Electric</button>
+                <button class="pill" data-filter="psychic">🔮 Psychic</button>
+                <button class="pill" data-filter="normal">⬜ Normal</button>
+              </div>
+            </div>
+            <button class="add-poke-btn" id="add-poke-btn">＋ Add Pokémon</button>
+            <div class="storage-grid" id="storage-grid">
+              <!-- tiles rendered by JS -->
+            </div>
           </div>
+
         </div>
+      </div>
 
-        <div class="panel" id="panel-items"></div>
-
-        <div class="panel" id="panel-biome">
-          <h2>🌿 Biome Search</h2>
-          <p>Find out which Pokémon spawn in a specific biome.</p>
-          <p class="coming-soon">Coming in Stage 3</p>
+      <!-- Pokédex Card Modal -->
+      <div id="pokedex-card-overlay" class="pokedex-overlay hidden">
+        <div id="pokedex-card" class="pokedex-card">
+          <button class="card-close-btn" id="card-close-btn">✕</button>
+          <!-- card content rendered by JS -->
         </div>
+      </div>
 
-        <div class="panel" id="panel-battle">
-          <h2>⚔️ Battle Optimizer</h2>
-          <p>Input an opponent's team and get your best counter party.</p>
-          <p class="coming-soon">Coming in Stage 6</p>
-        </div>
+      <div class="panel" id="panel-items"></div>
 
-        <div class="panel" id="panel-moves">
-          <h2>💡 Move Examiner</h2>
-          <p>View learnable moves and best moves for your current level cap.</p>
-          <p class="coming-soon">Coming in Stage 6</p>
-        </div>
+      <div class="panel" id="panel-battle">
+        <h2>⚔️ Stadium</h2>
+        <p>Input an opponent's team and get your best counter party.</p>
+        <p class="coming-soon">Coming soon</p>
+      </div>
 
-        <div class="panel" id="panel-types">
-          <h2>🔥 Type Chart</h2>
-          <p>Full type effectiveness chart with Pokémon name lookup.</p>
-          <p class="coming-soon">Coming in Stage 7</p>
-        </div>
+      <div class="panel" id="panel-types">
+        <h2>🔥 Type Chart</h2>
+        <p>Full type effectiveness chart with Pokémon name lookup.</p>
+        <p class="coming-soon">Coming soon</p>
+      </div>
 
-      </main>
+      <div class="panel" id="panel-settings"></div>
+
+    </main>
+  </div>
+
+  <!-- TRAINER NAME MODAL -->
+  <div id="trainer-modal" class="trainer-modal-overlay hidden">
+    <div class="trainer-modal-card">
+      <div class="trainer-modal-heading">ENTER TRAINER NAME</div>
+      <label class="trainer-modal-label" for="trainer-modal-input">Enter your trainer name</label>
+      <input type="text" id="trainer-modal-input" maxlength="20" autocomplete="off" placeholder="Trainer name..." />
+      <button id="trainer-modal-confirm" type="button">CONFIRM</button>
     </div>
   </div>
 

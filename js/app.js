@@ -8,25 +8,192 @@ let allPokemon = [];
 let selectedPokemon = null;
 let selectedItem = null;
 let itemIndex = {};   // { "Item Name": [{ pokemon, amount }, ...] }
+let pokedexSearchQuery = '';
+let pokedexSelectedTypes = new Set();
+
+// ─── TYPE RENDER HELPERS ──────────────────────
+function typeIconHTML(type) {
+  if (!type) return '';
+  const lc = String(type).toLowerCase();
+  return `<span class="type-badge type-${lc}">${lc}</span>`;
+}
+
+function typeCardIconHTML(type) {
+  if (!type) return '';
+  const lc = String(type).toLowerCase();
+  return `<div class="type-card-icon">
+    <img src="assets/types/${lc}.png" alt="${lc} type">
+    <span class="type-card-icon-label">${lc}</span>
+  </div>`;
+}
 
 // ─── INIT ─────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  initTrainer();
   initNav();
   loadPokemonData();
 });
 
 // ─── NAVIGATION ───────────────────────────────
+const tabHistory = [];
+let currentPanel = 'pokedex';
+
+function switchPanel(panelName, isBack) {
+  if (!panelName || panelName === currentPanel) return;
+  if (!isBack) tabHistory.push(currentPanel);
+
+  document.querySelectorAll('.nav-tab[data-panel]').forEach(t => {
+    t.classList.toggle('active', t.dataset.panel === panelName);
+  });
+  document.querySelectorAll('.panel').forEach(p => {
+    p.classList.toggle('active', p.id === 'panel-' + panelName);
+  });
+
+  currentPanel = panelName;
+  updateBackBtn();
+
+  if (panelName === 'settings') buildSettingsPanel();
+}
+
+function updateBackBtn() {
+  const btn = document.getElementById('back-btn');
+  if (!btn) return;
+  btn.style.display = tabHistory.length > 0 ? 'inline-block' : 'none';
+}
+
 function initNav() {
-  document.querySelectorAll('.nav-item').forEach(item => {
+  document.querySelectorAll('.nav-tab[data-panel]').forEach(item => {
     item.addEventListener('click', () => {
-      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-      item.classList.add('active');
-      const panelId = 'panel-' + item.dataset.panel;
-      const panel = document.getElementById(panelId);
-      if (panel) panel.classList.add('active');
+      switchPanel(item.dataset.panel, false);
     });
   });
+
+  document.getElementById('back-btn')?.addEventListener('click', () => {
+    if (!tabHistory.length) return;
+    const prev = tabHistory.pop();
+    switchPanel(prev, true);
+  });
+}
+
+// ─── TRAINER NAME ─────────────────────────────
+const TRAINER_KEY = 'pokenav_trainer';
+
+function getTrainerName() {
+  return localStorage.getItem(TRAINER_KEY) || '';
+}
+
+function setTrainerName(name) {
+  localStorage.setItem(TRAINER_KEY, name);
+  applyTrainerName();
+}
+
+function applyTrainerName() {
+  const name = getTrainerName();
+  const display = document.getElementById('trainer-display');
+  if (display) display.textContent = name ? name.toUpperCase() : 'TRAINER';
+
+  const pcTab = document.querySelector('.nav-tab[data-panel="party"]');
+  if (pcTab) pcTab.textContent = name ? `${name.toUpperCase()}'S PC` : "TRAINER'S PC";
+}
+
+function initTrainer() {
+  applyTrainerName();
+  if (!getTrainerName()) {
+    showTrainerModal();
+  }
+}
+
+function showTrainerModal() {
+  const modal = document.getElementById('trainer-modal');
+  const input = document.getElementById('trainer-modal-input');
+  const btn   = document.getElementById('trainer-modal-confirm');
+  if (!modal || !input || !btn) return;
+
+  modal.classList.remove('hidden');
+  input.value = getTrainerName();
+  setTimeout(() => input.focus(), 50);
+
+  const submit = () => {
+    const v = input.value.trim();
+    if (!v) { input.focus(); return; }
+    setTrainerName(v);
+    modal.classList.add('hidden');
+  };
+
+  btn.onclick = submit;
+  input.onkeydown = (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); submit(); }
+  };
+}
+
+// Settings panel — trainer name editor + reset all data.
+function buildSettingsPanel() {
+  const panel = document.getElementById('panel-settings');
+  if (!panel) return;
+
+  const name = getTrainerName();
+
+  panel.innerHTML = `
+    <h2 class="settings-heading">TRAINER SETTINGS</h2>
+
+    <div class="settings-card">
+      <div class="settings-row">
+        <span class="settings-label">Current Trainer</span>
+        <span class="settings-value" id="settings-current-name"></span>
+      </div>
+      <div class="settings-row settings-row--input">
+        <label class="settings-label" for="settings-trainer-input">Edit Name</label>
+        <input id="settings-trainer-input" type="text" maxlength="20"
+               placeholder="Trainer name..." autocomplete="off" />
+        <button id="settings-save-btn" class="settings-btn" type="button">SAVE</button>
+      </div>
+    </div>
+
+    <div class="settings-card settings-card--danger">
+      <div class="settings-label settings-label--danger">Danger Zone</div>
+      <p class="settings-help">Wipes trainer name, party, storage, and all saved data, then reloads the app.</p>
+      <button id="settings-reset-btn" class="settings-btn settings-btn--danger" type="button">RESET ALL DATA</button>
+    </div>
+  `;
+
+  // Seed values via textContent/value to avoid HTML injection in user input
+  document.getElementById('settings-current-name').textContent = name || '—';
+  document.getElementById('settings-trainer-input').value = name;
+
+  document.getElementById('settings-save-btn').addEventListener('click', () => {
+    const input = document.getElementById('settings-trainer-input');
+    const v = (input.value || '').trim();
+    if (!v) { input.focus(); return; }
+    setTrainerName(v); // updates localStorage + nav display + PC tab label
+    document.getElementById('settings-current-name').textContent = v;
+    flashSettingsSaved();
+  });
+
+  document.getElementById('settings-trainer-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      document.getElementById('settings-save-btn').click();
+    }
+  });
+
+  document.getElementById('settings-reset-btn').addEventListener('click', () => {
+    const ok = confirm('This will erase your trainer name, party, storage, and all PokeNav data. Are you sure?');
+    if (!ok) return;
+    localStorage.clear();
+    location.reload();
+  });
+}
+
+function flashSettingsSaved() {
+  const btn = document.getElementById('settings-save-btn');
+  if (!btn) return;
+  const prev = btn.textContent;
+  btn.textContent = 'SAVED';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = prev;
+    btn.disabled = false;
+  }, 900);
 }
 
 // ─── DATA LOADING ─────────────────────────────
@@ -67,50 +234,138 @@ function buildItemIndex() {
 
 // ─── POKÉDEX PANEL ────────────────────────────
 function buildPokedexPanel() {
-  const panel = document.getElementById('panel-pokedex');
-  panel.innerHTML = `
-    <h2>📖 Pokédex</h2>
-    <div class="panel-search">
-      <input type="text" id="pokedex-search" placeholder="Search by name or number..." autocomplete="off" />
-    </div>
-    <div class="pokedex-layout">
-      <div class="pokedex-results" id="pokedex-results"></div>
-      <div id="pokedex-detail-panel">
-        <div class="poke-card-empty">Select a Pokémon to view details</div>
-      </div>
-    </div>
-  `;
+  const grid = document.getElementById('pokedex-grid');
+  if (!grid) return;
 
-  renderPokedexList(allPokemon);
+  renderPokedexTiles();
 
-  document.getElementById('pokedex-search').addEventListener('input', e => {
-    const q = e.target.value.trim().toLowerCase();
-    const filtered = allPokemon.filter(p =>
-      p.name.toLowerCase().includes(q) ||
-      String(p.id).includes(q) ||
-      String(p.id).padStart(4, '0').includes(q)
-    );
-    renderPokedexList(filtered);
+  document.getElementById('pokedex-search')?.addEventListener('input', e => {
+    pokedexSearchQuery = e.target.value.trim().toLowerCase();
+    renderPokedexTiles();
   });
+
+  document.getElementById('pokedex-element-btn')?.addEventListener('click', () => {
+    const panel = document.getElementById('pokedex-element-panel');
+    const btn   = document.getElementById('pokedex-element-btn');
+    panel?.classList.toggle('hidden');
+    btn?.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.element-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const type = item.dataset.type;
+      if (!type) return;
+      if (pokedexSelectedTypes.has(type)) {
+        pokedexSelectedTypes.delete(type);
+        item.classList.remove('active');
+      } else {
+        pokedexSelectedTypes.add(type);
+        item.classList.add('active');
+      }
+      updatePokedexFilterCount();
+      renderPokedexActiveFilters();
+      renderPokedexTiles();
+    });
+  });
+
+  document.getElementById('pokedex-clear-types')?.addEventListener('click', () => {
+    clearPokedexTypeFilters();
+  });
+
+  updatePokedexFilterCount();
+  renderPokedexActiveFilters();
 }
 
-function renderPokedexList(list) {
-  const container = document.getElementById('pokedex-results');
-  if (!list.length) {
-    container.innerHTML = '<div class="no-results">No Pokémon found</div>';
+function renderPokedexTiles() {
+  const grid = document.getElementById('pokedex-grid');
+  if (!grid) return;
+
+  const filtered = allPokemon.filter(p => {
+    if (pokedexSearchQuery) {
+      const q = pokedexSearchQuery;
+      const matches =
+        p.name.toLowerCase().includes(q) ||
+        String(p.id).includes(q) ||
+        String(p.id).padStart(4, '0').includes(q);
+      if (!matches) return false;
+    }
+    if (pokedexSelectedTypes.size > 0) {
+      const pTypes = p.types.map(t => String(t).toLowerCase());
+      for (const t of pokedexSelectedTypes) {
+        if (!pTypes.includes(t)) return false;
+      }
+    }
+    return true;
+  });
+
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="no-results">No Pokémon found</div>';
     return;
   }
-  container.innerHTML = list.map(p => `
-    <div class="pokedex-result-item ${selectedPokemon?.id === p.id ? 'selected' : ''}"
-         data-id="${p.id}" onclick="selectPokemon(${p.id})">
-      <img src="${p.sprite}" alt="${p.name}" onerror="this.style.opacity='0.3'" />
-      <span class="pokedex-result-num">#${String(p.id).padStart(4, '0')}</span>
-      <span class="pokedex-result-name">${p.name}</span>
-      <div class="pokedex-result-types">
-        ${p.types.map(t => `<span class="type-badge type-${t}">${t}</span>`).join('')}
+
+  grid.innerHTML = filtered.map(p => `
+    <div class="pokedex-tile" data-id="${p.id}">
+      <img class="pokedex-tile-sprite" src="${p.sprite}" alt="${p.name}"
+           onerror="this.style.opacity='0.3'" />
+      <div class="pokedex-tile-number">#${String(p.id).padStart(4, '0')}</div>
+      <div class="pokedex-tile-name">${p.name}</div>
+      <div class="pokedex-tile-types">
+        ${p.types.map(t => `<img class="pokedex-tile-type-icon" src="assets/types/${String(t).toLowerCase()}.png" alt="${t}" title="${t}" onerror="this.style.display='none'">`).join('')}
       </div>
     </div>
   `).join('');
+
+  grid.querySelectorAll('.pokedex-tile').forEach(tile => {
+    tile.addEventListener('click', () => {
+      const id = parseInt(tile.dataset.id, 10);
+      selectPokemon(id);
+    });
+  });
+}
+
+function updatePokedexFilterCount() {
+  const el = document.getElementById('pokedex-filter-count');
+  if (!el) return;
+  el.textContent = `${pokedexSelectedTypes.size} active`;
+}
+
+function renderPokedexActiveFilters() {
+  const container = document.getElementById('pokedex-active-filters');
+  if (!container) return;
+
+  if (pokedexSelectedTypes.size === 0) {
+    container.classList.add('hidden');
+    container.innerHTML = '';
+    return;
+  }
+
+  container.classList.remove('hidden');
+  container.innerHTML = Array.from(pokedexSelectedTypes).map(t => `
+    <span class="filter-tag">
+      <span class="filter-tag-name">${t}</span>
+      <button class="filter-tag-remove" data-type="${t}" type="button" aria-label="Remove ${t} filter">✕</button>
+    </span>
+  `).join('');
+
+  container.querySelectorAll('.filter-tag-remove').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.dataset.type;
+      pokedexSelectedTypes.delete(type);
+      const item = document.querySelector(`.element-item[data-type="${type}"]`);
+      item?.classList.remove('active');
+      updatePokedexFilterCount();
+      renderPokedexActiveFilters();
+      renderPokedexTiles();
+    });
+  });
+}
+
+function clearPokedexTypeFilters() {
+  pokedexSelectedTypes.clear();
+  document.querySelectorAll('.element-item.active').forEach(el => el.classList.remove('active'));
+  updatePokedexFilterCount();
+  renderPokedexActiveFilters();
+  renderPokedexTiles();
 }
 
 function addPokemonToStorageById(id, event) {
@@ -130,19 +385,35 @@ function addPokemonToStorageById(id, event) {
 function selectPokemon(id) {
   selectedPokemon = allPokemon.find(p => p.id === id);
   if (!selectedPokemon) return;
+  openPokedexDetailModal(selectedPokemon);
+}
 
-  // Update selected state in list
-  document.querySelectorAll('.pokedex-result-item').forEach(el => {
-    el.classList.toggle('selected', parseInt(el.dataset.id) === id);
-  });
+function openPokedexDetailModal(pokemon) {
+  const overlay = document.getElementById('pokedex-card-overlay');
+  const card    = document.getElementById('pokedex-card');
+  if (!overlay || !card) return;
 
-  renderPokedexCard(selectedPokemon, 0);
+  card.style.transformOrigin = 'center center';
+  renderPokedexCard(pokemon, 0);
+  overlay.classList.remove('hidden');
+
+  // restart pop-in animation
+  card.classList.remove('pop-in');
+  card.offsetHeight;
+  card.classList.add('pop-in');
+
+  // assign (don't add) so handlers don't accumulate
+  overlay.onclick = (e) => {
+    if (e.target === overlay) overlay.classList.add('hidden');
+  };
 }
 
 function renderPokedexCard(pokemon, spawnIdx) {
-  const container = document.getElementById('pokedex-detail-panel');
+  const card = document.getElementById('pokedex-card');
+  if (!card) return;
+
   const spawns = pokemon.spawns || [];
-  const spawn = spawns[spawnIdx] || spawns[0];
+  const spawn  = spawns[spawnIdx] || spawns[0];
 
   const tabsHTML = spawns.length > 1
     ? `<div class="spawn-tabs">
@@ -168,34 +439,37 @@ function renderPokedexCard(pokemon, spawnIdx) {
       </div>`
     : '<p style="color:var(--text-muted);font-size:0.85rem">No drops recorded.</p>';
 
-  container.innerHTML = `
-    <div class="poke-card" style="position:relative;">
-      <button class="add-storage-btn" id="detail-add-storage-btn" style="position:absolute;top:12px;right:12px;">+ Storage</button>
-      <div class="poke-card-header">
-        <img class="poke-card-sprite" src="${pokemon.sprite}" alt="${pokemon.name}"
-             onerror="this.style.opacity='0.3'" />
-        <div>
-          <div class="poke-card-num">#${String(pokemon.id).padStart(4, '0')}</div>
-          <div class="poke-card-name">${pokemon.name}</div>
-          <div class="poke-card-types">
-            ${pokemon.types.map(t => `<span class="type-badge type-${t}">${t}</span>`).join('')}
-          </div>
+  card.innerHTML = `
+    <button class="card-close-btn" id="card-close-btn">✕</button>
+    <button class="add-storage-btn" id="detail-add-storage-btn" style="position:absolute;top:14px;right:46px;">+ Storage</button>
+    <div class="poke-card-header">
+      <img class="poke-card-sprite" src="${pokemon.sprite}" alt="${pokemon.name}"
+           onerror="this.style.opacity='0.3'" />
+      <div>
+        <div class="poke-card-num">#${String(pokemon.id).padStart(4, '0')}</div>
+        <div class="poke-card-name">${pokemon.name}</div>
+        <div class="poke-card-types">
+          ${pokemon.types.map(t => typeIconHTML(t)).join('')}
         </div>
       </div>
-
-      <hr class="poke-card-divider" />
-      <div class="poke-card-section-label">Spawn Locations</div>
-      ${tabsHTML}
-      ${spawnHTML}
-
-      <hr class="poke-card-divider" />
-      <div class="poke-card-section-label">Drops</div>
-      ${dropsHTML}
     </div>
+
+    <hr class="poke-card-divider" />
+    <div class="poke-card-section-label">Spawn Locations</div>
+    ${tabsHTML}
+    ${spawnHTML}
+
+    <hr class="poke-card-divider" />
+    <div class="poke-card-section-label">Drops</div>
+    ${dropsHTML}
   `;
 
   document.getElementById('detail-add-storage-btn')?.addEventListener('click', (e) => {
     addPokemonToStorageById(pokemon.id, e);
+  });
+
+  document.getElementById('card-close-btn')?.addEventListener('click', () => {
+    document.getElementById('pokedex-card-overlay')?.classList.add('hidden');
   });
 }
 
@@ -315,7 +589,7 @@ function renderItemCard(name) {
       <div class="dropper-info">
         <div class="dropper-name">${pokemon.name}</div>
         <div class="dropper-num">#${String(pokemon.id).padStart(4, '0')} •
-          ${pokemon.types.map(t => `<span class="type-badge type-${t}">${t}</span>`).join(' ')}
+          ${pokemon.types.map(t => typeIconHTML(t)).join(' ')}
         </div>
       </div>
       <span class="dropper-amount">${amount}</span>
@@ -334,23 +608,15 @@ function renderItemCard(name) {
 
 // ─── CROSS-PANEL NAVIGATION ───────────────────
 // Called when user clicks a Pokémon in the Item Search panel.
-// Switches to Pokédex tab and opens that Pokémon's card.
+// Switches to Pokédex tab and opens that Pokémon's pop-out card.
 function goToPokedex(id) {
-  // Switch nav
-  document.querySelectorAll('.nav-item').forEach(n => {
-    n.classList.toggle('active', n.dataset.panel === 'pokedex');
-  });
-  document.querySelectorAll('.panel').forEach(p => {
-    p.classList.toggle('active', p.id === 'panel-pokedex');
-  });
-
-  // Select and scroll to pokemon
+  switchPanel('pokedex', false);
   selectPokemon(id);
 
-  // Scroll the result into view
+  // Scroll the underlying tile into view so it's visible after the modal closes
   setTimeout(() => {
-    const el = document.querySelector(`.pokedex-result-item[data-id="${id}"]`);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const tile = document.querySelector(`.pokedex-tile[data-id="${id}"]`);
+    if (tile) tile.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, 50);
 }
 
@@ -434,9 +700,9 @@ const PartyStorage = (() => {
     return `${SPRITE_BASE}${dexId}.webp`;
   }
 
-  // ── Type badge HTML ────────────────────────────────
+  // ── Type badge HTML (delegates to global typeIconHTML) ─
   function typeBadge(type) {
-    return `<span class="type-badge type-${type.toLowerCase()}">${type}</span>`;
+    return typeIconHTML(type);
   }
 
   // ── Render a tile ──────────────────────────────────
@@ -682,7 +948,7 @@ const PartyStorage = (() => {
           <input class="card-nickname" type="text" placeholder="${poke.name}"
                  value="${poke.nickname}" data-field="nickname" maxlength="12">
           <div class="card-species">${poke.name}</div>
-          <div class="tile-types">${poke.types.map(typeBadge).join('')}</div>
+          <div class="tile-types">${poke.types.map(t => typeCardIconHTML(t)).join('')}</div>
         </div>
       </div>
       <div class="card-section">
@@ -785,7 +1051,7 @@ const PartyStorage = (() => {
     list.innerHTML = filtered.map(m => `
       <div class="move-item ${poke.moves.includes(m.name) ? 'selected' : ''}"
            data-move="${m.name}">
-        <span class="type-badge type-${m.type.toLowerCase()}">${m.type}</span>
+        ${typeIconHTML(m.type)}
         <span class="move-item-name">${m.name}</span>
         ${m.power ? `<span class="move-item-power">${m.power}</span>` : ''}
       </div>
@@ -881,7 +1147,7 @@ const PartyStorage = (() => {
           <span class="move-item-name">#${String(p.id).padStart(4,'0')} ${p.name}</span>
         </div>
         <div style="display:flex;align-items:center;gap:6px;">
-          ${p.types.map(t => `<span class="type-badge type-${t.toLowerCase()}">${t}</span>`).join('')}
+          ${p.types.map(t => typeIconHTML(t)).join('')}
           <input type="number" class="picker-level-input" data-id="${p.id}"
                  min="1" max="100" value="50" placeholder="Lv">
           <button class="picker-add-btn" data-id="${p.id}">＋</button>
@@ -966,7 +1232,7 @@ const PartyStorage = (() => {
 document.addEventListener('DOMContentLoaded', () => {
   // Run init once when the party panel first becomes active
   let partyInited = false;
-  document.querySelectorAll('.nav-item').forEach(item => {
+  document.querySelectorAll('.nav-tab[data-panel]').forEach(item => {
     item.addEventListener('click', () => {
       if (item.dataset.panel === 'party' && !partyInited) {
         partyInited = true;
