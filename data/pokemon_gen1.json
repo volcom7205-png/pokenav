@@ -1,0 +1,8621 @@
+[
+  {
+    "id": 1,
+    "name": "Bulbasaur",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/bulbasaur/sprite.png",
+    "drops": [
+      {
+        "item": "Melon Seeds",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Miracle Seed",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "5-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Ivysaur",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/ivysaur/sprite.png",
+    "drops": [
+      {
+        "item": "Melon Seeds",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Miracle Seed",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "16-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Venusaur",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/venusaur/sprite.png",
+    "drops": [
+      {
+        "item": "Melon Seeds",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Miracle Seed",
+        "chance": "25%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "32-52",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Charmander",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/charmander/sprite.png",
+    "drops": [
+      {
+        "item": "Blaze Powder",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Charcoal Stick",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills",
+          "volcanic"
+        ],
+        "time": "any",
+        "weather": "clear"
+      },
+      {
+        "label": "Nether",
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_basalt"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Charmeleon",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/charmeleon/sprite.png",
+    "drops": [
+      {
+        "item": "Blaze Powder",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Charcoal Stick",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "16-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills",
+          "volcanic"
+        ],
+        "time": "any",
+        "weather": "clear"
+      },
+      {
+        "label": "Nether",
+        "bucket": "ultra-rare",
+        "levelRange": "16-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_basalt"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Charizard",
+    "types": [
+      "Fire",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/charizard/sprite.png",
+    "drops": [
+      {
+        "item": "Blaze Powder",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Charcoal Stick",
+        "chance": "25%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "36-53",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills",
+          "volcanic"
+        ],
+        "time": "any",
+        "weather": "clear"
+      },
+      {
+        "label": "Nether",
+        "bucket": "ultra-rare",
+        "levelRange": "36-53",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_basalt"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Squirtle",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/squirtle/sprite.png",
+    "drops": [
+      {
+        "item": "Turtle Scute",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Mystic Water",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing. minecraft:water"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Fishing",
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Wartortle",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/wartortle/sprite.png",
+    "drops": [
+      {
+        "item": "Turtle Scute",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Mystic Water",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "16-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing. minecraft:water"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "ultra-rare",
+        "levelRange": "16-40",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Fishing",
+        "bucket": "ultra-rare",
+        "levelRange": "16-40",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Blastoise",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/blastoise/sprite.png",
+    "drops": [
+      {
+        "item": "Turtle Scute",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Mystic Water",
+        "chance": "25%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "36-53",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing. minecraft:water"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "ultra-rare",
+        "levelRange": "36-53",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Fishing",
+        "bucket": "ultra-rare",
+        "levelRange": "36-53",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Caterpie",
+    "types": [
+      "Bug"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/caterpie/sprite.png",
+    "drops": [
+      {
+        "item": "String",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Wepear Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "1-20",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "plains"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing, Spooky"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Metapod",
+    "types": [
+      "Bug"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/metapod/sprite.png",
+    "drops": [
+      {
+        "item": "String",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Wepear Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "7-21",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "plains"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing, Spooky"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Butterfree",
+    "types": [
+      "Bug",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/butterfree/sprite.png",
+    "drops": [
+      {
+        "item": "Silver Powder",
+        "chance": "5%"
+      },
+      {
+        "item": "Shed Shell",
+        "chance": "5%"
+      },
+      {
+        "item": "Wepear Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "10-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "temperate"
+        ],
+        "time": "day",
+        "weather": "any",
+        "notes": "Not in: Floral, Freezing, Spooky"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "10-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "floral"
+        ],
+        "time": "day",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Weedle",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/weedle/sprite.png",
+    "drops": [
+      {
+        "item": "String",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "1-20",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "jungle"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Kakuna",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/kakuna/sprite.png",
+    "drops": [
+      {
+        "item": "String",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "7-21",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "jungle"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Beedrill",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/beedrill/sprite.png",
+    "drops": [
+      {
+        "item": "Poison Barb",
+        "chance": "5%"
+      },
+      {
+        "item": "Shed Shell",
+        "chance": "5%"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "10-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "jungle"
+        ],
+        "time": "day",
+        "weather": "clear",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Pidgey",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/pidgey/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Raw Chicken 1"
+      },
+      {
+        "item": "Chilan Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "1-25",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "temperate",
+          "sky"
+        ],
+        "time": "day",
+        "weather": "any",
+        "notes": "Not in: Spooky"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Pidgeotto",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/pidgeotto/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Chicken 1"
+      },
+      {
+        "item": "Sharp Beak",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Chilan Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "18-35",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "temperate",
+          "sky"
+        ],
+        "time": "day",
+        "weather": "any",
+        "notes": "Not in: Spooky"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Pidgeot",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/pidgeot/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Raw Chicken 1"
+      },
+      {
+        "item": "Sharp Beak",
+        "chance": "5%"
+      },
+      {
+        "item": "Chilan Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "36-48",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "temperate",
+          "sky"
+        ],
+        "time": "day",
+        "weather": "any",
+        "notes": "Not in: Spooky"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Rattata",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/rattata/sprite.png",
+    "drops": [
+      {
+        "item": "Rotten Flesh",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Chilan Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "1-25",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "grassland"
+        ],
+        "time": "night",
+        "weather": "any",
+        "notes": "Not in: Spooky"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "1-25",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. minY = 0"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "uncommon",
+        "levelRange": "1-25",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. minY = 0"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Raticate",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/raticate/sprite.png",
+    "drops": [
+      {
+        "item": "Rotten Flesh",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Chilan Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "20-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "grassland"
+        ],
+        "time": "night",
+        "weather": "any",
+        "notes": "Not in: Spooky"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "20-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. minY = 0"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "uncommon",
+        "levelRange": "20-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. minY = 0"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Spearow",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/spearow/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Raw Chicken 1"
+      },
+      {
+        "item": "Sharp Beak",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Charti Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "1-26",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "badlands",
+          "savanna",
+          "sky"
+        ],
+        "time": "day",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Fearow",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/fearow/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Chicken 1"
+      },
+      {
+        "item": "Sharp Beak",
+        "chance": "5%"
+      },
+      {
+        "item": "Charti Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "20-44",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "badlands",
+          "savanna",
+          "sky"
+        ],
+        "time": "day",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Ekans",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/ekans/sprite.png",
+    "drops": [
+      {
+        "item": "Razor Fang",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "4-29",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "arid"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "4-29",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_desert"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Arbok",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/arbok/sprite.png",
+    "drops": [
+      {
+        "item": "Razor Fang",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "22-45",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "arid"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "22-45",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_desert"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Pikachu",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/pikachu/sprite.png",
+    "drops": [
+      {
+        "item": "Light Ball",
+        "chance": "5%"
+      },
+      {
+        "item": "Thunder Stone",
+        "chance": "5%"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "uncommon",
+        "levelRange": "16-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Spooky"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "16-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "beach",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Raichu",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/raichu/sprite.png",
+    "drops": [
+      {
+        "item": "Light Ball",
+        "chance": "10%"
+      },
+      {
+        "item": "Thunder Stone",
+        "chance": "10%"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "27-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Spooky"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Sandshrew",
+    "types": [
+      "Ground"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/sandshrew/sprite.png",
+    "drops": [
+      {
+        "item": "Armadillo Scute",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Grip Claw",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Quick Claw",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Soft Sand",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "arid"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Sandslash",
+    "types": [
+      "Ground"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/sandslash/sprite.png",
+    "drops": [
+      {
+        "item": "Armadillo Scute",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Grip Claw",
+        "chance": "5%"
+      },
+      {
+        "item": "Quick Claw",
+        "chance": "5%"
+      },
+      {
+        "item": "Soft Sand",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "22-45",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "arid"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Nidoran\u2640",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/nidoran\u2640/sprite.png",
+    "drops": [
+      {
+        "item": "Poison Barb",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Pecha Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "3-28",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Nidorina",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/nidorina/sprite.png",
+    "drops": [
+      {
+        "item": "Poison Barb",
+        "chance": "5%"
+      },
+      {
+        "item": "Pecha Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "16-37",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Nidoqueen",
+    "types": [
+      "Poison",
+      "Ground"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/nidoqueen/sprite.png",
+    "drops": [
+      {
+        "item": "Poison Barb",
+        "chance": "10%"
+      },
+      {
+        "item": "Pecha Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "37-51",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Nidoran\u2642",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/nidoran\u2642/sprite.png",
+    "drops": [
+      {
+        "item": "Poison Barb",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Pecha Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "3-28",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Nidorino",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/nidorino/sprite.png",
+    "drops": [
+      {
+        "item": "Poison Barb",
+        "chance": "5%"
+      },
+      {
+        "item": "Pecha Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "16-37",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Nidoking",
+    "types": [
+      "Poison",
+      "Ground"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/nidoking/sprite.png",
+    "drops": [
+      {
+        "item": "Poison Barb",
+        "chance": "10%"
+      },
+      {
+        "item": "Pecha Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "37-51",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Clefairy",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/clefairy/sprite.png",
+    "drops": [
+      {
+        "item": "Moon Stone",
+        "chance": "5%"
+      },
+      {
+        "item": "Babiri Berry",
+        "chance": "5%"
+      },
+      {
+        "item": "Fairy Feather",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "uncommon",
+        "levelRange": "17-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "dripstone"
+        ],
+        "time": "night",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "17-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "dripstone"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "uncommon",
+        "levelRange": "17-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills"
+        ],
+        "time": "night",
+        "weather": "any",
+        "notes": "Full Moon"
+      },
+      {
+        "label": "Overworld 4",
+        "bucket": "uncommon",
+        "levelRange": "17-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "magical"
+        ],
+        "time": "night",
+        "weather": "any",
+        "notes": "Not in: Spooky"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Clefable",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/clefable/sprite.png",
+    "drops": [
+      {
+        "item": "Moon Stone",
+        "chance": "10%"
+      },
+      {
+        "item": "Babiri Berry",
+        "chance": "10%"
+      },
+      {
+        "item": "Fairy Feather",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "uncommon",
+        "levelRange": "27-48",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "dripstone"
+        ],
+        "time": "night",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "27-48",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "dripstone"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "uncommon",
+        "levelRange": "27-48",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills"
+        ],
+        "time": "night",
+        "weather": "any",
+        "notes": "Full Moon"
+      },
+      {
+        "label": "Overworld 4",
+        "bucket": "uncommon",
+        "levelRange": "27-48",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "magical"
+        ],
+        "time": "night",
+        "weather": "any",
+        "notes": "Not in: Spooky"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Vulpix",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/vulpix/sprite.png",
+    "drops": [
+      {
+        "item": "Sweet Berries",
+        "quantity": "1-3"
+      },
+      {
+        "item": "Charcoal",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Rawst Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "5-30",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "taiga"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_forest"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Nether Frozen"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Ninetales",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/ninetales/sprite.png",
+    "drops": [
+      {
+        "item": "Sweet Berries",
+        "quantity": "2-4"
+      },
+      {
+        "item": "Charcoal",
+        "chance": "5%"
+      },
+      {
+        "item": "Rawst Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "25-51",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "taiga"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "25-51",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_forest"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Nether Frozen"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Jigglypuff",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/jigglypuff/sprite.png",
+    "drops": [
+      {
+        "item": "Moon Stone",
+        "chance": "5%"
+      },
+      {
+        "item": "Air Balloon",
+        "chance": "5%"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "16-27",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "floral"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "16-27",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "plains"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Floral"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "16-27",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Wigglytuff",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/wigglytuff/sprite.png",
+    "drops": [
+      {
+        "item": "Moon Stone",
+        "chance": "10%"
+      },
+      {
+        "item": "Air Balloon",
+        "chance": "10%"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "22-44",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "floral"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "22-44",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "plains"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Floral"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "22-44",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Zubat",
+    "types": [
+      "Poison",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/zubat/sprite.png",
+    "drops": [
+      {
+        "item": "Phantom Membrane",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Razor Fang",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Persim Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "1-25",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "swamp"
+        ],
+        "time": "night",
+        "weather": "clear",
+        "notes": "Not in: Spooky, Freezing"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "1-25",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Spooky, Freezing"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "1-25",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark, Forest, Swamp"
+      },
+      {
+        "label": "Overworld 4",
+        "bucket": "uncommon",
+        "levelRange": "1-25",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark, Forest, Swamp"
+      },
+      {
+        "label": "Overworld 5",
+        "bucket": "common",
+        "levelRange": "1-25",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "spooky"
+        ],
+        "time": "any",
+        "weather": "clear"
+      },
+      {
+        "label": "Overworld 6",
+        "bucket": "uncommon",
+        "levelRange": "1-25",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "deep_dark"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Golbat",
+    "types": [
+      "Poison",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/golbat/sprite.png",
+    "drops": [
+      {
+        "item": "Phantom Membrane",
+        "chance": "5%"
+      },
+      {
+        "item": "Razor Fang",
+        "chance": "5%"
+      },
+      {
+        "item": "Persim Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "22-46",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "swamp"
+        ],
+        "time": "night",
+        "weather": "clear",
+        "notes": "Not in: Spooky, Freezing"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "22-46",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Spooky, Freezing"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "22-46",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark, Forest, Swamp"
+      },
+      {
+        "label": "Overworld 4",
+        "bucket": "uncommon",
+        "levelRange": "22-46",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark, Forest, Swamp"
+      },
+      {
+        "label": "Overworld 5",
+        "bucket": "common",
+        "levelRange": "22-46",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "spooky"
+        ],
+        "time": "any",
+        "weather": "clear"
+      },
+      {
+        "label": "Overworld 6",
+        "bucket": "uncommon",
+        "levelRange": "22-46",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "deep_dark"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Oddish",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/oddish/sprite.png",
+    "drops": [
+      {
+        "item": "Absorb Bulb",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Pecha Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Gloom",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/gloom/sprite.png",
+    "drops": [
+      {
+        "item": "Honey Bottle",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Absorb Bulb",
+        "chance": "5%"
+      },
+      {
+        "item": "Pecha Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "21-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "21-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Vileplume",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/vileplume/sprite.png",
+    "drops": [
+      {
+        "item": "Absorb Bulb",
+        "chance": "10%"
+      },
+      {
+        "item": "Pecha Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "35-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle"
+        ],
+        "time": "night",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "35-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "temperate"
+        ],
+        "time": "night",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Paras",
+    "types": [
+      "Bug",
+      "Grass"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/paras/sprite.png",
+    "drops": [
+      {
+        "item": "Red Mushroom",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Coba Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "uncommon",
+        "levelRange": "4-29",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "4-29",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "mushroom"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "4-29",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_fungus"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Nether Warped"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "uncommon",
+        "levelRange": "4-29",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Lush. structure:cobblemon:shipwreck_coves/lush_shipwreck_cove, minY = -41, maxY = 9"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Parasect",
+    "types": [
+      "Bug",
+      "Grass"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/parasect/sprite.png",
+    "drops": [
+      {
+        "item": "Red Mushroom 1"
+      },
+      {
+        "item": "Coba Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "uncommon",
+        "levelRange": "24-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "24-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "mushroom"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "24-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_fungus"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Nether Warped"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "uncommon",
+        "levelRange": "24-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Lush. structure:cobblemon:shipwreck_coves/lush_shipwreck_cove, minY = -41, maxY = 9"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Venonat",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/venonat/sprite.png",
+    "drops": [
+      {
+        "item": "String",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Persim Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "spooky",
+          "swamp"
+        ],
+        "time": "night",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Venomoth",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/venomoth/sprite.png",
+    "drops": [
+      {
+        "item": "String",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Silver Powder",
+        "chance": "5%"
+      },
+      {
+        "item": "Shed Shell",
+        "chance": "5%"
+      },
+      {
+        "item": "Persim Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "31-45",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "spooky",
+          "swamp"
+        ],
+        "time": "night",
+        "weather": "clear"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Diglett",
+    "types": [
+      "Ground"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/diglett/sprite.png",
+    "drops": [
+      {
+        "item": "Dirt",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Potato",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Big Root",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Soft Sand",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "2-27",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. minY = 0"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Dugtrio",
+    "types": [
+      "Ground"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/dugtrio/sprite.png",
+    "drops": [
+      {
+        "item": "Dirt",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Potato",
+        "chance": "5%"
+      },
+      {
+        "item": "Big Root",
+        "chance": "5%"
+      },
+      {
+        "item": "Soft Sand",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "26-43",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. minY = 0"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Meowth",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/meowth/sprite.png",
+    "drops": [
+      {
+        "item": "Gold Nugget",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Quick Claw",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "4-29",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "clear",
+        "notes": "Not in: Arid, Freezing, Taiga"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "4-29",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "arid"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Persian",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/persian/sprite.png",
+    "drops": [
+      {
+        "item": "Gold Nugget",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Quick Claw",
+        "chance": "5%"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "28-44",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "clear",
+        "notes": "Not in: Arid, Freezing, Taiga"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "28-44",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "arid"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Psyduck",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/psyduck/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Raw Chicken 1"
+      },
+      {
+        "item": "Mystic Water",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "freshwater",
+          "grassland",
+          "magical",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing, Swamp. minecraft:water"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "forest",
+          "freshwater",
+          "grassland",
+          "magical",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Fishing",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "forest",
+          "freshwater",
+          "grassland",
+          "magical",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Golduck",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/golduck/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Chicken 1"
+      },
+      {
+        "item": "Mystic Water",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "33-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "33-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "freshwater",
+          "grassland",
+          "magical",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing, Swamp. minecraft:water"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "common",
+        "levelRange": "33-50",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "forest",
+          "freshwater",
+          "grassland",
+          "magical",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Fishing",
+        "bucket": "common",
+        "levelRange": "33-50",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "forest",
+          "freshwater",
+          "grassland",
+          "magical",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Mankey",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/mankey/sprite.png",
+    "drops": [
+      {
+        "item": "Muscle Band",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Payapa Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills",
+          "jungle"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Primeape",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/primeape/sprite.png",
+    "drops": [
+      {
+        "item": "Muscle Band",
+        "chance": "5%"
+      },
+      {
+        "item": "Payapa Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "28-46",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills",
+          "jungle"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Growlithe",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/growlithe/sprite.png",
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Rawst Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "10-35",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Desert"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Arcanine",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/arcanine/sprite.png",
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Rawst Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "30-56",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Desert"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Poliwag",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/poliwag/sprite.png",
+    "drops": [
+      {
+        "item": "King's Rock",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Chesto Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "rain"
+      },
+      {
+        "label": "Underwater 1",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minecraft:lily_pad"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "rain",
+        "notes": "Not in: Freezing, Swamp. minecraft:water"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing, Swamp"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 3",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 4",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Lush. structure:cobblemon:shipwreck_coves/lush_shipwreck_cove, minY = -41, maxY = 9"
+      },
+      {
+        "label": "Underwater 4",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Lush. structure:cobblemon:shipwreck_coves/lush_shipwreck_cove, minY = -41, maxY = 9"
+      },
+      {
+        "label": "Fishing 3",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Lush. structure:cobblemon:shipwreck_coves/lush_shipwreck_cove, minY = -41, maxY = 9"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Poliwhirl",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/poliwhirl/sprite.png",
+    "drops": [
+      {
+        "item": "King's Rock",
+        "chance": "5%"
+      },
+      {
+        "item": "Chesto Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "rain"
+      },
+      {
+        "label": "Underwater 1",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minecraft:lily_pad"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "rain",
+        "notes": "Not in: Freezing, Swamp. minecraft:water"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing, Swamp"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 3",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 4",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Lush. structure:cobblemon:shipwreck_coves/lush_shipwreck_cove, minY = -41, maxY = 9"
+      },
+      {
+        "label": "Underwater 4",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Lush. structure:cobblemon:shipwreck_coves/lush_shipwreck_cove, minY = -41, maxY = 9"
+      },
+      {
+        "label": "Fishing 3",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Lush. structure:cobblemon:shipwreck_coves/lush_shipwreck_cove, minY = -41, maxY = 9"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Poliwrath",
+    "types": [
+      "Water",
+      "Fighting"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/poliwrath/sprite.png",
+    "drops": [
+      {
+        "item": "King's Rock",
+        "chance": "10%"
+      },
+      {
+        "item": "Chesto Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "34-51",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "rain"
+      },
+      {
+        "label": "Underwater 1",
+        "bucket": "common",
+        "levelRange": "34-51",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minecraft:lily_pad"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "34-51",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "rain",
+        "notes": "Not in: Freezing, Swamp. minecraft:water"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "common",
+        "levelRange": "34-51",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing, Swamp"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "34-51",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 3",
+        "bucket": "common",
+        "levelRange": "34-51",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "34-51",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "34-51",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 4",
+        "bucket": "common",
+        "levelRange": "34-51",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Lush. structure:cobblemon:shipwreck_coves/lush_shipwreck_cove, minY = -41, maxY = 9"
+      },
+      {
+        "label": "Underwater 4",
+        "bucket": "common",
+        "levelRange": "34-51",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Lush. structure:cobblemon:shipwreck_coves/lush_shipwreck_cove, minY = -41, maxY = 9"
+      },
+      {
+        "label": "Fishing 3",
+        "bucket": "common",
+        "levelRange": "34-51",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Lush. structure:cobblemon:shipwreck_coves/lush_shipwreck_cove, minY = -41, maxY = 9"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Abra",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/abra/sprite.png",
+    "drops": [
+      {
+        "item": "Ender Pearl",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Twisted Spoon",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Kasib Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "rare",
+        "levelRange": "6-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills",
+          "temperate"
+        ],
+        "time": "night",
+        "weather": "any",
+        "notes": "Not in: Magical"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "magical"
+        ],
+        "time": "night",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Kadabra",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/kadabra/sprite.png",
+    "drops": [
+      {
+        "item": "Ender Pearl",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Twisted Spoon",
+        "chance": "5%"
+      },
+      {
+        "item": "Kasib Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "rare",
+        "levelRange": "16-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills",
+          "temperate"
+        ],
+        "time": "night",
+        "weather": "any",
+        "notes": "Not in: Magical"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "16-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "magical"
+        ],
+        "time": "night",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "16-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Alakazam",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/alakazam/sprite.png",
+    "drops": [
+      {
+        "item": "Ender Pearl",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Twisted Spoon",
+        "chance": "10%"
+      },
+      {
+        "item": "Kasib Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "rare",
+        "levelRange": "35-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills",
+          "temperate"
+        ],
+        "time": "night",
+        "weather": "any",
+        "notes": "Not in: Magical"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "35-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "magical"
+        ],
+        "time": "night",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "35-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Machop",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/machop/sprite.png",
+    "drops": [
+      {
+        "item": "Focus Band",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Muscle Band",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Wepear Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Machoke",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/machoke/sprite.png",
+    "drops": [
+      {
+        "item": "Focus Band",
+        "chance": "5%"
+      },
+      {
+        "item": "Muscle Band",
+        "chance": "5%"
+      },
+      {
+        "item": "Wepear Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "28-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Machamp",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/machamp/sprite.png",
+    "drops": [
+      {
+        "item": "Focus Band",
+        "chance": "10%"
+      },
+      {
+        "item": "Muscle Band",
+        "chance": "10%"
+      },
+      {
+        "item": "Wepear Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "36-51",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Bellsprout",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/bellsprout/sprite.png",
+    "drops": [
+      {
+        "item": "Big Root",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Weepinbell",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/weepinbell/sprite.png",
+    "drops": [
+      {
+        "item": "Big Root",
+        "chance": "5%"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "21-39",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Victreebel",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/victreebel/sprite.png",
+    "drops": [
+      {
+        "item": "Big Root",
+        "chance": "10%"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "34-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Tentacool",
+    "types": [
+      "Water",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/tentacool/sprite.png",
+    "drops": [
+      {
+        "item": "Ink Sac",
+        "quantity": "1-3"
+      },
+      {
+        "item": "Glow Ink Sac 1-3",
+        "chance": "10%"
+      },
+      {
+        "item": "Poison Barb",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Surface",
+        "bucket": "common",
+        "levelRange": "9-34",
+        "context": [
+          "surface"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 1",
+        "bucket": "uncommon",
+        "levelRange": "9-34",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Dripstone, Lush"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "common",
+        "levelRange": "9-34",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "9-34",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "9-34",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Dripstone, Lush"
+      },
+      {
+        "label": "Underwater 3",
+        "bucket": "common",
+        "levelRange": "9-34",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Tentacruel",
+    "types": [
+      "Water",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/tentacruel/sprite.png",
+    "drops": [
+      {
+        "item": "Ink Sac",
+        "quantity": "2-4"
+      },
+      {
+        "item": "Glow Ink Sac 2-4",
+        "chance": "10%"
+      },
+      {
+        "item": "Poison Barb",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Surface",
+        "bucket": "common",
+        "levelRange": "30-52",
+        "context": [
+          "surface"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 1",
+        "bucket": "uncommon",
+        "levelRange": "30-52",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Dripstone, Lush"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "common",
+        "levelRange": "30-52",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "30-52",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "30-52",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Dripstone, Lush"
+      },
+      {
+        "label": "Underwater 3",
+        "bucket": "common",
+        "levelRange": "30-52",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Geodude",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/geodude/sprite.png",
+    "drops": [
+      {
+        "item": "Gravel",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Everstone",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Black Augurite",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Rindo Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "mountain"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Graveler",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/graveler/sprite.png",
+    "drops": [
+      {
+        "item": "Gravel",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Everstone",
+        "chance": "5%"
+      },
+      {
+        "item": "Black Augurite",
+        "chance": "5%"
+      },
+      {
+        "item": "Rindo Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "mountain"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "25-39",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Golem",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/golem/sprite.png",
+    "drops": [
+      {
+        "item": "Gravel",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Everstone",
+        "chance": "10%"
+      },
+      {
+        "item": "Black Augurite",
+        "chance": "10%"
+      },
+      {
+        "item": "Rindo Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "34-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "mountain"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "34-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Ponyta",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/ponyta/sprite.png",
+    "drops": [
+      {
+        "item": "Leather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Blaze Powder",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Shuca Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "16-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "grassland"
+        ],
+        "time": "any",
+        "weather": "clear",
+        "notes": "Not in: Floral, Magical"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "16-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_overgrowth",
+          "nether_wasteland"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Rapidash",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/rapidash/sprite.png",
+    "drops": [
+      {
+        "item": "Leather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Blaze Powder",
+        "chance": "5%"
+      },
+      {
+        "item": "Shuca Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "40-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "grassland"
+        ],
+        "time": "any",
+        "weather": "clear",
+        "notes": "Not in: Floral, Magical"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "40-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_overgrowth",
+          "nether_wasteland"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Slowpoke",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/slowpoke/sprite.png",
+    "drops": [
+      {
+        "item": "King's Rock",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Lagging Tail",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Chesto Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "beach"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "river"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "beach"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "freshwater"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Slowbro",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/slowbro/sprite.png",
+    "drops": [
+      {
+        "item": "King's Rock",
+        "chance": "5%"
+      },
+      {
+        "item": "Lagging Tail",
+        "chance": "5%"
+      },
+      {
+        "item": "Chesto Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "37-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "beach"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing",
+        "bucket": "common",
+        "levelRange": "37-49",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "beach"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Magnemite",
+    "types": [
+      "Electric",
+      "Steel"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/magnemite/sprite.png",
+    "drops": [
+      {
+        "item": "Raw Iron",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Magnet",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Metal Coat",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Shuca Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "uncommon",
+        "levelRange": "8-33",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minecraft:lightning_rod"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Magneton",
+    "types": [
+      "Electric",
+      "Steel"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/magneton/sprite.png",
+    "drops": [
+      {
+        "item": "Raw Iron",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Magnet",
+        "chance": "5%"
+      },
+      {
+        "item": "Metal Coat",
+        "chance": "5%"
+      },
+      {
+        "item": "Shuca Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "uncommon",
+        "levelRange": "30-47",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "30-47",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minecraft:lightning_rod"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Farfetch'd",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/farfetchd/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Raw Chicken 1"
+      },
+      {
+        "item": "Medicinal Leek",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Chilan Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "13-38",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "cobblemon:medicinal_leek"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Doduo",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/doduo/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Raw Chicken 1"
+      },
+      {
+        "item": "Sharp Beak",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Wacan Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Dodrio",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/dodrio/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Chicken 1"
+      },
+      {
+        "item": "Sharp Beak",
+        "chance": "5%"
+      },
+      {
+        "item": "Wacan Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "31-47",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "31-47",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Seel",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/seel/sprite.png",
+    "drops": [
+      {
+        "item": "Raw Cod",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Never-Melt Ice",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Aspear Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "cold_ocean",
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Dewgong",
+    "types": [
+      "Water",
+      "Ice"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/dewgong/sprite.png",
+    "drops": [
+      {
+        "item": "Raw Cod",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Never-Melt Ice",
+        "chance": "5%"
+      },
+      {
+        "item": "Aspear Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "34-48",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "common",
+        "levelRange": "34-48",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing",
+        "bucket": "common",
+        "levelRange": "34-48",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "cold_ocean",
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Grimer",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/grimer/sprite.png",
+    "drops": [
+      {
+        "item": "Slimeball",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Black Sludge",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Toxic Orb",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Surface 1",
+        "bucket": "uncommon",
+        "levelRange": "8-33",
+        "context": [
+          "surface"
+        ],
+        "biomes": [
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Surface 2",
+        "bucket": "uncommon",
+        "levelRange": "8-33",
+        "context": [
+          "surface"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Swamp"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Swamp"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Muk",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/muk/sprite.png",
+    "drops": [
+      {
+        "item": "Slimeball",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Black Sludge",
+        "chance": "5%"
+      },
+      {
+        "item": "Toxic Orb",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Surface 1",
+        "bucket": "uncommon",
+        "levelRange": "38-50",
+        "context": [
+          "surface"
+        ],
+        "biomes": [
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Surface 2",
+        "bucket": "uncommon",
+        "levelRange": "38-50",
+        "context": [
+          "surface"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Swamp"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "38-50",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "swamp"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "38-50",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Swamp"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Shellder",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/shellder/sprite.png",
+    "drops": [
+      {
+        "item": "Aspear Berry",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Shell Bell",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Underwater 1",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "seafloor"
+        ],
+        "biomes": [
+          "cold_ocean",
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "seafloor"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Cold Ocean, Frozen Ocean"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "cold_ocean",
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Cold Ocean, Frozen Ocean"
+      },
+      {
+        "label": "Underwater 3",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "seafloor"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      },
+      {
+        "label": "Fishing 3",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Cloyster",
+    "types": [
+      "Water",
+      "Ice"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/cloyster/sprite.png",
+    "drops": [
+      {
+        "item": "Aspear Berry",
+        "chance": "5%"
+      },
+      {
+        "item": "Shell Bell",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Underwater 1",
+        "bucket": "common",
+        "levelRange": "26-53",
+        "context": [
+          "seafloor"
+        ],
+        "biomes": [
+          "cold_ocean",
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "common",
+        "levelRange": "26-53",
+        "context": [
+          "seafloor"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Cold Ocean, Frozen Ocean"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "26-53",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "cold_ocean",
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "26-53",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Cold Ocean, Frozen Ocean"
+      },
+      {
+        "label": "Underwater 3",
+        "bucket": "common",
+        "levelRange": "26-53",
+        "context": [
+          "seafloor"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      },
+      {
+        "label": "Fishing 3",
+        "bucket": "common",
+        "levelRange": "26-53",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Gastly",
+    "types": [
+      "Ghost",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/gastly/sprite.png",
+    "drops": [
+      {
+        "item": "Spell Tag",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Payapa Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. maxLight = 0"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "spooky"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "maxLight = 0"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "6-31",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Haunter",
+    "types": [
+      "Ghost",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/haunter/sprite.png",
+    "drops": [
+      {
+        "item": "Spell Tag",
+        "chance": "5%"
+      },
+      {
+        "item": "Payapa Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "25-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. maxLight = 0"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "25-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "25-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "spooky"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "maxLight = 0"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "25-41",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Gengar",
+    "types": [
+      "Ghost",
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/gengar/sprite.png",
+    "drops": [
+      {
+        "item": "Spell Tag",
+        "chance": "10%"
+      },
+      {
+        "item": "Payapa Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "36-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. maxLight = 0"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "36-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "36-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "spooky"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "maxLight = 0"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "36-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Onix",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/onix/sprite.png",
+    "drops": [
+      {
+        "item": "Stone",
+        "quantity": "1-3"
+      },
+      {
+        "item": "Hard Stone",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Lagging Tail",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Passho Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "14-39",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark"
+      },
+      {
+        "label": "Nether",
+        "bucket": "uncommon",
+        "levelRange": "14-39",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_basalt"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Drowzee",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/drowzee/sprite.png",
+    "drops": [
+      {
+        "item": "Chesto Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "night",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Hypno",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/hypno/sprite.png",
+    "drops": [
+      {
+        "item": "Chesto Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "26-48",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "night",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Krabby",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/krabby/sprite.png",
+    "drops": [
+      {
+        "item": "King's Rock",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "coast"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 1",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "seafloor"
+        ],
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "seafloor"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Kingler",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/kingler/sprite.png",
+    "drops": [
+      {
+        "item": "King's Rock",
+        "chance": "5%"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "28-48",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "coast"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 1",
+        "bucket": "common",
+        "levelRange": "28-48",
+        "context": [
+          "seafloor"
+        ],
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "28-48",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "common",
+        "levelRange": "28-48",
+        "context": [
+          "seafloor"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "28-48",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Voltorb",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/voltorb/sprite.png",
+    "drops": [
+      {
+        "item": "Gunpowder",
+        "quantity": "0-1"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "8-33",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minecraft:lightning_rod"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Electrode",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/electrode/sprite.png",
+    "drops": [
+      {
+        "item": "Gunpowder",
+        "quantity": "0-2"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "30-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "30-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minecraft:lightning_rod"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Exeggcute",
+    "types": [
+      "Grass",
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/exeggcute/sprite.png",
+    "drops": [
+      {
+        "item": "Egg",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Oval Stone",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Psychic Seed",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Tanga Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "8-33",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle",
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "8-33",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "beach",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Exeggutor",
+    "types": [
+      "Grass",
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/exeggutor/sprite.png",
+    "drops": [
+      {
+        "item": "Egg",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Oval Stone",
+        "chance": "5%"
+      },
+      {
+        "item": "Psychic Seed",
+        "chance": "5%"
+      },
+      {
+        "item": "Tanga Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "28-53",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle",
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Cubone",
+    "types": [
+      "Ground",
+      "Rock"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/cubone/sprite.png",
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Nanab Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "badlands",
+          "desert"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "volcanic"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_desert"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "name": "Marowak",
+    "types": [
+      "Ground",
+      "Rock"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/marowak/sprite.png",
+    "drops": [
+      {
+        "item": "Bone 1"
+      },
+      {
+        "item": "Nanab Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "28-43",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "badlands",
+          "desert"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Hitmonlee",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/hitmonlee/sprite.png",
+    "drops": [
+      {
+        "item": "Black Belt",
+        "chance": "5%"
+      },
+      {
+        "item": "Payapa Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "20-46",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "name": "Hitmonchan",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/hitmonchan/sprite.png",
+    "drops": [
+      {
+        "item": "Black Belt",
+        "chance": "5%"
+      },
+      {
+        "item": "Payapa Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "20-46",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Lickitung",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/lickitung/sprite.png",
+    "drops": [
+      {
+        "item": "Slimeball",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Lagging Tail",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "14-39",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "grassland"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Koffing",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/koffing/sprite.png",
+    "drops": [
+      {
+        "item": "Black Sludge",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Smoke Ball",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "9-34",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "9-34",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_toxic"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "9-34",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "magical"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "common",
+        "levelRange": "9-34",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "spooky"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "name": "Weezing",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/weezing/sprite.png",
+    "drops": [
+      {
+        "item": "Black Sludge",
+        "chance": "5%"
+      },
+      {
+        "item": "Smoke Ball",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "35-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "35-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_toxic"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Rhyhorn",
+    "types": [
+      "Ground",
+      "Rock"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/rhyhorn/sprite.png",
+    "drops": [
+      {
+        "item": "Protector",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Passho Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "10-35",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "mountain",
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Cold"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Rhydon",
+    "types": [
+      "Ground",
+      "Rock"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/rhydon/sprite.png",
+    "drops": [
+      {
+        "item": "Protector",
+        "chance": "5%"
+      },
+      {
+        "item": "Passho Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "42-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "mountain",
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Cold"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Chansey",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/chansey/sprite.png",
+    "drops": [
+      {
+        "item": "Lucky Egg",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "rare",
+        "levelRange": "17-45",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Tangela",
+    "types": [
+      "Grass"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/tangela/sprite.png",
+    "drops": [
+      {
+        "item": "Vine",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Big Root",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "common",
+        "levelRange": "19-44",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Kangaskhan",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/kangaskhan/sprite.png",
+    "drops": [
+      {
+        "item": "Chilan Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "rare",
+        "levelRange": "24-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "savanna"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Horsea",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/horsea/sprite.png",
+    "drops": [
+      {
+        "item": "Ink Sac",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Prismarine Shard",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Dragon Scale",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Underwater 1",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "lukewarm_ocean",
+          "warm_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Cold Ocean, Frozen Ocean"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "5-30",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Seadra",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/seadra/sprite.png",
+    "drops": [
+      {
+        "item": "Ink Sac",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Prismarine Shard",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Dragon Scale",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Underwater 1",
+        "bucket": "common",
+        "levelRange": "32-44",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "lukewarm_ocean",
+          "warm_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "32-44",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Cold Ocean, Frozen Ocean"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "common",
+        "levelRange": "32-44",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "32-44",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Goldeen",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/goldeen/sprite.png",
+    "drops": [
+      {
+        "item": "Raw Salmon 1"
+      },
+      {
+        "item": "Bone Meal",
+        "chance": "5%"
+      },
+      {
+        "item": "Mystic Water",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Wacan Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Underwater",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "river"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing",
+        "bucket": "common",
+        "levelRange": "7-32",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "bamboo",
+          "floral",
+          "freezing",
+          "freshwater",
+          "jungle",
+          "magical",
+          "mountain",
+          "taiga",
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "name": "Seaking",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/seaking/sprite.png",
+    "drops": [
+      {
+        "item": "Raw Salmon 1"
+      },
+      {
+        "item": "Bone Meal",
+        "chance": "10%"
+      },
+      {
+        "item": "Mystic Water",
+        "chance": "5%"
+      },
+      {
+        "item": "Wacan Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Underwater",
+        "bucket": "common",
+        "levelRange": "33-45",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "river"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing",
+        "bucket": "common",
+        "levelRange": "33-45",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "bamboo",
+          "floral",
+          "freezing",
+          "freshwater",
+          "jungle",
+          "magical",
+          "mountain",
+          "taiga",
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "name": "Staryu",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/staryu/sprite.png",
+    "drops": [],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "9-34",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "coast"
+        ],
+        "time": "night",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 1",
+        "bucket": "uncommon",
+        "levelRange": "9-34",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "uncommon",
+        "levelRange": "9-34",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "coast",
+          "ocean",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "9-34",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "coast",
+          "ocean",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minLureLevel = 1"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "uncommon",
+        "levelRange": "9-34",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      },
+      {
+        "label": "Fishing 3",
+        "bucket": "uncommon",
+        "levelRange": "9-34",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      },
+      {
+        "label": "Fishing 4",
+        "bucket": "common",
+        "levelRange": "9-34",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minLureLevel = 1, structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "name": "Starmie",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/starmie/sprite.png",
+    "drops": [],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "29-52",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "coast"
+        ],
+        "time": "night",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater 1",
+        "bucket": "uncommon",
+        "levelRange": "29-52",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "uncommon",
+        "levelRange": "29-52",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "coast",
+          "ocean",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "29-52",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "coast",
+          "ocean",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minLureLevel = 1"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "uncommon",
+        "levelRange": "29-52",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      },
+      {
+        "label": "Fishing 3",
+        "bucket": "uncommon",
+        "levelRange": "29-52",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      },
+      {
+        "label": "Fishing 4",
+        "bucket": "common",
+        "levelRange": "29-52",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minLureLevel = 1, structure:cobblemon:shipwreck_coves/submerged_shipwreck_cove, minY = -60, maxY = 13"
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "name": "Mr.Mime",
+    "types": [
+      "Psychic",
+      "Ice"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/mrmime/sprite.png",
+    "drops": [
+      {
+        "item": "Light Clay",
+        "chance": "5%"
+      },
+      {
+        "item": "Babiri Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "uncommon",
+        "levelRange": "26-46",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "26-46",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "name": "Scyther",
+    "types": [
+      "Bug",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/scyther/sprite.png",
+    "drops": [
+      {
+        "item": "Wepear Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "rare",
+        "levelRange": "25-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "forest",
+          "hills"
+        ],
+        "time": "day",
+        "weather": "any",
+        "notes": "Not in: Freezing, Spooky"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "25-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle"
+        ],
+        "time": "day",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "name": "Jynx",
+    "types": [
+      "Ice",
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/jynx/sprite.png",
+    "drops": [
+      {
+        "item": "Aspear Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "30-46",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "freezing"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "name": "Electabuzz",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/electabuzz/sprite.png",
+    "drops": [
+      {
+        "item": "Redstone",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Electirizer",
+        "chance": "5%"
+      },
+      {
+        "item": "Cheri Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "30-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills",
+          "plains"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "name": "Magmar",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/magmar/sprite.png",
+    "drops": [
+      {
+        "item": "Blaze Powder",
+        "chance": "5%"
+      },
+      {
+        "item": "Magmarizer",
+        "chance": "5%"
+      },
+      {
+        "item": "Rawst Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "30-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "hills"
+        ],
+        "time": "any",
+        "weather": "clear",
+        "notes": "Not in: Volcanic. minecraft:lava, minecraft:magma_block"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "30-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "volcanic"
+        ],
+        "time": "any",
+        "weather": "clear"
+      },
+      {
+        "label": "Nether",
+        "bucket": "common",
+        "levelRange": "30-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "nether_basalt",
+          "nether_wasteland"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "name": "Pinsir",
+    "types": [
+      "Bug"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/pinsir/sprite.png",
+    "drops": [
+      {
+        "item": "Pinap Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "rare",
+        "levelRange": "25-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "jungle",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "25-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing. #cobblemon:saccharine_trees"
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "name": "Tauros",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/tauros/sprite.png",
+    "drops": [
+      {
+        "item": "Leather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Beef",
+        "quantity": "1-3"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "common",
+        "levelRange": "24-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "grassland"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Hills"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "common",
+        "levelRange": "24-49",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "highlands"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "name": "Magikarp",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/magikarp/sprite.png",
+    "drops": [
+      {
+        "item": "Raw Salmon 1"
+      },
+      {
+        "item": "Bone Meal",
+        "chance": "5%"
+      },
+      {
+        "item": "Wacan Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Underwater",
+        "bucket": "common",
+        "levelRange": "1-20",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "freshwater",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Surface",
+        "bucket": "uncommon",
+        "levelRange": "1-20",
+        "context": [
+          "surface"
+        ],
+        "biomes": [
+          "freshwater",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "common",
+        "levelRange": "1-20",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "uncommon",
+        "levelRange": "1-20",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minLureLevel = 1"
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "name": "Gyarados",
+    "types": [
+      "Water",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/gyarados/sprite.png",
+    "drops": [
+      {
+        "item": "Raw Salmon 1"
+      },
+      {
+        "item": "Bone Meal",
+        "chance": "10%"
+      },
+      {
+        "item": "Wacan Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Underwater",
+        "bucket": "common",
+        "levelRange": "20-54",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "freshwater",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Surface",
+        "bucket": "uncommon",
+        "levelRange": "20-54",
+        "context": [
+          "surface"
+        ],
+        "biomes": [
+          "freshwater",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing",
+        "bucket": "common",
+        "levelRange": "20-54",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "name": "Lapras",
+    "types": [
+      "Water",
+      "Ice"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/lapras/sprite.png",
+    "drops": [
+      {
+        "item": "Mystic Water",
+        "chance": "5%"
+      },
+      {
+        "item": "Never-Melt Ice",
+        "chance": "5%"
+      },
+      {
+        "item": "Heart of the Sea",
+        "chance": "5%"
+      },
+      {
+        "item": "Aspear Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Surface 1",
+        "bucket": "uncommon",
+        "levelRange": "29-54",
+        "context": [
+          "surface"
+        ],
+        "biomes": [
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Surface 2",
+        "bucket": "ultra-rare",
+        "levelRange": "29-54",
+        "context": [
+          "surface"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Frozen Ocean"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "uncommon",
+        "levelRange": "29-54",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "common",
+        "levelRange": "29-54",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "frozen_ocean"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "minLureLevel = 1"
+      },
+      {
+        "label": "Fishing 3",
+        "bucket": "ultra-rare",
+        "levelRange": "29-54",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Frozen Ocean"
+      }
+    ]
+  },
+  {
+    "id": 132,
+    "name": "Ditto",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/ditto/sprite.png",
+    "drops": [
+      {
+        "item": "Quick Powder",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Metal Powder",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "rare",
+        "levelRange": "4-29",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Ocean. Slime Chunk"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "ultra-rare",
+        "levelRange": "4-29",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Ocean"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "uncommon",
+        "levelRange": "4-29",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "name": "Eevee",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/eevee/sprite.png",
+    "drops": [
+      {
+        "item": "Silk Scarf",
+        "chance": "5%"
+      },
+      {
+        "item": "Eviolite",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "ultra-rare",
+        "levelRange": "5-33",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Ocean, Temperate"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "rare",
+        "levelRange": "5-33",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "temperate"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 3",
+        "bucket": "uncommon",
+        "levelRange": "5-33",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 134,
+    "name": "Vaporeon",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/vaporeon/sprite.png",
+    "drops": [
+      {
+        "item": "Water Stone",
+        "chance": "25%"
+      },
+      {
+        "item": "Mystic Water",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "ultra-rare",
+        "levelRange": "28-53",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "freshwater",
+          "jungle",
+          "magical",
+          "temperate",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing. minecraft:water"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "ultra-rare",
+        "levelRange": "28-53",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "freshwater",
+          "jungle",
+          "magical",
+          "temperate",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "28-53",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing",
+        "bucket": "ultra-rare",
+        "levelRange": "28-53",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "freshwater",
+          "jungle",
+          "magical",
+          "temperate",
+          "tropical_island"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Freezing"
+      }
+    ]
+  },
+  {
+    "id": 135,
+    "name": "Jolteon",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/jolteon/sprite.png",
+    "drops": [
+      {
+        "item": "Thunder Stone",
+        "chance": "25%"
+      },
+      {
+        "item": "Magnet",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "ultra-rare",
+        "levelRange": "28-53",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "grassland"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "28-53",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 136,
+    "name": "Flareon",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/flareon/sprite.png",
+    "drops": [
+      {
+        "item": "Fire Stone",
+        "chance": "25%"
+      },
+      {
+        "item": "Charcoal Stick",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "ultra-rare",
+        "levelRange": "28-53",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "badlands",
+          "desert"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "28-53",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 137,
+    "name": "Porygon",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/porygon/sprite.png",
+    "drops": [],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "uncommon",
+        "levelRange": "15-40",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "cobblemon:pc"
+      }
+    ]
+  },
+  {
+    "id": 138,
+    "name": "Omanyte",
+    "types": [
+      "Rock",
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/omanyte/sprite.png",
+    "drops": [
+      {
+        "item": "Nautilus Shell 1"
+      },
+      {
+        "item": "Bone Meal",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "11-36",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "ultra-rare",
+        "levelRange": "11-36",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 139,
+    "name": "Omastar",
+    "types": [
+      "Rock",
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/omastar/sprite.png",
+    "drops": [
+      {
+        "item": "Nautilus Shell 1"
+      },
+      {
+        "item": "Bone Meal",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "40-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "ultra-rare",
+        "levelRange": "40-50",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "name": "Kabuto",
+    "types": [
+      "Rock",
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/kabuto/sprite.png",
+    "drops": [
+      {
+        "item": "Razor Claw",
+        "chance": "5%"
+      },
+      {
+        "item": "Bone Meal",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "11-36",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "ultra-rare",
+        "levelRange": "11-36",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "name": "Kabutops",
+    "types": [
+      "Rock",
+      "Water"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/kabutops/sprite.png",
+    "drops": [
+      {
+        "item": "Razor Claw",
+        "chance": "10%"
+      },
+      {
+        "item": "Bone Meal",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "40-50",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "ultra-rare",
+        "levelRange": "40-50",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 142,
+    "name": "Aerodactyl",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/aerodactyl/sprite.png",
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Rocky Helmet",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "ultra-rare",
+        "levelRange": "27-52",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "lush"
+        ],
+        "time": "any",
+        "weather": "any"
+      }
+    ]
+  },
+  {
+    "id": 143,
+    "name": "Snorlax",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/snorlax/sprite.png",
+    "drops": [
+      {
+        "item": "Apple",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Apple",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Chesto Berry",
+        "chance": "5%"
+      },
+      {
+        "item": "Leftovers",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "rare",
+        "levelRange": "34-54",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "snowy_forest",
+          "forest",
+          "hills"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "uncommon",
+        "levelRange": "34-54",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "#cobblemon:saccharine_trees"
+      }
+    ]
+  },
+  {
+    "id": 144,
+    "name": "Articuno",
+    "types": [
+      "Ice",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/articuno/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "2-4"
+      },
+      {
+        "item": "Raw Chicken 1"
+      },
+      {
+        "item": "Never-Melt Ice 1"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "unknown",
+        "levelRange": "?",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [],
+        "time": "any",
+        "weather": "any",
+        "notes": "No standard spawn data \u2014 may require special conditions or events."
+      }
+    ]
+  },
+  {
+    "id": 145,
+    "name": "Zapdos",
+    "types": [
+      "Electric",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/zapdos/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "2-4"
+      },
+      {
+        "item": "Raw Chicken 1"
+      },
+      {
+        "item": "Magnet 1"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "unknown",
+        "levelRange": "?",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [],
+        "time": "any",
+        "weather": "any",
+        "notes": "No standard spawn data \u2014 may require special conditions or events."
+      }
+    ]
+  },
+  {
+    "id": 146,
+    "name": "Moltres",
+    "types": [
+      "Fire",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/moltres/sprite.png",
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "2-4"
+      },
+      {
+        "item": "Cooked Chicken 1"
+      },
+      {
+        "item": "Charcoal Stick 1"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "unknown",
+        "levelRange": "?",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [],
+        "time": "any",
+        "weather": "any",
+        "notes": "No standard spawn data \u2014 may require special conditions or events."
+      }
+    ]
+  },
+  {
+    "id": 147,
+    "name": "Dratini",
+    "types": [
+      "Dragon"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/dratini/sprite.png",
+    "drops": [
+      {
+        "item": "Dragon's Breath",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Dragon Fang",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Dragon Scale",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Yache Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Surface",
+        "bucket": "rare",
+        "levelRange": "5-30",
+        "context": [
+          "surface"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. maxY = 32"
+      },
+      {
+        "label": "Underwater 1",
+        "bucket": "rare",
+        "levelRange": "5-30",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. maxY = 32"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "uncommon",
+        "levelRange": "5-30",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "rare",
+        "levelRange": "5-30",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. maxY = 32"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "ultra-rare",
+        "levelRange": "5-30",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "magical",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Frozen Ocean"
+      }
+    ]
+  },
+  {
+    "id": 148,
+    "name": "Dragonair",
+    "types": [
+      "Dragon"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/dragonair/sprite.png",
+    "drops": [
+      {
+        "item": "Dragon's Breath",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Dragon Fang",
+        "chance": "5%"
+      },
+      {
+        "item": "Dragon Scale",
+        "chance": "5%"
+      },
+      {
+        "item": "Yache Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Surface",
+        "bucket": "rare",
+        "levelRange": "30-42",
+        "context": [
+          "surface"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. maxY = 32"
+      },
+      {
+        "label": "Underwater 1",
+        "bucket": "rare",
+        "levelRange": "30-42",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. maxY = 32"
+      },
+      {
+        "label": "Underwater 2",
+        "bucket": "uncommon",
+        "levelRange": "30-42",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "rare",
+        "levelRange": "30-42",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. maxY = 32"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "ultra-rare",
+        "levelRange": "30-42",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "magical",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Frozen Ocean"
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "name": "Dragonite",
+    "types": [
+      "Dragon",
+      "Flying"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/dragonite/sprite.png",
+    "drops": [
+      {
+        "item": "Dragon's Breath",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Dragon Fang",
+        "chance": "10%"
+      },
+      {
+        "item": "Dragon Scale",
+        "chance": "10%"
+      },
+      {
+        "item": "Yache Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld 1",
+        "bucket": "rare",
+        "levelRange": "55-60",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. maxY = 32, minecraft:water"
+      },
+      {
+        "label": "Underwater",
+        "bucket": "uncommon",
+        "levelRange": "55-60",
+        "context": [
+          "submerged"
+        ],
+        "biomes": [
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any"
+      },
+      {
+        "label": "Overworld 2",
+        "bucket": "ultra-rare",
+        "levelRange": "55-60",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [
+          "sky"
+        ],
+        "time": "any",
+        "weather": "rain"
+      },
+      {
+        "label": "Fishing 1",
+        "bucket": "rare",
+        "levelRange": "55-60",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "overworld"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Deep Dark. maxY = 32"
+      },
+      {
+        "label": "Fishing 2",
+        "bucket": "ultra-rare",
+        "levelRange": "55-60",
+        "context": [
+          "fishing"
+        ],
+        "biomes": [
+          "magical",
+          "ocean"
+        ],
+        "time": "any",
+        "weather": "any",
+        "notes": "Not in: Frozen Ocean"
+      }
+    ]
+  },
+  {
+    "id": 150,
+    "name": "Mewtwo",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/mewtwo/sprite.png",
+    "drops": [
+      {
+        "item": "Twisted Spoon 1"
+      }
+    ],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "unknown",
+        "levelRange": "?",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [],
+        "time": "any",
+        "weather": "any",
+        "notes": "No standard spawn data \u2014 may require special conditions or events."
+      }
+    ]
+  },
+  {
+    "id": 151,
+    "name": "Mew",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://cobblemon.tools/pokedex/pokemon/mew/sprite.png",
+    "drops": [],
+    "spawns": [
+      {
+        "label": "Overworld",
+        "bucket": "unknown",
+        "levelRange": "?",
+        "context": [
+          "grounded"
+        ],
+        "biomes": [],
+        "time": "any",
+        "weather": "any",
+        "notes": "No standard spawn data \u2014 may require special conditions or events."
+      }
+    ]
+  }
+]
