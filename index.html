@@ -22,8 +22,8 @@
       <nav class="sidebar">
         <ul>
           <li class="nav-item active" data-panel="pokedex">📖 Pokédex</li>
-          <li class="nav-item" data-panel="caught">✅ Caught Tracker</li>
-          <<li class="nav-item" data-panel="items">🎒 Item Search</li>>
+          <li class="nav-item" data-panel="party">📟 Party / Storage</li>
+          <li class="nav-item" data-panel="items">🎒 Item Search</li>
           <li class="nav-item" data-panel="biome">🌿 Biome Search</li>
           <li class="nav-item" data-panel="battle">⚔️ Battle Optimizer</li>
           <li class="nav-item" data-panel="moves">💡 Move Examiner</li>
@@ -36,10 +36,47 @@
 
         <div class="panel active" id="panel-pokedex"></div>
 
-        <div class="panel" id="panel-caught">
-          <h2>✅ Caught Tracker</h2>
-          <p>Log and manage all the Pokémon you've caught.</p>
-          <p class="coming-soon">Coming in Stage 4</p>
+        <div id="panel-party" class="panel">
+          <div class="party-storage-layout">
+
+            <!-- LEFT: Party (6 slots) -->
+            <div class="party-column">
+              <h2 class="panel-title">Party</h2>
+              <div class="party-slots" id="party-slots">
+                <!-- 6 slots rendered by JS -->
+              </div>
+            </div>
+
+            <!-- RIGHT: Storage -->
+            <div class="storage-column">
+              <h2 class="panel-title">Storage</h2>
+              <div class="storage-search-bar">
+                <input type="text" id="storage-search" placeholder="Search by name, #, type, or move..." />
+                <div class="storage-filter-pills" id="storage-filter-pills">
+                  <button class="pill active" data-filter="all">All</button>
+                  <button class="pill" data-filter="fire">🔥 Fire</button>
+                  <button class="pill" data-filter="water">💧 Water</button>
+                  <button class="pill" data-filter="grass">🌿 Grass</button>
+                  <button class="pill" data-filter="electric">⚡ Electric</button>
+                  <button class="pill" data-filter="psychic">🔮 Psychic</button>
+                  <button class="pill" data-filter="normal">⬜ Normal</button>
+                </div>
+              </div>
+              <button class="add-poke-btn" id="add-poke-btn">＋ Add Pokémon</button>
+              <div class="storage-grid" id="storage-grid">
+                <!-- tiles rendered by JS -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Pokédex Card Modal -->
+        <div id="pokedex-card-overlay" class="pokedex-overlay hidden">
+          <div id="pokedex-card" class="pokedex-card">
+            <button class="card-close-btn" id="card-close-btn">✕</button>
+            <!-- card content rendered by JS -->
+          </div>
         </div>
 
         <div class="panel" id="panel-items"></div>
