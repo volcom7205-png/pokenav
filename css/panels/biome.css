@@ -152,17 +152,73 @@
   margin-bottom: 10px;
 }
 
-.biome-picker-group { margin-bottom: 12px; }
-.biome-picker-header {
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  color: var(--accent-red);
+/* Two-level accordion: dimension > climate group > chips. */
+.biome-picker-dim { margin-bottom: 8px; }
+.biome-picker-header,
+.biome-picker-subheader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-tile);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  font-family: 'Rajdhani', sans-serif;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  text-align: left;
   text-transform: uppercase;
-  margin-bottom: 6px;
-  border-bottom: 1px dashed var(--border-color);
-  padding-bottom: 4px;
+  transition: background 0.1s, border-color 0.1s;
 }
-.biome-picker-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.biome-picker-header {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 7px 9px;
+  border-radius: 4px;
+  letter-spacing: 2px;
+}
+.biome-picker-header:hover { border-color: var(--accent-red); background: var(--nav-hover); }
+.biome-picker-header.is-open {
+  border-color: var(--accent-red);
+  background: rgba(255,51,51,0.08);
+}
+.biome-picker-dim-body {
+  padding: 6px 0 0 8px;
+  border-left: 1px dashed var(--border-color);
+  margin: 4px 0 0 6px;
+}
+.biome-picker-subgroup { margin-bottom: 4px; }
+.biome-picker-subheader {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 3px;
+  border-left: 3px solid var(--biome-group-color, var(--border-color));
+}
+.biome-picker-subheader:hover { background: var(--nav-hover); }
+.biome-picker-subheader.is-open { background: rgba(255,255,255,0.04); }
+.picker-chevron {
+  font-size: 0.6rem;
+  width: 10px;
+  flex: 0 0 10px;
+  color: var(--text-muted);
+}
+.picker-emoji { flex: 0 0 auto; }
+.picker-label { flex: 1; }
+.picker-count {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  padding: 1px 6px;
+  letter-spacing: 0.5px;
+  text-transform: none;
+}
+
+.biome-picker-chips { display: flex; flex-wrap: wrap; gap: 4px; padding: 6px 0 4px; }
+.biome-chip-wrap { display: inline-flex; flex-direction: column; gap: 4px; }
+.biome-chip-wrap.active { flex-basis: 100%; width: 100%; }
 
 .biome-chip {
   background: var(--bg-tile);
@@ -198,6 +254,42 @@
   text-align: center;
 }
 .biome-chip.active .biome-chip-count { color: var(--btn-text); background: rgba(0,0,0,0.4); }
+
+/* Inline panel that drops below an active chip — lists underlying biomes
+   from the taxonomy, grouped by source mod. */
+.biome-underlying {
+  background: rgba(0,0,0,0.25);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--biome-group-color, var(--accent-red));
+  border-radius: 0 4px 4px 0;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.biome-underlying--empty {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  border-left-color: var(--text-muted);
+}
+.biome-underlying-source-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.biome-underlying-list { display: flex; flex-wrap: wrap; gap: 4px; }
+.biome-underlying-tag {
+  font-size: 0.72rem;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  padding: 2px 6px;
+  color: var(--text-primary);
+}
 
 .biome-results-header {
   font-size: 1.1rem;

@@ -12,6 +12,7 @@ const BiomeSearch = (() => {
   let pokQuery = '';
   let biomeFilter = '';
   let biomeSelected = null;
+  let pickerOpen = new Set();   // 'dim:overworld', 'group:aquatic', …
   let wantedQuery = '';
   let wantedSort = 'id';
 
@@ -69,6 +70,9 @@ const BiomeSearch = (() => {
     wirePokemonView();
     wireBiomeView();
     wireWantedView();
+    PokeNavBiomes.onModsChanged(() => {
+      if (mode === 'biome') renderBiomePicker();
+    });
     renderMode();
   }
 
@@ -135,14 +139,17 @@ const BiomeSearch = (() => {
             ${wanted.has(p.id) ? '★ Wanted' : '+ Wanted'}
           </button>
         </div>
-        ${(p.spawns && p.spawns.length)
-          ? p.spawns.map(s => `
-            <div class="biome-spawn-block">
-              <div class="biome-spawn-label">${s.label || 'Spawn'}</div>
-              ${renderSpawnContent(s)}
-            </div>
-          `).join('')
-          : '<div class="biome-spawn-empty">No spawn data for this Pokémon.</div>'}
+        ${(() => {
+          const merged = mergeSpawns(p.spawns || []);
+          return merged.length
+            ? merged.map(s => `
+              <div class="biome-spawn-block">
+                <div class="biome-spawn-label">${s.label || 'Spawn'}</div>
+                ${renderSpawnContent(s)}
+              </div>
+            `).join('')
+            : '<div class="biome-spawn-empty">No spawn data for this Pokémon.</div>';
+        })()}
       </section>
     `).join('');
 
@@ -176,47 +183,145 @@ const BiomeSearch = (() => {
     const biomes = allKnownBiomes()
       .filter(b => !biomeFilter || b.includes(biomeFilter));
 
-    // Bucket by group (canonical order via PokeNavBiomes).
     const byGroup = {};
     for (const b of biomes) {
       const g = PokeNavBiomes.getGroup(b);
       (byGroup[g] = byGroup[g] || []).push(b);
     }
 
-    const groupOrder = PokeNavBiomes.getGroupOrder().filter(g => byGroup[g]);
-    root.innerHTML = groupOrder.map(g => {
+    // Bucket non-empty groups by dimension, preserving canonical order.
+    const dimToGroups = {};
+    for (const dim of PokeNavBiomes.getDimensionOrder()) dimToGroups[dim] = [];
+    for (const g of PokeNavBiomes.getGroupOrder()) {
+      if (!byGroup[g]?.length) continue;
       const meta = PokeNavBiomes.getGroupMeta(g);
-      return `
-      <div class="biome-picker-group" data-group="${g}">
-        <div class="biome-picker-header" style="color:${meta.color}">
-          ${meta.emoji} ${meta.label}
-        </div>
-        <div class="biome-picker-chips">
-          ${byGroup[g].map(b => {
-            const count = biomeIndex.get(b)?.length || 0;
-            const empty = count === 0 ? 'is-empty' : '';
-            const active = biomeSelected === b ? 'active' : '';
-            return `
-              <button class="biome-chip ${empty} ${active}" data-biome="${b}"
-                      data-group="${g}" type="button" title="${count} mons"
-                      style="--biome-group-color:${meta.color}">
-                ${prettyBiome(b)}
-                <span class="biome-chip-count">${count}</span>
+      dimToGroups[meta.dimension].push(g);
+    }
+
+    // Active search forces every section open so the user can see what survived
+    // the filter. Selection alone respects user-toggled state.
+    const forceOpen = !!biomeFilter;
+    const isOpen = key => forceOpen || pickerOpen.has(key);
+
+    let html = '';
+    for (const dim of PokeNavBiomes.getDimensionOrder()) {
+      const groups = dimToGroups[dim];
+      if (!groups.length) continue;
+      const dimMeta = PokeNavBiomes.getDimensionMeta(dim);
+      const dimKey = `dim:${dim}`;
+      const dimOpen = isOpen(dimKey);
+      const totalCount = groups.reduce((s, g) => s + byGroup[g].length, 0);
+      const isOverworld = dim === 'overworld';
+
+      let body = '';
+      if (isOverworld) {
+        body = groups.map(g => {
+          const gMeta = PokeNavBiomes.getGroupMeta(g);
+          const gKey = `group:${g}`;
+          const gOpen = isOpen(gKey);
+          return `
+            <div class="biome-picker-subgroup" data-group="${g}">
+              <button class="biome-picker-subheader ${gOpen ? 'is-open' : ''}"
+                      data-toggle="${gKey}" type="button"
+                      style="--biome-group-color:${gMeta.color}">
+                <span class="picker-chevron">${gOpen ? '▼' : '▶'}</span>
+                <span class="picker-emoji">${gMeta.emoji}</span>
+                <span class="picker-label">${gMeta.label}</span>
+                <span class="picker-count">${byGroup[g].length}</span>
               </button>
-            `;
-          }).join('')}
+              ${gOpen ? renderChipRow(byGroup[g], gMeta.color, g) : ''}
+            </div>
+          `;
+        }).join('');
+      } else {
+        const merged = groups.flatMap(g => byGroup[g]);
+        const color = PokeNavBiomes.getGroupMeta(groups[0]).color;
+        body = renderChipRow(merged, color, groups[0]);
+      }
+
+      html += `
+        <div class="biome-picker-dim" data-dim="${dim}">
+          <button class="biome-picker-header ${dimOpen ? 'is-open' : ''}"
+                  data-toggle="${dimKey}" type="button">
+            <span class="picker-chevron">${dimOpen ? '▼' : '▶'}</span>
+            <span class="picker-emoji">${dimMeta.emoji}</span>
+            <span class="picker-label">${dimMeta.label}</span>
+            <span class="picker-count">${isOverworld ? `${groups.length} groups` : totalCount}</span>
+          </button>
+          ${dimOpen ? `<div class="biome-picker-dim-body">${body}</div>` : ''}
         </div>
-      </div>
       `;
-    }).join('');
+    }
+
+    root.innerHTML = html || '<div class="biome-empty">No biomes match.</div>';
+
+    root.querySelectorAll('[data-toggle]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.toggle;
+        if (pickerOpen.has(key)) pickerOpen.delete(key);
+        else pickerOpen.add(key);
+        renderBiomePicker();
+      });
+    });
 
     root.querySelectorAll('.biome-chip').forEach(btn => {
       btn.addEventListener('click', () => {
-        biomeSelected = btn.dataset.biome;
+        const tag = btn.dataset.biome;
+        biomeSelected = biomeSelected === tag ? null : tag;
         renderBiomePicker();
         renderBiomeResults();
       });
     });
+  }
+
+  function renderChipRow(biomes, color, groupKey) {
+    return `
+      <div class="biome-picker-chips">
+        ${biomes.map(b => {
+          const count = biomeIndex.get(b)?.length || 0;
+          const empty = count === 0 ? 'is-empty' : '';
+          const active = biomeSelected === b ? 'active' : '';
+          return `
+            <div class="biome-chip-wrap ${active}">
+              <button class="biome-chip ${empty} ${active}" data-biome="${b}"
+                      data-group="${groupKey}" type="button" title="${count} mons"
+                      style="--biome-group-color:${color}">
+                ${prettyBiome(b)}
+                <span class="biome-chip-count">${count}</span>
+              </button>
+              ${active ? renderUnderlyingPanel(b) : ''}
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+  }
+
+  function renderUnderlyingPanel(tag) {
+    const entry = PokeNavBiomes.getTaxonomyEntry(tag);
+    if (!entry) {
+      return '<div class="biome-underlying biome-underlying--empty">No underlying biome data.</div>';
+    }
+    const enabled = PokeNavBiomes.getEnabledMods();
+    const filtered = (entry.underlying || []).filter(u => enabled.has(u.source));
+    if (!filtered.length) {
+      return '<div class="biome-underlying biome-underlying--empty">No underlying biomes from enabled mod packs.</div>';
+    }
+    const bySource = {};
+    for (const u of filtered) (bySource[u.source] = bySource[u.source] || []).push(u);
+    const order = Object.keys(bySource).sort();
+    return `
+      <div class="biome-underlying">
+        ${order.map(src => `
+          <div class="biome-underlying-source">
+            <div class="biome-underlying-source-label">${src.replace(/_/g, ' ')}</div>
+            <div class="biome-underlying-list">
+              ${bySource[src].map(u => `<span class="biome-underlying-tag">${u.name}</span>`).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
   }
 
   function renderBiomeResults() {

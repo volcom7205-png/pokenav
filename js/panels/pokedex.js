@@ -168,7 +168,7 @@ function renderPokedexCard(pokemon, spawnIdx) {
   const card = document.getElementById('pokedex-card');
   if (!card) return;
 
-  const spawns = pokemon.spawns || [];
+  const spawns = mergeSpawns(pokemon.spawns || []);
   const spawn  = spawns[spawnIdx] || spawns[0];
 
   const tabsHTML = spawns.length > 1
