@@ -1,0 +1,913 @@
+/* PokeNav — Pokédex panel + shared pop-out card modal (used by PC, Stadium too) */
+
+/* ── Legacy two-column layout (kept for reference / not currently active) ─ */
+.pokedex-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .pokedex-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pokedex-results {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+}
+
+.pokedex-result-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.pokedex-result-item:hover {
+  border-color: var(--accent-red);
+  background: var(--nav-hover);
+}
+
+.pokedex-result-item.selected {
+  border-color: var(--accent-red);
+  background: var(--nav-hover);
+}
+
+.pokedex-result-item img {
+  width: 36px;
+  height: 36px;
+  image-rendering: pixelated;
+}
+
+.pokedex-result-num {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  min-width: 38px;
+}
+
+.pokedex-result-name {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.pokedex-result-types {
+  display: flex;
+  gap: 4px;
+}
+
+/* ── Pokédex pop-out detail card content ──────────────── */
+.poke-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  position: sticky;
+  top: 0;
+}
+
+.poke-card-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.poke-card-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.poke-card-sprite {
+  width: 80px;
+  height: 80px;
+  image-rendering: pixelated;
+}
+
+.poke-card-num {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.poke-card-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.poke-card-types {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.poke-card-divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 16px 0;
+}
+
+.poke-card-section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+/* Spawn tabs */
+.spawn-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.spawn-tab {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.spawn-tab:hover {
+  border-color: var(--accent-red);
+  color: var(--text-primary);
+}
+
+.spawn-tab.active {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #fff;
+}
+
+/* Spawn stat grid */
+.spawn-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.spawn-stat {
+  background: var(--bg-primary);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.spawn-stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.spawn-stat-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Rarity colors */
+.rarity-ultra-rare { color: #e94560; }
+.rarity-rare       { color: #f5a623; }
+.rarity-uncommon   { color: #7ec8e3; }
+.rarity-common     { color: #a0a0b0; }
+.rarity-unknown    { color: #a0a0b0; }
+
+/* Context pills */
+.context-row {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.context-pill {
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--bg-tile);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+/* Biome pills */
+.biome-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.biome-pill {
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  text-transform: capitalize;
+}
+
+/* Spawn notes */
+.spawn-notes {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--bg-primary);
+  border-radius: 0 8px 8px 0;
+  border-left: 2px solid var(--border-color);
+  padding: 8px 10px;
+  line-height: 1.5;
+}
+
+/* Drops list */
+.drops-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.drop-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.drop-item-name {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.drop-item-amount {
+  font-size: 0.8rem;
+  color: var(--accent-yellow);
+  font-weight: 500;
+}
+
+/* ── Type badges + card icon ──────────────────────────── */
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.type-badge.type-fire { background: #b84000; }
+.type-badge.type-water { background: #1a6aaa; }
+.type-badge.type-grass { background: #2d7a2d; }
+.type-badge.type-electric { background: #aa8800; color: #000; }
+.type-badge.type-psychic { background: #9c2060; }
+.type-badge.type-ice { background: #2a8a9a; }
+.type-badge.type-dragon { background: #2a3a99; }
+.type-badge.type-dark { background: #2a3040; }
+.type-badge.type-fairy { background: #8a3060; }
+.type-badge.type-fighting { background: #8a2000; }
+.type-badge.type-poison { background: #5a1a80; }
+.type-badge.type-ground { background: #7a4a1a; }
+.type-badge.type-flying { background: #3a4a99; }
+.type-badge.type-bug { background: #4a6a00; }
+.type-badge.type-rock { background: #5a4a2a; }
+.type-badge.type-ghost { background: #3a2a7a; }
+.type-badge.type-steel { background: #4a5a6a; }
+.type-badge.type-normal { background: #4a4a4a; }
+
+/* Card pop-out: large PNG icon with label underneath */
+.type-card-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.type-card-icon img {
+  width: 56px;
+  height: 56px;
+  image-rendering: auto;
+}
+.type-card-icon-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #cccccc;
+}
+
+/* ── Tile grid + element filter ───────────────────────── */
+#panel-pokedex {
+  width: 100%;
+}
+
+.pokedex-search-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+#pokedex-search,
+#typechart-search {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #ccc;
+  font-size: 14px;
+  padding: 10px 14px;
+  flex: 1;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+#pokedex-search:focus,
+#typechart-search:focus {
+  border-color: #ff3333;
+}
+
+#pokedex-search::placeholder,
+#typechart-search::placeholder {
+  color: #555;
+}
+
+.pokedex-element-btn {
+  background: #1a0000;
+  border: 1px solid #ff3333;
+  border-radius: 6px;
+  color: #ff3333;
+  font-size: 10px;
+  padding: 7px 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.pokedex-element-btn.active {
+  background: #ff3333;
+  color: #fff;
+}
+
+.pokedex-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.pokedex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.pokedex-tile {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 16px 12px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+  position: relative;
+}
+
+.pokedex-tile:hover {
+  border-color: #ff3333;
+  transform: translateY(-2px);
+}
+
+.pokedex-tile-sprite {
+  width: 72px;
+  height: 72px;
+  image-rendering: pixelated;
+}
+
+.pokedex-tile-number {
+  color: #444;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.pokedex-tile-name {
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.pokedex-tile-types {
+  display: flex;
+  gap: 4px;
+}
+
+.pokedex-tile-type-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.pokedex-element-panel {
+  width: 200px;
+  flex-shrink: 0;
+  background: #0d0d0d;
+  border-left: 2px solid #1a1a1a;
+  padding: 14px 12px;
+  margin-left: 16px;
+}
+
+.pokedex-element-panel.hidden {
+  display: none;
+}
+
+.element-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.element-panel-title {
+  color: #ff3333;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.element-panel-count {
+  color: #ff6666;
+  font-size: 9px;
+}
+
+.element-icon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.element-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 4px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.element-item:hover {
+  background: rgba(255, 51, 51, 0.05);
+}
+
+.element-item.active {
+  background: #1a0000;
+  border-color: #ff3333;
+}
+
+.element-item img {
+  width: 34px;
+  height: 34px;
+}
+
+.element-item-label {
+  color: #555;
+  font-size: 7px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.element-item.active .element-item-label {
+  color: #ff6666;
+}
+
+.element-panel-footer {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #1a1a1a;
+  text-align: center;
+}
+
+.element-clear-all {
+  background: transparent;
+  border: none;
+  color: #555;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
+.element-clear-all:hover {
+  color: #ff6666;
+}
+
+.pokedex-grid .no-results {
+  grid-column: 1 / -1;
+}
+
+/* ── Pop-out card modal (overlay + container) ─────────── */
+/* Used by Pokédex detail, PC tile editor, Stadium opponent picker, etc. */
+.pokedex-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.pokedex-overlay.hidden {
+  display: none;
+}
+
+.pokedex-card {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 16px;
+  width: min(560px, 92vw);
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 0 60px rgba(230, 57, 70, 0.25);
+  transform-origin: center center;
+}
+
+.pokedex-card.pop-in {
+  animation: cardPopIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes cardPopIn {
+  from { opacity: 0; transform: scale(0.3); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.card-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: #666;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.card-close-btn:hover {
+  color: var(--accent, #e63946);
+}
+
+/* ── Card interior (header / identity / sections) ─────── */
+.card-header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.card-sprite {
+  width: 96px;
+  height: 96px;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.card-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-number {
+  font-size: 0.72rem;
+  color: #555;
+}
+
+.card-nickname {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #333;
+  color: #eee;
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 180px;
+  outline: none;
+  padding: 2px 0;
+}
+
+.card-nickname:focus {
+  border-bottom-color: var(--accent, #e63946);
+}
+
+.card-species {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.card-section {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.card-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent, #e63946);
+  margin-bottom: 8px;
+}
+
+.card-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card-row label {
+  font-size: 0.78rem;
+  color: #888;
+}
+
+.card-field-input {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #eee;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  outline: none;
+  width: 70px;
+}
+
+.card-field-input:focus {
+  border-color: var(--accent, #e63946);
+}
+
+select.card-field-input {
+  width: 110px;
+}
+
+/* ── Stat table (IV/EV editor) ────────────────────────── */
+.stat-header {
+  display: grid;
+  grid-template-columns: 44px 1fr 8px 1fr;
+  gap: 6px;
+  font-size: 0.68rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+  padding: 0 2px;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 44px 1fr 8px 1fr;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.stat-row label {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.stat-input {
+  background: #1a1a1a;
+  border: 1px solid #2e2e2e;
+  border-radius: 4px;
+  color: #eee;
+  font-size: 0.8rem;
+  padding: 3px 6px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.stat-input:focus {
+  border-color: var(--accent, #e63946);
+}
+
+.stat-divider {
+  text-align: center;
+  color: #444;
+  font-size: 0.8rem;
+}
+
+/* ── Move slots ───────────────────────────────────────── */
+.move-slots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.move-slot {
+  background: #1a1a1a;
+  border: 1px solid #2e2e2e;
+  border-radius: 7px;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 34px;
+  font-size: 0.82rem;
+}
+
+.move-name {
+  color: #eee;
+  font-weight: 500;
+}
+
+.move-empty {
+  color: #444;
+  font-style: italic;
+}
+
+.move-clear {
+  background: transparent;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0 2px;
+  transition: color 0.15s ease;
+}
+
+.move-clear:hover {
+  color: var(--accent, #e63946);
+}
+
+/* ── Move picker (also reused by add/storage/opponent pickers) ─ */
+.move-search-input {
+  width: 100%;
+  padding: 7px 12px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #eee;
+  font-size: 0.85rem;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+.move-search-input:focus {
+  border-color: var(--accent, #e63946);
+}
+
+.move-list {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.move-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.move-item:hover {
+  background: #222;
+}
+
+.move-item.selected {
+  background: rgba(230, 57, 70, 0.12);
+  cursor: not-allowed;
+}
+
+.move-item-name {
+  flex: 1;
+  font-size: 0.82rem;
+  color: #ddd;
+}
+
+.move-item-power {
+  font-size: 0.72rem;
+  color: #666;
+  min-width: 28px;
+  text-align: right;
+}
+
+/* "+ Storage" button shown on Pokédex detail card */
+.add-storage-btn {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  background: transparent;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #888;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.add-storage-btn:hover {
+  border-color: var(--accent, #e63946);
+  color: #fff;
+  background: rgba(230,57,70,0.1);
+}
+
+/* Picker rows (level input + add button) used by add-poke / storage / opponent pickers */
+.picker-level-input {
+  width: 44px;
+  padding: 3px 5px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #eee;
+  font-size: 0.78rem;
+  outline: none;
+  text-align: center;
+}
+
+.picker-level-input:focus {
+  border-color: var(--accent, #e63946);
+}
+
+.picker-add-btn {
+  padding: 3px 8px;
+  background: transparent;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #aaa;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.picker-add-btn:hover {
+  border-color: var(--accent, #e63946);
+  color: #fff;
+  background: rgba(230,57,70,0.1);
+}

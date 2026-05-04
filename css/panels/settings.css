@@ -1,0 +1,194 @@
+/* PokeNav — Settings tab + reset confirmation modal */
+
+.settings-heading {
+  color: #ff3333;
+  font-size: 18px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.settings-trainer-display {
+  color: #eee;
+  font-size: 36px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 28px;
+  line-height: 1;
+}
+
+.settings-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings-card--danger {
+  border-color: #5a1a1a;
+}
+
+.settings-divider {
+  max-width: 560px;
+  height: 1px;
+  background: #2a2a2a;
+  margin: 28px 0 20px;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.settings-label {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.settings-label--danger {
+  color: #ff6666;
+}
+
+#settings-trainer-input {
+  flex: 1;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  min-width: 200px;
+}
+
+#settings-trainer-input:focus {
+  border-color: var(--accent-red);
+}
+
+#settings-trainer-input::placeholder {
+  color: var(--text-muted);
+}
+
+.settings-help {
+  color: #888;
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.settings-btn {
+  background: transparent;
+  border: 1px solid #ff3333;
+  border-radius: 4px;
+  color: #ff3333;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  min-height: 36px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.settings-btn:hover {
+  background: #ff3333;
+  color: #fff;
+}
+
+.settings-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.settings-btn--primary {
+  background: #ff3333;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.settings-btn--primary:hover {
+  background: #ff5555;
+  color: #fff;
+}
+
+.settings-btn--danger {
+  border-color: #ff3333;
+  color: #ff3333;
+  background: transparent;
+  align-self: flex-start;
+}
+
+.settings-btn--danger:hover {
+  background: #ff3333;
+  color: #fff;
+}
+
+/* ── Reset confirmation modal ─────────────────────────── */
+.reset-modal-card {
+  border-color: #5a1a1a;
+}
+
+.reset-modal-heading {
+  color: #ff3333;
+}
+
+.reset-modal-body {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 4px 0 18px;
+}
+
+.reset-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.reset-modal-cancel,
+.reset-modal-confirm {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  min-height: 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.reset-modal-cancel {
+  background: transparent;
+  border: 1px solid #444;
+  color: #aaa;
+}
+
+.reset-modal-cancel:hover {
+  border-color: #888;
+  color: #eee;
+}
+
+.reset-modal-confirm {
+  background: #ff3333;
+  border: 1px solid #ff3333;
+  color: #fff;
+}
+
+.reset-modal-confirm:hover {
+  background: #ff5555;
+  border-color: #ff5555;
+}

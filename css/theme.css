@@ -1,0 +1,188 @@
+/* PokeNav — industrial theme: monospace numbers, bevels, rivets, watermark */
+
+/* Roboto Mono on numeric/stat text */
+.pokedex-tile-number,
+.tile-number,
+.tile-number-sep,
+.tile-level,
+.poke-card-num,
+.card-number,
+.dropper-num-id,
+.dropper-amount,
+.spawn-stat-value,
+.settings-trainer-display {
+  font-family: 'Roboto Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+
+/* Inset 1px border on tiles, cards, panels */
+.pokedex-tile,
+.poke-tile,
+.dropper-item,
+.item-card,
+.settings-card,
+.pokedex-card {
+  box-shadow: inset 0 0 0 1px #2a2a2a;
+}
+
+/* Preserve hover glow on poke-tile while keeping inset border */
+.poke-tile:hover {
+  box-shadow: inset 0 0 0 1px #2a2a2a, 0 4px 16px rgba(255, 51, 51, 0.2);
+}
+
+/* Action button polish */
+.add-poke-btn,
+.element-clear-all,
+#pokedex-element-btn,
+#pc-element-btn,
+#trainer-modal-confirm {
+  border-radius: 4px;
+  letter-spacing: 2px;
+  min-height: 36px;
+}
+
+/* ── Team Dickie branding ─────────────────────────────── */
+
+/* Stack emblem next to the existing POKENAV/TEAM DICKIE text */
+.nav-logo {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.nav-emblem {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: #ff3333;
+  color: #fff;
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* Faint D watermark behind pop-out card content */
+.pokedex-card {
+  overflow: hidden auto;
+}
+
+.pokedex-card::before {
+  content: 'D';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 180px;
+  color: rgba(255, 51, 51, 0.04);
+  z-index: 0;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Lift card content above the watermark */
+.pokedex-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Industrial detail pass — fractures, rivets, bevels ─ */
+
+/* Chamfered bevel — top/left highlight, bottom/right shadow, plus outline.
+   Overrides the simple inset border above. */
+.pokedex-tile,
+.poke-tile,
+.dropper-item,
+.item-card,
+.settings-card,
+.pokedex-card {
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.05),
+    inset -1px -1px 0 0 rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px #2a2a2a;
+}
+
+/* Rebuild .poke-tile hover so bevel + outer glow coexist */
+.poke-tile:hover {
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.06),
+    inset -1px -1px 0 0 rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px #2a2a2a,
+    0 4px 16px rgba(255, 51, 51, 0.2);
+}
+
+/* Corner rivets on tiles + cards. Four tiny dark dots with a faint
+   inner highlight, like recessed bolt heads. */
+.pokedex-tile,
+.poke-tile,
+.settings-card,
+.item-card {
+  background-image:
+    radial-gradient(circle at 7px 7px, rgba(255, 255, 255, 0.06) 0 1px, transparent 1.5px),
+    radial-gradient(circle at calc(100% - 7px) 7px, rgba(255, 255, 255, 0.06) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 7px calc(100% - 7px), rgba(255, 255, 255, 0.06) 0 1px, transparent 1.5px),
+    radial-gradient(circle at calc(100% - 7px) calc(100% - 7px), rgba(255, 255, 255, 0.06) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 7px 7px, #050505 0 2.5px, transparent 3px),
+    radial-gradient(circle at calc(100% - 7px) 7px, #050505 0 2.5px, transparent 3px),
+    radial-gradient(circle at 7px calc(100% - 7px), #050505 0 2.5px, transparent 3px),
+    radial-gradient(circle at calc(100% - 7px) calc(100% - 7px), #050505 0 2.5px, transparent 3px);
+  background-repeat: no-repeat;
+}
+
+/* Pop-out card: rivets + faint crack overlay + the existing D watermark */
+.pokedex-card {
+  background-color: #111;
+  background-image:
+    radial-gradient(circle at 10px 10px, rgba(255, 255, 255, 0.07) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at calc(100% - 10px) 10px, rgba(255, 255, 255, 0.07) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at 10px calc(100% - 10px), rgba(255, 255, 255, 0.07) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at calc(100% - 10px) calc(100% - 10px), rgba(255, 255, 255, 0.07) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at 10px 10px, #050505 0 3px, transparent 3.6px),
+    radial-gradient(circle at calc(100% - 10px) 10px, #050505 0 3px, transparent 3.6px),
+    radial-gradient(circle at 10px calc(100% - 10px), #050505 0 3px, transparent 3.6px),
+    radial-gradient(circle at calc(100% - 10px) calc(100% - 10px), #050505 0 3px, transparent 3.6px),
+    url('../assets/textures/cracks.svg');
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat,
+                     no-repeat, no-repeat, no-repeat, no-repeat,
+                     repeat;
+  background-size: auto, auto, auto, auto, auto, auto, auto, auto, 320px 320px;
+}
+
+/* Segmented industrial dividers */
+hr.poke-card-divider {
+  border: 0;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, #2a2a2a 0 6px, transparent 6px 12px);
+  margin: 14px 0;
+}
+
+.settings-divider {
+  background: repeating-linear-gradient(90deg, #2a2a2a 0 6px, transparent 6px 12px);
+}
+
+/* Nav: thin highlight strip above the red border, like a worn metal lip */
+.top-nav {
+  box-shadow:
+    inset 0 -3px 0 0 rgba(255, 51, 51, 0.12),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Stronger emboss on the nav emblem to match the icons' chamfered hex-bolt look */
+.nav-emblem {
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.35),
+    inset -1px -1px 0 0 rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 1px 0 0 rgba(255, 255, 255, 0.04);
+}

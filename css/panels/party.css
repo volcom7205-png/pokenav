@@ -1,0 +1,309 @@
+/* PokeNav — Trainer's PC: layout, pokemon tiles, party slot, add/deposit/release */
+
+/* PC tab layout — sticky party left + scrolling storage right */
+.pc-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.pc-section-header {
+  font-family: 'Rajdhani', 'Segoe UI', Tahoma, sans-serif;
+  font-size: 14px;
+  color: #ff3333;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.pc-party-column {
+  width: 320px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
+}
+
+.pc-party-column .party-section {
+  background: #1a001a;
+  border: 1px solid #ff3333;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.pc-party-column .party-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.pc-party-column .poke-tile {
+  background: #1a001a;
+}
+
+.pc-storage-column {
+  flex: 1;
+  min-width: 0;
+}
+
+.pc-storage-column .storage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+/* Empty party drop slot */
+.party-slot {
+  border: 1px dashed #444;
+  border-radius: 8px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.party-slot.empty {
+  color: #555;
+  font-size: 1.4rem;
+}
+
+.party-slot.drag-over {
+  border-color: #ff3333;
+  background: rgba(255, 51, 51, 0.08);
+}
+
+/* PC search input mirrors Pokédex search */
+#pc-search {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #ccc;
+  font-size: 14px;
+  padding: 10px 14px;
+  flex: 1;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+#pc-search:focus {
+  border-color: #ff3333;
+}
+
+#pc-search::placeholder {
+  color: #555;
+}
+
+/* ── Pokemon tiles (used in PC party + storage) ───────── */
+.poke-tile {
+  background: #1a1a1a;
+  border: 1px solid #2e2e2e;
+  border-radius: 10px;
+  padding: 16px 12px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  user-select: none;
+  position: relative;
+}
+
+.poke-tile:hover {
+  border-color: #ff3333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 51, 51, 0.2);
+}
+
+.poke-tile.dragging {
+  opacity: 0.4;
+  transform: scale(0.95);
+}
+
+.poke-tile img.tile-sprite {
+  width: 72px;
+  height: 72px;
+  image-rendering: pixelated;
+}
+
+.tile-number-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+
+.tile-number {
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.tile-number-sep {
+  color: #888;
+}
+
+.tile-level {
+  color: #ff3333;
+  letter-spacing: 1px;
+}
+
+.tile-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ccc;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.tile-types {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+/* Mobile responsive: stack party into one column */
+@media (max-width: 600px) {
+  .party-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* "+ Add Pokémon" button above storage */
+.add-poke-btn {
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  border: 1px dashed #444;
+  border-radius: 7px;
+  color: #888;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  margin-bottom: 8px;
+}
+
+.add-poke-btn:hover {
+  border-color: var(--accent, #e63946);
+  color: #fff;
+  background: rgba(230,57,70,0.08);
+}
+
+/* Party tile quick-deposit button (top-right →) */
+.tile-deposit-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: transparent;
+  border: 1px solid #00aaff;
+  color: #00aaff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 2;
+}
+
+.tile-deposit-btn:hover {
+  background: #00aaff;
+  color: #000;
+}
+
+.tile-deposit-warning {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.85);
+  color: #ff3333;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Empty party slot quick-fill button (+) */
+.slot-fill-btn {
+  font-size: 24px;
+  color: #444;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.slot-fill-btn:hover {
+  color: #ff3333;
+}
+
+/* Pokédex tile owned indicator (small Poké Ball, top-left) */
+.tile-owned-ball {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid #333;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tile-owned-ball::before {
+  content: '';
+  display: block;
+  height: 50%;
+  background: #ff3333;
+  box-shadow: inset 0 -1px 0 0 #333, inset 0 1px 0 0 #333;
+}
+
+.tile-owned-ball::after {
+  content: '';
+  display: block;
+  height: 50%;
+  background: #111;
+}
+
+/* Storage card release button (with click-to-confirm state) */
+.release-btn {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #ff6600;
+  color: #ff6600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.release-btn:hover {
+  background: #ff6600;
+  color: #000;
+}
+
+.release-btn.release-btn--confirm {
+  border-color: #ff3333;
+  color: #ff3333;
+}
+
+.release-btn.release-btn--confirm:hover {
+  background: #ff3333;
+  color: #fff;
+}
