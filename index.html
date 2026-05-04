@@ -162,9 +162,34 @@
       </div>
 
       <div class="panel" id="panel-types">
-        <h2>🔥 Type Chart</h2>
-        <p>Full type effectiveness chart with Pokémon name lookup.</p>
-        <p class="coming-soon">Coming soon</p>
+        <div class="typechart-mode-row">
+          <button class="typechart-mode-btn active" data-mode="lookup" type="button">◆ QUICK LOOKUP</button>
+          <button class="typechart-mode-btn" data-mode="search" type="button">◆ POKÉMON SEARCH</button>
+        </div>
+
+        <div class="typechart-view" id="typechart-lookup-view">
+          <div class="typechart-picker-section">
+            <div class="typechart-section-header">SELECT TYPE(S) — pick 1 or 2</div>
+            <div class="typechart-picker" id="typechart-picker"></div>
+            <div class="typechart-picker-footer">
+              <span id="typechart-picker-count" class="typechart-picker-count">0 selected</span>
+              <button id="typechart-picker-clear" class="typechart-clear-btn" type="button">Clear</button>
+            </div>
+          </div>
+
+          <div class="typechart-results" id="typechart-lookup-results">
+            <div class="typechart-empty">Pick a type above to see effectiveness.</div>
+          </div>
+        </div>
+
+        <div class="typechart-view hidden" id="typechart-search-view">
+          <div class="pokedex-search-row">
+            <input type="text" id="typechart-search" placeholder="Search by name or number..." autocomplete="off" />
+          </div>
+          <div class="typechart-results" id="typechart-search-results">
+            <div class="typechart-empty">Search for a Pokémon to see its defensive matchups.</div>
+          </div>
+        </div>
       </div>
 
       <div class="panel" id="panel-settings"></div>
