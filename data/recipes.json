@@ -1,0 +1,1238 @@
+[
+  {
+    "result": "cobblemon:ancient_azure_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:blue_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_citrine_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:yellow_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_feather_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:sky_tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:sky_tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:white_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_gigaton_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:black_tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_3_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:black_tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:black_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_great_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:blue_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_heavy_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:black_tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:black_tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:black_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_ivory_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:white_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:white_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_jet_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:sky_tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_3_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:sky_tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:white_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_leaden_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:black_tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:black_tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:black_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_poke_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:red_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_roseate_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:pink_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:pink_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_slate_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:black_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_ultra_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_3_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:black_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_verdant_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:green_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:green_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ancient_wing_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:sky_tumblestone"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:sky_tumblestone"
+      },
+      "b": {
+        "item": "cobblemon:white_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:azure_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:blue_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:beast_ball",
+    "count": 8,
+    "type": "shaped",
+    "pattern": [
+      "GEG",
+      "EDE",
+      "GEG"
+    ],
+    "key": {
+      "G": {
+        "tag": "c:ingots/gold"
+      },
+      "E": {
+        "item": "minecraft:echo_shard"
+      },
+      "D": {
+        "tag": "cobblemon:tier_4_poke_ball_materials"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:citrine_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:yellow_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:dive_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:white_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:blue_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:dream_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:pink_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_4_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:pink_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:blue_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:dusk_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:green_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_3_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:green_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:fast_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:white_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:friend_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:green_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:green_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:red_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:great_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:blue_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:heal_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:pink_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:white_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:white_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:pink_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:heavy_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:black_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:level_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:pink_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:pink_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:red_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:love_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:white_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:pink_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_3_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:pink_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:pink_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:lure_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:green_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:luxury_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:white_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_3_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:black_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:master_ball",
+    "count": 1,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "minecraft:shulker_shell"
+      },
+      "l": {
+        "tag": "c:ingots/netherite"
+      },
+      "c": {
+        "item": "minecraft:nether_star"
+      },
+      "r": {
+        "tag": "c:ingots/netherite"
+      },
+      "b": {
+        "item": "minecraft:shulker_shell"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:moon_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:yellow_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:nest_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:green_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:green_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:net_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:white_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:park_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:green_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:green_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:green_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:poke_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:red_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:premier_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:white_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:white_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:white_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:white_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:quick_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:blue_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_3_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:blue_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:repeat_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_3_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:yellow_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:roseate_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:pink_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:pink_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:pink_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:pink_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:safari_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:green_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:green_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:white_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:slate_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:black_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:sport_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:white_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_2_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:red_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:timer_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:red_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:white_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_3_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:white_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:black_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:ultra_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:black_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_3_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:yellow_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:black_apricorn"
+      }
+    }
+  },
+  {
+    "result": "cobblemon:verdant_ball",
+    "count": 4,
+    "type": "shaped",
+    "pattern": [
+      " t ",
+      "lcr",
+      " b "
+    ],
+    "key": {
+      "t": {
+        "item": "cobblemon:green_apricorn"
+      },
+      "l": {
+        "item": "cobblemon:green_apricorn"
+      },
+      "c": {
+        "tag": "cobblemon:tier_1_poke_ball_materials"
+      },
+      "r": {
+        "item": "cobblemon:green_apricorn"
+      },
+      "b": {
+        "item": "cobblemon:green_apricorn"
+      }
+    }
+  }
+]
