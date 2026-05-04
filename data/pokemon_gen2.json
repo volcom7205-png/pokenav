@@ -437,6 +437,41 @@
         "name": "Frenzy Plant",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Miracle Seed",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-32",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "floral"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-32",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -917,6 +952,41 @@
       {
         "name": "Frenzy Plant",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Miracle Seed",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "16-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "floral"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "16-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -1485,6 +1555,41 @@
         "name": "Frenzy Plant",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Miracle Seed",
+        "chance": "25%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "32-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "floral"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "32-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -1922,6 +2027,56 @@
       {
         "name": "Blast Burn",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Charcoal Stick",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "temperate"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Spooky",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_crimson",
+          "nether_forest",
+          "nether_overgrowth"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -2396,6 +2551,56 @@
       {
         "name": "Blast Burn",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Charcoal Stick",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "17-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "temperate"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Spooky",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "17-41",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "17-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_crimson",
+          "nether_forest",
+          "nether_overgrowth"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -3052,6 +3257,28 @@
         "name": "Blast Burn",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Charcoal Stick",
+        "chance": "25%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "36-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "temperate"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Spooky",
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -3612,6 +3839,83 @@
       {
         "name": "Hydro Cannon",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Mystic Water",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "arid",
+          "jungle",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "arid",
+          "jungle",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 5"
       }
     ]
   },
@@ -4206,6 +4510,83 @@
       {
         "name": "Hydro Cannon",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Mystic Water",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "18-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "18-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "18-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "arid",
+          "jungle",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "18-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "18-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "arid",
+          "jungle",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 5"
       }
     ]
   },
@@ -4914,6 +5295,83 @@
         "name": "Hydro Cannon",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Mystic Water",
+        "chance": "25%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "30-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "30-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "30-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "arid",
+          "jungle",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "30-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "30-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "arid",
+          "jungle",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 5"
+      }
     ]
   },
   {
@@ -5525,6 +5983,34 @@
       {
         "name": "Whirlpool",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Silk Scarf",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-22",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "taiga",
+          "temperate",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -6197,6 +6683,34 @@
         "name": "Whirlpool",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Silk Scarf",
+        "chance": "5%"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "15-42",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "taiga",
+          "temperate",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -6719,6 +7233,41 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Raw Chicken",
+        "quantity": "1"
+      },
+      {
+        "item": "Wise Glasses",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Chilan Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-26",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "sky",
+          "spooky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -7298,6 +7847,41 @@
         "name": "Toxic",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Chicken",
+        "quantity": "1"
+      },
+      {
+        "item": "Wise Glasses",
+        "chance": "5%"
+      },
+      {
+        "item": "Chilan Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "20-45",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "sky",
+          "spooky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -7750,6 +8334,54 @@
       {
         "name": "Refresh",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Charti Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "day",
+        "weather": "clear",
+        "biomes": [
+          "temperate"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -8240,6 +8872,54 @@
         "name": "Refresh",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Charti Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "18-39",
+        "time": "night",
+        "weather": "clear",
+        "biomes": [
+          "temperate"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "18-39",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "18-39",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      }
     ]
   },
   {
@@ -8715,6 +9395,94 @@
       {
         "name": "Refresh",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "String",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Spider Eye",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Rotten Flesh",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Poison Barb",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "night",
+        "weather": "clear",
+        "biomes": [
+          "forest",
+          "jungle",
+          "spooky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 5"
       }
     ]
   },
@@ -9270,6 +10038,94 @@
         "name": "Refresh",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "String",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Spider Eye",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Rotten Flesh",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Poison Barb",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "22-40",
+        "time": "night",
+        "weather": "clear",
+        "biomes": [
+          "forest",
+          "jungle",
+          "spooky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-40",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-40",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-40",
+        "time": "any",
+        "weather": "any",
+        "biomes": [],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-40",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 5"
+      }
     ]
   },
   {
@@ -9819,6 +10675,119 @@
         "name": "Take Down",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Phantom Membrane",
+        "chance": "10%"
+      },
+      {
+        "item": "Razor Fang",
+        "chance": "10%"
+      },
+      {
+        "item": "Persim Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "41-54",
+        "time": "night",
+        "weather": "clear",
+        "biomes": [
+          "forest",
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Spooky, Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "41-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Spooky, Freezing",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "41-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark, Forest, Swamp",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "41-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark, Forest, Swamp",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "41-54",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "spooky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "41-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "deep_dark"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 6"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "41-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 7"
+      }
     ]
   },
   {
@@ -10263,6 +11232,100 @@
       {
         "name": "Zap Cannon",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Prismarine Crystal",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Deep Sea Scale",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Persim Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "deep_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "deep_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 6"
       }
     ]
   },
@@ -10763,6 +11826,100 @@
         "name": "Zap Cannon",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Prismarine Crystal",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Deep Sea Scale",
+        "chance": "5%"
+      },
+      {
+        "item": "Persim Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "27-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "deep_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "27-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "27-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "deep_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "27-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "27-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "27-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 6"
+      }
     ]
   },
   {
@@ -11219,6 +12376,53 @@
       {
         "name": "Teeter Dance",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Light Ball",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Thunder Stone",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "forest"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Spooky",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "16-32",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "beach",
+          "skyroot_forest",
+          "skyroot_woodland",
+          "tropical_island"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
       }
     ]
   },
@@ -11802,6 +13006,76 @@
         "name": "Zap Cannon",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Moon Stone",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Babiri Berry",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Fairy Feather",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-22",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "dripstone"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-22",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "dripstone"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-22",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "hills"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-22",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "magical"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Spooky",
+        "label": "Overworld 4"
+      }
     ]
   },
   {
@@ -12332,6 +13606,63 @@
       {
         "name": "Tickle",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Moon Stone",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Air Balloon",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Floral",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -12929,6 +14260,65 @@
       {
         "name": "Zap Cannon",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Lucky Egg",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Shiny Stone",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Fairy Feather",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "rare",
+        "levelRange": "1-25",
+        "time": "day",
+        "weather": "clear",
+        "biomes": [
+          "floral",
+          "magical",
+          "sky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Plains, Spooky",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "rare",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "rare",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -13674,6 +15064,65 @@
         "name": "Zap Cannon",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Lucky Egg",
+        "chance": "5%"
+      },
+      {
+        "item": "Shiny Stone",
+        "chance": "5%"
+      },
+      {
+        "item": "Fairy Feather",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "rare",
+        "levelRange": "20-41",
+        "time": "day",
+        "weather": "clear",
+        "biomes": [
+          "floral",
+          "magical",
+          "sky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Plains, Spooky",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "rare",
+        "levelRange": "20-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "rare",
+        "levelRange": "20-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      }
     ]
   },
   {
@@ -14225,6 +15674,53 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Raw Chicken",
+        "quantity": "1"
+      },
+      {
+        "item": "Wise Glasses",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Persim Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "7-32",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "badlands",
+          "plateau"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "7-32",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -14842,6 +16338,53 @@
         "name": "Toxic",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Chicken",
+        "quantity": "1"
+      },
+      {
+        "item": "Wise Glasses",
+        "chance": "5%"
+      },
+      {
+        "item": "Persim Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "25-47",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "badlands",
+          "plateau"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "25-47",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -15278,6 +16821,36 @@
       {
         "name": "Hold Back",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Raw Mutton",
+        "quantity": "1-2"
+      },
+      {
+        "item": "White Wool",
+        "quantity": "1-2"
+      },
+      {
+        "item": "Cheri Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "3-28",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "highlands",
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -15803,6 +17376,36 @@
       {
         "name": "Hold Back",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Raw Mutton",
+        "quantity": "1-3"
+      },
+      {
+        "item": "White Wool",
+        "quantity": "1"
+      },
+      {
+        "item": "Cheri Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "15-37",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "highlands",
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -16451,6 +18054,32 @@
         "name": "Hold Back",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Raw Mutton",
+        "quantity": "2-4"
+      },
+      {
+        "item": "Cheri Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "30-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "highlands",
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -16966,6 +18595,44 @@
       {
         "name": "Take Down",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Absorb Bulb",
+        "chance": "10%"
+      },
+      {
+        "item": "Pecha Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "35-49",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "floral"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "35-49",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "jungle"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -17569,6 +19236,79 @@
       {
         "name": "Uproar",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Kebia Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "14-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "river"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "14-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "river"
+        ],
+        "context": [
+          "surface"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "14-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral",
+          "hills",
+          "magical",
+          "river",
+          "snowy_forest",
+          "taiga",
+          "temperate"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "14-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral",
+          "hills",
+          "magical",
+          "river",
+          "snowy_forest",
+          "taiga",
+          "temperate"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
       }
     ]
   },
@@ -18193,6 +19933,79 @@
         "name": "Uproar",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Kebia Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "18-42",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "river"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "18-42",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "river"
+        ],
+        "context": [
+          "surface"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "18-42",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral",
+          "hills",
+          "magical",
+          "river",
+          "snowy_forest",
+          "taiga",
+          "temperate"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "18-42",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral",
+          "hills",
+          "magical",
+          "river",
+          "snowy_forest",
+          "taiga",
+          "temperate"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
+      }
     ]
   },
   {
@@ -18806,6 +20619,32 @@
         "name": "Uproar",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Hard Stone",
+        "chance": "5%"
+      },
+      {
+        "item": "Passho Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "16-41",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "forest"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Spooky",
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -19408,6 +21247,237 @@
         "name": "Sweet Kiss",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Verdant Froglight",
+        "quantity": "1"
+      },
+      {
+        "item": "King's Rock",
+        "chance": "10%"
+      },
+      {
+        "item": "Chesto Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "rain",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "rain",
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing, Swamp",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Freezing, Swamp",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lush"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lush"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 6"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 7"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lush"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 8"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 9"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Freezing, Swamp",
+        "label": "Overworld 10"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freshwater",
+          "hills",
+          "jungle",
+          "magical",
+          "mushroom",
+          "temperate"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 11"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 12"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 13"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 14"
+      }
     ]
   },
   {
@@ -19860,6 +21930,54 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Yache Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -20321,6 +22439,58 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Sunflower",
+        "quantity": "1"
+      },
+      {
+        "item": "Yache Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "18-34",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "18-34",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "18-34",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -20806,6 +22976,58 @@
       {
         "name": "False Swipe",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "White Wool",
+        "quantity": "1-3"
+      },
+      {
+        "item": "Yache Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "27-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "27-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "27-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -21463,6 +23685,41 @@
         "name": "Zap Cannon",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Nanab Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "11-36",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "jungle",
+          "tropical_island"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "11-36",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -21838,6 +24095,72 @@
       {
         "name": "Uproar",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Wheat Seeds",
+        "quantity": "1"
+      },
+      {
+        "item": "Coba Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-18",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "sunflower_plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-18",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Sunflower Plains",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-18",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-18",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
       }
     ]
   },
@@ -22285,6 +24608,72 @@
         "name": "Uproar",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Sunflower",
+        "quantity": "1"
+      },
+      {
+        "item": "Coba Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "13-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "sunflower_plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "13-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Sunflower Plains",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "13-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "13-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
+      }
     ]
   },
   {
@@ -22724,6 +25113,85 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Wide Lens",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Charti Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "14-39",
+        "time": "day",
+        "weather": "clear",
+        "biomes": [
+          "freshwater"
+        ],
+        "context": [
+          "surface"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "14-39",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lush"
+        ],
+        "context": [
+          "surface"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "14-39",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "bumblezone"
+        ],
+        "context": [
+          "surface"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "14-39",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "surface"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "14-39",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "surface"
+        ],
+        "label": "Overworld 5"
       }
     ]
   },
@@ -23261,6 +25729,300 @@
       {
         "name": "Swagger",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Clay Ball",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Rindo Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lush"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lush"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "rain",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 6"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 7"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 8"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mushroom",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 9"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mushroom",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 10"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 11"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 12"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 13"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 14"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 15"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mushroom",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 16"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 17"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mushroom",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 18"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mushroom",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 19"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mushroom",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 20"
       }
     ]
   },
@@ -23883,6 +26645,213 @@
       {
         "name": "Swagger",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Clay Ball",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Rindo Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lush"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lush"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "rain",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 6"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 7"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mushroom",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 8"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 9"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mushroom",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Muddy",
+        "label": "Overworld 10"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 11"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 12"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 13"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "20-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 14"
       }
     ]
   },
@@ -24567,6 +27536,70 @@
         "name": "Sing",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Sun Stone",
+        "chance": "25%"
+      },
+      {
+        "item": "Twisted Spoon",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "28-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "hills"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "28-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "28-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "28-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
+      }
     ]
   },
   {
@@ -25245,6 +28278,70 @@
         "name": "Sing",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Moon Stone",
+        "chance": "25%"
+      },
+      {
+        "item": "Black Glasses",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "28-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "spooky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "28-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "28-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "28-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
+      }
     ]
   },
   {
@@ -25817,6 +28914,74 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Raw Chicken",
+        "quantity": "1"
+      },
+      {
+        "item": "Bluk Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "16-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "spooky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "16-41",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "16-41",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "16-41",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "sky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
       }
     ]
   },
@@ -26664,6 +29829,61 @@
         "name": "Zap Cannon",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "King's Rock",
+        "chance": "10%"
+      },
+      {
+        "item": "Lagging Tail",
+        "chance": "10%"
+      },
+      {
+        "item": "Chesto Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "37-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "beach"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "37-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "beach"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "37-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "beach"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
+      }
     ]
   },
   {
@@ -27303,6 +30523,106 @@
         "name": "Zap Cannon",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Phantom Membrane",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Spell Tag",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Kasib Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "spooky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "spooky",
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "spooky",
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_warped"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark",
+        "label": "Overworld 6"
+      }
     ]
   },
   {
@@ -27317,6 +30637,92 @@
         "name": "Hidden Power",
         "method": "level",
         "level": 1
+      }
+    ],
+    "drops": [
+      {
+        "item": "Ender Pearl",
+        "quantity": "0-1"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-100",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "end"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-100",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "end"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-100",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-100",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-100",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "howling_constructs"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-100",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "howling_constructs"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 6"
       }
     ]
   },
@@ -27387,6 +30793,28 @@
       {
         "name": "Tickle",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Colbur Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "rare",
+        "levelRange": "15-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark",
+        "label": "Overworld"
       }
     ]
   },
@@ -28064,6 +31492,35 @@
         "name": "Zap Cannon",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Leather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Razor Fang",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Persim Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "21-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "savanna"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -28539,6 +31996,35 @@
       {
         "name": "Refresh",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "String",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Occa Berry",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Iron Ball",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "4-29",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -29196,6 +32682,35 @@
       {
         "name": "Refresh",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "String",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Occa Berry",
+        "chance": "5%"
+      },
+      {
+        "item": "Iron Ball",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "31-47",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -29904,6 +33419,32 @@
         "name": "Zap Cannon",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Rocky Helmet",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Cheri Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "17-42",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark",
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -30556,6 +34097,52 @@
       {
         "name": "Swagger",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Phantom Membrane",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Razor Fang",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Poison Barb",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Yache Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "18-43",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "badlands"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "18-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_mountain"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -31250,6 +34837,53 @@
         "name": "Toxic",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Raw Iron",
+        "quantity": "2-4"
+      },
+      {
+        "item": "Lagging Tail",
+        "chance": "5%"
+      },
+      {
+        "item": "Metal Coat",
+        "chance": "5%"
+      },
+      {
+        "item": "Passho Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "34-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Deep Dark",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "34-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_basalt"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -31915,6 +35549,59 @@
       {
         "name": "Zap Cannon",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Babiri Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "5-30",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "5-30",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "5-30",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -32656,6 +36343,59 @@
         "name": "Zap Cannon",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Babiri Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "23-45",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "23-45",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "23-45",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      }
     ]
   },
   {
@@ -33224,6 +36964,204 @@
       {
         "name": "Swagger",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Pufferfish",
+        "quantity": "1"
+      },
+      {
+        "item": "Prismarine Shard",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Poison Barb",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lukewarm_ocean",
+          "warm_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Cold Ocean, Frozen Ocean",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lukewarm_ocean",
+          "warm_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lukewarm_ocean",
+          "warm_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Cold Ocean, Frozen Ocean",
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lukewarm_ocean",
+          "warm_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 6"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Cold Ocean, Frozen Ocean",
+        "label": "Overworld 7"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lukewarm_ocean",
+          "warm_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 8"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lukewarm_ocean",
+          "warm_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 9"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Cold Ocean, Frozen Ocean",
+        "label": "Overworld 10"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Cold",
+        "label": "Overworld 11"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Cold",
+        "label": "Overworld 12"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Cold",
+        "label": "Overworld 13"
       }
     ]
   },
@@ -33837,6 +37775,27 @@
         "name": "Morning Sun",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Wepear Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "45-50",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "jungle"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -34337,6 +38296,99 @@
       {
         "name": "Swagger",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Berry Juice",
+        "quantity": "1"
+      },
+      {
+        "item": "Luminous Moss",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "16-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lush"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "16-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lush"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "16-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lush"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "16-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "16-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "16-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Lush",
+        "label": "Overworld 6"
       }
     ]
   },
@@ -34910,6 +38962,72 @@
       {
         "name": "Venoshock",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Coba Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "rare",
+        "levelRange": "25-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "forest"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing, Spooky",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "25-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "jungle",
+          "skyroot_forest",
+          "skyroot_woodland",
+          "tropical_island"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "25-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "25-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "crystal_canyon"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
       }
     ]
   },
@@ -35563,6 +39681,39 @@
         "name": "Whirlpool",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Razor Claw",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Grip Claw",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Quick Claw",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Chople Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "18-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -36164,6 +40315,72 @@
       {
         "name": "Refresh",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Sweet Berries",
+        "quantity": "1-3"
+      },
+      {
+        "item": "Honey Bottle",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Peat Block",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "mountain",
+          "skyroot_forest",
+          "skyroot_woodland",
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Volcanic",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "crystal_canyon",
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -36845,6 +41062,72 @@
         "name": "Refresh",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Sweet Berries",
+        "quantity": "2-4"
+      },
+      {
+        "item": "Honey Bottle",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Peat Block",
+        "chance": "5%"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "30-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "mountain",
+          "skyroot_forest",
+          "skyroot_woodland",
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Volcanic",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "30-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "30-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "crystal_canyon",
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      }
     ]
   },
   {
@@ -37293,6 +41576,73 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Magma Cream",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Passho Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "surface"
+        ],
+        "notes": "Not in: Volcanic",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "volcanic"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_basalt",
+          "nether_wasteland"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether",
+          "volcanic"
+        ],
+        "context": [
+          "surface"
+        ],
+        "label": "Overworld 4"
       }
     ]
   },
@@ -37818,6 +42168,77 @@
         "name": "Refresh",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Magma Cream",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Basalt",
+        "quantity": "1"
+      },
+      {
+        "item": "Passho Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "38-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "surface"
+        ],
+        "notes": "Not in: Volcanic",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "38-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "volcanic"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "38-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_basalt",
+          "nether_wasteland"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "38-43",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether",
+          "volcanic"
+        ],
+        "context": [
+          "surface"
+        ],
+        "label": "Overworld 4"
+      }
     ]
   },
   {
@@ -38270,6 +42691,39 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Raw Porkchop",
+        "quantity": "1"
+      },
+      {
+        "item": "Brown Wool",
+        "quantity": "1"
+      },
+      {
+        "item": "Never-Melt Ice",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Aspear Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -38781,6 +43235,39 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Raw Porkchop",
+        "quantity": "1-2"
+      },
+      {
+        "item": "Brown Wool",
+        "quantity": "1-2"
+      },
+      {
+        "item": "Never-Melt Ice",
+        "chance": "5%"
+      },
+      {
+        "item": "Aspear Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "33-45",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -39330,6 +43817,71 @@
         "name": "Mud Sport",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Luminous Moss",
+        "chance": "5%"
+      },
+      {
+        "item": "Rindo Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "16-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "warm_ocean"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "16-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "notes": "Not in: Warm Ocean",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "16-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "warm_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "16-41",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "warm_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
+      }
     ]
   },
   {
@@ -39773,6 +44325,100 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Raw Cod",
+        "quantity": "1"
+      },
+      {
+        "item": "Bone Meal",
+        "chance": "5%"
+      },
+      {
+        "item": "Aspear Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "5-30",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "5-30",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "5-30",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "5-30",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "5-30",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "5-30",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 6"
       }
     ]
   },
@@ -40316,6 +44962,83 @@
         "name": "Toxic",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Ink Sac",
+        "quantity": "1-3"
+      },
+      {
+        "item": "Aspear Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "25-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "25-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "25-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "25-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "25-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 5"
+      }
     ]
   },
   {
@@ -40856,6 +45579,49 @@
       {
         "name": "Happy Hour",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Chicken",
+        "quantity": "1"
+      },
+      {
+        "item": "Charti Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "peak"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Volcanic",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -41423,6 +46189,102 @@
         "name": "Toxic",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Raw Cod",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Wacan Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "30-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lukewarm_ocean",
+          "warm_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "30-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Cold Ocean, Frozen Ocean",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "30-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Cold Ocean, Frozen Ocean",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "30-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lukewarm_ocean",
+          "warm_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "30-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Cold Ocean, Frozen Ocean",
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "30-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Cold Ocean, Frozen Ocean",
+        "label": "Overworld 6"
+      }
     ]
   },
   {
@@ -41980,6 +46842,37 @@
         "name": "Toxic",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Sharp Beak",
+        "chance": "5%"
+      },
+      {
+        "item": "Metal Coat",
+        "chance": "5%"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "rare",
+        "levelRange": "22-47",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "badlands",
+          "desert",
+          "sky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -42530,6 +47423,65 @@
       {
         "name": "Charm",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Rotten Flesh",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Blaze Powder",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Rawst Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "badlands"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -43141,6 +48093,65 @@
         "name": "Charm",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Rotten Flesh",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Blaze Powder",
+        "chance": "5%"
+      },
+      {
+        "item": "Rawst Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "24-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "badlands"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "24-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "24-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      }
     ]
   },
   {
@@ -43628,6 +48639,104 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Ink Sac",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Prismarine Shard",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Dragon Scale",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "39-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lukewarm_ocean",
+          "warm_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "39-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Cold Ocean, Frozen Ocean",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "39-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "lukewarm_ocean",
+          "warm_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "39-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Cold Ocean, Frozen Ocean",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "39-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "39-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 6"
       }
     ]
   },
@@ -44123,6 +49232,44 @@
       {
         "name": "Water Gun",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Clay Ball",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Passho Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "badlands"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "savanna"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -44783,6 +49930,48 @@
         "name": "Water Gun",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Clay Ball",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Protector",
+        "chance": "5%"
+      },
+      {
+        "item": "Passho Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "25-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "badlands"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "25-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "savanna"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -45293,6 +50482,27 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Up-Grade",
+        "chance": "25%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "35-52",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -45900,6 +51110,46 @@
         "name": "Toxic",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Leather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Persim Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "22-47",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "snowy_forest",
+          "snowy_taiga",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-47",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -45958,6 +51208,48 @@
       {
         "name": "Spore",
         "method": "special"
+      }
+    ],
+    "drops": [],
+    "spawns": [
+      {
+        "bucket": "rare",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "rare",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -46305,6 +51597,31 @@
       {
         "name": "Toxic",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Black Belt",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Payapa Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-21",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "hills"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -46862,6 +52179,31 @@
         "name": "Toxic",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Black Belt",
+        "chance": "5%"
+      },
+      {
+        "item": "Payapa Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "20-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "hills"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -47379,6 +52721,40 @@
         "name": "Toxic",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Aspear Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freezing"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freezing"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -47879,6 +53255,36 @@
         "name": "Zap Cannon",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Redstone",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Electirizer",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Cheri Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "11-36",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "hills",
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -48335,6 +53741,63 @@
       {
         "name": "Uproar",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Blaze Powder",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Magmarizer",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Rawst Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "11-36",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "hills"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Volcanic",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "11-36",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "volcanic"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "11-36",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_basalt",
+          "nether_wasteland"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -48936,6 +54399,61 @@
       {
         "name": "Zap Cannon",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Leather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Beef",
+        "quantity": "1-3"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "24-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "grassland"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "24-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mushroom_fields"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "24-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mushroom_fields"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -49785,6 +55303,53 @@
         "name": "Wish",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Lucky Egg 25% OR Oval Stone 25% OR Egg",
+        "chance": "50%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "rare",
+        "levelRange": "40-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "rare",
+        "levelRange": "40-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "rare",
+        "levelRange": "40-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      }
     ]
   },
   {
@@ -50300,6 +55865,45 @@
       {
         "name": "Uproar",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Hard Stone",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Chople Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-30",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mountain"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "rare",
+        "levelRange": "5-30",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mountain"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -50845,6 +56449,45 @@
       {
         "name": "Uproar",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Hard Stone",
+        "chance": "5%"
+      },
+      {
+        "item": "Chople Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "30-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mountain"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "rare",
+        "levelRange": "30-54",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mountain"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -51708,6 +57351,45 @@
         "name": "Whirlpool",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Hard Stone",
+        "chance": "10%"
+      },
+      {
+        "item": "Chople Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "55-60",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mountain"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "rare",
+        "levelRange": "55-60",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mountain"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -52420,7 +58102,14 @@
         "name": "Psycho Boost",
         "method": "special"
       }
-    ]
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "2-4"
+      }
+    ],
+    "spawns": []
   },
   {
     "id": 250,
@@ -53032,6 +58721,17 @@
         "name": "Celebrate",
         "method": "special"
       }
-    ]
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "2-4"
+      },
+      {
+        "item": "Sacred Ash",
+        "quantity": "1"
+      }
+    ],
+    "spawns": []
   }
 ]

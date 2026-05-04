@@ -195,9 +195,12 @@ function renderPokedexCard(pokemon, spawnIdx) {
       </div>`
     : '<p style="color:var(--text-muted);font-size:0.85rem">No drops recorded.</p>';
 
+  const isWanted = typeof BiomeSearch !== 'undefined' && BiomeSearch.isWanted?.(pokemon.id);
   card.innerHTML = `
     <button class="card-close-btn" id="card-close-btn">✕</button>
     <button class="add-storage-btn" id="detail-add-storage-btn" style="position:absolute;top:14px;right:46px;">+ Storage</button>
+    <button class="add-wanted-btn ${isWanted ? 'is-wanted' : ''}" id="detail-add-wanted-btn"
+            style="position:absolute;top:14px;right:140px;">${isWanted ? '★ Wanted' : '+ Wanted'}</button>
     <div class="poke-card-header">
       <img class="poke-card-sprite" src="${pokemon.sprite}" alt="${pokemon.name}"
            onerror="this.style.opacity='0.3'" />
@@ -222,6 +225,14 @@ function renderPokedexCard(pokemon, spawnIdx) {
 
   document.getElementById('detail-add-storage-btn')?.addEventListener('click', (e) => {
     addPokemonToStorageById(pokemon.id, e);
+  });
+
+  document.getElementById('detail-add-wanted-btn')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (typeof BiomeSearch === 'undefined') return;
+    BiomeSearch.toggleWanted(pokemon.id);
+    // Re-render so button label flips
+    renderPokedexCard(pokemon, spawnIdx);
   });
 
   document.getElementById('card-close-btn')?.addEventListener('click', () => {

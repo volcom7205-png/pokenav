@@ -62,6 +62,14 @@ function getMul(atk, def) {
   return def in row ? row[def] : 1;
 }
 
+// Single attacker type vs N defender types — multiplied through.
+function multiplyTypes(atk, defs) {
+  let m = 1;
+  const a = String(atk).toLowerCase();
+  for (const d of defs) m *= getMul(a, String(d).toLowerCase());
+  return m;
+}
+
 // Defensive multipliers for a Pokémon with 1 or 2 types — returns { atkType: multiplier }
 function getDefenseMultipliers(defenderTypes) {
   const result = {};

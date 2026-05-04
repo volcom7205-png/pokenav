@@ -346,6 +346,32 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Stick",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Miracle Seed",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "jungle",
+          "tropical_island"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -707,6 +733,32 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Stick",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Miracle Seed",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "16-42",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "jungle",
+          "tropical_island"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -1218,6 +1270,32 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Stick",
+        "quantity": "1-2"
+      },
+      {
+        "item": "Miracle Seed",
+        "chance": "25%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "35-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "jungle",
+          "tropical_island"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -1554,6 +1632,42 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Rabbit Hide",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Raw Rabbit",
+        "quantity": "1"
+      },
+      {
+        "item": "Rabbit's Foot",
+        "chance": "5%"
+      },
+      {
+        "item": "Charcoal Stick",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "grassland",
+          "skyroot_grove",
+          "skyroot_meadow",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -1907,6 +2021,42 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Rabbit Hide",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Rabbit",
+        "quantity": "1"
+      },
+      {
+        "item": "Rabbit's Foot",
+        "chance": "10%"
+      },
+      {
+        "item": "Charcoal Stick",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "16-42",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "grassland",
+          "skyroot_grove",
+          "skyroot_meadow",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -2384,6 +2534,42 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Rabbit Hide",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Raw Rabbit",
+        "quantity": "1"
+      },
+      {
+        "item": "Rabbit's Foot",
+        "chance": "25%"
+      },
+      {
+        "item": "Charcoal Stick",
+        "chance": "25%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "35-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "grassland",
+          "skyroot_grove",
+          "skyroot_meadow",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -2660,6 +2846,69 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Mystic Water",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "jungle"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "jungle",
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "5-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "jungle",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
       }
     ]
   },
@@ -2941,6 +3190,69 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Mystic Water",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "16-42",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "16-42",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "jungle"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "16-42",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "jungle",
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "16-42",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "jungle",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
       }
     ]
   },
@@ -3390,6 +3702,69 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Mystic Water",
+        "chance": "25%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "35-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "swamp"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "35-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "jungle"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "35-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "jungle",
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "35-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "jungle",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
+      }
     ]
   },
   {
@@ -3664,6 +4039,28 @@
       {
         "name": "Uproar",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Oran Berry",
+        "quantity": "0-1"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "3-28",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -4065,6 +4462,28 @@
         "name": "Uproar",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Oran Berry",
+        "quantity": "0-2"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "24-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -4373,6 +4792,39 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Raw Chicken",
+        "quantity": "1"
+      },
+      {
+        "item": "Wacan Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "hills",
+          "sky",
+          "spooky",
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Arid",
+        "label": "Overworld"
       }
     ]
   },
@@ -4690,6 +5142,43 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Chicken",
+        "quantity": "1"
+      },
+      {
+        "item": "Sharp Beak",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Wacan Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "18-37",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "hills",
+          "sky",
+          "spooky",
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Arid",
+        "label": "Overworld"
       }
     ]
   },
@@ -5133,6 +5622,43 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Raw Chicken",
+        "quantity": "1"
+      },
+      {
+        "item": "Metal Coat",
+        "chance": "10%"
+      },
+      {
+        "item": "Wacan Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "38-50",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "hills",
+          "sky",
+          "spooky",
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Arid",
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -5373,6 +5899,49 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Sweet Berries",
+        "quantity": "1-3"
+      },
+      {
+        "item": "Emerald",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Roseli Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-25",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -5721,6 +6290,49 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Sweet Berries",
+        "quantity": "2-4"
+      },
+      {
+        "item": "Emerald",
+        "chance": "5%"
+      },
+      {
+        "item": "Roseli Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "18-46",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "18-46",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -5957,6 +6569,54 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Coba Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "floral"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-25",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -6233,6 +6893,58 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "White Wool",
+        "quantity": "1-2"
+      },
+      {
+        "item": "Coba Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "20-46",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "floral"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "20-46",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "20-46",
+        "time": "any",
+        "weather": "clear",
+        "biomes": [
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      }
     ]
   },
   {
@@ -6418,6 +7130,47 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Raw Mutton",
+        "quantity": "1-2"
+      },
+      {
+        "item": "White Wool",
+        "quantity": "1"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mountain",
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Volcanic",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -6673,6 +7426,47 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Raw Mutton",
+        "quantity": "1-3"
+      },
+      {
+        "item": "White Wool",
+        "quantity": "1-2"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "24-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mountain",
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Volcanic",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "24-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "skyroot_grove",
+          "skyroot_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -6932,6 +7726,82 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Turtle Scute",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Rindo Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "3-28",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freshwater"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "3-28",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freshwater"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "3-28",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "arid",
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "3-28",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "arid",
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 4"
       }
     ]
   },
@@ -7410,6 +8280,82 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Turtle Scute",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Rindo Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "22-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freshwater"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freshwater"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "arid",
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "arid",
+          "freshwater",
+          "hills",
+          "jungle",
+          "temperate"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 4"
+      }
     ]
   },
   {
@@ -7666,6 +8612,46 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Wepear Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
       }
     ]
   },
@@ -7990,6 +8976,46 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Wepear Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "25-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "25-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -8271,6 +9297,27 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Soft Sand",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "7-32",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "desert"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -8646,6 +9693,27 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Soft Sand",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "36-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "desert"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -9023,6 +10091,140 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Chicken",
+        "quantity": "1"
+      },
+      {
+        "item": "Raw Cod",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Wacan Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "23-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "island",
+          "sky"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "23-48",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "island",
+          "sky"
+        ],
+        "context": [
+          "surface"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "23-48",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "23-48",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "23-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "23-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "surface"
+        ],
+        "label": "Overworld 6"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "23-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 7"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "23-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 8"
+      }
     ]
   },
   {
@@ -9306,6 +10508,82 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Raw Salmon",
+        "quantity": "1"
+      },
+      {
+        "item": "Bone Meal",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "3-28",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean",
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "3-28",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "coast",
+          "ocean",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "3-28",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean",
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "3-28",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "coast",
+          "ocean",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 4"
       }
     ]
   },
@@ -9628,6 +10906,82 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Raw Salmon",
+        "quantity": "1"
+      },
+      {
+        "item": "Bone Meal",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "26-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean",
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "26-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "coast",
+          "ocean",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "26-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean",
+          "swamp"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "26-49",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "coast",
+          "ocean",
+          "swamp"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 4"
+      }
     ]
   },
   {
@@ -9748,6 +11102,40 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Shuca Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "1-24",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "1-24",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -10247,6 +11635,40 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Shuca Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "30-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "30-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -10486,6 +11908,58 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Blaze Powder",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Charti Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "badlands",
+          "volcanic"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_basalt"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_wasteland"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -10808,6 +12282,58 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Blaze Powder",
+        "chance": "5%"
+      },
+      {
+        "item": "Charti Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "28-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "badlands",
+          "volcanic"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "28-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_basalt"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "28-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_wasteland"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      }
     ]
   },
   {
@@ -11088,6 +12614,148 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Ink Sac",
+        "quantity": "1-3"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "notes": "Not in: Frozen Ocean",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean",
+          "tropical_island"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 6"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean",
+          "tropical_island"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 7"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean",
+          "tropical_island"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 8"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean",
+          "tropical_island"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 9"
       }
     ]
   },
@@ -11449,6 +13117,148 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Ink Sac",
+        "quantity": "2-4"
+      },
+      {
+        "item": "Pinap Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "35-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "35-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "ocean"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "notes": "Not in: Frozen Ocean",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "35-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "35-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "35-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "35-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean",
+          "tropical_island"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 6"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "35-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean",
+          "tropical_island"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 7"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "35-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean",
+          "tropical_island"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 8"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "35-48",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean",
+          "tropical_island"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 9"
+      }
     ]
   },
   {
@@ -11738,6 +13548,124 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Spell Tag",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "floral",
+          "magical",
+          "mountain",
+          "plains",
+          "snowy",
+          "spooky",
+          "taiga",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Arid, Bamboo, Cherry Blossom, Island, Jungle, Ocean, Swamp, Thermal, Volcanic",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "floral",
+          "magical",
+          "mountain",
+          "plains",
+          "snowy",
+          "spooky",
+          "taiga",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Arid, Bamboo, Cherry Blossom, Island, Jungle, Ocean, Swamp, Thermal, Volcanic",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "floral",
+          "magical",
+          "mountain",
+          "plains",
+          "snowy",
+          "spooky",
+          "taiga",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Arid, Bamboo, Cherry Blossom, Island, Jungle, Ocean, Swamp, Thermal, Volcanic",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "6-31",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "floral",
+          "magical",
+          "mountain",
+          "plains",
+          "snowy",
+          "spooky",
+          "taiga",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Arid, Bamboo, Cherry Blossom, Island, Jungle, Ocean, Swamp, Thermal, Volcanic",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "6-31",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 6"
       }
     ]
   },
@@ -12085,6 +14013,124 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Spell Tag",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "26-51",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "floral",
+          "magical",
+          "mountain",
+          "plains",
+          "snowy",
+          "spooky",
+          "taiga",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Arid, Bamboo, Cherry Blossom, Island, Jungle, Ocean, Swamp, Thermal, Volcanic",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "26-51",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "floral",
+          "magical",
+          "mountain",
+          "plains",
+          "snowy",
+          "spooky",
+          "taiga",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Arid, Bamboo, Cherry Blossom, Island, Jungle, Ocean, Swamp, Thermal, Volcanic",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "26-51",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "floral",
+          "magical",
+          "mountain",
+          "plains",
+          "snowy",
+          "spooky",
+          "taiga",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Arid, Bamboo, Cherry Blossom, Island, Jungle, Ocean, Swamp, Thermal, Volcanic",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "26-51",
+        "time": "night",
+        "weather": "any",
+        "biomes": [
+          "floral",
+          "magical",
+          "mountain",
+          "plains",
+          "snowy",
+          "spooky",
+          "taiga",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Arid, Bamboo, Cherry Blossom, Island, Jungle, Ocean, Swamp, Thermal, Volcanic",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "26-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "26-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 6"
+      }
     ]
   },
   {
@@ -12405,6 +14451,55 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Babiri Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "magical",
+          "skyroot_forest",
+          "skyroot_woodland"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -12740,6 +14835,55 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Babiri Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "32-37",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "magical",
+          "skyroot_forest",
+          "skyroot_woodland"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "32-37",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "32-37",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -13191,6 +15335,55 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Babiri Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "42-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "magical",
+          "skyroot_forest",
+          "skyroot_woodland"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "42-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "42-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      }
     ]
   },
   {
@@ -13510,6 +15703,42 @@
       {
         "name": "Uproar",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Roseli Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "magical"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_forest",
+          "nether_warped"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Nether Desert",
+        "label": "Overworld 2"
       }
     ]
   },
@@ -13847,6 +16076,42 @@
       {
         "name": "Uproar",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Roseli Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "32-37",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "magical"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "32-37",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_forest",
+          "nether_warped"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Nether Desert",
+        "label": "Overworld 2"
       }
     ]
   },
@@ -14332,6 +16597,42 @@
       {
         "name": "Uproar",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Roseli Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "42-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "magical"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "42-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_forest",
+          "nether_warped"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Nether Desert",
+        "label": "Overworld 2"
       }
     ]
   },
@@ -14869,6 +17170,27 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Chople Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "35-52",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -15395,6 +17717,46 @@
         "name": "Uproar",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Razor Claw",
+        "chance": "5%"
+      },
+      {
+        "item": "Wepear Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "28-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freezing",
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "28-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freezing",
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -15867,6 +18229,135 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Kasib Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "38-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "beach"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "38-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "38-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "38-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether_quartz"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "38-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "warped_desert"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "38-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "beach",
+          "warm_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 6"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "38-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "beach",
+          "warm_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 7"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "38-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "beach",
+          "warm_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 8"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "38-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "beach",
+          "warm_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 9"
+      }
     ]
   },
   {
@@ -16242,6 +18733,39 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Chicken",
+        "quantity": "1"
+      },
+      {
+        "item": "Medicinal Leek",
+        "quantity": "1"
+      },
+      {
+        "item": "Coba Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "rare",
+        "levelRange": "33-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "forest"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
       }
     ]
   },
@@ -16896,6 +19420,40 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Aspear Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "42-52",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freezing"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "42-52",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freezing"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -17077,6 +19635,69 @@
       {
         "name": "Celebrate",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Sugar",
+        "quantity": "0-1"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
       }
     ]
   },
@@ -17437,6 +20058,73 @@
       {
         "name": "Celebrate",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Sugar",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Cake",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "22-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "22-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 4"
       }
     ]
   },
@@ -17818,6 +20506,44 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Gold Helmet",
+        "chance": "5%"
+      },
+      {
+        "item": "Nanab Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "22-47",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "badlands"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "22-47",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "nether"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      }
     ]
   },
   {
@@ -18165,6 +20891,118 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "seafloor"
+        ],
+        "label": "Overworld 6"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 7"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 8"
       }
     ]
   },
@@ -18537,6 +21375,57 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Stone",
+        "quantity": "2"
+      },
+      {
+        "item": "Luminous Moss",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "rare",
+        "levelRange": "22-47",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "22-47",
+        "time": "dusk",
+        "weather": "any",
+        "biomes": [
+          "plains"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-47",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      }
     ]
   },
   {
@@ -18870,6 +21759,71 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Feather",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Raw Chicken",
+        "quantity": "1"
+      },
+      {
+        "item": "Raw Cod",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Blue Ice",
+        "quantity": "1"
+      },
+      {
+        "item": "Aspear Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "22-47",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "frozen_ocean"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-47",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "frozen_ocean"
+        ],
+        "context": [
+          "surface"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "22-47",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "frozen_ocean",
+          "glacial",
+          "tundra"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
       }
     ]
   },
@@ -19320,6 +22274,27 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Roseli Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "19-44",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -19702,6 +22677,38 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Raw Copper",
+        "quantity": "0-1"
+      },
+      {
+        "item": "Lagging Tail",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Nanab Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "8-33",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "badlands",
+          "hills",
+          "savanna"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld"
       }
     ]
   },
@@ -20163,6 +23170,38 @@
         "name": "Snore",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Raw Copper",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Lagging Tail",
+        "chance": "5%"
+      },
+      {
+        "item": "Nanab Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "34-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "badlands",
+          "hills",
+          "savanna"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -20547,7 +23586,18 @@
         "name": "Snore",
         "method": "legacy"
       }
-    ]
+    ],
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Feather",
+        "quantity": "0-2"
+      }
+    ],
+    "spawns": []
   },
   {
     "id": 881,
@@ -20899,7 +23949,18 @@
         "name": "Snore",
         "method": "legacy"
       }
-    ]
+    ],
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Feather",
+        "quantity": "0-2"
+      }
+    ],
+    "spawns": []
   },
   {
     "id": 882,
@@ -21239,7 +24300,18 @@
         "name": "Snore",
         "method": "legacy"
       }
-    ]
+    ],
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Cod",
+        "quantity": "1"
+      }
+    ],
+    "spawns": []
   },
   {
     "id": 883,
@@ -21543,7 +24615,18 @@
         "name": "Snore",
         "method": "legacy"
       }
-    ]
+    ],
+    "drops": [
+      {
+        "item": "Bone",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Raw Cod",
+        "quantity": "1"
+      }
+    ],
+    "spawns": []
   },
   {
     "id": 885,
@@ -21709,6 +24792,93 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Phantom Membrane",
+        "chance": "2.5%"
+      },
+      {
+        "item": "Haban Berry",
+        "chance": "2.5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "2-27",
+        "time": "dusk",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "surface"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "2-27",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 5"
       }
     ]
   },
@@ -22113,6 +25283,93 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Phantom Membrane",
+        "chance": "5%"
+      },
+      {
+        "item": "Haban Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "50-55",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "50-55",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "50-55",
+        "time": "dusk",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "surface"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "50-55",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "50-55",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 5"
       }
     ]
   },
@@ -22558,6 +25815,93 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Phantom Membrane",
+        "chance": "10%"
+      },
+      {
+        "item": "Haban Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "60-65",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "60-65",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "60-65",
+        "time": "dusk",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "surface"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "60-65",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "ultra-rare",
+        "levelRange": "60-65",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "coast",
+          "ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "notes": "Not in: Freezing",
+        "label": "Overworld 5"
       }
     ]
   },
@@ -23059,7 +26403,9 @@
         "name": "Snore",
         "method": "legacy"
       }
-    ]
+    ],
+    "drops": [],
+    "spawns": []
   },
   {
     "id": 894,
@@ -23360,7 +26706,9 @@
         "name": "Snore",
         "method": "legacy"
       }
-    ]
+    ],
+    "drops": [],
+    "spawns": []
   },
   {
     "id": 895,
@@ -23656,7 +27004,9 @@
         "name": "Snore",
         "method": "legacy"
       }
-    ]
+    ],
+    "drops": [],
+    "spawns": []
   },
   {
     "id": 899,
@@ -24221,6 +27571,33 @@
         "name": "Toxic",
         "method": "legacy"
       }
+    ],
+    "drops": [
+      {
+        "item": "Leather",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Persim Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "42-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "snowy_forest",
+          "snowy_taiga",
+          "tundra"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -24735,6 +28112,47 @@
       {
         "name": "Morning Sun",
         "method": "special"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Stone Axe",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Wepear Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "rare",
+        "levelRange": "45-50",
+        "time": "day",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "hills"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Freezing, Spooky",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "rare",
+        "levelRange": "45-50",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "skyroot_forest",
+          "skyroot_woodland"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
       }
     ]
   },
@@ -25378,6 +28796,72 @@
         "name": "Refresh",
         "method": "special"
       }
+    ],
+    "drops": [
+      {
+        "item": "Sweet Berries",
+        "quantity": "3-5"
+      },
+      {
+        "item": "Honey Bottle",
+        "quantity": "0-3"
+      },
+      {
+        "item": "Peat Block",
+        "chance": "10%"
+      },
+      {
+        "item": "Oran Berry",
+        "chance": "10%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "45-55",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "forest",
+          "mountain",
+          "skyroot_forest",
+          "skyroot_woodland",
+          "taiga"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Volcanic",
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "45-55",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "aether",
+          "overworld"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "45-55",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "crystal_canyon",
+          "floral_meadow"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "label": "Overworld 3"
+      }
     ]
   },
   {
@@ -25758,6 +29242,86 @@
       {
         "name": "Zen Headbutt",
         "method": "tutor"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Raw Salmon",
+        "quantity": "1"
+      },
+      {
+        "item": "Bone Meal",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "common",
+        "levelRange": "41-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freshwater"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "41-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "arid",
+          "forest",
+          "freshwater",
+          "grassland",
+          "jungle",
+          "mountain",
+          "snowy_forest",
+          "taiga",
+          "tundra"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "41-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "freshwater"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "41-53",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "arid",
+          "forest",
+          "freshwater",
+          "grassland",
+          "jungle",
+          "mountain",
+          "snowy_forest",
+          "taiga",
+          "tundra"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
       }
     ]
   },
@@ -26237,6 +29801,36 @@
         "name": "X-Scissor",
         "method": "tutor"
       }
+    ],
+    "drops": [
+      {
+        "item": "Razor Claw",
+        "chance": "5%"
+      },
+      {
+        "item": "Poison Barb",
+        "chance": "5%"
+      },
+      {
+        "item": "Payapa Berry",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "38-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "mountain"
+        ],
+        "context": [
+          "grounded"
+        ],
+        "notes": "Not in: Arid, Taiga, Volcanic",
+        "label": "Overworld"
+      }
     ]
   },
   {
@@ -26684,6 +30278,195 @@
       {
         "name": "Water Pulse",
         "method": "tutor"
+      }
+    ],
+    "drops": [
+      {
+        "item": "Pufferfish",
+        "quantity": "1"
+      },
+      {
+        "item": "Prismarine Shard",
+        "quantity": "0-2"
+      },
+      {
+        "item": "Poison Barb",
+        "chance": "5%"
+      }
+    ],
+    "spawns": [
+      {
+        "bucket": "uncommon",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 1"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold_ocean",
+          "frozen_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 2"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 3"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 4"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold_ocean",
+          "frozen_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 5"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 6"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold_ocean",
+          "frozen_ocean"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 7"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 8"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 9"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold_ocean",
+          "frozen_ocean"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 10"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold"
+        ],
+        "context": [
+          "submerged"
+        ],
+        "label": "Overworld 11"
+      },
+      {
+        "bucket": "uncommon",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 12"
+      },
+      {
+        "bucket": "common",
+        "levelRange": "39-51",
+        "time": "any",
+        "weather": "any",
+        "biomes": [
+          "cold"
+        ],
+        "context": [
+          "fishing"
+        ],
+        "label": "Overworld 13"
       }
     ]
   }

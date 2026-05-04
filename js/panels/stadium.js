@@ -60,8 +60,8 @@ const Stadium = (() => {
         html += `
           <div class="stadium-opponent-slot" data-slot="${i}">
             <button class="stadium-opponent-remove" data-slot="${i}" title="Remove">✕</button>
-            <img class="opp-sprite" src="https://cobbledex.b-cdn.net/3dmons/previews/small/${p.id}.webp"
-                 onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.id}.png'"
+            <img class="opp-sprite" src="${spriteUrl(p.id)}"
+                 onerror="${spriteFallbackOnError(p.id)}"
                  alt="${p.name}">
             <div class="stadium-opponent-name">${p.name}</div>
             <div class="stadium-opponent-level">
@@ -124,12 +124,11 @@ const Stadium = (() => {
     card.offsetHeight;
     card.classList.add('pop-in');
 
-    document.getElementById('card-close-btn')?.addEventListener('click', () => {
-      overlay.classList.add('hidden');
-    });
-    overlay.addEventListener('click', function onBg(e) {
+    const closeBtn = document.getElementById('card-close-btn');
+    if (closeBtn) closeBtn.onclick = () => overlay.classList.add('hidden');
+    overlay.onclick = (e) => {
       if (e.target === overlay) overlay.classList.add('hidden');
-    });
+    };
 
     renderOppPickerList('');
     document.getElementById('opp-picker-search')?.addEventListener('input', (e) => {
@@ -152,8 +151,8 @@ const Stadium = (() => {
     list.innerHTML = filtered.map(p => `
       <div class="move-item picker-row" data-id="${p.id}">
         <div style="display:flex;align-items:center;gap:8px;flex:1;">
-          <img src="https://cobbledex.b-cdn.net/3dmons/previews/small/${p.id}.webp"
-               onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.id}.png'"
+          <img src="${spriteUrl(p.id)}"
+               onerror="${spriteFallbackOnError(p.id)}"
                style="width:32px;height:32px;image-rendering:pixelated;" alt="${p.name}">
           <span class="move-item-name">#${String(p.id).padStart(4,'0')} ${p.name}</span>
         </div>
@@ -201,7 +200,7 @@ const Stadium = (() => {
     for (const atk of TYPE_LIST) {
       let count = 0;
       for (const opp of opponents) {
-        const m = effectiveness(atk, opp.types);
+        const m = multiplyTypes(atk, opp.types);
         if (m > 1) count++;
       }
       weaknessCounts[atk] = count;
@@ -240,7 +239,7 @@ const Stadium = (() => {
           for (const moveName of learnableNames(dex)) {
             const move = movesByName.get(moveName);
             if (!move || move.power <= 1) continue;
-            const mult = effectiveness(move.type, opp.types);
+            const mult = multiplyTypes(move.type, opp.types);
             if (mult === 0) continue;
             const score = move.power * mult;
             if (score > best.score) best = { score, move, mult };
@@ -266,8 +265,8 @@ const Stadium = (() => {
               if (!b.move) {
                 return `
                   <div class="stadium-counter-badge mult-bad" title="${opp.name} Lv ${oppLvl}: no effective move">
-                    <img src="https://cobbledex.b-cdn.net/3dmons/previews/small/${opp.id}.webp"
-                         onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${opp.id}.png'"
+                    <img src="${spriteUrl(opp.id)}"
+                         onerror="${spriteFallbackOnError(opp.id)}"
                          alt="${opp.name}">
                     <span class="badge-mult">×${b.mult}</span>
                     <span class="badge-lvl ${lvlCls}">Lv ${oppLvl}</span>
@@ -277,8 +276,8 @@ const Stadium = (() => {
               const cls = b.mult >= 2 ? (b.mult >= 4 ? 'mult-great' : 'mult-good') : '';
               return `
                 <div class="stadium-counter-badge ${cls}" title="${opp.name} Lv ${oppLvl}: ${b.move.name} ×${b.mult}">
-                  <img src="https://cobbledex.b-cdn.net/3dmons/previews/small/${opp.id}.webp"
-                       onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${opp.id}.png'"
+                  <img src="${spriteUrl(opp.id)}"
+                       onerror="${spriteFallbackOnError(opp.id)}"
                        alt="${opp.name}">
                   <span class="badge-mult">×${formatMul(b.mult)}</span>
                   <span class="badge-lvl ${lvlCls}">Lv ${oppLvl}</span>
@@ -288,8 +287,8 @@ const Stadium = (() => {
 
             return `
               <div class="stadium-counter-row">
-                <img class="counter-sprite" src="https://cobbledex.b-cdn.net/3dmons/previews/small/${c.dex.id}.webp"
-                     onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${c.dex.id}.png'"
+                <img class="counter-sprite" src="${spriteUrl(c.dex.id)}"
+                     onerror="${spriteFallbackOnError(c.dex.id)}"
                      alt="${c.dex.name}">
                 <div class="stadium-counter-info">
                   <div class="stadium-counter-name">
@@ -316,13 +315,6 @@ const Stadium = (() => {
         ${counterHTML}
       </div>
     `;
-  }
-
-  // Effectiveness multiplier of one attacking type vs N defender types
-  function effectiveness(atk, defs) {
-    let m = 1;
-    for (const d of defs) m *= getMul(atk.toLowerCase(), d.toLowerCase());
-    return m;
   }
 
   function formatMul(m) {
@@ -355,8 +347,8 @@ const Stadium = (() => {
 
     list.innerHTML = filtered.map(p => `
       <div class="moveset-pokemon-row ${p.id === movesetSelectedId ? 'selected' : ''}" data-id="${p.id}">
-        <img src="https://cobbledex.b-cdn.net/3dmons/previews/small/${p.id}.webp"
-             onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.id}.png'"
+        <img src="${spriteUrl(p.id)}"
+             onerror="${spriteFallbackOnError(p.id)}"
              alt="${p.name}">
         <div class="moveset-pokemon-info">
           <div class="moveset-pokemon-name">${p.name}</div>
@@ -436,8 +428,8 @@ const Stadium = (() => {
     root.innerHTML = `
       <div class="moveset-detail-header">
         <img class="moveset-detail-sprite"
-             src="https://cobbledex.b-cdn.net/3dmons/previews/small/${dex.id}.webp"
-             onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dex.id}.png'"
+             src="${spriteUrl(dex.id)}"
+             onerror="${spriteFallbackOnError(dex.id)}"
              alt="${dex.name}">
         <div class="moveset-detail-title">
           <div class="moveset-detail-name">${dex.name}</div>

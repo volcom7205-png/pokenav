@@ -219,21 +219,6 @@
   color: #000;
 }
 
-.tile-deposit-warning {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,0.85);
-  color: #ff3333;
-  font-size: 10px;
-  letter-spacing: 1px;
-  padding: 4px 8px;
-  border-radius: 3px;
-  pointer-events: none;
-  z-index: 3;
-}
-
 /* Empty party slot quick-fill button (+) */
 .slot-fill-btn {
   font-size: 24px;

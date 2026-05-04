@@ -1,0 +1,259 @@
+/* PokeNav — Items / TM Tracker */
+
+#panel-itemsguide { padding: 18px 24px; overflow-y: auto; }
+
+.itemsguide-tab-row {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+.itemsguide-tab {
+  background: var(--bg-tile);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 9px 16px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.itemsguide-tab:hover { background: var(--nav-hover); }
+.itemsguide-tab.active {
+  background: var(--accent-red);
+  color: var(--btn-text);
+  border-color: var(--accent-red);
+}
+
+.itemsguide-search-row {
+  margin-bottom: 12px;
+}
+#itemsguide-search {
+  width: 100%;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-input);
+  color: var(--text-primary);
+  padding: 9px 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  border-radius: 4px;
+}
+
+.itemsguide-empty {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 30px 18px;
+  text-align: center;
+}
+.itemsguide-empty--inline { padding: 16px; }
+
+/* ── Item list (berry / battle / vitamin) ──────── */
+
+.itemsguide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.itemsguide-card {
+  position: relative;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px 12px;
+  cursor: help;
+  transition: border-color 0.1s, transform 0.1s;
+}
+.itemsguide-card:hover {
+  border-color: var(--accent-red);
+  transform: translateY(-1px);
+  z-index: 2;
+}
+.itemsguide-card-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.itemsguide-card-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Hover tooltip — full description in a popover when the inline
+   description was truncated by a small viewport. */
+.itemsguide-card[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  background: #050505;
+  color: var(--text-primary);
+  border: 1px solid var(--accent-red);
+  padding: 8px 10px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  border-radius: 4px;
+  width: 280px;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  pointer-events: none;
+  white-space: normal;
+}
+
+/* ── TMs ──────────────────────────────────────── */
+
+.itemsguide-tm-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.itemsguide-tm-list {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  max-height: calc(100vh - 230px);
+  overflow-y: auto;
+}
+
+.itemsguide-tm-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.itemsguide-tm-row:hover { background: var(--nav-hover); }
+.itemsguide-tm-row.selected {
+  background: rgba(255,51,51,0.15);
+  border-left: 3px solid var(--accent-red);
+  padding-left: 7px;
+}
+.itemsguide-tm-typeicon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+.itemsguide-tm-info { flex: 1; min-width: 0; }
+.itemsguide-tm-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.itemsguide-tm-meta {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 0.3px;
+}
+.itemsguide-tm-count {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--accent-red);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: right;
+  min-width: 36px;
+}
+.itemsguide-tm-count span {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 1.5px;
+  font-weight: 400;
+}
+
+.itemsguide-tm-detail {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 14px;
+  max-height: calc(100vh - 230px);
+  overflow-y: auto;
+}
+.itemsguide-tm-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+.itemsguide-tm-detail-head img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+.itemsguide-tm-detail-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-primary);
+}
+.itemsguide-tm-detail-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: 'Roboto Mono', monospace;
+}
+.itemsguide-tm-detail-count {
+  font-size: 0.78rem;
+  color: var(--accent-red);
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.itemsguide-tm-learners {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 6px;
+}
+.itemsguide-tm-learner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+.itemsguide-tm-learner img {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  flex: 0 0 auto;
+}
+.itemsguide-tm-learner-info { flex: 1; min-width: 0; }
+.itemsguide-tm-learner-num {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+.itemsguide-tm-learner-name {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.itemsguide-tm-learner-types {
+  display: flex;
+  gap: 3px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 900px) {
+  .itemsguide-tm-layout { grid-template-columns: 1fr; }
+  .itemsguide-tm-list, .itemsguide-tm-detail { max-height: none; }
+}

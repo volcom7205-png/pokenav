@@ -25,9 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   loadPokemonData();
 
-  // Lazy-init Party + Stadium when their tabs are first opened
+  // Lazy-init Party / Stadium / Biome Search / Items panels when
+  // their tabs are first opened.
   let partyInited = false;
   let stadiumInited = false;
+  let biomeInited = false;
+  let itemsGuideInited = false;
   document.querySelectorAll('.nav-tab[data-panel]').forEach(item => {
     item.addEventListener('click', () => {
       if (item.dataset.panel === 'party' && !partyInited) {
@@ -37,6 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (item.dataset.panel === 'battle' && !stadiumInited) {
         stadiumInited = true;
         Stadium.init();
+      }
+      if (item.dataset.panel === 'biome' && !biomeInited) {
+        biomeInited = true;
+        BiomeSearch.init();
+      }
+      if (item.dataset.panel === 'itemsguide' && !itemsGuideInited && typeof ItemsGuide !== 'undefined') {
+        itemsGuideInited = true;
+        ItemsGuide.init();
       }
     });
   });

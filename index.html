@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="css/panels/party.css" />
   <link rel="stylesheet" href="css/panels/typechart.css" />
   <link rel="stylesheet" href="css/panels/stadium.css" />
+  <link rel="stylesheet" href="css/panels/itemsguide.css" />
+  <link rel="stylesheet" href="css/panels/biome.css" />
   <link rel="stylesheet" href="css/panels/settings.css" />
   <link rel="stylesheet" href="css/theme.css" />
 </head>
@@ -38,8 +40,8 @@
         <button class="nav-tab" data-panel="items">Poké Drops</button>
         <button class="nav-tab" data-panel="battle">Stadium</button>
         <button class="nav-tab" data-panel="types">Type Chart</button>
-        <div class="nav-tab nav-tab--placeholder">—</div>
-        <div class="nav-tab nav-tab--placeholder">—</div>
+        <button class="nav-tab" data-panel="itemsguide">Items</button>
+        <button class="nav-tab" data-panel="biome">Biome Search</button>
         <button class="nav-tab" data-panel="settings">Settings</button>
       </div>
 
@@ -242,6 +244,50 @@
         </div>
       </div>
 
+      <div class="panel" id="panel-itemsguide"></div>
+
+      <div class="panel" id="panel-biome">
+        <div class="biome-mode-row">
+          <button class="biome-mode-btn active" data-mode="pokemon" type="button">⌕ POKÉMON</button>
+          <button class="biome-mode-btn" data-mode="biome" type="button">◆ BIOME</button>
+          <button class="biome-mode-btn" data-mode="wanted" type="button">★ MOST WANTED</button>
+        </div>
+
+        <div class="biome-view" id="biome-pokemon-view">
+          <div class="pokedex-search-row">
+            <input type="text" id="biome-pok-search" placeholder="Type a Pokémon name or #..." autocomplete="off" />
+          </div>
+          <div id="biome-pok-results" class="biome-pok-results">
+            <div class="biome-empty">Type a Pokémon name to see where it spawns.</div>
+          </div>
+        </div>
+
+        <div class="biome-view hidden" id="biome-biome-view">
+          <div class="biome-biome-grid">
+            <aside class="biome-picker-section">
+              <input type="text" id="biome-biome-search" placeholder="Filter biomes..." autocomplete="off" />
+              <div id="biome-picker" class="biome-picker"></div>
+            </aside>
+            <div id="biome-biome-results" class="biome-biome-results">
+              <div class="biome-empty">Pick a biome to see what spawns there.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="biome-view hidden" id="biome-wanted-view">
+          <div class="biome-wanted-toolbar">
+            <input type="text" id="biome-wanted-search" placeholder="Search Most Wanted..." autocomplete="off" />
+            <select id="biome-wanted-sort">
+              <option value="id">Sort: Dex #</option>
+              <option value="name">Sort: Name</option>
+              <option value="type">Sort: Primary type</option>
+              <option value="rarity">Sort: Rarity</option>
+            </select>
+          </div>
+          <div id="biome-wanted-grid" class="biome-wanted-grid"></div>
+        </div>
+      </div>
+
       <div class="panel" id="panel-settings"></div>
 
     </main>
@@ -283,6 +329,8 @@
   <script src="js/panels/typechart.js"></script>
   <script src="js/panels/party.js"></script>
   <script src="js/panels/stadium.js"></script>
+  <script src="js/panels/itemsguide.js"></script>
+  <script src="js/panels/biome.js"></script>
 
   <!-- Entry point: shared state, data load, init wiring -->
   <script src="js/app.js"></script>

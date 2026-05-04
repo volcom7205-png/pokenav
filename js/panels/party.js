@@ -5,7 +5,6 @@ const PartyStorage = (() => {
   // ── Constants ──────────────────────────────────────
   const PARTY_SIZE = 6;
   const LS_KEY = 'pokenav_party_storage';
-  const SPRITE_BASE = 'https://cobbledex.b-cdn.net/3dmons/previews/small/';
 
   // ── State ──────────────────────────────────────────
   let state = { party: Array(PARTY_SIZE).fill(null), storage: [] };
@@ -55,11 +54,6 @@ const PartyStorage = (() => {
     };
   }
 
-  // ── Sprite URL ─────────────────────────────────────
-  function spriteUrl(dexId) {
-    return `${SPRITE_BASE}${dexId}.webp`;
-  }
-
   // ── Render a tile ──────────────────────────────────
   function makeTile(poke, sourceType) {
     const div = document.createElement('div');
@@ -73,7 +67,7 @@ const PartyStorage = (() => {
     div.innerHTML = `
       ${depositBtn}
       <img class="tile-sprite" src="${spriteUrl(poke.dexId)}"
-           onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.dexId}.png'"
+           onerror="${spriteFallbackOnError(poke.dexId)}"
            alt="${poke.name}">
       <div class="tile-number-row">
         <span class="tile-number">#${String(poke.dexId).padStart(4,'0')}</span>
@@ -87,36 +81,15 @@ const PartyStorage = (() => {
   }
 
   // ── Quick deposit (party → storage) ────────────────
+  // PC storage is unbounded, so this always succeeds when a party
+  // slot has a Pokémon.
   function depositToStorage(partyIndex) {
     const poke = state.party[partyIndex];
-    if (!poke) return false;
-
-    let placed = false;
-    for (let i = 0; i < state.storage.length; i++) {
-      if (state.storage[i] === null) {
-        state.storage[i] = poke;
-        placed = true;
-        break;
-      }
-    }
-    if (!placed) {
-      state.storage.push(poke);
-      placed = true;
-    }
-    if (!placed) return false;
-
+    if (!poke) return;
+    state.storage.push(poke);
     state.party[partyIndex] = null;
     save();
     renderPC();
-    return true;
-  }
-
-  function showPcFullWarning(tile) {
-    const warn = document.createElement('div');
-    warn.className = 'tile-deposit-warning';
-    warn.textContent = 'PC FULL';
-    tile.appendChild(warn);
-    setTimeout(() => warn.remove(), 2000);
   }
 
   function bindDepositButton(tile, partyIndex) {
@@ -124,8 +97,7 @@ const PartyStorage = (() => {
     if (!btn) return;
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const ok = depositToStorage(partyIndex);
-      if (!ok) showPcFullWarning(tile);
+      depositToStorage(partyIndex);
     });
   }
 
@@ -352,6 +324,38 @@ const PartyStorage = (() => {
     bindCardEvents(poke, sourceType);
   }
 
+  // ── Move slots HTML (the 4-slot ribbon inside the card) ──
+  function moveSlotsHTML(poke) {
+    return [0,1,2,3].map(i => `
+      <div class="move-slot" data-slot="${i}">
+        ${poke.moves[i]
+          ? `<span class="move-name">${poke.moves[i]}</span><button class="move-clear" data-slot="${i}">✕</button>`
+          : `<span class="move-empty">— empty —</span>`}
+      </div>`).join('');
+  }
+
+  // Re-render the move-slot ribbon and rebind ONLY its move-clear
+  // buttons. Keeps card-level listeners (close, fields, IVs, picker)
+  // attached to their original elements so we don't accumulate them.
+  function rerenderMoveSlots(poke) {
+    const root = document.getElementById('card-move-slots');
+    if (!root) return;
+    root.innerHTML = moveSlotsHTML(poke);
+    root.querySelectorAll('.move-clear').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const slot = Number(btn.dataset.slot);
+        poke.moves[slot] = undefined;
+        poke.moves = poke.moves.filter(Boolean);
+        save();
+        rerenderMoveSlots(poke);
+        // Clear the picker's "selected" highlight on whatever was removed
+        document.querySelectorAll('#move-list .move-item').forEach(el => {
+          el.classList.toggle('selected', poke.moves.includes(el.dataset.move));
+        });
+      });
+    });
+  }
+
   // ── Build card inner HTML ──────────────────────────
   function buildCardHTML(poke, sourceType) {
     const statKeys = ['hp','atk','def','spa','spd','spe'];
@@ -367,18 +371,13 @@ const PartyStorage = (() => {
                min="0" max="252" value="${poke.evs[s]}">
       </div>`).join('');
 
-    const moveSlots = [0,1,2,3].map(i => `
-      <div class="move-slot" data-slot="${i}">
-        ${poke.moves[i]
-          ? `<span class="move-name">${poke.moves[i]}</span><button class="move-clear" data-slot="${i}">✕</button>`
-          : `<span class="move-empty">— empty —</span>`}
-      </div>`).join('');
+    const moveSlots = moveSlotsHTML(poke);
 
     return `
       <button class="card-close-btn" id="card-close-btn">✕</button>
       <div class="card-header">
         <img class="card-sprite" src="${spriteUrl(poke.dexId)}"
-             onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.dexId}.png'"
+             onerror="${spriteFallbackOnError(poke.dexId)}"
              alt="${poke.name}">
         <div class="card-identity">
           <div class="card-number">#${String(poke.dexId).padStart(4,'0')}</div>
@@ -422,13 +421,13 @@ const PartyStorage = (() => {
   function bindCardEvents(poke, sourceType) {
     const overlay = document.getElementById('pokedex-card-overlay');
 
-    // Close
-    document.getElementById('card-close-btn')?.addEventListener('click', () => {
-      overlay.classList.add('hidden');
-    });
-    overlay.addEventListener('click', (e) => {
+    // Close — assign (don't addEventListener) so handlers don't
+    // accumulate across modal opens.
+    const closeBtn = document.getElementById('card-close-btn');
+    if (closeBtn) closeBtn.onclick = () => overlay.classList.add('hidden');
+    overlay.onclick = (e) => {
       if (e.target === overlay) overlay.classList.add('hidden');
-    });
+    };
 
     // Release (storage only — button not present otherwise)
     const releaseBtn = document.querySelector('.release-btn');
@@ -473,26 +472,9 @@ const PartyStorage = (() => {
       });
     });
 
-    // Clear move
-    document.querySelectorAll('.move-clear').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const slot = Number(btn.dataset.slot);
-        poke.moves[slot] = undefined;
-        poke.moves = poke.moves.filter(Boolean);
-        save();
-        document.getElementById('card-move-slots').innerHTML =
-          [0,1,2,3].map(i => `
-            <div class="move-slot" data-slot="${i}">
-              ${poke.moves[i]
-                ? `<span class="move-name">${poke.moves[i]}</span><button class="move-clear" data-slot="${i}">✕</button>`
-                : `<span class="move-empty">— empty —</span>`}
-            </div>`).join('');
-        document.querySelectorAll('.move-clear').forEach(b => {
-          b.addEventListener('click', () => b.closest('[data-slot]') && b.click());
-        });
-        bindCardEvents(poke, sourceType);
-      });
-    });
+    // Clear move — handlers attached by rerenderMoveSlots so they
+    // don't pile up via repeated bindCardEvents calls.
+    rerenderMoveSlots(poke);
 
     // Move picker
     renderMoveList(poke, '', sourceType);
@@ -560,16 +542,8 @@ const PartyStorage = (() => {
         if (poke.moves.length >= 4) return;
         poke.moves.push(moveName);
         save();
-        // refresh move slots
-        document.getElementById('card-move-slots').innerHTML =
-          [0,1,2,3].map(i => `
-            <div class="move-slot" data-slot="${i}">
-              ${poke.moves[i]
-                ? `<span class="move-name">${poke.moves[i]}</span><button class="move-clear" data-slot="${i}">✕</button>`
-                : `<span class="move-empty">— empty —</span>`}
-            </div>`).join('');
+        rerenderMoveSlots(poke);
         el.classList.add('selected');
-        bindCardEvents(poke, sourceType);
       });
     });
   }
@@ -635,8 +609,8 @@ const PartyStorage = (() => {
     list.innerHTML = filtered.map(p => `
       <div class="move-item picker-row" data-id="${p.id}">
         <div style="display:flex;align-items:center;gap:8px;flex:1;">
-          <img src="https://cobbledex.b-cdn.net/3dmons/previews/small/${p.id}.webp"
-               onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.id}.png'"
+          <img src="${spriteUrl(p.id)}"
+               onerror="${spriteFallbackOnError(p.id)}"
                style="width:32px;height:32px;image-rendering:pixelated;" alt="${p.name}">
           <span class="move-item-name">#${String(p.id).padStart(4,'0')} ${p.name}</span>
         </div>
@@ -728,7 +702,7 @@ const PartyStorage = (() => {
       <div class="move-item picker-row" data-uid="${p.uid}">
         <div style="display:flex;align-items:center;gap:8px;flex:1;">
           <img src="${spriteUrl(p.dexId)}"
-               onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.dexId}.png'"
+               onerror="${spriteFallbackOnError(p.dexId)}"
                style="width:32px;height:32px;image-rendering:pixelated;" alt="${p.name}">
           <span class="move-item-name">#${String(p.dexId).padStart(4,'0')} ${p.nickname || p.name}
             <span style="color:#666;font-size:0.7rem;margin-left:4px;">LVL ${p.level}</span>
