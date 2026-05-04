@@ -4,7 +4,7 @@ let allPokemon = [];
 let selectedPokemon = null;
 
 function loadPokemonData() {
-  PokeNavData.load()
+  Promise.all([PokeNavData.load(), PokeNavBiomes.load()])
     .then(() => {
       allPokemon = PokeNavData.getPokemon();
       buildItemIndex();

@@ -244,8 +244,7 @@ function renderSpawnContent(spawn) {
   const contexts = (spawn.context || [])
     .map(c => c.charAt(0).toUpperCase() + c.slice(1));
 
-  const biomeNames = (spawn.biomes || [])
-    .map(b => b.replace(/_/g, ' ').replace('nether/', 'Nether: '));
+  const biomes = PokeNavBiomes.sortBiomes(spawn.biomes || []);
 
   const rarityClass = 'rarity-' + (spawn.bucket || 'unknown').replace(' ', '-');
   const rarityLabel = spawn.bucket
@@ -281,10 +280,13 @@ function renderSpawnContent(spawn) {
         ${contexts.map(c => `<span class="context-pill">${c}</span>`).join('')}
       </div>` : ''}
 
-    ${biomeNames.length ? `
+    ${biomes.length ? `
       <div class="poke-card-section-label" style="margin-top:12px">Biomes</div>
       <div class="biome-list">
-        ${biomeNames.map(b => `<span class="biome-pill">${b}</span>`).join('')}
+        ${biomes.map(b => {
+          const color = PokeNavBiomes.getGroupColor(b);
+          return `<span class="biome-pill" data-group="${PokeNavBiomes.getGroup(b)}" style="border-left-color:${color}">${PokeNavBiomes.prettyBiome(b)}</span>`;
+        }).join('')}
       </div>` : ''}
 
     ${spawn.notes ? `<div class="spawn-notes">${spawn.notes}</div>` : ''}

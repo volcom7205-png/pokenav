@@ -229,11 +229,12 @@
 
 .biome-pill {
   font-size: 0.75rem;
-  padding: 3px 10px;
-  border-radius: 20px;
+  padding: 3px 10px 3px 8px;
+  border-radius: 3px 12px 12px 3px;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  color: var(--text-muted);
+  border-left: 3px solid var(--text-muted);
+  color: var(--text-primary);
   text-transform: capitalize;
 }
 

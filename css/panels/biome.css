@@ -168,18 +168,24 @@
   background: var(--bg-tile);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
-  padding: 4px 8px;
+  border-left: 3px solid var(--biome-group-color, var(--border-color));
+  padding: 4px 8px 4px 7px;
   font-family: inherit;
   font-size: 0.78rem;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 2px 4px 4px 2px;
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  transition: background 0.1s;
+  transition: background 0.1s, border-color 0.1s;
 }
-.biome-chip:hover { background: var(--nav-hover); border-color: var(--accent-red); }
-.biome-chip.active { background: var(--accent-red); color: var(--btn-text); border-color: var(--accent-red); }
+.biome-chip:hover { background: var(--nav-hover); border-color: var(--accent-red); border-left-color: var(--biome-group-color, var(--accent-red)); }
+.biome-chip.active {
+  background: var(--accent-red);
+  color: var(--btn-text);
+  border-color: var(--accent-red);
+  border-left-color: var(--biome-group-color, var(--accent-red));
+}
 .biome-chip.is-empty { opacity: 0.4; }
 .biome-chip-count {
   font-family: 'Roboto Mono', monospace;
@@ -413,8 +419,9 @@
   font-size: 0.7rem;
   background: rgba(0,0,0,0.4);
   border: 1px solid var(--border-color);
-  padding: 2px 6px;
-  border-radius: 2px;
+  border-left: 3px solid var(--text-muted);
+  padding: 2px 6px 2px 5px;
+  border-radius: 2px 4px 4px 2px;
   color: var(--text-primary);
 }
 .biome-wanted-biome--none {

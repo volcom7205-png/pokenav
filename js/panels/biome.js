@@ -15,46 +15,7 @@ const BiomeSearch = (() => {
   let wantedQuery = '';
   let wantedSort = 'id';
 
-  // Dimension grouping for the biome picker. Anything not matched
-  // here falls through to "Overworld".
-  const NETHER_PREFIX = /^nether/;
-  const END_BIOMES = new Set(['end', 'warped_desert', 'crystalline_chasm']);
-  const AETHER_BIOMES = new Set([
-    'aether', 'skyroot_grove', 'skyroot_meadow', 'skyroot_forest',
-    'skyroot_woodland', 'crystal_canyon', 'howling_constructs',
-    'pollinated_fields', 'floral_meadow',
-  ]);
-  const BUMBLEZONE_BIOMES = new Set(['bumblezone']);
-
-  // Wiki taxonomy that may not yet appear in spawn data — keep them
-  // in the picker so users can browse the full vocabulary.
-  const WIKI_EXTRA_BIOMES = [
-    'arid','badlands','bamboo','beach','cave','cherry_blossom','coast','cold','dripstone',
-    'deep_dark','deep_ocean','desert','floral','floral_meadow','forest','freezing','freshwater',
-    'frozen_ocean','frozen_river','glacial','grassland','highlands','hills','island','jungle',
-    'lukewarm_ocean','lush','magical','mountain','muddy','mushroom','mushroom_fields','ocean',
-    'overworld','peak','plains','plateau','river','salt','sandy','savanna','shrubland','sky',
-    'snowy','snowy_beach','snowy_forest','snowy_taiga','spooky','sunflower_plains','swamp',
-    'taiga','temperate','thermal','tropical_island','tundra','volcanic','warm_ocean',
-    'nether','nether_basalt','nether_crimson','nether_desert','nether_forest','nether_frozen',
-    'nether_fungus','nether_mountain','nether_overgrowth','nether_quartz','nether_soul_fire',
-    'nether_soul_sand','nether_toxic','nether_warped','nether_wasteland',
-    'aether','skyroot_grove','skyroot_meadow','skyroot_forest','skyroot_woodland',
-    'crystal_canyon','howling_constructs','pollinated_fields',
-    'end','warped_desert','crystalline_chasm','bumblezone',
-  ];
-
-  function dimensionFor(biome) {
-    if (NETHER_PREFIX.test(biome)) return 'Nether';
-    if (END_BIOMES.has(biome)) return 'End';
-    if (AETHER_BIOMES.has(biome)) return 'Aether';
-    if (BUMBLEZONE_BIOMES.has(biome)) return 'Bumblezone';
-    return 'Overworld';
-  }
-
-  function prettyBiome(b) {
-    return b.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-  }
+  const prettyBiome = b => PokeNavBiomes.prettyBiome(b);
 
   // ── Most Wanted localStorage ─────────────────────
   function loadWanted() {
@@ -87,16 +48,20 @@ const BiomeSearch = (() => {
   }
 
   function allKnownBiomes() {
-    const set = new Set(WIKI_EXTRA_BIOMES);
+    const set = new Set();
+    const tax = PokeNavBiomes;
+    for (const g of tax.getGroupOrder()) {
+      for (const t of tax.getGroupMeta(g).tags) set.add(t);
+    }
     for (const b of biomeIndex.keys()) set.add(b);
-    return [...set].sort();
+    return tax.sortBiomes([...set]);
   }
 
   // ── Init / mode toggle ───────────────────────────
   async function init() {
     if (inited) return;
     inited = true;
-    await PokeNavData.load();
+    await Promise.all([PokeNavData.load(), PokeNavBiomes.load()]);
     allPokemon = PokeNavData.getPokemon();
     buildIndex();
     loadWanted();
@@ -208,26 +173,33 @@ const BiomeSearch = (() => {
     const root = document.getElementById('biome-picker');
     if (!root) return;
 
-    const biomes = allKnownBiomes();
-    const grouped = {};
+    const biomes = allKnownBiomes()
+      .filter(b => !biomeFilter || b.includes(biomeFilter));
+
+    // Bucket by group (canonical order via PokeNavBiomes).
+    const byGroup = {};
     for (const b of biomes) {
-      if (biomeFilter && !b.includes(biomeFilter)) continue;
-      const dim = dimensionFor(b);
-      (grouped[dim] = grouped[dim] || []).push(b);
+      const g = PokeNavBiomes.getGroup(b);
+      (byGroup[g] = byGroup[g] || []).push(b);
     }
 
-    const ORDER = ['Overworld', 'Nether', 'End', 'Aether', 'Bumblezone'];
-    root.innerHTML = ORDER.filter(d => grouped[d]).map(dim => `
-      <div class="biome-picker-group">
-        <div class="biome-picker-header">${dim}</div>
+    const groupOrder = PokeNavBiomes.getGroupOrder().filter(g => byGroup[g]);
+    root.innerHTML = groupOrder.map(g => {
+      const meta = PokeNavBiomes.getGroupMeta(g);
+      return `
+      <div class="biome-picker-group" data-group="${g}">
+        <div class="biome-picker-header" style="color:${meta.color}">
+          ${meta.emoji} ${meta.label}
+        </div>
         <div class="biome-picker-chips">
-          ${grouped[dim].map(b => {
+          ${byGroup[g].map(b => {
             const count = biomeIndex.get(b)?.length || 0;
             const empty = count === 0 ? 'is-empty' : '';
             const active = biomeSelected === b ? 'active' : '';
             return `
-              <button class="biome-chip ${empty} ${active}" data-biome="${b}" type="button"
-                      title="${count} mons">
+              <button class="biome-chip ${empty} ${active}" data-biome="${b}"
+                      data-group="${g}" type="button" title="${count} mons"
+                      style="--biome-group-color:${meta.color}">
                 ${prettyBiome(b)}
                 <span class="biome-chip-count">${count}</span>
               </button>
@@ -235,7 +207,8 @@ const BiomeSearch = (() => {
           }).join('')}
         </div>
       </div>
-    `).join('');
+      `;
+    }).join('');
 
     root.querySelectorAll('.biome-chip').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -373,7 +346,7 @@ const BiomeSearch = (() => {
       // Aggregate biomes across all spawn entries
       const biomeSet = new Set();
       for (const s of (p.spawns || [])) for (const b of (s.biomes || [])) biomeSet.add(b);
-      const biomes = [...biomeSet];
+      const biomes = PokeNavBiomes.sortBiomes([...biomeSet]);
       const bestBucket = (p.spawns || [])
         .map(s => s.bucket)
         .filter(Boolean)
@@ -391,7 +364,10 @@ const BiomeSearch = (() => {
           <div class="biome-wanted-rarity rarity-${bestBucket}">${bestBucket.toUpperCase()}</div>
           <div class="biome-wanted-biomes">
             ${biomes.length
-              ? biomes.slice(0, 8).map(b => `<span class="biome-wanted-biome">${prettyBiome(b)}</span>`).join('')
+              ? biomes.slice(0, 8).map(b => {
+                  const color = PokeNavBiomes.getGroupColor(b);
+                  return `<span class="biome-wanted-biome" data-group="${PokeNavBiomes.getGroup(b)}" style="border-left-color:${color}">${prettyBiome(b)}</span>`;
+                }).join('')
               : '<span class="biome-wanted-biome biome-wanted-biome--none">No spawn data</span>'}
             ${biomes.length > 8 ? `<span class="biome-wanted-more">+${biomes.length - 8} more</span>` : ''}
           </div>
