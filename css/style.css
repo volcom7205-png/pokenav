@@ -2175,11 +2175,14 @@ hr.poke-card-divider {
    TYPE CHART PANEL
    ============================================================ */
 
-#panel-types {
-  padding: 14px 24px 24px;
+#panel-types.active {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+#panel-types {
+  padding: 14px 24px 24px;
 }
 
 .typechart-mode-row {
@@ -2654,5 +2657,463 @@ hr.poke-card-divider {
   }
   .typechart-search-list {
     max-height: 240px;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────
+   STADIUM PANEL
+   ────────────────────────────────────────────────────────────────*/
+
+#panel-battle.active {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#panel-battle {
+  padding: 14px 24px 24px;
+}
+
+.stadium-mode-row {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 8px;
+}
+
+.stadium-mode-btn {
+  padding: 10px 22px;
+  background: var(--bg-panel);
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  color: #888;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  min-height: 36px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.04),
+    inset -1px -1px 0 0 rgba(0, 0, 0, 0.4);
+}
+
+.stadium-mode-btn:hover {
+  color: #ccc;
+  border-color: #555;
+}
+
+.stadium-mode-btn.active {
+  color: var(--accent-red);
+  border-color: var(--accent-red);
+  background: rgba(255, 51, 51, 0.08);
+}
+
+.stadium-view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stadium-view.hidden {
+  display: none;
+}
+
+.stadium-planning-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(0, 2fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.stadium-opponents,
+.stadium-analysis {
+  background: var(--bg-panel);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 12px 14px;
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.03),
+    inset -1px -1px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.stadium-section-header {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.stadium-opponent-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.stadium-opponent-slot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 6px 8px;
+  min-height: 110px;
+  background: var(--bg-tile);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.04),
+    inset -1px -1px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.stadium-opponent-slot:hover {
+  border-color: #555;
+}
+
+.stadium-opponent-slot.empty {
+  color: #555;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  justify-content: center;
+}
+
+.stadium-opponent-slot.empty:hover {
+  color: var(--accent-red);
+  border-color: var(--accent-red);
+}
+
+.stadium-opponent-slot img.opp-sprite {
+  width: 56px;
+  height: 56px;
+  image-rendering: pixelated;
+}
+
+.stadium-opponent-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ccc;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.stadium-opponent-level {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.stadium-opponent-level .opp-level-input {
+  width: 38px;
+  padding: 2px 4px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 3px;
+  color: #eee;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  outline: none;
+  -moz-appearance: textfield;
+}
+
+.stadium-opponent-level .opp-level-input::-webkit-outer-spin-button,
+.stadium-opponent-level .opp-level-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.stadium-opponent-level .opp-level-input:focus {
+  border-color: var(--accent-red);
+}
+
+.stadium-opponent-types {
+  display: flex;
+  gap: 3px;
+}
+
+.stadium-opponent-types img {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.stadium-opponent-remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #888;
+  border: none;
+  border-radius: 50%;
+  font-size: 11px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.15s, background 0.15s;
+}
+
+.stadium-opponent-remove:hover {
+  color: #fff;
+  background: var(--accent-red);
+}
+
+.stadium-opponent-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.stadium-counter {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 11px;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+/* Analysis side */
+.stadium-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: #666;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.stadium-analysis-block {
+  margin-bottom: 16px;
+}
+
+.stadium-analysis-block:last-child {
+  margin-bottom: 0;
+}
+
+/* Aggregated weakness tile grid (reuses typechart-tile look) */
+.stadium-weakness-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 6px;
+}
+
+.stadium-weakness-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 4px 6px;
+  background: var(--bg-tile);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  min-width: 0;
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.04),
+    inset -1px -1px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.stadium-weakness-tile img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  filter: grayscale(60%);
+}
+
+.stadium-weakness-tile .se-count {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+}
+
+.stadium-weakness-tile .type-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.stadium-weakness-tile.has-se {
+  border-color: rgba(255, 80, 80, 0.45);
+  background: rgba(255, 80, 80, 0.08);
+}
+
+.stadium-weakness-tile.has-se img {
+  filter: none;
+}
+
+.stadium-weakness-tile.has-se .se-count {
+  color: #ff7070;
+}
+
+/* Counter list */
+.stadium-counter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stadium-counter-row {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background: var(--bg-tile);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.03),
+    inset -1px -1px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.stadium-counter-row img.counter-sprite {
+  width: 36px;
+  height: 36px;
+  image-rendering: pixelated;
+}
+
+.stadium-counter-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.stadium-counter-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ddd;
+}
+
+.stadium-counter-meta {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 10px;
+  color: #888;
+  letter-spacing: 0.5px;
+}
+
+.stadium-counter-badges {
+  display: flex;
+  gap: 4px;
+}
+
+.stadium-counter-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 4px;
+  min-width: 36px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+}
+
+.stadium-counter-badge img {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.stadium-counter-badge .badge-mult {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: #888;
+}
+
+.stadium-counter-badge .badge-lvl {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 9px;
+  color: #666;
+  letter-spacing: 0.5px;
+}
+
+.stadium-counter-badge .badge-lvl.lvl-bad {
+  color: #ff7070;
+}
+
+.stadium-counter-badge .badge-lvl.lvl-good {
+  color: #80e080;
+}
+
+.stadium-counter-badge.mult-good {
+  border-color: rgba(110, 220, 110, 0.4);
+  background: rgba(110, 220, 110, 0.08);
+}
+
+.stadium-counter-badge.mult-good .badge-mult {
+  color: #80e080;
+}
+
+.stadium-counter-badge.mult-great {
+  border-color: rgba(255, 200, 80, 0.5);
+  background: rgba(255, 200, 80, 0.10);
+}
+
+.stadium-counter-badge.mult-great .badge-mult {
+  color: #ffce6e;
+}
+
+.stadium-counter-badge.mult-bad {
+  border-color: rgba(120, 120, 120, 0.3);
+  opacity: 0.5;
+}
+
+.stadium-counter-score {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ddd;
+  text-align: right;
+  min-width: 36px;
+}
+
+.stadium-counter-source {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  padding: 1px 5px;
+  border: 1px solid #333;
+  border-radius: 3px;
+}
+
+@media (max-width: 1100px) {
+  .stadium-planning-grid {
+    grid-template-columns: 1fr;
   }
 }

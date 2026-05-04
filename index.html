@@ -156,9 +156,31 @@
       <div class="panel" id="panel-items"></div>
 
       <div class="panel" id="panel-battle">
-        <h2>⚔️ Stadium</h2>
-        <p>Input an opponent's team and get your best counter party.</p>
-        <p class="coming-soon">Coming soon</p>
+        <div class="stadium-mode-row">
+          <button class="stadium-mode-btn active" data-mode="planning" type="button">⚔️ BATTLE PLANNING</button>
+          <button class="stadium-mode-btn" data-mode="moveset" type="button">★ BEST MOVESET</button>
+        </div>
+
+        <div class="stadium-view" id="stadium-planning-view">
+          <div class="stadium-planning-grid">
+            <section class="stadium-opponents">
+              <div class="stadium-section-header">OPPONENT'S TEAM — pick 1–6</div>
+              <div class="stadium-opponent-grid" id="stadium-opponent-grid"></div>
+              <div class="stadium-opponent-footer">
+                <span id="stadium-opponent-count" class="stadium-counter">0 / 6 set</span>
+                <button id="stadium-opponent-clear" class="typechart-clear-btn" type="button">Clear team</button>
+              </div>
+            </section>
+
+            <section class="stadium-analysis" id="stadium-analysis">
+              <div class="stadium-empty">Add opponents to see weakness analysis and recommended counters from your party + storage.</div>
+            </section>
+          </div>
+        </div>
+
+        <div class="stadium-view hidden" id="stadium-moveset-view">
+          <div class="stadium-empty">Coming soon — pick a Pokémon and see its top recommended moves.</div>
+        </div>
       </div>
 
       <div class="panel" id="panel-types">
