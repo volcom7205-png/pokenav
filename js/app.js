@@ -1,6 +1,6 @@
 /* =============================================
    POKENAV — app.js
-   Stage 3: Pokédex + Item Search
+   Stage 3: Pokédex + Poké Drops
    ============================================= */
 
 // ─── STATE ────────────────────────────────────
@@ -29,6 +29,19 @@ function typeIconHTML(type) {
          style="width:40px;height:40px;border-radius:50%;">
     <span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:${color};">${lc}</span>
   </div>`;
+}
+
+// Compact horizontal pill for dense list rows where the 40px stacked icon
+// would make rows too tall (e.g. Poké Drops dropper rows).
+function typeIconHTMLCompact(type) {
+  if (!type) return '';
+  const lc = String(type).toLowerCase();
+  const color = TYPE_COLORS[lc] || '#4a4a4a';
+  return `<span style="display:inline-flex;align-items:center;gap:5px;vertical-align:middle;">
+    <img src="assets/types/${lc}.png" alt="${lc} type"
+         style="width:20px;height:20px;border-radius:50%;">
+    <span style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:${color};">${lc}</span>
+  </span>`;
 }
 
 // ─── INIT ─────────────────────────────────────
@@ -230,6 +243,9 @@ function buildItemIndex() {
     (pokemon.drops || []).forEach(drop => {
       const name = drop.item;
       if (!itemIndex[name]) itemIndex[name] = [];
+      // Dedupe: each Pokémon appears at most once per item, even if it has
+      // multiple drop entries or spawn profiles for the same item.
+      if (itemIndex[name].some(d => d.pokemon.id === pokemon.id)) return;
       const amount = drop.chance || (drop.quantity ? drop.quantity : '1');
       itemIndex[name].push({ pokemon, amount });
     });
@@ -500,11 +516,11 @@ function renderSpawnContent(spawn) {
   `;
 }
 
-// ─── ITEM SEARCH PANEL ────────────────────────
+// ─── POKÉ DROPS PANEL ─────────────────────────
 function buildItemSearchPanel() {
   const panel = document.getElementById('panel-items');
   panel.innerHTML = `
-    <h2>🎒 Item Search</h2>
+    <h2>🎒 Poké Drops</h2>
     <div class="panel-search">
       <input type="text" id="item-search" placeholder="Search for a drop item..." autocomplete="off" />
     </div>
@@ -564,8 +580,9 @@ function renderItemCard(name) {
       <img src="${pokemon.sprite}" alt="${pokemon.name}" onerror="this.style.opacity='0.3'" />
       <div class="dropper-info">
         <div class="dropper-name">${pokemon.name}</div>
-        <div class="dropper-num">#${String(pokemon.id).padStart(4, '0')} •
-          ${pokemon.types.map(t => typeIconHTML(t)).join(' ')}
+        <div class="dropper-num">
+          <span class="dropper-num-id">#${String(pokemon.id).padStart(4, '0')}</span>
+          <span class="dropper-types">${pokemon.types.map(t => typeIconHTMLCompact(t)).join('')}</span>
         </div>
       </div>
       <span class="dropper-amount">${amount}</span>
@@ -583,7 +600,7 @@ function renderItemCard(name) {
 }
 
 // ─── CROSS-PANEL NAVIGATION ───────────────────
-// Called when user clicks a Pokémon in the Item Search panel.
+// Called when user clicks a Pokémon in the Poké Drops panel.
 // Switches to Pokédex tab and opens that Pokémon's pop-out card.
 function goToPokedex(id) {
   switchPanel('pokedex', false);

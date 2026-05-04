@@ -709,7 +709,7 @@ body {
 }
 
 /* =====================
-   ITEM SEARCH / DROPS PANEL
+   POKÉ DROPS PANEL
    ===================== */
 .item-search-layout {
   display: grid;
@@ -826,17 +826,32 @@ body {
 
 .dropper-info {
   flex: 1;
+  min-width: 0;
 }
 
 .dropper-name {
   font-size: 0.95rem;
   color: var(--text-primary);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .dropper-num {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
   font-size: 0.75rem;
   color: var(--text-muted);
+}
+
+.dropper-num-id {
+  color: var(--text-muted);
+}
+
+.dropper-types {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .dropper-amount {
