@@ -44,8 +44,6 @@
           <button id="pokedex-element-btn" class="pokedex-element-btn" type="button">◆ ELEMENTS ◀</button>
         </div>
 
-        <div id="pokedex-active-filters" class="pokedex-active-filters hidden"></div>
-
         <div class="pokedex-main">
           <div id="pokedex-grid" class="pokedex-grid"></div>
 
@@ -84,37 +82,60 @@
       </div>
 
       <div id="panel-party" class="panel">
-        <div class="party-storage-layout">
+        <div class="pokedex-search-row">
+          <input type="text" id="pc-search" placeholder="Search by name or number..." autocomplete="off" />
+          <button id="pc-element-btn" class="pokedex-element-btn" type="button">◆ ELEMENTS ◀</button>
+        </div>
 
-          <!-- LEFT: Party (6 slots) -->
-          <div class="party-column">
-            <h2 class="panel-title">Party</h2>
-            <div class="party-slots" id="party-slots">
-              <!-- 6 slots rendered by JS -->
+        <div class="pokedex-main">
+          <div class="pc-content">
+            <div class="pc-party-column">
+              <section class="party-section">
+                <div class="pc-section-header">PARTY</div>
+                <div class="party-grid" id="party-grid"></div>
+              </section>
+            </div>
+
+            <div class="pc-storage-column">
+              <button class="add-poke-btn" id="add-poke-btn">＋ Add Pokémon</button>
+              <section class="storage-section">
+                <div class="pc-section-header">PC STORAGE</div>
+                <div class="storage-grid" id="storage-grid"></div>
+              </section>
             </div>
           </div>
 
-          <!-- RIGHT: Storage -->
-          <div class="storage-column">
-            <h2 class="panel-title">Storage</h2>
-            <div class="storage-search-bar">
-              <input type="text" id="storage-search" placeholder="Search by name, #, type, or move..." />
-              <div class="storage-filter-pills" id="storage-filter-pills">
-                <button class="pill active" data-filter="all">All</button>
-                <button class="pill" data-filter="fire">🔥 Fire</button>
-                <button class="pill" data-filter="water">💧 Water</button>
-                <button class="pill" data-filter="grass">🌿 Grass</button>
-                <button class="pill" data-filter="electric">⚡ Electric</button>
-                <button class="pill" data-filter="psychic">🔮 Psychic</button>
-                <button class="pill" data-filter="normal">⬜ Normal</button>
-              </div>
+          <aside id="pc-element-panel" class="pokedex-element-panel hidden">
+            <div class="element-panel-header">
+              <span class="element-panel-title">◆ ELEMENTS</span>
+              <span id="pc-filter-count" class="element-panel-count">0 active</span>
             </div>
-            <button class="add-poke-btn" id="add-poke-btn">＋ Add Pokémon</button>
-            <div class="storage-grid" id="storage-grid">
-              <!-- tiles rendered by JS -->
-            </div>
-          </div>
 
+            <div class="element-icon-grid">
+              <div class="element-item" data-type="normal"></div>
+              <div class="element-item" data-type="fire"></div>
+              <div class="element-item" data-type="water"></div>
+              <div class="element-item" data-type="grass"></div>
+              <div class="element-item" data-type="electric"></div>
+              <div class="element-item" data-type="ice"></div>
+              <div class="element-item" data-type="fighting"></div>
+              <div class="element-item" data-type="poison"></div>
+              <div class="element-item" data-type="ground"></div>
+              <div class="element-item" data-type="flying"></div>
+              <div class="element-item" data-type="psychic"></div>
+              <div class="element-item" data-type="bug"></div>
+              <div class="element-item" data-type="rock"></div>
+              <div class="element-item" data-type="ghost"></div>
+              <div class="element-item" data-type="dragon"></div>
+              <div class="element-item" data-type="dark"></div>
+              <div class="element-item" data-type="steel"></div>
+              <div class="element-item" data-type="fairy"></div>
+            </div>
+
+            <div class="element-panel-footer">
+              <button id="pc-clear-types" class="element-clear-all" type="button">Clear all</button>
+            </div>
+          </aside>
         </div>
       </div>
 

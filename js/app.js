@@ -12,18 +12,22 @@ let pokedexSearchQuery = '';
 let pokedexSelectedTypes = new Set();
 
 // ─── TYPE RENDER HELPERS ──────────────────────
+const TYPE_COLORS = {
+  fire: '#b84000', water: '#1a6aaa', grass: '#2d7a2d', electric: '#aa8800',
+  psychic: '#9c2060', ice: '#2a8a9a', dragon: '#2a3a99', dark: '#2a3040',
+  fairy: '#8a3060', fighting: '#8a2000', poison: '#5a1a80', ground: '#7a4a1a',
+  flying: '#3a4a99', bug: '#4a6a00', rock: '#5a4a2a', ghost: '#3a2a7a',
+  steel: '#4a5a6a', normal: '#4a4a4a',
+};
+
 function typeIconHTML(type) {
   if (!type) return '';
   const lc = String(type).toLowerCase();
-  return `<span class="type-badge type-${lc}">${lc}</span>`;
-}
-
-function typeCardIconHTML(type) {
-  if (!type) return '';
-  const lc = String(type).toLowerCase();
-  return `<div class="type-card-icon">
-    <img src="assets/types/${lc}.png" alt="${lc} type">
-    <span class="type-card-icon-label">${lc}</span>
+  const color = TYPE_COLORS[lc] || '#4a4a4a';
+  return `<div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+    <img src="assets/types/${lc}.png" alt="${lc} type"
+         style="width:40px;height:40px;border-radius:50%;">
+    <span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:${color};">${lc}</span>
   </div>`;
 }
 
@@ -251,9 +255,10 @@ function buildPokedexPanel() {
     btn?.classList.toggle('active');
   });
 
-  document.querySelectorAll('.element-item').forEach(item => {
+  document.querySelectorAll('#pokedex-element-panel .element-item').forEach(item => {
+    const type = item.dataset.type;
+    if (type) item.innerHTML = typeIconHTML(type);
     item.addEventListener('click', () => {
-      const type = item.dataset.type;
       if (!type) return;
       if (pokedexSelectedTypes.has(type)) {
         pokedexSelectedTypes.delete(type);
@@ -263,7 +268,6 @@ function buildPokedexPanel() {
         item.classList.add('active');
       }
       updatePokedexFilterCount();
-      renderPokedexActiveFilters();
       renderPokedexTiles();
     });
   });
@@ -273,7 +277,6 @@ function buildPokedexPanel() {
   });
 
   updatePokedexFilterCount();
-  renderPokedexActiveFilters();
 }
 
 function renderPokedexTiles() {
@@ -303,14 +306,19 @@ function renderPokedexTiles() {
     return;
   }
 
+  const ownedIds = (typeof PartyStorage !== 'undefined' && PartyStorage.getOwnedDexIds)
+    ? PartyStorage.getOwnedDexIds()
+    : new Set();
+
   grid.innerHTML = filtered.map(p => `
     <div class="pokedex-tile" data-id="${p.id}">
+      ${ownedIds.has(p.id) ? '<div class="tile-owned-ball"></div>' : ''}
       <img class="pokedex-tile-sprite" src="${p.sprite}" alt="${p.name}"
            onerror="this.style.opacity='0.3'" />
       <div class="pokedex-tile-number">#${String(p.id).padStart(4, '0')}</div>
       <div class="pokedex-tile-name">${p.name}</div>
-      <div class="pokedex-tile-types">
-        ${p.types.map(t => `<img class="pokedex-tile-type-icon" src="assets/types/${String(t).toLowerCase()}.png" alt="${t}" title="${t}" onerror="this.style.display='none'">`).join('')}
+      <div class="pokedex-tile-types" style="display:flex;flex-direction:row;gap:6px;justify-content:center;margin-top:6px;">
+        ${p.types.map(t => typeIconHTML(t)).join('')}
       </div>
     </div>
   `).join('');
@@ -329,42 +337,10 @@ function updatePokedexFilterCount() {
   el.textContent = `${pokedexSelectedTypes.size} active`;
 }
 
-function renderPokedexActiveFilters() {
-  const container = document.getElementById('pokedex-active-filters');
-  if (!container) return;
-
-  if (pokedexSelectedTypes.size === 0) {
-    container.classList.add('hidden');
-    container.innerHTML = '';
-    return;
-  }
-
-  container.classList.remove('hidden');
-  container.innerHTML = Array.from(pokedexSelectedTypes).map(t => `
-    <span class="filter-tag">
-      <span class="filter-tag-name">${t}</span>
-      <button class="filter-tag-remove" data-type="${t}" type="button" aria-label="Remove ${t} filter">✕</button>
-    </span>
-  `).join('');
-
-  container.querySelectorAll('.filter-tag-remove').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const type = btn.dataset.type;
-      pokedexSelectedTypes.delete(type);
-      const item = document.querySelector(`.element-item[data-type="${type}"]`);
-      item?.classList.remove('active');
-      updatePokedexFilterCount();
-      renderPokedexActiveFilters();
-      renderPokedexTiles();
-    });
-  });
-}
-
 function clearPokedexTypeFilters() {
   pokedexSelectedTypes.clear();
-  document.querySelectorAll('.element-item.active').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('#pokedex-element-panel .element-item.active').forEach(el => el.classList.remove('active'));
   updatePokedexFilterCount();
-  renderPokedexActiveFilters();
   renderPokedexTiles();
 }
 
@@ -448,7 +424,7 @@ function renderPokedexCard(pokemon, spawnIdx) {
       <div>
         <div class="poke-card-num">#${String(pokemon.id).padStart(4, '0')}</div>
         <div class="poke-card-name">${pokemon.name}</div>
-        <div class="poke-card-types">
+        <div class="poke-card-types" style="display:flex;flex-direction:row;gap:12px;flex-wrap:wrap;">
           ${pokemon.types.map(t => typeIconHTML(t)).join('')}
         </div>
       </div>
@@ -658,6 +634,10 @@ const PartyStorage = (() => {
   let allMoves = [];
   let allPokemon = [];
 
+  // PC tab filter state
+  let pcSearchQuery = '';
+  let pcSelectedTypes = new Set();
+
   // ── localStorage ───────────────────────────────────
   function save() {
     localStorage.setItem(LS_KEY, JSON.stringify(state));
@@ -700,70 +680,148 @@ const PartyStorage = (() => {
     return `${SPRITE_BASE}${dexId}.webp`;
   }
 
-  // ── Type badge HTML (delegates to global typeIconHTML) ─
-  function typeBadge(type) {
-    return typeIconHTML(type);
-  }
-
   // ── Render a tile ──────────────────────────────────
-  function makeTile(poke) {
+  function makeTile(poke, sourceType) {
     const div = document.createElement('div');
     div.className = 'poke-tile';
     div.draggable = true;
     div.dataset.uid = poke.uid;
+    const lvlText = (typeof poke.level === 'number' && poke.level >= 1) ? `LVL ${poke.level}` : 'LVL —';
+    const depositBtn = sourceType === 'party'
+      ? `<button class="tile-deposit-btn" title="Deposit to PC">→</button>`
+      : '';
     div.innerHTML = `
+      ${depositBtn}
       <img class="tile-sprite" src="${spriteUrl(poke.dexId)}"
            onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.dexId}.png'"
            alt="${poke.name}">
+      <div class="tile-number-row">
+        <span class="tile-number">#${String(poke.dexId).padStart(4,'0')}</span>
+        <span class="tile-number-sep">•</span>
+        <span class="tile-level">${lvlText}</span>
+      </div>
       <div class="tile-name">${poke.nickname || poke.name}</div>
-      <div class="tile-number">#${String(poke.dexId).padStart(4,'0')}</div>
-      <div class="tile-types">${poke.types.map(typeBadge).join('')}</div>
+      <div class="tile-types" style="display:flex;flex-direction:row;gap:6px;justify-content:center;margin-top:6px;">${poke.types.map(t => typeIconHTML(t)).join('')}</div>
     `;
     return div;
   }
 
-  // ── Render party column ────────────────────────────
+  // ── Quick deposit (party → storage) ────────────────
+  function depositToStorage(partyIndex) {
+    const poke = state.party[partyIndex];
+    if (!poke) return false;
+
+    let placed = false;
+    for (let i = 0; i < state.storage.length; i++) {
+      if (state.storage[i] === null) {
+        state.storage[i] = poke;
+        placed = true;
+        break;
+      }
+    }
+    if (!placed) {
+      state.storage.push(poke);
+      placed = true;
+    }
+    if (!placed) return false;
+
+    state.party[partyIndex] = null;
+    save();
+    renderPC();
+    return true;
+  }
+
+  function showPcFullWarning(tile) {
+    const warn = document.createElement('div');
+    warn.className = 'tile-deposit-warning';
+    warn.textContent = 'PC FULL';
+    tile.appendChild(warn);
+    setTimeout(() => warn.remove(), 2000);
+  }
+
+  function bindDepositButton(tile, partyIndex) {
+    const btn = tile.querySelector('.tile-deposit-btn');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const ok = depositToStorage(partyIndex);
+      if (!ok) showPcFullWarning(tile);
+    });
+  }
+
+  // ── Filter logic (search + type set, AND logic) ────
+  function pokeMatchesFilter(poke) {
+    if (!poke) return false;
+    if (pcSearchQuery) {
+      const q = pcSearchQuery;
+      const hits =
+        (poke.nickname || '').toLowerCase().includes(q) ||
+        poke.name.toLowerCase().includes(q) ||
+        String(poke.dexId).includes(q) ||
+        String(poke.dexId).padStart(4, '0').includes(q);
+      if (!hits) return false;
+    }
+    if (pcSelectedTypes.size > 0) {
+      const pTypes = poke.types.map(t => String(t).toLowerCase());
+      for (const t of pcSelectedTypes) {
+        if (!pTypes.includes(t)) return false;
+      }
+    }
+    return true;
+  }
+
+  function isFilterActive() {
+    return pcSearchQuery !== '' || pcSelectedTypes.size > 0;
+  }
+
+  // ── Render PC tab (party + storage grids together) ─
+  function renderPC() {
+    renderParty();
+    renderStorage();
+    if (typeof renderPokedexTiles === 'function') renderPokedexTiles();
+  }
+
+  // ── Render party grid (2-column) ───────────────────
   function renderParty() {
-    const container = document.getElementById('party-slots');
+    const container = document.getElementById('party-grid');
     if (!container) return;
     container.innerHTML = '';
+    const filterOn = isFilterActive();
+
     for (let i = 0; i < PARTY_SIZE; i++) {
-      const slot = document.createElement('div');
-      slot.className = 'party-slot';
-      slot.dataset.index = i;
       const poke = state.party[i];
       if (poke) {
-        slot.classList.remove('empty');
-        const tile = makeTile(poke);
+        if (filterOn && !pokeMatchesFilter(poke)) continue;
+        const tile = makeTile(poke, 'party');
         bindTileEvents(tile, 'party', i);
-        slot.appendChild(tile);
-      } else {
-        slot.classList.add('empty');
-        slot.textContent = '+';
+        bindSlotDrop(tile, 'party', i);
+        bindDepositButton(tile, i);
+        container.appendChild(tile);
+      } else if (!filterOn) {
+        const slot = document.createElement('div');
+        slot.className = 'party-slot empty';
+        slot.dataset.index = i;
+        slot.innerHTML = '<button class="slot-fill-btn">+</button>';
+        slot.querySelector('.slot-fill-btn').addEventListener('click', (e) => {
+          e.stopPropagation();
+          openStoragePicker(i);
+        });
+        bindSlotDrop(slot, 'party', i);
+        container.appendChild(slot);
       }
-      bindSlotDrop(slot, 'party', i);
-      container.appendChild(slot);
     }
   }
 
   // ── Render storage grid ────────────────────────────
-  function renderStorage(filter = '') {
+  function renderStorage() {
     const container = document.getElementById('storage-grid');
     if (!container) return;
     container.innerHTML = '';
-    let list = state.storage;
-    if (filter) {
-      const f = filter.toLowerCase();
-      list = list.filter(p =>
-        p.name.toLowerCase().includes(f) ||
-        String(p.dexId).includes(f) ||
-        p.types.some(t => t.toLowerCase().includes(f)) ||
-        p.moves.some(m => m.toLowerCase().includes(f))
-      );
-    }
-    list.forEach((poke, i) => {
-      const tile = makeTile(poke);
-      bindTileEvents(tile, 'storage', state.storage.indexOf(poke));
+    const list = state.storage.filter(pokeMatchesFilter);
+    list.forEach((poke) => {
+      const idx = state.storage.indexOf(poke);
+      const tile = makeTile(poke, 'storage');
+      bindTileEvents(tile, 'storage', idx);
       tile.addEventListener('dragover', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -802,7 +860,7 @@ const PartyStorage = (() => {
       dragSource = null;
     });
     tile.addEventListener('click', (e) => {
-      if (!e.defaultPrevented) openCard(sourceType === 'party' ? state.party[index] : state.storage[index], tile);
+      if (!e.defaultPrevented) openCard(sourceType === 'party' ? state.party[index] : state.storage[index], tile, sourceType);
     });
   }
 
@@ -855,8 +913,7 @@ const PartyStorage = (() => {
       }
     }
     save();
-    renderParty();
-    renderStorage(document.getElementById('storage-search')?.value || '');
+    renderPC();
   }
 
   // ── Storage grid drop zone ─────────────────────────
@@ -888,7 +945,7 @@ const PartyStorage = (() => {
   ];
 
   // ── Open Pokédex card ──────────────────────────────
-  function openCard(poke, originTile) {
+  function openCard(poke, originTile, sourceType) {
     if (!poke) return;
     const overlay = document.getElementById('pokedex-card-overlay');
     const card    = document.getElementById('pokedex-card');
@@ -904,7 +961,7 @@ const PartyStorage = (() => {
       card.style.transformOrigin = 'center center';
     }
 
-    card.innerHTML = buildCardHTML(poke);
+    card.innerHTML = buildCardHTML(poke, sourceType);
     overlay.classList.remove('hidden');
 
     // Restart animation
@@ -912,11 +969,11 @@ const PartyStorage = (() => {
     card.offsetHeight;
     card.classList.add('pop-in');
 
-    bindCardEvents(poke);
+    bindCardEvents(poke, sourceType);
   }
 
   // ── Build card inner HTML ──────────────────────────
-  function buildCardHTML(poke) {
+  function buildCardHTML(poke, sourceType) {
     const statKeys = ['hp','atk','def','spa','spd','spe'];
     const statLabels = { hp:'HP', atk:'Atk', def:'Def', spa:'Sp.A', spd:'Sp.D', spe:'Spe' };
 
@@ -948,7 +1005,7 @@ const PartyStorage = (() => {
           <input class="card-nickname" type="text" placeholder="${poke.name}"
                  value="${poke.nickname}" data-field="nickname" maxlength="12">
           <div class="card-species">${poke.name}</div>
-          <div class="tile-types">${poke.types.map(t => typeCardIconHTML(t)).join('')}</div>
+          <div class="tile-types" style="display:flex;flex-direction:row;gap:6px;justify-content:center;margin-top:6px;">${poke.types.map(t => typeIconHTML(t)).join('')}</div>
         </div>
       </div>
       <div class="card-section">
@@ -977,11 +1034,12 @@ const PartyStorage = (() => {
         <input type="text" id="move-search" placeholder="Search moves..." class="move-search-input">
         <div class="move-list" id="move-list"></div>
       </div>
+      ${sourceType === 'storage' ? `<button class="release-btn">RELEASE</button>` : ''}
     `;
   }
 
   // ── Bind card interactivity ────────────────────────
-  function bindCardEvents(poke) {
+  function bindCardEvents(poke, sourceType) {
     const overlay = document.getElementById('pokedex-card-overlay');
 
     // Close
@@ -992,14 +1050,35 @@ const PartyStorage = (() => {
       if (e.target === overlay) overlay.classList.add('hidden');
     });
 
+    // Release (storage only — button not present otherwise)
+    const releaseBtn = document.querySelector('.release-btn');
+    if (releaseBtn) {
+      releaseBtn.addEventListener('click', () => {
+        if (!releaseBtn.classList.contains('release-btn--confirm')) {
+          releaseBtn.classList.add('release-btn--confirm');
+          releaseBtn.textContent = 'CONFIRM RELEASE';
+          return;
+        }
+        const idx = state.storage.findIndex(p => p && p.uid === poke.uid);
+        if (idx !== -1) state.storage.splice(idx, 1);
+        save();
+        renderPC();
+        if (typeof renderPokedexTiles === 'function') renderPokedexTiles();
+        overlay.classList.add('hidden');
+      });
+      releaseBtn.addEventListener('mouseleave', () => {
+        releaseBtn.classList.remove('release-btn--confirm');
+        releaseBtn.textContent = 'RELEASE';
+      });
+    }
+
     // Nickname / level / nature
     document.querySelectorAll('[data-field]').forEach(el => {
       el.addEventListener('change', () => {
         const field = el.dataset.field;
         poke[field] = el.type === 'number' ? Number(el.value) : el.value;
         save();
-        renderParty();
-        renderStorage(document.getElementById('storage-search')?.value || '');
+        renderPC();
       });
     });
 
@@ -1031,19 +1110,19 @@ const PartyStorage = (() => {
         document.querySelectorAll('.move-clear').forEach(b => {
           b.addEventListener('click', () => b.closest('[data-slot]') && b.click());
         });
-        bindCardEvents(poke);
+        bindCardEvents(poke, sourceType);
       });
     });
 
     // Move picker
-    renderMoveList(poke, '');
+    renderMoveList(poke, '', sourceType);
     document.getElementById('move-search')?.addEventListener('input', (e) => {
-      renderMoveList(poke, e.target.value);
+      renderMoveList(poke, e.target.value, sourceType);
     });
   }
 
   // ── Render move picker list ────────────────────────
-  function renderMoveList(poke, filter) {
+  function renderMoveList(poke, filter, sourceType) {
     const list = document.getElementById('move-list');
     if (!list) return;
     const f = filter.toLowerCase();
@@ -1073,7 +1152,7 @@ const PartyStorage = (() => {
                 : `<span class="move-empty">— empty —</span>`}
             </div>`).join('');
         el.classList.add('selected');
-        bindCardEvents(poke);
+        bindCardEvents(poke, sourceType);
       });
     });
   }
@@ -1083,7 +1162,7 @@ const PartyStorage = (() => {
     const poke = createPoke(dexEntry);
     state.storage.push(poke);
     save();
-    renderStorage(document.getElementById('storage-search')?.value || '');
+    renderPC();
   }
 
   async function openAddPicker() {
@@ -1181,6 +1260,95 @@ const PartyStorage = (() => {
     });
   }
 
+  // ── Storage picker (used to fill empty party slots) ─
+  async function openStoragePicker(slotIndex) {
+    const overlay = document.getElementById('pokedex-card-overlay');
+    const card    = document.getElementById('pokedex-card');
+    if (!overlay || !card) return;
+
+    card.style.transformOrigin = 'center center';
+    card.innerHTML = `
+      <button class="card-close-btn" id="card-close-btn">✕</button>
+      <div class="section-label" style="margin-bottom:12px;">Pick from PC Storage</div>
+      <input type="text" id="storage-picker-search" placeholder="Search PC storage..."
+             class="move-search-input" style="margin-bottom:10px;">
+      <div class="move-list" id="storage-picker-list" style="max-height:360px;"></div>
+    `;
+
+    overlay.classList.remove('hidden');
+    card.classList.remove('pop-in');
+    card.offsetHeight;
+    card.classList.add('pop-in');
+
+    document.getElementById('card-close-btn')?.addEventListener('click', () => {
+      overlay.classList.add('hidden');
+    });
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) overlay.classList.add('hidden');
+    });
+
+    renderStoragePickerList(slotIndex, '');
+    document.getElementById('storage-picker-search')?.addEventListener('input', (e) => {
+      renderStoragePickerList(slotIndex, e.target.value);
+    });
+  }
+
+  function renderStoragePickerList(slotIndex, filter) {
+    const list = document.getElementById('storage-picker-list');
+    if (!list) return;
+    const f = (filter || '').toLowerCase();
+    const filtered = state.storage.filter(p => p && (
+      !f ||
+      (p.nickname || '').toLowerCase().includes(f) ||
+      p.name.toLowerCase().includes(f) ||
+      String(p.dexId).includes(f)
+    ));
+
+    if (!filtered.length) {
+      list.innerHTML = '<div style="color:#555;padding:8px;">No Pokémon in PC storage.</div>';
+      return;
+    }
+
+    list.innerHTML = filtered.map(p => `
+      <div class="move-item picker-row" data-uid="${p.uid}">
+        <div style="display:flex;align-items:center;gap:8px;flex:1;">
+          <img src="${spriteUrl(p.dexId)}"
+               onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.dexId}.png'"
+               style="width:32px;height:32px;image-rendering:pixelated;" alt="${p.name}">
+          <span class="move-item-name">#${String(p.dexId).padStart(4,'0')} ${p.nickname || p.name}
+            <span style="color:#666;font-size:0.7rem;margin-left:4px;">LVL ${p.level}</span>
+          </span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          ${p.types.map(t => typeIconHTML(t)).join('')}
+        </div>
+      </div>
+    `).join('');
+
+    list.querySelectorAll('.picker-row').forEach(row => {
+      row.addEventListener('click', () => {
+        const uid = row.dataset.uid;
+        const idx = state.storage.findIndex(p => p && p.uid === uid);
+        if (idx === -1) return;
+        const poke = state.storage.splice(idx, 1)[0];
+        const displaced = state.party[slotIndex];
+        state.party[slotIndex] = poke;
+        if (displaced) state.storage.push(displaced);
+        save();
+        renderPC();
+        document.getElementById('pokedex-card-overlay')?.classList.add('hidden');
+      });
+    });
+  }
+
+  // ── Owned dex IDs (for Pokédex tile indicator) ─────
+  function getOwnedDexIds() {
+    const ids = new Set();
+    state.party.forEach(p => { if (p) ids.add(p.dexId); });
+    state.storage.forEach(p => { if (p) ids.add(p.dexId); });
+    return ids;
+  }
+
   // ── Init ───────────────────────────────────────────
   async function init() {
     load();
@@ -1197,25 +1365,49 @@ const PartyStorage = (() => {
       allPokemon = await res.json();
     } catch(e) { console.warn('PokeNav: could not load pokemon_gen1.json', e); }
 
-    renderParty();
-    renderStorage();
+    renderPC();
     bindStorageGridDrop();
 
-    // Search
-    document.getElementById('storage-search')?.addEventListener('input', (e) => {
-      renderStorage(e.target.value);
+    // Search input
+    document.getElementById('pc-search')?.addEventListener('input', (e) => {
+      pcSearchQuery = e.target.value.trim().toLowerCase();
+      renderPC();
     });
 
-    // Type filter pills
-    document.getElementById('storage-filter-pills')?.addEventListener('click', (e) => {
-      const pill = e.target.closest('.pill');
-      if (!pill) return;
-      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      const f = pill.dataset.filter === 'all' ? '' : pill.dataset.filter;
-      document.getElementById('storage-search').value = f;
-      renderStorage(f);
+    // Element panel toggle
+    document.getElementById('pc-element-btn')?.addEventListener('click', () => {
+      const panel = document.getElementById('pc-element-panel');
+      const btn   = document.getElementById('pc-element-btn');
+      panel?.classList.toggle('hidden');
+      btn?.classList.toggle('active');
     });
+
+    // Element items — render PNG icons + bind toggles
+    document.querySelectorAll('#pc-element-panel .element-item').forEach(item => {
+      const type = item.dataset.type;
+      if (type) item.innerHTML = typeIconHTML(type);
+      item.addEventListener('click', () => {
+        if (!type) return;
+        if (pcSelectedTypes.has(type)) {
+          pcSelectedTypes.delete(type);
+          item.classList.remove('active');
+        } else {
+          pcSelectedTypes.add(type);
+          item.classList.add('active');
+        }
+        updatePcFilterCount();
+        renderPC();
+      });
+    });
+
+    document.getElementById('pc-clear-types')?.addEventListener('click', () => {
+      pcSelectedTypes.clear();
+      document.querySelectorAll('#pc-element-panel .element-item.active').forEach(el => el.classList.remove('active'));
+      updatePcFilterCount();
+      renderPC();
+    });
+
+    updatePcFilterCount();
 
     document.getElementById('add-poke-btn')?.addEventListener('click', () => {
       openAddPicker();
@@ -1225,7 +1417,16 @@ const PartyStorage = (() => {
     window.pokeNavAddToStorage = addToStorage;
   }
 
-  return { init };
+  function updatePcFilterCount() {
+    const el = document.getElementById('pc-filter-count');
+    if (el) el.textContent = `${pcSelectedTypes.size} active`;
+  }
+
+  // Bootstrap: load saved state immediately so owned indicators
+  // render correctly on Pokédex even before the Party tab is opened.
+  load();
+
+  return { init, getOwnedDexIds };
 })();
 
 // Hook into existing panel-switch logic — init when Party panel is shown

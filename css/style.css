@@ -104,9 +104,10 @@ body {
 .nav-tab {
   background: none;
   border: none;
+  border-right: 1px solid #2a2a2a;
   border-bottom: 3px solid transparent;
   color: #555;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 0 16px;
@@ -115,14 +116,20 @@ body {
   font-family: inherit;
   display: flex;
   align-items: center;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.nav-tab:last-child {
+  border-right: none;
 }
 
 .nav-tab:hover {
-  color: #ccc;
+  background: #161616;
+  color: #888;
 }
 
 .nav-tab.active {
+  background: #1a0000;
   color: #ff3333;
   border-bottom: 3px solid #ff3333;
 }
@@ -133,6 +140,7 @@ body {
 }
 
 .nav-tab--placeholder:hover {
+  background: none;
   color: #2a2a2a;
 }
 
@@ -855,59 +863,73 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--accent-red); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #ff6666; }
 
-/* ── PARTY / STORAGE LAYOUT ─────────────────────────── */
-.party-storage-layout {
-  display: flex;
-  gap: 16px;
-  height: 100%;
-  overflow: hidden;
-}
-
-.party-column {
-  width: 30%;
-  min-width: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border-right: 1px solid #333;
-  padding-right: 16px;
-}
-
-.storage-column {
+/* ── PC TAB LAYOUT ───────────────────────────────────── */
+.pc-content {
   flex: 1;
+  min-width: 0;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  overflow: hidden;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
 }
 
-.panel-title {
-  font-size: 0.85rem;
+.pc-section-header {
+  font-family: 'Rajdhani', 'Segoe UI', Tahoma, sans-serif;
+  font-size: 14px;
+  color: #ff3333;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent, #e63946);
-  margin: 0 0 8px 0;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
 }
 
-/* ── PARTY SLOTS ─────────────────────────────────────── */
-.party-slots {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  overflow-y: auto;
+/* Left column: sticky party */
+.pc-party-column {
+  width: 320px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
+}
+
+.pc-party-column .party-section {
+  background: #1a001a;
+  border: 1px solid #ff3333;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.pc-party-column .party-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.pc-party-column .poke-tile {
+  background: #1a001a;
+}
+
+/* Right column: scrolling storage */
+.pc-storage-column {
   flex: 1;
+  min-width: 0;
 }
 
+.pc-storage-column .storage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+/* Empty party drop slot */
 .party-slot {
   border: 1px dashed #444;
   border-radius: 8px;
-  min-height: 72px;
+  min-height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
-  position: relative;
 }
 
 .party-slot.empty {
@@ -916,64 +938,30 @@ body {
 }
 
 .party-slot.drag-over {
-  border-color: var(--accent, #e63946);
-  background: rgba(230, 57, 70, 0.08);
+  border-color: #ff3333;
+  background: rgba(255, 51, 51, 0.08);
 }
 
-/* ── STORAGE SEARCH ──────────────────────────────────── */
-.storage-search-bar {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-#storage-search {
-  width: 100%;
-  padding: 8px 12px;
+/* PC search input mirrors Pokédex search */
+#pc-search {
   background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 6px;
-  color: #eee;
-  font-size: 0.9rem;
-  outline: none;
-  box-sizing: border-box;
-}
-
-#storage-search:focus {
-  border-color: var(--accent, #e63946);
-}
-
-.storage-filter-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.pill {
-  padding: 3px 10px;
-  border-radius: 999px;
-  border: 1px solid #444;
-  background: transparent;
-  color: #aaa;
-  font-size: 0.75rem;
-  cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-}
-
-.pill.active, .pill:hover {
-  border-color: var(--accent, #e63946);
-  color: #fff;
-  background: rgba(230, 57, 70, 0.15);
-}
-
-/* ── STORAGE GRID ────────────────────────────────────── */
-.storage-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 10px;
-  overflow-y: auto;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #ccc;
+  font-size: 14px;
+  padding: 10px 14px;
   flex: 1;
-  padding-right: 4px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+#pc-search:focus {
+  border-color: #ff3333;
+}
+
+#pc-search::placeholder {
+  color: #555;
 }
 
 /* ── POKEMON TILES ───────────────────────────────────── */
@@ -981,7 +969,8 @@ body {
   background: #1a1a1a;
   border: 1px solid #2e2e2e;
   border-radius: 10px;
-  padding: 10px 8px;
+  padding: 16px 12px;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -993,9 +982,9 @@ body {
 }
 
 .poke-tile:hover {
-  border-color: var(--accent, #e63946);
+  border-color: #ff3333;
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(230, 57, 70, 0.2);
+  box-shadow: 0 4px 16px rgba(255, 51, 51, 0.2);
 }
 
 .poke-tile.dragging {
@@ -1004,27 +993,46 @@ body {
 }
 
 .poke-tile img.tile-sprite {
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
   image-rendering: pixelated;
 }
 
-.tile-name {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #eee;
-  text-align: center;
+.tile-number-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin-bottom: 4px;
 }
 
 .tile-number {
-  font-size: 0.7rem;
-  color: #666;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.tile-number-sep {
+  color: #888;
+}
+
+.tile-level {
+  color: #ff3333;
+  letter-spacing: 1px;
+}
+
+.tile-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ccc;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .tile-types {
   display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
+  gap: 6px;
   justify-content: center;
 }
 
@@ -1333,23 +1341,8 @@ select.card-field-input {
 
 /* ── MOBILE RESPONSIVE ───────────────────────────────── */
 @media (max-width: 600px) {
-  .party-storage-layout {
-    flex-direction: column;
-  }
-  .party-column {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #333;
-    padding-right: 0;
-    padding-bottom: 16px;
-  }
-  .party-slots {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .party-slot {
-    width: calc(33% - 6px);
-    min-height: 90px;
+  .party-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1440,10 +1433,10 @@ select.card-field-input {
 #pokedex-search {
   background: #1a1a1a;
   border: 1px solid #2a2a2a;
-  border-radius: 6px;
+  border-radius: 8px;
   color: #ccc;
-  font-size: 11px;
-  padding: 7px 10px;
+  font-size: 14px;
+  padding: 10px 14px;
   flex: 1;
   outline: none;
   font-family: inherit;
@@ -1478,42 +1471,6 @@ select.card-field-input {
   color: #fff;
 }
 
-.pokedex-active-filters {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 12px;
-}
-
-.pokedex-active-filters.hidden {
-  display: none;
-}
-
-.filter-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: #2a0000;
-  border: 1px solid #ff3333;
-  border-radius: 4px;
-  color: #ff6666;
-  font-size: 9px;
-  padding: 3px 7px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.filter-tag-remove {
-  background: transparent;
-  border: none;
-  color: #ff3333;
-  cursor: pointer;
-  font-size: 9px;
-  padding: 0;
-  line-height: 1;
-  font-family: inherit;
-}
-
 .pokedex-main {
   display: flex;
   align-items: flex-start;
@@ -1522,7 +1479,7 @@ select.card-field-input {
 
 .pokedex-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
   flex: 1;
   min-width: 0;
@@ -1532,13 +1489,15 @@ select.card-field-input {
   background: #1a1a1a;
   border: 1px solid #2a2a2a;
   border-radius: 8px;
-  padding: 12px 8px;
+  padding: 16px 12px;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
   cursor: pointer;
   transition: border-color 0.15s ease, transform 0.15s ease;
+  position: relative;
 }
 
 .pokedex-tile:hover {
@@ -1547,20 +1506,20 @@ select.card-field-input {
 }
 
 .pokedex-tile-sprite {
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
   image-rendering: pixelated;
 }
 
 .pokedex-tile-number {
   color: #444;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 1px;
 }
 
 .pokedex-tile-name {
   color: #ccc;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1573,8 +1532,8 @@ select.card-field-input {
 }
 
 .pokedex-tile-type-icon {
-  width: 22px;
-  height: 22px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
@@ -1615,7 +1574,7 @@ select.card-field-input {
 .element-icon-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 6px;
 }
 
 .element-item {
@@ -1794,5 +1753,115 @@ select.card-field-input {
 
 .settings-btn--danger:hover {
   background: #aa1a1a;
+  color: #fff;
+}
+
+/* ── PARTY TILE QUICK DEPOSIT BUTTON ──────────────────── */
+.tile-deposit-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: transparent;
+  border: 1px solid #00aaff;
+  color: #00aaff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 2;
+}
+
+.tile-deposit-btn:hover {
+  background: #00aaff;
+  color: #000;
+}
+
+.tile-deposit-warning {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.85);
+  color: #ff3333;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ── EMPTY PARTY SLOT QUICK FILL BUTTON ───────────────── */
+.slot-fill-btn {
+  font-size: 24px;
+  color: #444;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.slot-fill-btn:hover {
+  color: #ff3333;
+}
+
+/* ── POKÉDEX TILE OWNED INDICATOR (POKÉBALL) ──────────── */
+.tile-owned-ball {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid #333;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tile-owned-ball::before {
+  content: '';
+  display: block;
+  height: 50%;
+  background: #ff3333;
+  box-shadow: inset 0 -1px 0 0 #333, inset 0 1px 0 0 #333;
+}
+
+.tile-owned-ball::after {
+  content: '';
+  display: block;
+  height: 50%;
+  background: #111;
+}
+
+/* ── STORAGE CARD RELEASE BUTTON ──────────────────────── */
+.release-btn {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #ff6600;
+  color: #ff6600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.release-btn:hover {
+  background: #ff6600;
+  color: #000;
+}
+
+.release-btn.release-btn--confirm {
+  border-color: #ff3333;
+  color: #ff3333;
+}
+
+.release-btn.release-btn--confirm:hover {
+  background: #ff3333;
   color: #fff;
 }
