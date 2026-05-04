@@ -179,7 +179,16 @@
         </div>
 
         <div class="stadium-view hidden" id="stadium-moveset-view">
-          <div class="stadium-empty">Coming soon — pick a Pokémon and see its top recommended moves.</div>
+          <div class="moveset-grid">
+            <section class="moveset-picker">
+              <div class="stadium-section-header">PICK A POKÉMON</div>
+              <input type="text" id="moveset-search" class="moveset-search-input" placeholder="Search by name or #..." autocomplete="off">
+              <div class="moveset-pokemon-list" id="moveset-pokemon-list"></div>
+            </section>
+            <section class="moveset-detail" id="moveset-detail">
+              <div class="stadium-empty">Pick a Pokémon to see its top recommended moves.</div>
+            </section>
+          </div>
         </div>
       </div>
 
