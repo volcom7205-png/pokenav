@@ -237,6 +237,15 @@
   color: var(--text-primary);
   text-transform: capitalize;
 }
+.biome-pill[data-biome] {
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s, transform 0.1s;
+}
+.biome-pill[data-biome]:hover {
+  background: var(--nav-hover, rgba(255,51,51,0.08));
+  border-color: var(--accent-red);
+  transform: translateY(-1px);
+}
 
 /* Spawn notes */
 .spawn-notes {

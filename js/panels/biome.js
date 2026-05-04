@@ -78,17 +78,19 @@ const BiomeSearch = (() => {
 
   function wireModeToggle() {
     document.querySelectorAll('.biome-mode-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        mode = btn.dataset.mode;
-        document.querySelectorAll('.biome-mode-btn').forEach(b => {
-          b.classList.toggle('active', b === btn);
-        });
-        document.getElementById('biome-pokemon-view').classList.toggle('hidden', mode !== 'pokemon');
-        document.getElementById('biome-biome-view').classList.toggle('hidden', mode !== 'biome');
-        document.getElementById('biome-wanted-view').classList.toggle('hidden', mode !== 'wanted');
-        renderMode();
-      });
+      btn.addEventListener('click', () => setMode(btn.dataset.mode));
     });
+  }
+
+  function setMode(m) {
+    mode = m;
+    document.querySelectorAll('.biome-mode-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.mode === m);
+    });
+    document.getElementById('biome-pokemon-view').classList.toggle('hidden', m !== 'pokemon');
+    document.getElementById('biome-biome-view').classList.toggle('hidden', m !== 'biome');
+    document.getElementById('biome-wanted-view').classList.toggle('hidden', m !== 'wanted');
+    renderMode();
   }
 
   function renderMode() {
@@ -159,6 +161,13 @@ const BiomeSearch = (() => {
         const id = Number(btn.dataset.id);
         toggleWanted(id);
         renderPokemonView();
+      });
+    });
+
+    root.querySelectorAll('.biome-pill[data-biome]').forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openBiome(pill.dataset.biome);
       });
     });
   }
@@ -471,7 +480,7 @@ const BiomeSearch = (() => {
             ${biomes.length
               ? biomes.slice(0, 8).map(b => {
                   const color = PokeNavBiomes.getGroupColor(b);
-                  return `<span class="biome-wanted-biome" data-group="${PokeNavBiomes.getGroup(b)}" style="border-left-color:${color}">${prettyBiome(b)}</span>`;
+                  return `<span class="biome-wanted-biome" data-biome="${b}" data-group="${PokeNavBiomes.getGroup(b)}" role="button" tabindex="0" style="border-left-color:${color}">${prettyBiome(b)}</span>`;
                 }).join('')
               : '<span class="biome-wanted-biome biome-wanted-biome--none">No spawn data</span>'}
             ${biomes.length > 8 ? `<span class="biome-wanted-more">+${biomes.length - 8} more</span>` : ''}
@@ -486,9 +495,17 @@ const BiomeSearch = (() => {
         toggleWanted(Number(btn.dataset.id));
       });
     });
+    root.querySelectorAll('.biome-wanted-biome[data-biome]').forEach(chip => {
+      chip.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openBiome(chip.dataset.biome);
+      });
+    });
+
     root.querySelectorAll('.biome-wanted-tile').forEach(tile => {
       tile.addEventListener('click', (e) => {
         if (e.target.closest('.biome-wanted-remove')) return;
+        if (e.target.closest('.biome-wanted-biome[data-biome]')) return;
         const id = Number(tile.dataset.id);
         if (typeof selectPokemon === 'function') selectPokemon(id);
       });
@@ -497,5 +514,29 @@ const BiomeSearch = (() => {
 
   // Public surface — Pokédex panel calls these to add the "+ Wanted"
   // button on its detail modal.
-  return { init, isWanted, toggleWanted };
+  async function openBiome(tag) {
+    await init();
+    const group = PokeNavBiomes.getGroup(tag);
+    const dim = PokeNavBiomes.getDimension(tag);
+    pickerOpen.add(`dim:${dim}`);
+    pickerOpen.add(`group:${group}`);
+    biomeSelected = tag;
+    biomeFilter = '';
+    const search = document.getElementById('biome-biome-search');
+    if (search) search.value = '';
+    setMode('biome');
+    setTimeout(() => {
+      const chip = document.querySelector(`.biome-chip[data-biome="${tag}"]`);
+      if (chip) chip.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 60);
+  }
+
+  return { init, isWanted, toggleWanted, openBiome };
 })();
+
+function goToBiome(tag) {
+  const overlay = document.getElementById('pokedex-card-overlay');
+  if (overlay) overlay.classList.add('hidden');
+  switchPanel('biome', false);
+  BiomeSearch.openBiome(tag);
+}

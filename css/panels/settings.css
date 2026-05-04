@@ -136,6 +136,68 @@
   color: #fff;
 }
 
+/* ── Biome mod packs ──────────────────────────────────── */
+.biome-mod-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.biome-mod-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.1s, background 0.1s;
+}
+
+.biome-mod-row:hover {
+  border-color: var(--accent-red);
+}
+
+.biome-mod-row.is-locked {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.biome-mod-row.is-locked:hover {
+  border-color: var(--border-color);
+}
+
+.biome-mod-row input[type=checkbox] {
+  width: 16px;
+  height: 16px;
+  accent-color: #ff3333;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.biome-mod-row.is-locked input[type=checkbox] {
+  cursor: default;
+}
+
+.biome-mod-name {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.biome-mod-locked {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  padding: 2px 8px;
+}
+
 /* ── Reset confirmation modal ─────────────────────────── */
 .reset-modal-card {
   border-color: #5a1a1a;

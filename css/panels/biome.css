@@ -516,6 +516,14 @@
   border-radius: 2px 4px 4px 2px;
   color: var(--text-primary);
 }
+.biome-wanted-biome[data-biome] {
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s;
+}
+.biome-wanted-biome[data-biome]:hover {
+  background: rgba(255,51,51,0.18);
+  border-color: var(--accent-red);
+}
 .biome-wanted-biome--none {
   font-style: italic;
   color: var(--text-muted);

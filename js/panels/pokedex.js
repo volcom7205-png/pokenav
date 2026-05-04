@@ -238,6 +238,13 @@ function renderPokedexCard(pokemon, spawnIdx) {
   document.getElementById('card-close-btn')?.addEventListener('click', () => {
     document.getElementById('pokedex-card-overlay')?.classList.add('hidden');
   });
+
+  card.querySelectorAll('.biome-pill[data-biome]').forEach(pill => {
+    pill.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goToBiome(pill.dataset.biome);
+    });
+  });
 }
 
 function renderSpawnContent(spawn) {
@@ -285,7 +292,7 @@ function renderSpawnContent(spawn) {
       <div class="biome-list">
         ${biomes.map(b => {
           const color = PokeNavBiomes.getGroupColor(b);
-          return `<span class="biome-pill" data-group="${PokeNavBiomes.getGroup(b)}" style="border-left-color:${color}">${PokeNavBiomes.prettyBiome(b)}</span>`;
+          return `<span class="biome-pill" data-biome="${b}" data-group="${PokeNavBiomes.getGroup(b)}" role="button" tabindex="0" style="border-left-color:${color}">${PokeNavBiomes.prettyBiome(b)}</span>`;
         }).join('')}
       </div>` : ''}
 

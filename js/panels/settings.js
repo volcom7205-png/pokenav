@@ -1,10 +1,38 @@
-/* PokeNav — Settings panel: trainer name editor + reset confirmation */
+/* PokeNav — Settings panel: trainer name editor + biome mod packs + reset confirmation */
+
+const BIOME_MOD_PACKS = [
+  { key: 'vanilla',              label: 'Vanilla Minecraft',          locked: true  },
+  { key: 'cobblemon',            label: 'Cobblemon',                  locked: true  },
+  { key: 'terralith',            label: 'Terralith',                  locked: false },
+  { key: 'wythers',              label: "Wythers' Overhauled Overworld", locked: false },
+  { key: 'oh_the_biomes_youll_go', label: "Oh The Biomes You'll Go",  locked: false },
+  { key: 'betternether',         label: 'BetterNether',               locked: false },
+  { key: 'incendium',            label: 'Incendium',                  locked: false },
+  { key: 'aether',               label: 'Aether',                     locked: false },
+  { key: 'bumblezone',           label: 'Bumblezone',                 locked: false },
+];
 
 function buildSettingsPanel() {
   const panel = document.getElementById('panel-settings');
   if (!panel) return;
 
   const name = getTrainerName();
+  const enabled = (typeof PokeNavBiomes !== 'undefined')
+    ? PokeNavBiomes.getEnabledMods()
+    : new Set(['vanilla','cobblemon','terralith']);
+
+  const modRows = BIOME_MOD_PACKS.map(m => {
+    const checked = enabled.has(m.key) ? 'checked' : '';
+    const locked = m.locked ? 'disabled' : '';
+    const lockTag = m.locked ? '<span class="biome-mod-locked">locked</span>' : '';
+    return `
+      <label class="biome-mod-row ${m.locked ? 'is-locked' : ''}">
+        <input type="checkbox" data-mod="${m.key}" ${checked} ${locked} />
+        <span class="biome-mod-name">${m.label}</span>
+        ${lockTag}
+      </label>
+    `;
+  }).join('');
 
   panel.innerHTML = `
     <h2 class="settings-heading">TRAINER SETTINGS</h2>
@@ -18,6 +46,12 @@ function buildSettingsPanel() {
                placeholder="Trainer name..." autocomplete="off" />
         <button id="settings-save-btn" class="settings-btn settings-btn--primary" type="button">SAVE</button>
       </div>
+    </div>
+
+    <div class="settings-card">
+      <div class="settings-label">🌍 Biome Mod Packs</div>
+      <p class="settings-help">Choose which mod packs' biomes appear when you expand a biome group in Biome Search. Vanilla + Cobblemon are always on.</p>
+      <div class="biome-mod-list">${modRows}</div>
     </div>
 
     <div class="settings-divider"></div>
@@ -50,6 +84,16 @@ function buildSettingsPanel() {
   });
 
   document.getElementById('settings-reset-btn').addEventListener('click', showResetModal);
+
+  panel.querySelectorAll('.biome-mod-row input[type=checkbox]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      if (typeof PokeNavBiomes === 'undefined') return;
+      const next = new Set(PokeNavBiomes.getEnabledMods());
+      const key = cb.dataset.mod;
+      if (cb.checked) next.add(key); else next.delete(key);
+      PokeNavBiomes.setEnabledMods(next);
+    });
+  });
 }
 
 function showResetModal() {
