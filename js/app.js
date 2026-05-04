@@ -153,18 +153,18 @@ function buildSettingsPanel() {
   panel.innerHTML = `
     <h2 class="settings-heading">TRAINER SETTINGS</h2>
 
+    <div class="settings-trainer-display" id="settings-current-name"></div>
+
     <div class="settings-card">
-      <div class="settings-row">
-        <span class="settings-label">Current Trainer</span>
-        <span class="settings-value" id="settings-current-name"></span>
-      </div>
+      <label class="settings-label" for="settings-trainer-input">Edit Trainer Name</label>
       <div class="settings-row settings-row--input">
-        <label class="settings-label" for="settings-trainer-input">Edit Name</label>
         <input id="settings-trainer-input" type="text" maxlength="20"
                placeholder="Trainer name..." autocomplete="off" />
-        <button id="settings-save-btn" class="settings-btn" type="button">SAVE</button>
+        <button id="settings-save-btn" class="settings-btn settings-btn--primary" type="button">SAVE</button>
       </div>
     </div>
+
+    <div class="settings-divider"></div>
 
     <div class="settings-card settings-card--danger">
       <div class="settings-label settings-label--danger">Danger Zone</div>
@@ -174,7 +174,7 @@ function buildSettingsPanel() {
   `;
 
   // Seed values via textContent/value to avoid HTML injection in user input
-  document.getElementById('settings-current-name').textContent = name || '—';
+  document.getElementById('settings-current-name').textContent = name ? name.toUpperCase() : '—';
   document.getElementById('settings-trainer-input').value = name;
 
   document.getElementById('settings-save-btn').addEventListener('click', () => {
@@ -182,7 +182,7 @@ function buildSettingsPanel() {
     const v = (input.value || '').trim();
     if (!v) { input.focus(); return; }
     setTrainerName(v); // updates localStorage + nav display + PC tab label
-    document.getElementById('settings-current-name').textContent = v;
+    document.getElementById('settings-current-name').textContent = v.toUpperCase();
     flashSettingsSaved();
   });
 
@@ -193,12 +193,26 @@ function buildSettingsPanel() {
     }
   });
 
-  document.getElementById('settings-reset-btn').addEventListener('click', () => {
-    const ok = confirm('This will erase your trainer name, party, storage, and all PokeNav data. Are you sure?');
-    if (!ok) return;
+  document.getElementById('settings-reset-btn').addEventListener('click', showResetModal);
+}
+
+function showResetModal() {
+  const modal = document.getElementById('reset-modal');
+  if (!modal) return;
+  modal.classList.remove('hidden');
+
+  const cancel = document.getElementById('reset-modal-cancel');
+  const confirm = document.getElementById('reset-modal-confirm');
+  const close = () => modal.classList.add('hidden');
+
+  cancel.onclick = close;
+  confirm.onclick = () => {
     localStorage.clear();
     location.reload();
-  });
+  };
+
+  // Close on backdrop click
+  modal.onclick = (e) => { if (e.target === modal) close(); };
 }
 
 function flashSettingsSaved() {

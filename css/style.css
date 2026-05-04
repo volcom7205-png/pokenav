@@ -29,7 +29,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   height: 100vh;
@@ -265,6 +265,17 @@ body {
   padding: 24px 32px;
   overflow-y: auto;
   background-color: var(--bg-primary);
+  background-image:
+    /* hairline cracks across the floor */
+    url('../assets/textures/cracks.svg'),
+    /* fine diagonal hatch — like brushed metal */
+    repeating-linear-gradient(135deg, transparent 0 3px, rgba(0, 0, 0, 0.08) 3px 4px),
+    /* horizontal scanlines */
+    repeating-linear-gradient(0deg, transparent 0 39px, rgba(255, 255, 255, 0.018) 39px 40px),
+    /* rare vertical seam */
+    repeating-linear-gradient(90deg, transparent 0 119px, rgba(255, 255, 255, 0.012) 119px 120px);
+  background-size: 480px 480px, auto, auto, auto;
+  background-blend-mode: soft-light, normal, normal, normal;
   width: 100%;
 }
 
@@ -1662,17 +1673,27 @@ select.card-field-input {
    ===================== */
 .settings-heading {
   color: #ff3333;
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
+}
+
+.settings-trainer-display {
+  color: #eee;
+  font-size: 36px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 28px;
+  line-height: 1;
 }
 
 .settings-card {
   background: #1a1a1a;
   border: 1px solid #2a2a2a;
   border-radius: 8px;
-  padding: 16px 18px;
+  padding: 18px 20px;
   margin-bottom: 14px;
   max-width: 560px;
   display: flex;
@@ -1684,6 +1705,13 @@ select.card-field-input {
   border-color: #5a1a1a;
 }
 
+.settings-divider {
+  max-width: 560px;
+  height: 1px;
+  background: #2a2a2a;
+  margin: 28px 0 20px;
+}
+
 .settings-row {
   display: flex;
   align-items: center;
@@ -1693,57 +1721,54 @@ select.card-field-input {
 
 .settings-label {
   color: #888;
-  font-size: 10px;
-  letter-spacing: 1px;
+  font-size: 11px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  min-width: 110px;
 }
 
 .settings-label--danger {
   color: #ff6666;
 }
 
-.settings-value {
-  color: #ccc;
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
 #settings-trainer-input {
   flex: 1;
-  background: #0d0d0d;
-  border: 1px solid #2a2a2a;
-  border-radius: 5px;
-  color: #ccc;
-  font-size: 12px;
-  padding: 7px 10px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
   outline: none;
   font-family: inherit;
-  transition: border-color 0.15s ease;
-  min-width: 160px;
+  transition: border-color 0.2s;
+  min-width: 200px;
 }
 
 #settings-trainer-input:focus {
-  border-color: #ff3333;
+  border-color: var(--accent-red);
+}
+
+#settings-trainer-input::placeholder {
+  color: var(--text-muted);
 }
 
 .settings-help {
-  color: #666;
-  font-size: 11px;
+  color: #888;
+  font-size: 12px;
   margin: 0;
   line-height: 1.5;
 }
 
 .settings-btn {
-  background: #1a0000;
+  background: transparent;
   border: 1px solid #ff3333;
-  border-radius: 5px;
+  border-radius: 4px;
   color: #ff3333;
-  font-size: 10px;
-  letter-spacing: 1.5px;
+  font-size: 12px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 7px 14px;
+  padding: 8px 20px;
+  min-height: 36px;
   cursor: pointer;
   font-family: inherit;
   transition: background-color 0.15s ease, color 0.15s ease;
@@ -1759,16 +1784,84 @@ select.card-field-input {
   cursor: default;
 }
 
+.settings-btn--primary {
+  background: #ff3333;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.settings-btn--primary:hover {
+  background: #ff5555;
+  color: #fff;
+}
+
 .settings-btn--danger {
-  border-color: #aa1a1a;
-  color: #ff6666;
+  border-color: #ff3333;
+  color: #ff3333;
   background: transparent;
   align-self: flex-start;
 }
 
 .settings-btn--danger:hover {
-  background: #aa1a1a;
+  background: #ff3333;
   color: #fff;
+}
+
+/* ── RESET CONFIRMATION MODAL ───────────────────────── */
+.reset-modal-card {
+  border-color: #5a1a1a;
+}
+
+.reset-modal-heading {
+  color: #ff3333;
+}
+
+.reset-modal-body {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 4px 0 18px;
+}
+
+.reset-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.reset-modal-cancel,
+.reset-modal-confirm {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  min-height: 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.reset-modal-cancel {
+  background: transparent;
+  border: 1px solid #444;
+  color: #aaa;
+}
+
+.reset-modal-cancel:hover {
+  border-color: #888;
+  color: #eee;
+}
+
+.reset-modal-confirm {
+  background: #ff3333;
+  border: 1px solid #ff3333;
+  color: #fff;
+}
+
+.reset-modal-confirm:hover {
+  background: #ff5555;
+  border-color: #ff5555;
 }
 
 /* ── PARTY TILE QUICK DEPOSIT BUTTON ──────────────────── */
@@ -1879,4 +1972,198 @@ select.card-field-input {
 .release-btn.release-btn--confirm:hover {
   background: #ff3333;
   color: #fff;
+}
+
+/* =====================
+   INDUSTRIAL THEME (Checkpoint 3)
+   ===================== */
+
+/* Roboto Mono on numeric/stat text */
+.pokedex-tile-number,
+.tile-number,
+.tile-number-sep,
+.tile-level,
+.poke-card-num,
+.card-number,
+.dropper-num-id,
+.dropper-amount,
+.spawn-stat-value,
+.settings-trainer-display {
+  font-family: 'Roboto Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+
+/* Inset 1px border on tiles, cards, panels */
+.pokedex-tile,
+.poke-tile,
+.dropper-item,
+.item-card,
+.settings-card,
+.pokedex-card {
+  box-shadow: inset 0 0 0 1px #2a2a2a;
+}
+
+/* Preserve hover glow on poke-tile while keeping inset border */
+.poke-tile:hover {
+  box-shadow: inset 0 0 0 1px #2a2a2a, 0 4px 16px rgba(255, 51, 51, 0.2);
+}
+
+/* Action button polish */
+.add-poke-btn,
+.element-clear-all,
+#pokedex-element-btn,
+#pc-element-btn,
+#trainer-modal-confirm {
+  border-radius: 4px;
+  letter-spacing: 2px;
+  min-height: 36px;
+}
+
+/* ── TEAM DICKIE BRANDING ──────────────────────────── */
+
+/* Stack emblem next to the existing POKENAV/TEAM DICKIE text */
+.nav-logo {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.nav-emblem {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: #ff3333;
+  color: #fff;
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* Faint D watermark behind pop-out card content */
+.pokedex-card {
+  overflow: hidden auto;
+}
+
+.pokedex-card::before {
+  content: 'D';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 180px;
+  color: rgba(255, 51, 51, 0.04);
+  z-index: 0;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Lift card content above the watermark */
+.pokedex-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =====================
+   INDUSTRIAL DETAIL PASS — fractures, rivets, bevels
+   Inspired by the type icons (chamfered metal, cracks, hex bolts)
+   ===================== */
+
+/* Chamfered bevel — top/left highlight, bottom/right shadow, plus outline.
+   Overrides the simple inset border from the base theme block. */
+.pokedex-tile,
+.poke-tile,
+.dropper-item,
+.item-card,
+.settings-card,
+.pokedex-card {
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.05),
+    inset -1px -1px 0 0 rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px #2a2a2a;
+}
+
+/* Rebuild .poke-tile hover so bevel + outer glow coexist */
+.poke-tile:hover {
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.06),
+    inset -1px -1px 0 0 rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px #2a2a2a,
+    0 4px 16px rgba(255, 51, 51, 0.2);
+}
+
+/* Corner rivets on tiles + cards. Four tiny dark dots with a faint
+   inner highlight, like recessed bolt heads. */
+.pokedex-tile,
+.poke-tile,
+.settings-card,
+.item-card {
+  background-image:
+    radial-gradient(circle at 7px 7px, rgba(255, 255, 255, 0.06) 0 1px, transparent 1.5px),
+    radial-gradient(circle at calc(100% - 7px) 7px, rgba(255, 255, 255, 0.06) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 7px calc(100% - 7px), rgba(255, 255, 255, 0.06) 0 1px, transparent 1.5px),
+    radial-gradient(circle at calc(100% - 7px) calc(100% - 7px), rgba(255, 255, 255, 0.06) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 7px 7px, #050505 0 2.5px, transparent 3px),
+    radial-gradient(circle at calc(100% - 7px) 7px, #050505 0 2.5px, transparent 3px),
+    radial-gradient(circle at 7px calc(100% - 7px), #050505 0 2.5px, transparent 3px),
+    radial-gradient(circle at calc(100% - 7px) calc(100% - 7px), #050505 0 2.5px, transparent 3px);
+  background-repeat: no-repeat;
+}
+
+/* Pop-out card: rivets + faint crack overlay + the existing D watermark */
+.pokedex-card {
+  background-color: #111;
+  background-image:
+    radial-gradient(circle at 10px 10px, rgba(255, 255, 255, 0.07) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at calc(100% - 10px) 10px, rgba(255, 255, 255, 0.07) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at 10px calc(100% - 10px), rgba(255, 255, 255, 0.07) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at calc(100% - 10px) calc(100% - 10px), rgba(255, 255, 255, 0.07) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at 10px 10px, #050505 0 3px, transparent 3.6px),
+    radial-gradient(circle at calc(100% - 10px) 10px, #050505 0 3px, transparent 3.6px),
+    radial-gradient(circle at 10px calc(100% - 10px), #050505 0 3px, transparent 3.6px),
+    radial-gradient(circle at calc(100% - 10px) calc(100% - 10px), #050505 0 3px, transparent 3.6px),
+    url('../assets/textures/cracks.svg');
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat,
+                     no-repeat, no-repeat, no-repeat, no-repeat,
+                     repeat;
+  background-size: auto, auto, auto, auto, auto, auto, auto, auto, 320px 320px;
+}
+
+/* Segmented industrial dividers */
+hr.poke-card-divider {
+  border: 0;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, #2a2a2a 0 6px, transparent 6px 12px);
+  margin: 14px 0;
+}
+
+.settings-divider {
+  background: repeating-linear-gradient(90deg, #2a2a2a 0 6px, transparent 6px 12px);
+}
+
+/* Nav: thin highlight strip above the red border, like a worn metal lip */
+.top-nav {
+  box-shadow:
+    inset 0 -3px 0 0 rgba(255, 51, 51, 0.12),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Stronger emboss on the nav emblem to match the icons' chamfered hex-bolt look */
+.nav-emblem {
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.35),
+    inset -1px -1px 0 0 rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 1px 0 0 rgba(255, 255, 255, 0.04);
 }

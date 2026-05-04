@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PokeNav</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -14,8 +17,11 @@
       <div class="nav-zone nav-zone--left">
         <button id="back-btn" class="back-btn">BACK</button>
         <div class="nav-logo">
-          <span class="nav-logo-title">POKENAV</span>
-          <span class="nav-logo-subtitle">TEAM DICKIE</span>
+          <div class="nav-emblem" aria-hidden="true">D</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-title">POKENAV</span>
+            <span class="nav-logo-subtitle">TEAM DICKIE</span>
+          </div>
         </div>
       </div>
 
@@ -173,6 +179,18 @@
       <label class="trainer-modal-label" for="trainer-modal-input">Enter your trainer name</label>
       <input type="text" id="trainer-modal-input" maxlength="20" autocomplete="off" placeholder="Trainer name..." />
       <button id="trainer-modal-confirm" type="button">CONFIRM</button>
+    </div>
+  </div>
+
+  <!-- RESET CONFIRMATION MODAL -->
+  <div id="reset-modal" class="trainer-modal-overlay hidden">
+    <div class="trainer-modal-card reset-modal-card">
+      <div class="trainer-modal-heading reset-modal-heading">RESET ALL DATA?</div>
+      <p class="reset-modal-body">This will erase your trainer name, party, storage, and every saved PokeNav setting. This cannot be undone.</p>
+      <div class="reset-modal-actions">
+        <button id="reset-modal-cancel" type="button" class="reset-modal-cancel">CANCEL</button>
+        <button id="reset-modal-confirm" type="button" class="reset-modal-confirm">CONFIRM RESET</button>
+      </div>
     </div>
   </div>
 
