@@ -2,6 +2,7 @@
 
 let pokedexSearchQuery = '';
 let pokedexSelectedTypes = new Set();
+let pokedexSelectedGen = 'all';
 
 function buildPokedexPanel() {
   const grid = document.getElementById('pokedex-grid');
@@ -42,6 +43,16 @@ function buildPokedexPanel() {
     clearPokedexTypeFilters();
   });
 
+  document.querySelectorAll('#pokedex-gen-row .gen-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      pokedexSelectedGen = chip.dataset.gen;
+      document.querySelectorAll('#pokedex-gen-row .gen-chip').forEach(c => {
+        c.classList.toggle('active', c === chip);
+      });
+      renderPokedexTiles();
+    });
+  });
+
   updatePokedexFilterCount();
 }
 
@@ -50,6 +61,9 @@ function renderPokedexTiles() {
   if (!grid) return;
 
   const filtered = allPokemon.filter(p => {
+    if (pokedexSelectedGen !== 'all' && PokeNavData.getGen(p.id) !== Number(pokedexSelectedGen)) {
+      return false;
+    }
     if (pokedexSearchQuery) {
       const q = pokedexSearchQuery;
       const matches =

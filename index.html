@@ -56,6 +56,18 @@
           <input type="text" id="pokedex-search" placeholder="Search by name or number..." autocomplete="off" />
           <button id="pokedex-element-btn" class="pokedex-element-btn" type="button">◆ ELEMENTS ◀</button>
         </div>
+        <div class="pokedex-gen-row" id="pokedex-gen-row">
+          <button class="gen-chip active" data-gen="all">ALL</button>
+          <button class="gen-chip" data-gen="1">GEN I</button>
+          <button class="gen-chip" data-gen="2">GEN II</button>
+          <button class="gen-chip" data-gen="3">GEN III</button>
+          <button class="gen-chip" data-gen="4">GEN IV</button>
+          <button class="gen-chip" data-gen="5">GEN V</button>
+          <button class="gen-chip" data-gen="6">GEN VI</button>
+          <button class="gen-chip" data-gen="7">GEN VII</button>
+          <button class="gen-chip" data-gen="8">GEN VIII</button>
+          <button class="gen-chip" data-gen="9">GEN IX</button>
+        </div>
 
         <div class="pokedex-main">
           <div id="pokedex-grid" class="pokedex-grid"></div>
@@ -260,6 +272,7 @@
   <!-- Core helpers (no dependencies) -->
   <script src="js/core/types.js"></script>
   <script src="js/core/utils.js"></script>
+  <script src="js/core/data.js"></script>
   <script src="js/core/nav.js"></script>
   <script src="js/core/trainer.js"></script>
 

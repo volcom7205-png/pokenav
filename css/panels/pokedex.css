@@ -339,6 +339,38 @@
   margin-bottom: 10px;
 }
 
+.pokedex-gen-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.gen-chip {
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  color: #888;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.gen-chip:hover {
+  color: #ddd;
+  border-color: #444;
+}
+
+.gen-chip.active {
+  background: rgba(230, 57, 70, 0.18);
+  border-color: #e63946;
+  color: #ffaaaa;
+}
+
 #pokedex-search,
 #typechart-search {
   background: #1a1a1a;
@@ -857,6 +889,27 @@ select.card-field-input {
   min-width: 28px;
   text-align: right;
 }
+
+.move-item-method {
+  font-size: 0.68rem;
+  letter-spacing: 0.5px;
+  color: #aaa;
+  background: #1d1d1d;
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 2px 6px;
+  min-width: 44px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.move-item-method--tm     { color: #6cb6ff; border-color: #2a4566; }
+.move-item-method--hm     { color: #c39bff; border-color: #4a3066; }
+.move-item-method--tutor  { color: #ffb86c; border-color: #66442a; }
+.move-item-method--egg    { color: #f5d76e; border-color: #66552a; }
+.move-item-method--special{ color: #ff7a9c; border-color: #66263d; }
+.move-item-method--legacy { color: #888;    border-color: #2a2a2a; font-style: italic; }
+.move-item-method--evolution { color: #7cffa6; border-color: #2a663d; }
 
 /* "+ Storage" button shown on Pokédex detail card */
 .add-storage-btn {

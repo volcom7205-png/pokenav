@@ -501,18 +501,55 @@ const PartyStorage = (() => {
     });
   }
 
+  // ── Method ordering for picker sort ────────────────
+  const METHOD_ORDER = { level: 0, evolution: 1, tm: 2, hm: 3, tutor: 4, egg: 5, special: 6, legacy: 7 };
+  const METHOD_LABEL = { level: 'Lv', evolution: 'Evo', tm: 'TM', hm: 'HM', tutor: 'Tutor', egg: 'Egg', special: 'Special', legacy: 'Legacy' };
+
+  function methodBadge(entry) {
+    if (entry.method === 'level') return `<span class="move-item-method">Lv ${entry.level}</span>`;
+    return `<span class="move-item-method move-item-method--${entry.method}">${METHOD_LABEL[entry.method] || entry.method}</span>`;
+  }
+
   // ── Render move picker list ────────────────────────
+  // Shows only the moves this Pokémon can learn, labeled with the
+  // learn method (Lv N / TM / Egg / Tutor / …) and sorted by level
+  // ascending, with non-level methods grouped after.
   function renderMoveList(poke, filter, sourceType) {
     const list = document.getElementById('move-list');
     if (!list) return;
+    const dex = PokeNavData.getPokemonById(poke.dexId);
+    const learnable = dex?.learnableMoves || [];
     const f = filter.toLowerCase();
-    const filtered = allMoves.filter(m => !f || m.name.toLowerCase().includes(f)).slice(0, 80);
-    list.innerHTML = filtered.map(m => `
-      <div class="move-item ${poke.moves.includes(m.name) ? 'selected' : ''}"
-           data-move="${m.name}">
-        ${typeIconHTML(m.type)}
-        <span class="move-item-name">${m.name}</span>
-        ${m.power ? `<span class="move-item-power">${m.power}</span>` : ''}
+
+    // Build a render row per learnable entry (a move can appear once
+    // per method, e.g. learned by level AND available as a TM).
+    const rows = learnable
+      .map(entry => ({
+        ...entry,
+        move: PokeNavData.getMoveByName(entry.name),
+      }))
+      .filter(r => r.move)
+      .filter(r => !f || r.name.toLowerCase().includes(f))
+      .sort((a, b) => {
+        const ao = METHOD_ORDER[a.method] ?? 99;
+        const bo = METHOD_ORDER[b.method] ?? 99;
+        if (ao !== bo) return ao - bo;
+        if (a.method === 'level') return (a.level || 0) - (b.level || 0);
+        return a.name.localeCompare(b.name);
+      });
+
+    if (!rows.length) {
+      list.innerHTML = `<div style="color:#666;padding:12px;text-align:center;">No learnable moves${dex ? '' : ' (data not loaded)'}.</div>`;
+      return;
+    }
+
+    list.innerHTML = rows.map(r => `
+      <div class="move-item ${poke.moves.includes(r.name) ? 'selected' : ''}"
+           data-move="${r.name}">
+        ${typeIconHTML(r.move.type)}
+        <span class="move-item-name">${r.name}</span>
+        ${methodBadge(r)}
+        ${r.move.power ? `<span class="move-item-power">${r.move.power}</span>` : ''}
       </div>
     `).join('');
 
@@ -572,10 +609,8 @@ const PartyStorage = (() => {
     });
 
     if (!allPokemon.length) {
-      try {
-        const res = await fetch('data/pokemon_gen1.json');
-        allPokemon = await res.json();
-      } catch(e) { console.warn('PokeNav: could not load pokemon_gen1.json', e); }
+      await PokeNavData.load();
+      allPokemon = PokeNavData.getPokemon();
     }
 
     renderPickerList('');
@@ -733,17 +768,11 @@ const PartyStorage = (() => {
   async function init() {
     load();
 
-    // Load moves data
     try {
-      const res = await fetch('data/moves.json');
-      allMoves = await res.json();
-    } catch(e) { console.warn('PokeNav: could not load moves.json', e); }
-
-    // Load pokemon data
-    try {
-      const res = await fetch('data/pokemon_gen1.json');
-      allPokemon = await res.json();
-    } catch(e) { console.warn('PokeNav: could not load pokemon_gen1.json', e); }
+      await PokeNavData.load();
+      allMoves = PokeNavData.getMoves();
+      allPokemon = PokeNavData.getPokemon();
+    } catch(e) { console.warn('PokeNav: data load failed', e); }
 
     renderPC();
     bindStorageGridDrop();

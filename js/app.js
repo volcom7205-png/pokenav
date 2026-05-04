@@ -4,13 +4,9 @@ let allPokemon = [];
 let selectedPokemon = null;
 
 function loadPokemonData() {
-  fetch('data/pokemon_gen1.json')
-    .then(res => {
-      if (!res.ok) throw new Error('Could not load pokemon_gen1.json');
-      return res.json();
-    })
-    .then(data => {
-      allPokemon = data;
+  PokeNavData.load()
+    .then(() => {
+      allPokemon = PokeNavData.getPokemon();
       buildItemIndex();
       buildPokedexPanel();
       buildItemSearchPanel();
@@ -20,7 +16,7 @@ function loadPokemonData() {
       console.error('Data load error:', err);
       document.getElementById('panel-pokedex').innerHTML =
         `<h2>📖 Pokédex</h2><p style="color:var(--accent-red)">
-        Error loading data: ${err.message}. Make sure pokemon_gen1.json is in the data/ folder.</p>`;
+        Error loading data: ${err.message}. Make sure data/pokemon_gen*.json files exist.</p>`;
     });
 }
 

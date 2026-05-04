@@ -4,25 +4,28 @@ const Stadium = (() => {
   const MAX_OPPONENTS = 6;
   let mode = 'planning';
   let opponents = [];        // up to 6 dex entries
-  let pokemonData = [];      // full Gen 1 data (incl. learnableMoves)
+  let pokemonData = [];      // full Pokémon data across all gens (incl. learnableMoves)
   let movesData = [];        // full move metadata (type/power/etc)
   let movesetSelectedId = null;
   let movesetSearch = '';
   let movesetCategory = 'all'; // 'all' | 'damage' | 'status'
 
   async function loadData() {
-    if (!pokemonData.length) {
-      try {
-        const res = await fetch('data/pokemon_gen1.json');
-        pokemonData = await res.json();
-      } catch (e) { console.warn('Stadium: pokemon_gen1.json failed', e); }
+    if (!pokemonData.length || !movesData.length) {
+      await PokeNavData.load();
+      pokemonData = PokeNavData.getPokemon();
+      movesData = PokeNavData.getMoves();
     }
-    if (!movesData.length) {
-      try {
-        const res = await fetch('data/moves.json');
-        movesData = await res.json();
-      } catch (e) { console.warn('Stadium: moves.json failed', e); }
-    }
+  }
+
+  // learnableMoves entries are { name, method, level? } objects.
+  // Helpers below extract just the move names for code paths that
+  // only care about "can this Pokémon learn move X?".
+  function learnableNames(dex) {
+    const moves = dex?.learnableMoves;
+    if (!moves) return [];
+    // Backward-compat: legacy data files may still hold strings.
+    return moves.map(m => typeof m === 'string' ? m : m.name);
   }
 
   // ── Mode toggle ──────────────────────────────────
@@ -234,7 +237,7 @@ const Stadium = (() => {
         // Per-opponent: find best damaging move (power × multiplier)
         const perOpp = opponents.map(opp => {
           let best = { score: 0, move: null, mult: 1 };
-          for (const moveName of (dex.learnableMoves || [])) {
+          for (const moveName of learnableNames(dex)) {
             const move = movesByName.get(moveName);
             if (!move || move.power <= 1) continue;
             const mult = effectiveness(move.type, opp.types);
@@ -385,7 +388,7 @@ const Stadium = (() => {
     if (!dex) return;
 
     const movesByName = new Map(movesData.map(m => [m.name, m]));
-    const learned = (dex.learnableMoves || [])
+    const learned = learnableNames(dex)
       .map(name => movesByName.get(name))
       .filter(Boolean);
 
