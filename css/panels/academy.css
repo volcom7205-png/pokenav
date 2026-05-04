@@ -1,0 +1,273 @@
+/* PokeNav — 🎓 Pokémon Academy: unified item / TM / drop hub. */
+
+#panel-academy {
+  padding: 18px 24px;
+  overflow-y: auto;
+}
+
+/* ── Toolbar (search) ──────────────────────────────── */
+
+.academy-toolbar {
+  margin-bottom: 10px;
+}
+#academy-search {
+  width: 100%;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-input);
+  color: var(--text-primary);
+  padding: 9px 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  border-radius: 4px;
+}
+
+/* ── Category chip row ─────────────────────────────── */
+
+.academy-cat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+.academy-cat-btn {
+  background: var(--bg-tile);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 7px 12px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.academy-cat-btn:hover { background: var(--nav-hover); }
+.academy-cat-btn.active {
+  background: var(--accent-red);
+  color: var(--btn-text);
+  border-color: var(--accent-red);
+}
+
+/* ── Body ──────────────────────────────────────────── */
+
+.academy-body {
+  min-height: 200px;
+}
+.academy-empty {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 30px 18px;
+  text-align: center;
+}
+
+/* ── Tile grid ─────────────────────────────────────── */
+
+.academy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+
+.academy-tile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: border-color 0.1s, transform 0.1s;
+}
+.academy-tile:hover {
+  border-color: var(--accent-red);
+  transform: translateY(-1px);
+}
+.academy-tile-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  image-rendering: pixelated;
+  object-fit: contain;
+}
+.academy-tile-icon--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1.1rem;
+}
+.academy-tile-info {
+  flex: 1;
+  min-width: 0;
+}
+.academy-tile-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.academy-tile-cat {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* ── Detail view ───────────────────────────────────── */
+
+.academy-detail {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 14px 18px;
+}
+
+.academy-back-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 5px 10px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-bottom: 12px;
+}
+.academy-back-btn:hover {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+}
+
+.academy-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+.academy-detail-icon {
+  width: 56px;
+  height: 56px;
+  image-rendering: pixelated;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+.academy-detail-icon--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1.6rem;
+}
+.academy-detail-titles { flex: 1; min-width: 0; }
+.academy-detail-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.academy-detail-cat {
+  font-size: 0.78rem;
+  color: var(--accent-red);
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.academy-detail-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.academy-detail-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.academy-section {
+  border-top: 1px dashed var(--border-color);
+  padding-top: 12px;
+}
+.academy-section:first-child { border-top: 0; padding-top: 0; }
+.academy-section-head {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.academy-section-placeholder {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 12px;
+  background: var(--bg-tile);
+  border: 1px dashed var(--border-color);
+  border-radius: 3px;
+}
+.academy-section-placeholder--standalone {
+  margin-top: 0;
+}
+
+/* ── TM detail ─────────────────────────────────────── */
+
+.academy-tm-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: 'Roboto Mono', monospace;
+  margin-bottom: 10px;
+}
+.academy-tm-learners {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+.academy-tm-learner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+.academy-tm-learner img {
+  width: 56px;
+  height: 56px;
+  image-rendering: pixelated;
+  flex: 0 0 auto;
+}
+.academy-tm-learner-info { flex: 1; min-width: 0; }
+.academy-tm-learner-num {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.academy-tm-learner-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.academy-tm-learner-types {
+  display: flex;
+  gap: 4px;
+  flex: 0 0 auto;
+}

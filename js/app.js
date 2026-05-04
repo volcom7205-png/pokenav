@@ -7,9 +7,7 @@ function loadPokemonData() {
   Promise.all([PokeNavData.load(), PokeNavBiomes.load()])
     .then(() => {
       allPokemon = PokeNavData.getPokemon();
-      buildItemIndex();
       buildPokedexPanel();
-      buildItemSearchPanel();
       buildTypeChartPanel();
     })
     .catch(err => {
@@ -25,12 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   loadPokemonData();
 
-  // Lazy-init Party / Stadium / Biome Search / Items panels when
+  // Lazy-init Party / Stadium / Biome Search / Academy panels when
   // their tabs are first opened.
   let partyInited = false;
   let stadiumInited = false;
   let biomeInited = false;
-  let itemsGuideInited = false;
+  let academyInited = false;
   document.querySelectorAll('.nav-tab[data-panel]').forEach(item => {
     item.addEventListener('click', () => {
       if (item.dataset.panel === 'party' && !partyInited) {
@@ -45,9 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
         biomeInited = true;
         BiomeSearch.init();
       }
-      if (item.dataset.panel === 'itemsguide' && !itemsGuideInited && typeof ItemsGuide !== 'undefined') {
-        itemsGuideInited = true;
-        ItemsGuide.init();
+      if (item.dataset.panel === 'academy' && !academyInited && typeof Academy !== 'undefined') {
+        academyInited = true;
+        Academy.init();
       }
     });
   });

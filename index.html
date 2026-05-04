@@ -9,11 +9,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/panels/pokedex.css" />
-  <link rel="stylesheet" href="css/panels/items.css" />
   <link rel="stylesheet" href="css/panels/party.css" />
   <link rel="stylesheet" href="css/panels/typechart.css" />
   <link rel="stylesheet" href="css/panels/stadium.css" />
-  <link rel="stylesheet" href="css/panels/itemsguide.css" />
+  <link rel="stylesheet" href="css/panels/academy.css" />
   <link rel="stylesheet" href="css/panels/biome.css" />
   <link rel="stylesheet" href="css/panels/settings.css" />
   <link rel="stylesheet" href="css/theme.css" />
@@ -37,10 +36,9 @@
       <div class="nav-zone nav-zone--center">
         <button class="nav-tab active" data-panel="pokedex">Pokédex</button>
         <button class="nav-tab" data-panel="party" id="tab-party">TRAINER'S PC</button>
-        <button class="nav-tab" data-panel="items">Poké Drops</button>
         <button class="nav-tab" data-panel="battle">Stadium</button>
         <button class="nav-tab" data-panel="types">Type Chart</button>
-        <button class="nav-tab" data-panel="itemsguide">Items</button>
+        <button class="nav-tab" data-panel="academy">🎓 ACADEMY</button>
         <button class="nav-tab" data-panel="biome">Biome Search</button>
         <button class="nav-tab" data-panel="settings">Settings</button>
       </div>
@@ -174,8 +172,6 @@
         </div>
       </div>
 
-      <div class="panel" id="panel-items"></div>
-
       <div class="panel" id="panel-battle">
         <div class="stadium-mode-row">
           <button class="stadium-mode-btn active" data-mode="planning" type="button">⚔️ BATTLE PLANNING</button>
@@ -244,7 +240,7 @@
         </div>
       </div>
 
-      <div class="panel" id="panel-itemsguide"></div>
+      <div class="panel" id="panel-academy"></div>
 
       <div class="panel" id="panel-biome">
         <div class="biome-mode-row">
@@ -326,11 +322,10 @@
   <!-- Panels (each one self-contained; depend on core helpers above) -->
   <script src="js/panels/settings.js"></script>
   <script src="js/panels/pokedex.js"></script>
-  <script src="js/panels/items.js"></script>
   <script src="js/panels/typechart.js"></script>
   <script src="js/panels/party.js"></script>
   <script src="js/panels/stadium.js"></script>
-  <script src="js/panels/itemsguide.js"></script>
+  <script src="js/panels/academy.js"></script>
   <script src="js/panels/biome.js"></script>
 
   <!-- Entry point: shared state, data load, init wiring -->
