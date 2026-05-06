@@ -1,14 +1,13 @@
-/* PokeNav — Stadium: battle planning + best moveset analysis */
+/* PokeNav — Stadium: battle planning. Pick up to 6 opponents, see aggregated
+   type weaknesses + recommended counters drawn from your party + storage.
+
+   Best-moveset analysis was folded into the Pokédex card's Moves section. */
 
 const Stadium = (() => {
   const MAX_OPPONENTS = 6;
-  let mode = 'planning';
   let opponents = [];        // up to 6 dex entries
   let pokemonData = [];      // full Pokémon data across all gens (incl. learnableMoves)
   let movesData = [];        // full move metadata (type/power/etc)
-  let movesetSelectedId = null;
-  let movesetSearch = '';
-  let movesetCategory = 'all'; // 'all' | 'damage' | 'status'
 
   async function loadData() {
     if (!pokemonData.length || !movesData.length) {
@@ -19,28 +18,10 @@ const Stadium = (() => {
   }
 
   // learnableMoves entries are { name, method, level? } objects.
-  // Helpers below extract just the move names for code paths that
-  // only care about "can this Pokémon learn move X?".
   function learnableNames(dex) {
     const moves = dex?.learnableMoves;
     if (!moves) return [];
-    // Backward-compat: legacy data files may still hold strings.
     return moves.map(m => typeof m === 'string' ? m : m.name);
-  }
-
-  // ── Mode toggle ──────────────────────────────────
-  function wireModeToggle() {
-    document.querySelectorAll('.stadium-mode-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        mode = btn.dataset.mode;
-        document.querySelectorAll('.stadium-mode-btn').forEach(b => {
-          b.classList.toggle('active', b === btn);
-        });
-        document.getElementById('stadium-planning-view').classList.toggle('hidden', mode !== 'planning');
-        document.getElementById('stadium-moveset-view').classList.toggle('hidden', mode !== 'moveset');
-        if (mode === 'moveset') renderMovesetList();
-      });
-    });
   }
 
   // ── Opponent slots ───────────────────────────────
@@ -105,83 +86,19 @@ const Stadium = (() => {
     if (el) el.textContent = `${opponents.length} / ${MAX_OPPONENTS} set`;
   }
 
-  // ── Picker (reuses pokedex-card overlay) ────────
+  // ── Picker (reuses shared overlay) ─────────────
   function openOpponentPicker(slotIdx) {
-    const overlay = document.getElementById('pokedex-card-overlay');
-    const card    = document.getElementById('pokedex-card');
-    if (!overlay || !card) return;
-
-    card.style.transformOrigin = 'center center';
-    card.innerHTML = `
-      <button class="card-close-btn" id="card-close-btn">✕</button>
-      <div class="section-label" style="margin-bottom:12px;">Add Opponent (slot ${slotIdx + 1})</div>
-      <input type="text" id="opp-picker-search" placeholder="Search by name or #..."
-             class="move-search-input" style="margin-bottom:10px;">
-      <div class="move-list" id="opp-picker-list" style="max-height:360px;"></div>
-    `;
-    overlay.classList.remove('hidden');
-    card.classList.remove('pop-in');
-    card.offsetHeight;
-    card.classList.add('pop-in');
-
-    const closeBtn = document.getElementById('card-close-btn');
-    if (closeBtn) closeBtn.onclick = () => overlay.classList.add('hidden');
-    overlay.onclick = (e) => {
-      if (e.target === overlay) overlay.classList.add('hidden');
-    };
-
-    renderOppPickerList('');
-    document.getElementById('opp-picker-search')?.addEventListener('input', (e) => {
-      renderOppPickerList(e.target.value);
-    });
-  }
-
-  function renderOppPickerList(filter) {
-    const list = document.getElementById('opp-picker-list');
-    if (!list) return;
-    if (!pokemonData.length) {
-      list.innerHTML = '<div style="color:#555;padding:8px;">Loading…</div>';
-      return;
-    }
-    const f = filter.toLowerCase();
-    const filtered = pokemonData.filter(p =>
-      !f || p.name.toLowerCase().includes(f) || String(p.id).includes(f)
-    ).slice(0, 80);
-
-    list.innerHTML = filtered.map(p => `
-      <div class="move-item picker-row" data-id="${p.id}">
-        <div style="display:flex;align-items:center;gap:8px;flex:1;">
-          <img src="${spriteUrl(p.id)}"
-               onerror="${spriteFallbackOnError(p.id)}"
-               style="width:32px;height:32px;image-rendering:pixelated;" alt="${p.name}">
-          <span class="move-item-name">#${String(p.id).padStart(4,'0')} ${p.name}</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:6px;">
-          ${p.types.map(t => typeIconHTML(t)).join('')}
-          <input type="number" class="picker-level-input" data-id="${p.id}"
-                 min="1" max="100" value="50" placeholder="Lv">
-          <button class="picker-add-btn" data-id="${p.id}">＋</button>
-        </div>
-      </div>
-    `).join('');
-
-    list.querySelectorAll('.picker-level-input').forEach(input => {
-      input.addEventListener('click', (e) => e.stopPropagation());
-    });
-
-    list.querySelectorAll('.picker-add-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = Number(btn.dataset.id);
-        const poke = pokemonData.find(p => p.id === id);
-        if (!poke || opponents.length >= MAX_OPPONENTS) return;
-        const input = list.querySelector(`.picker-level-input[data-id="${id}"]`);
-        const lvl = Math.max(1, Math.min(100, Number(input?.value) || 50));
+    PokeNavPicker.openPokemonPicker({
+      title: `Add Opponent (slot ${slotIdx + 1})`,
+      items: pokemonData,
+      withLevel: true,
+      onPick: (poke, lvl) => {
+        if (opponents.length >= MAX_OPPONENTS) return;
         opponents.push({ ...poke, level: lvl });
-        document.getElementById('pokedex-card-overlay')?.classList.add('hidden');
         renderOpponents();
         renderAnalysis();
         updateOpponentCount();
-      });
+      },
     });
   }
 
@@ -324,173 +241,8 @@ const Stadium = (() => {
     return String(m);
   }
 
-  // ── Best Moveset ─────────────────────────────────
-  // Score a damaging move: power × accuracy × STAB
-  function scoreMove(move, dexTypes) {
-    if (!move || !move.power || move.power <= 1) return 0;
-    const acc = (move.accuracy && move.accuracy > 0) ? move.accuracy / 100 : 1;
-    const stab = dexTypes.some(t => t.toLowerCase() === move.type.toLowerCase()) ? 1.5 : 1;
-    return move.power * acc * stab;
-  }
-
-  function renderMovesetList() {
-    const list = document.getElementById('moveset-pokemon-list');
-    if (!list) return;
-    if (!pokemonData.length) {
-      list.innerHTML = '<div style="color:#555;padding:8px;">Loading…</div>';
-      return;
-    }
-    const f = movesetSearch.toLowerCase();
-    const filtered = pokemonData.filter(p =>
-      !f || p.name.toLowerCase().includes(f) || String(p.id).includes(f)
-    );
-
-    list.innerHTML = filtered.map(p => `
-      <div class="moveset-pokemon-row ${p.id === movesetSelectedId ? 'selected' : ''}" data-id="${p.id}">
-        <img src="${spriteUrl(p.id)}"
-             onerror="${spriteFallbackOnError(p.id)}"
-             alt="${p.name}">
-        <div class="moveset-pokemon-info">
-          <div class="moveset-pokemon-name">${p.name}</div>
-          <div class="moveset-pokemon-num">#${String(p.id).padStart(4,'0')}</div>
-        </div>
-        <div class="moveset-pokemon-types">${p.types.map(t => typeIconHTMLCompact(t)).join('')}</div>
-      </div>
-    `).join('');
-
-    list.querySelectorAll('.moveset-pokemon-row').forEach(row => {
-      row.addEventListener('click', () => {
-        movesetSelectedId = Number(row.dataset.id);
-        list.querySelectorAll('.moveset-pokemon-row').forEach(r =>
-          r.classList.toggle('selected', Number(r.dataset.id) === movesetSelectedId)
-        );
-        renderMovesetDetail();
-      });
-    });
-  }
-
-  function renderMovesetDetail() {
-    const root = document.getElementById('moveset-detail');
-    if (!root) return;
-    if (!movesetSelectedId) {
-      root.innerHTML = `<div class="stadium-empty">Pick a Pokémon to see its top recommended moves.</div>`;
-      return;
-    }
-    const dex = pokemonData.find(p => p.id === movesetSelectedId);
-    if (!dex) return;
-
-    const movesByName = new Map(movesData.map(m => [m.name, m]));
-    const learned = learnableNames(dex)
-      .map(name => movesByName.get(name))
-      .filter(Boolean);
-
-    const damaging = learned
-      .filter(m => m.power > 1)
-      .map(m => ({ ...m, score: scoreMove(m, dex.types), stab: dex.types.some(t => t.toLowerCase() === m.type.toLowerCase()) }))
-      .sort((a, b) => b.score - a.score);
-
-    const status = learned
-      .filter(m => !m.power || m.power <= 1)
-      .sort((a, b) => a.name.localeCompare(b.name));
-
-    const showDamage = movesetCategory === 'all' || movesetCategory === 'damage';
-    const showStatus = movesetCategory === 'all' || movesetCategory === 'status';
-
-    const damageHeader = `
-      <div class="moveset-row moveset-row-header">
-        <span></span>
-        <span>MOVE</span>
-        <span>CATEGORY</span>
-        <span>POWER</span>
-        <span>ACCURACY</span>
-        <span>PP</span>
-        <span>SCORE</span>
-      </div>
-    `;
-    const statusHeader = `
-      <div class="moveset-row moveset-row-header">
-        <span></span>
-        <span>MOVE</span>
-        <span>CATEGORY</span>
-        <span>POWER</span>
-        <span>ACCURACY</span>
-        <span>PP</span>
-        <span></span>
-      </div>
-    `;
-
-    const damageRows = damaging.slice(0, 20).map(m => moveRow(m, true)).join('') ||
-      '<div class="stadium-empty" style="padding:14px;">No damaging moves.</div>';
-
-    const statusRows = status.slice(0, 30).map(m => moveRow(m, false)).join('') ||
-      '<div class="stadium-empty" style="padding:14px;">No status moves.</div>';
-
-    root.innerHTML = `
-      <div class="moveset-detail-header">
-        <img class="moveset-detail-sprite"
-             src="${spriteUrl(dex.id)}"
-             onerror="${spriteFallbackOnError(dex.id)}"
-             alt="${dex.name}">
-        <div class="moveset-detail-title">
-          <div class="moveset-detail-name">${dex.name}</div>
-          <div class="moveset-detail-meta">#${String(dex.id).padStart(4,'0')} · ${learned.length} learnable moves</div>
-        </div>
-        <div class="moveset-detail-types">${dex.types.map(t => typeIconHTML(t)).join('')}</div>
-      </div>
-
-      <div class="moveset-filter-row">
-        <button class="moveset-filter-btn ${movesetCategory==='all'?'active':''}" data-cat="all">ALL</button>
-        <button class="moveset-filter-btn ${movesetCategory==='damage'?'active':''}" data-cat="damage">DAMAGE</button>
-        <button class="moveset-filter-btn ${movesetCategory==='status'?'active':''}" data-cat="status">STATUS</button>
-      </div>
-
-      ${showDamage ? `
-        <div class="moveset-section">
-          <div class="stadium-section-header">⚔️ TOP DAMAGE MOVES</div>
-          <div class="moveset-rows">${damageHeader}${damageRows}</div>
-        </div>
-      ` : ''}
-      ${showStatus ? `
-        <div class="moveset-section">
-          <div class="stadium-section-header">✦ STATUS / UTILITY MOVES</div>
-          <div class="moveset-rows">${statusHeader}${statusRows}</div>
-        </div>
-      ` : ''}
-    `;
-
-    root.querySelectorAll('.moveset-filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        movesetCategory = btn.dataset.cat;
-        renderMovesetDetail();
-      });
-    });
-  }
-
-  function moveRow(m, isDamage) {
-    const tl = m.type.toLowerCase();
-    const color = TYPE_COLORS[tl] || '#888';
-    const cat = m.category || '';
-    const catCls = cat === 'Physical' ? 'cat-phys' : cat === 'Special' ? 'cat-spec' : 'cat-stat';
-    const acc = (m.accuracy && m.accuracy > 0) ? `${m.accuracy}%` : '—';
-    const pow = (m.power && m.power > 1) ? m.power : '—';
-    const stabBadge = isDamage && m.stab ? '<span class="moveset-stab">STAB</span>' : '';
-    const scoreCell = isDamage ? `<span class="moveset-score">${Math.round(m.score)}</span>` : '';
-    return `
-      <div class="moveset-row" style="border-left-color:${color};">
-        <img class="moveset-row-type" src="assets/types/${tl}.png" alt="${tl}">
-        <div class="moveset-row-name">${m.name}${stabBadge}</div>
-        <span class="moveset-row-cat ${catCls}">${cat || '—'}</span>
-        <span class="moveset-row-stat">${pow}</span>
-        <span class="moveset-row-stat">${acc}</span>
-        <span class="moveset-row-stat">${m.pp ?? '—'}</span>
-        ${scoreCell || '<span></span>'}
-      </div>
-    `;
-  }
-
   // ── Init ─────────────────────────────────────────
   async function init() {
-    wireModeToggle();
     await loadData();
     renderOpponents();
     updateOpponentCount();
@@ -502,13 +254,6 @@ const Stadium = (() => {
       renderAnalysis();
       updateOpponentCount();
     });
-
-    const search = document.getElementById('moveset-search');
-    search?.addEventListener('input', (e) => {
-      movesetSearch = e.target.value;
-      renderMovesetList();
-    });
-    renderMovesetList();
   }
 
   return { init };

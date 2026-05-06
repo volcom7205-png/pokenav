@@ -68,6 +68,12 @@
           <button class="gen-chip" data-gen="8">GEN VIII</button>
           <button class="gen-chip" data-gen="9">GEN IX</button>
         </div>
+        <div class="pokedex-collection-row" id="pokedex-collection-row">
+          <button class="collection-chip active" data-collection="all">All</button>
+          <button class="collection-chip" data-collection="owned">● Owned</button>
+          <button class="collection-chip" data-collection="wanted">★ Wanted</button>
+          <button class="collection-chip" data-collection="missing">Missing</button>
+        </div>
 
         <div class="pokedex-main">
           <div id="pokedex-grid" class="pokedex-grid"></div>
@@ -173,70 +179,34 @@
       </div>
 
       <div class="panel" id="panel-battle">
-        <div class="stadium-mode-row">
-          <button class="stadium-mode-btn active" data-mode="planning" type="button">⚔️ BATTLE PLANNING</button>
-          <button class="stadium-mode-btn" data-mode="moveset" type="button">★ BEST MOVESET</button>
-        </div>
+        <div class="stadium-planning-grid">
+          <section class="stadium-opponents">
+            <div class="stadium-section-header">OPPONENT'S TEAM — pick 1–6</div>
+            <div class="stadium-opponent-grid" id="stadium-opponent-grid"></div>
+            <div class="stadium-opponent-footer">
+              <span id="stadium-opponent-count" class="stadium-counter">0 / 6 set</span>
+              <button id="stadium-opponent-clear" class="typechart-clear-btn" type="button">Clear team</button>
+            </div>
+          </section>
 
-        <div class="stadium-view" id="stadium-planning-view">
-          <div class="stadium-planning-grid">
-            <section class="stadium-opponents">
-              <div class="stadium-section-header">OPPONENT'S TEAM — pick 1–6</div>
-              <div class="stadium-opponent-grid" id="stadium-opponent-grid"></div>
-              <div class="stadium-opponent-footer">
-                <span id="stadium-opponent-count" class="stadium-counter">0 / 6 set</span>
-                <button id="stadium-opponent-clear" class="typechart-clear-btn" type="button">Clear team</button>
-              </div>
-            </section>
-
-            <section class="stadium-analysis" id="stadium-analysis">
-              <div class="stadium-empty">Add opponents to see weakness analysis and recommended counters from your party + storage.</div>
-            </section>
-          </div>
-        </div>
-
-        <div class="stadium-view hidden" id="stadium-moveset-view">
-          <div class="moveset-grid">
-            <section class="moveset-picker">
-              <div class="stadium-section-header">PICK A POKÉMON</div>
-              <input type="text" id="moveset-search" class="moveset-search-input" placeholder="Search by name or #..." autocomplete="off">
-              <div class="moveset-pokemon-list" id="moveset-pokemon-list"></div>
-            </section>
-            <section class="moveset-detail" id="moveset-detail">
-              <div class="stadium-empty">Pick a Pokémon to see its top recommended moves.</div>
-            </section>
-          </div>
+          <section class="stadium-analysis" id="stadium-analysis">
+            <div class="stadium-empty">Add opponents to see weakness analysis and recommended counters from your party + storage.</div>
+          </section>
         </div>
       </div>
 
       <div class="panel" id="panel-types">
-        <div class="typechart-mode-row">
-          <button class="typechart-mode-btn active" data-mode="lookup" type="button">◆ QUICK LOOKUP</button>
-          <button class="typechart-mode-btn" data-mode="search" type="button">◆ POKÉMON SEARCH</button>
-        </div>
-
-        <div class="typechart-view" id="typechart-lookup-view">
-          <div class="typechart-picker-section">
-            <div class="typechart-section-header">SELECT TYPE(S) — pick 1 or 2</div>
-            <div class="typechart-picker" id="typechart-picker"></div>
-            <div class="typechart-picker-footer">
-              <span id="typechart-picker-count" class="typechart-picker-count">0 selected</span>
-              <button id="typechart-picker-clear" class="typechart-clear-btn" type="button">Clear</button>
-            </div>
-          </div>
-
-          <div class="typechart-results" id="typechart-lookup-results">
-            <div class="typechart-empty">Pick a type above to see effectiveness.</div>
+        <div class="typechart-picker-section">
+          <div class="typechart-section-header">SELECT TYPE(S) — pick 1 or 2</div>
+          <div class="typechart-picker" id="typechart-picker"></div>
+          <div class="typechart-picker-footer">
+            <span id="typechart-picker-count" class="typechart-picker-count">0 selected</span>
+            <button id="typechart-picker-clear" class="typechart-clear-btn" type="button">Clear</button>
           </div>
         </div>
 
-        <div class="typechart-view hidden" id="typechart-search-view">
-          <div class="pokedex-search-row">
-            <input type="text" id="typechart-search" placeholder="Search by name or number..." autocomplete="off" />
-          </div>
-          <div class="typechart-results" id="typechart-search-results">
-            <div class="typechart-empty">Search for a Pokémon to see its defensive matchups.</div>
-          </div>
+        <div class="typechart-results" id="typechart-lookup-results">
+          <div class="typechart-empty">Pick a type above to see effectiveness. Search a Pokémon's defensive matchups via the Pokédex card.</div>
         </div>
       </div>
 
@@ -244,21 +214,11 @@
 
       <div class="panel" id="panel-biome">
         <div class="biome-mode-row">
-          <button class="biome-mode-btn active" data-mode="pokemon" type="button">⌕ POKÉMON</button>
-          <button class="biome-mode-btn" data-mode="biome" type="button">◆ BIOME</button>
+          <button class="biome-mode-btn active" data-mode="biome" type="button">◆ BIOME</button>
           <button class="biome-mode-btn" data-mode="wanted" type="button">★ MOST WANTED</button>
         </div>
 
-        <div class="biome-view" id="biome-pokemon-view">
-          <div class="pokedex-search-row">
-            <input type="text" id="biome-pok-search" placeholder="Type a Pokémon name or #..." autocomplete="off" />
-          </div>
-          <div id="biome-pok-results" class="biome-pok-results">
-            <div class="biome-empty">Type a Pokémon name to see where it spawns.</div>
-          </div>
-        </div>
-
-        <div class="biome-view hidden" id="biome-biome-view">
+        <div class="biome-view" id="biome-biome-view">
           <div class="biome-biome-grid">
             <aside class="biome-picker-section">
               <input type="text" id="biome-biome-search" placeholder="Filter biomes..." autocomplete="off" />
@@ -332,6 +292,7 @@
   <script src="js/core/utils.js"></script>
   <script src="js/core/data.js"></script>
   <script src="js/core/biomes.js"></script>
+  <script src="js/core/picker.js"></script>
   <script src="js/core/nav.js"></script>
   <script src="js/core/trainer.js"></script>
 

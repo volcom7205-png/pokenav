@@ -557,167 +557,29 @@ const PartyStorage = (() => {
   }
 
   async function openAddPicker() {
-    const overlay = document.getElementById('pokedex-card-overlay');
-    const card    = document.getElementById('pokedex-card');
-    if (!overlay || !card) return;
-
-    card.style.transformOrigin = 'center center';
-    card.innerHTML = `
-      <button class="card-close-btn" id="card-close-btn">✕</button>
-      <div class="section-label" style="margin-bottom:12px;">Add Pokémon to Storage</div>
-      <input type="text" id="picker-search" placeholder="Search by name or #..."
-             class="move-search-input" style="margin-bottom:10px;">
-      <div class="move-list" id="picker-list" style="max-height:360px;"></div>
-    `;
-
-    overlay.classList.remove('hidden');
-    card.classList.remove('pop-in');
-    card.offsetHeight;
-    card.classList.add('pop-in');
-
-    document.getElementById('card-close-btn')?.addEventListener('click', () => {
-      overlay.classList.add('hidden');
-    });
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) overlay.classList.add('hidden');
-    });
-
     if (!allPokemon.length) {
       await PokeNavData.load();
       allPokemon = PokeNavData.getPokemon();
     }
-
-    renderPickerList('');
-    document.getElementById('picker-search')?.addEventListener('input', (e) => {
-      renderPickerList(e.target.value);
-    });
-  }
-
-  function renderPickerList(filter) {
-    const list = document.getElementById('picker-list');
-    if (!list || !allPokemon.length) {
-      if (list) list.innerHTML = '<div style="color:#555;padding:8px;">No Pokémon data loaded.</div>';
-      return;
-    }
-    const f = filter.toLowerCase();
-    const filtered = allPokemon.filter(p =>
-      !f ||
-      p.name.toLowerCase().includes(f) ||
-      String(p.id).includes(f)
-    ).slice(0, 80);
-
-    list.innerHTML = filtered.map(p => `
-      <div class="move-item picker-row" data-id="${p.id}">
-        <div style="display:flex;align-items:center;gap:8px;flex:1;">
-          <img src="${spriteUrl(p.id)}"
-               onerror="${spriteFallbackOnError(p.id)}"
-               style="width:32px;height:32px;image-rendering:pixelated;" alt="${p.name}">
-          <span class="move-item-name">#${String(p.id).padStart(4,'0')} ${p.name}</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:6px;">
-          ${p.types.map(t => typeIconHTML(t)).join('')}
-          <input type="number" class="picker-level-input" data-id="${p.id}"
-                 min="1" max="100" value="50" placeholder="Lv">
-          <button class="picker-add-btn" data-id="${p.id}">＋</button>
-        </div>
-      </div>
-    `).join('');
-
-    list.querySelectorAll('.picker-level-input').forEach(input => {
-      input.addEventListener('click', (e) => e.stopPropagation());
-    });
-
-    list.querySelectorAll('.picker-add-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const id = Number(btn.dataset.id);
-        const poke = allPokemon.find(p => p.id === id);
-        if (!poke) return;
-        const input = list.querySelector(`.picker-level-input[data-id="${id}"]`);
-        const lvl = Math.max(1, Math.min(100, Number(input?.value) || 50));
-        poke.level = lvl;
-        addToStorage(poke);
-        const row = btn.closest('.picker-row');
-        if (row) {
-          row.style.background = 'rgba(230,57,70,0.2)';
-          setTimeout(() => { row.style.background = ''; }, 400);
-        }
-        const search = document.getElementById('picker-search');
-        if (search) search.value = '';
-        renderPickerList('');
-      });
+    PokeNavPicker.openPokemonPicker({
+      title: 'Add Pokémon to Storage',
+      items: allPokemon,
+      withLevel: true,
+      multiAdd: true,
+      onPick: (poke, lvl) => {
+        addToStorage({ ...poke, level: lvl });
+      },
     });
   }
 
   // ── Storage picker (used to fill empty party slots) ─
-  async function openStoragePicker(slotIndex) {
-    const overlay = document.getElementById('pokedex-card-overlay');
-    const card    = document.getElementById('pokedex-card');
-    if (!overlay || !card) return;
-
-    card.style.transformOrigin = 'center center';
-    card.innerHTML = `
-      <button class="card-close-btn" id="card-close-btn">✕</button>
-      <div class="section-label" style="margin-bottom:12px;">Pick from PC Storage</div>
-      <input type="text" id="storage-picker-search" placeholder="Search PC storage..."
-             class="move-search-input" style="margin-bottom:10px;">
-      <div class="move-list" id="storage-picker-list" style="max-height:360px;"></div>
-    `;
-
-    overlay.classList.remove('hidden');
-    card.classList.remove('pop-in');
-    card.offsetHeight;
-    card.classList.add('pop-in');
-
-    document.getElementById('card-close-btn')?.addEventListener('click', () => {
-      overlay.classList.add('hidden');
-    });
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) overlay.classList.add('hidden');
-    });
-
-    renderStoragePickerList(slotIndex, '');
-    document.getElementById('storage-picker-search')?.addEventListener('input', (e) => {
-      renderStoragePickerList(slotIndex, e.target.value);
-    });
-  }
-
-  function renderStoragePickerList(slotIndex, filter) {
-    const list = document.getElementById('storage-picker-list');
-    if (!list) return;
-    const f = (filter || '').toLowerCase();
-    const filtered = state.storage.filter(p => p && (
-      !f ||
-      (p.nickname || '').toLowerCase().includes(f) ||
-      p.name.toLowerCase().includes(f) ||
-      String(p.dexId).includes(f)
-    ));
-
-    if (!filtered.length) {
-      list.innerHTML = '<div style="color:#555;padding:8px;">No Pokémon in PC storage.</div>';
-      return;
-    }
-
-    list.innerHTML = filtered.map(p => `
-      <div class="move-item picker-row" data-uid="${p.uid}">
-        <div style="display:flex;align-items:center;gap:8px;flex:1;">
-          <img src="${spriteUrl(p.dexId)}"
-               onerror="${spriteFallbackOnError(p.dexId)}"
-               style="width:32px;height:32px;image-rendering:pixelated;" alt="${p.name}">
-          <span class="move-item-name">#${String(p.dexId).padStart(4,'0')} ${p.nickname || p.name}
-            <span style="color:#666;font-size:0.7rem;margin-left:4px;">LVL ${p.level}</span>
-          </span>
-        </div>
-        <div style="display:flex;align-items:center;gap:6px;">
-          ${p.types.map(t => typeIconHTML(t)).join('')}
-        </div>
-      </div>
-    `).join('');
-
-    list.querySelectorAll('.picker-row').forEach(row => {
-      row.addEventListener('click', () => {
-        const uid = row.dataset.uid;
-        const idx = state.storage.findIndex(p => p && p.uid === uid);
+  function openStoragePicker(slotIndex) {
+    PokeNavPicker.openPokemonPicker({
+      title: 'Pick from PC Storage',
+      items: state.storage.filter(Boolean),
+      withLevel: false,
+      onPick: (picked) => {
+        const idx = state.storage.findIndex(p => p && p.uid === picked.uid);
         if (idx === -1) return;
         const poke = state.storage.splice(idx, 1)[0];
         const displaced = state.party[slotIndex];
@@ -725,8 +587,7 @@ const PartyStorage = (() => {
         if (displaced) state.storage.push(displaced);
         save();
         renderPC();
-        document.getElementById('pokedex-card-overlay')?.classList.add('hidden');
-      });
+      },
     });
   }
 

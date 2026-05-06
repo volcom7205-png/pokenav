@@ -3,6 +3,8 @@
 let pokedexSearchQuery = '';
 let pokedexSelectedTypes = new Set();
 let pokedexSelectedGen = 'all';
+let pokedexSelectedCollection = 'all'; // 'all' | 'owned' | 'wanted' | 'missing'
+let pokedexCardMoveCategory = 'damage'; // 'all' | 'damage' | 'status'
 
 function buildPokedexPanel() {
   const grid = document.getElementById('pokedex-grid');
@@ -53,6 +55,16 @@ function buildPokedexPanel() {
     });
   });
 
+  document.querySelectorAll('#pokedex-collection-row .collection-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      pokedexSelectedCollection = chip.dataset.collection;
+      document.querySelectorAll('#pokedex-collection-row .collection-chip').forEach(c => {
+        c.classList.toggle('active', c === chip);
+      });
+      renderPokedexTiles();
+    });
+  });
+
   updatePokedexFilterCount();
 }
 
@@ -60,10 +72,20 @@ function renderPokedexTiles() {
   const grid = document.getElementById('pokedex-grid');
   if (!grid) return;
 
+  const ownedIds = (typeof PartyStorage !== 'undefined' && PartyStorage.getOwnedDexIds)
+    ? PartyStorage.getOwnedDexIds()
+    : new Set();
+  const wantedFn = (typeof BiomeSearch !== 'undefined' && BiomeSearch.isWanted)
+    ? id => BiomeSearch.isWanted(id)
+    : () => false;
+
   const filtered = allPokemon.filter(p => {
     if (pokedexSelectedGen !== 'all' && PokeNavData.getGen(p.id) !== Number(pokedexSelectedGen)) {
       return false;
     }
+    if (pokedexSelectedCollection === 'owned' && !ownedIds.has(p.id)) return false;
+    if (pokedexSelectedCollection === 'wanted' && !wantedFn(p.id)) return false;
+    if (pokedexSelectedCollection === 'missing' && ownedIds.has(p.id)) return false;
     if (pokedexSearchQuery) {
       const q = pokedexSearchQuery;
       const matches =
@@ -86,13 +108,10 @@ function renderPokedexTiles() {
     return;
   }
 
-  const ownedIds = (typeof PartyStorage !== 'undefined' && PartyStorage.getOwnedDexIds)
-    ? PartyStorage.getOwnedDexIds()
-    : new Set();
-
   grid.innerHTML = filtered.map(p => `
     <div class="pokedex-tile" data-id="${p.id}">
       ${ownedIds.has(p.id) ? '<div class="tile-owned-ball"></div>' : ''}
+      ${wantedFn(p.id) ? '<div class="tile-wanted-star">★</div>' : ''}
       <img class="pokedex-tile-sprite" src="${p.sprite}" alt="${p.name}"
            onerror="this.style.opacity='0.3'" />
       <div class="pokedex-tile-number">#${String(p.id).padStart(4, '0')}</div>
@@ -221,10 +240,25 @@ function renderPokedexCard(pokemon, spawnIdx) {
     <hr class="poke-card-divider" />
     <div class="poke-card-section-label">Drops</div>
     ${dropsHTML}
+
+    <hr class="poke-card-divider" />
+    <div class="poke-card-section-label">Defensive Matchups</div>
+    ${renderMatchupSection(pokemon)}
+
+    <hr class="poke-card-divider" />
+    <div class="poke-card-section-label">Moves</div>
+    ${renderMoveSection(pokemon)}
   `;
 
   document.getElementById('detail-add-storage-btn')?.addEventListener('click', (e) => {
     addPokemonToStorageById(pokemon.id, e);
+  });
+
+  card.querySelectorAll('.poke-card-move-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      pokedexCardMoveCategory = btn.dataset.cat;
+      renderPokedexCard(pokemon, spawnIdx);
+    });
   });
 
   document.getElementById('detail-add-wanted-btn')?.addEventListener('click', (e) => {
@@ -310,6 +344,122 @@ function renderSpawnContent(spawn) {
       </div>` : ''}
 
     ${spawn.notes ? `<div class="spawn-notes">${spawn.notes}</div>` : ''}
+  `;
+}
+
+function renderMatchupSection(pokemon) {
+  const stabs = pokemon.types.map(t => String(t).toLowerCase());
+
+  // Offensive overall: best STAB multiplier against each defender type.
+  const offensiveTiles = TYPE_LIST.map(def => {
+    const best = Math.max(...stabs.map(atk => getMul(atk, def)));
+    return renderTypeMultiplierTile(def, best);
+  }).join('');
+
+  // Defensive: incoming attacks against this mon's type combo.
+  const defMults = getDefenseMultipliers(pokemon.types);
+  const defenseTiles = TYPE_LIST.map(atk =>
+    renderTypeMultiplierTile(atk, defMults[atk])
+  ).join('');
+
+  return `
+    <div class="poke-card-matchup-block">
+      <div class="poke-card-matchup-subhead">⚔️ Best STAB attack vs each type</div>
+      <div class="typechart-tile-grid poke-card-matchup-grid">${offensiveTiles}</div>
+    </div>
+    <div class="poke-card-matchup-block">
+      <div class="poke-card-matchup-subhead">🛡️ Incoming attacks vs ${pokemon.name}</div>
+      <div class="typechart-tile-grid poke-card-matchup-grid">${defenseTiles}</div>
+    </div>
+  `;
+}
+
+function pokedexScoreMove(move, dexTypes) {
+  if (!move || !move.power || move.power <= 1) return 0;
+  const acc = (move.accuracy && move.accuracy > 0) ? move.accuracy / 100 : 1;
+  const stab = dexTypes.some(t => t.toLowerCase() === move.type.toLowerCase()) ? 1.5 : 1;
+  return move.power * acc * stab;
+}
+
+function renderMoveSection(pokemon) {
+  const learnable = pokemon.learnableMoves || [];
+  if (!learnable.length) {
+    return `<div style="color:var(--text-muted);font-size:0.85rem;">No move data for this Pokémon.</div>`;
+  }
+
+  const seen = new Set();
+  const learned = [];
+  for (const entry of learnable) {
+    const name = typeof entry === 'string' ? entry : entry.name;
+    if (seen.has(name)) continue;
+    seen.add(name);
+    const move = PokeNavData.getMoveByName(name);
+    if (move) learned.push(move);
+  }
+
+  const damaging = learned
+    .filter(m => m.power > 1)
+    .map(m => ({
+      ...m,
+      score: pokedexScoreMove(m, pokemon.types),
+      stab: pokemon.types.some(t => t.toLowerCase() === m.type.toLowerCase()),
+    }))
+    .sort((a, b) => b.score - a.score);
+
+  const status = learned
+    .filter(m => !m.power || m.power <= 1)
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const cat = pokedexCardMoveCategory;
+  const showDamage = cat === 'all' || cat === 'damage';
+  const showStatus = cat === 'all' || cat === 'status';
+
+  const filterRow = `
+    <div class="poke-card-move-filter-row">
+      <button class="poke-card-move-filter ${cat==='all'?'active':''}" data-cat="all">ALL</button>
+      <button class="poke-card-move-filter ${cat==='damage'?'active':''}" data-cat="damage">DAMAGE · ${damaging.length}</button>
+      <button class="poke-card-move-filter ${cat==='status'?'active':''}" data-cat="status">STATUS · ${status.length}</button>
+    </div>
+  `;
+
+  const damageBlock = showDamage ? `
+    <div class="poke-card-move-block">
+      <div class="poke-card-move-subhead">⚔️ Top damage</div>
+      ${damaging.length
+        ? damaging.slice(0, 20).map(m => pokedexMoveRow(m, true)).join('')
+        : '<div class="poke-card-move-empty">No damaging moves.</div>'}
+    </div>` : '';
+
+  const statusBlock = showStatus ? `
+    <div class="poke-card-move-block">
+      <div class="poke-card-move-subhead">✦ Status / utility</div>
+      ${status.length
+        ? status.slice(0, 30).map(m => pokedexMoveRow(m, false)).join('')
+        : '<div class="poke-card-move-empty">No status moves.</div>'}
+    </div>` : '';
+
+  return filterRow + damageBlock + statusBlock;
+}
+
+function pokedexMoveRow(m, isDamage) {
+  const tl = m.type.toLowerCase();
+  const color = TYPE_COLORS[tl] || '#888';
+  const cat = m.category || '';
+  const catCls = cat === 'Physical' ? 'cat-phys' : cat === 'Special' ? 'cat-spec' : 'cat-stat';
+  const acc = (m.accuracy && m.accuracy > 0) ? `${m.accuracy}%` : '—';
+  const pow = (m.power && m.power > 1) ? m.power : '—';
+  const stabBadge = isDamage && m.stab ? '<span class="poke-card-move-stab">STAB</span>' : '';
+  const scoreCell = isDamage ? `<span class="poke-card-move-score">${Math.round(m.score)}</span>` : '<span></span>';
+  return `
+    <div class="poke-card-move-row" style="border-left-color:${color};">
+      <img class="poke-card-move-type" src="assets/types/${tl}.png" alt="${tl}">
+      <div class="poke-card-move-name">${m.name}${stabBadge}</div>
+      <span class="poke-card-move-cat ${catCls}">${cat || '—'}</span>
+      <span class="poke-card-move-stat">${pow}</span>
+      <span class="poke-card-move-stat">${acc}</span>
+      <span class="poke-card-move-stat">${m.pp ?? '—'}</span>
+      ${scoreCell}
+    </div>
   `;
 }
 

@@ -629,8 +629,8 @@
   background: #111;
   border: 1px solid #333;
   border-radius: 16px;
-  width: min(560px, 92vw);
-  max-height: 88vh;
+  width: min(760px, 94vw);
+  max-height: 90vh;
   overflow-y: auto;
   padding: 24px;
   position: relative;
@@ -985,4 +985,200 @@ select.card-field-input {
   border-color: var(--accent, #e63946);
   color: #fff;
   background: rgba(230,57,70,0.1);
+}
+
+/* ── Pokédex card: matchup + move sections (Phase 1) ───── */
+
+.poke-card-matchup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.poke-card-move-filter-row {
+  display: flex;
+  gap: 6px;
+  margin: 8px 0 12px;
+  flex-wrap: wrap;
+}
+
+.poke-card-move-filter {
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #888;
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: color 0.15s, border-color 0.15s, background-color 0.15s;
+}
+
+.poke-card-move-filter:hover {
+  color: #ccc;
+  border-color: #555;
+}
+
+.poke-card-move-filter.active {
+  color: #ff3333;
+  border-color: #ff3333;
+  background: rgba(255, 51, 51, 0.08);
+}
+
+.poke-card-move-block {
+  margin-bottom: 14px;
+}
+
+.poke-card-move-subhead {
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin: 6px 0 6px;
+}
+
+.poke-card-move-row {
+  display: grid;
+  grid-template-columns: 22px 1fr 70px 38px 50px 36px 36px;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 10px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-left-width: 3px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  font-size: 0.78rem;
+}
+
+.poke-card-move-type {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.poke-card-move-name {
+  color: #ddd;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.poke-card-move-stab {
+  display: inline-block;
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  background: #ff3333;
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.poke-card-move-cat {
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: #222;
+  color: #888;
+}
+
+.poke-card-move-cat.cat-phys { color: #f97316; }
+.poke-card-move-cat.cat-spec { color: #38bdf8; }
+.poke-card-move-cat.cat-stat { color: #a3a3a3; }
+
+.poke-card-move-stat {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.78rem;
+  color: #aaa;
+  text-align: center;
+}
+
+.poke-card-move-score {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  color: #ff3333;
+  text-align: center;
+  font-weight: 600;
+}
+
+.poke-card-move-empty {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 8px 0;
+}
+
+@media (max-width: 600px) {
+  .poke-card-move-row {
+    grid-template-columns: 20px 1fr 50px 30px 30px;
+    font-size: 0.72rem;
+  }
+  .poke-card-move-row .poke-card-move-stat:nth-of-type(3),
+  .poke-card-move-row .poke-card-move-score {
+    display: none;
+  }
+}
+
+/* ── Collection filter chips (Phase 1) ─────────────── */
+.pokedex-collection-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.collection-chip {
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  color: #888;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.collection-chip:hover {
+  color: #ddd;
+  border-color: #444;
+}
+
+.collection-chip.active {
+  background: rgba(230, 57, 70, 0.18);
+  border-color: #e63946;
+  color: #ffaaaa;
+}
+
+/* Wanted star, matches the owned-ball indicator on tiles */
+.tile-wanted-star {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  font-size: 14px;
+  line-height: 1;
+  color: #facc15;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.poke-card-matchup-block + .poke-card-matchup-block {
+  margin-top: 12px;
+}
+
+.poke-card-matchup-subhead {
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin: 6px 0 6px;
 }

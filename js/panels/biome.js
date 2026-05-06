@@ -8,8 +8,7 @@ const BiomeSearch = (() => {
   let allPokemon = [];
   let biomeIndex = new Map();   // biome -> [{ pokemon, spawn }]
   let wanted = new Set();        // Set<dexId>
-  let mode = 'pokemon';
-  let pokQuery = '';
+  let mode = 'biome';
   let biomeFilter = '';
   let biomeSelected = null;
   let pickerOpen = new Set();   // 'dim:overworld', 'group:aquatic', …
@@ -67,7 +66,6 @@ const BiomeSearch = (() => {
     buildIndex();
     loadWanted();
     wireModeToggle();
-    wirePokemonView();
     wireBiomeView();
     wireWantedView();
     PokeNavBiomes.onModsChanged(() => {
@@ -87,89 +85,14 @@ const BiomeSearch = (() => {
     document.querySelectorAll('.biome-mode-btn').forEach(b => {
       b.classList.toggle('active', b.dataset.mode === m);
     });
-    document.getElementById('biome-pokemon-view').classList.toggle('hidden', m !== 'pokemon');
     document.getElementById('biome-biome-view').classList.toggle('hidden', m !== 'biome');
     document.getElementById('biome-wanted-view').classList.toggle('hidden', m !== 'wanted');
     renderMode();
   }
 
   function renderMode() {
-    if (mode === 'pokemon') renderPokemonView();
-    else if (mode === 'biome') renderBiomeView();
+    if (mode === 'biome') renderBiomeView();
     else if (mode === 'wanted') renderWantedView();
-  }
-
-  // ── Pokémon search mode ─────────────────────────
-  function wirePokemonView() {
-    document.getElementById('biome-pok-search')?.addEventListener('input', e => {
-      pokQuery = e.target.value.trim().toLowerCase();
-      renderPokemonView();
-    });
-  }
-
-  function renderPokemonView() {
-    const root = document.getElementById('biome-pok-results');
-    if (!root) return;
-
-    if (!pokQuery) {
-      root.innerHTML = '<div class="biome-empty">Type a Pokémon name to see where it spawns.</div>';
-      return;
-    }
-    const matches = allPokemon.filter(p =>
-      p.name.toLowerCase().includes(pokQuery) ||
-      String(p.id).includes(pokQuery) ||
-      String(p.id).padStart(4, '0').includes(pokQuery)
-    ).slice(0, 12);
-
-    if (!matches.length) {
-      root.innerHTML = '<div class="biome-empty">No Pokémon found.</div>';
-      return;
-    }
-
-    root.innerHTML = matches.map(p => `
-      <section class="biome-pok-card">
-        <div class="biome-pok-head">
-          <img class="biome-pok-sprite" src="${p.sprite}" alt="${p.name}"
-               onerror="this.style.opacity='0.3'">
-          <div class="biome-pok-meta">
-            <div class="biome-pok-num">#${String(p.id).padStart(4,'0')}</div>
-            <div class="biome-pok-name">${p.name}</div>
-            <div class="biome-pok-types">${p.types.map(t => typeIconHTMLCompact(t)).join('')}</div>
-          </div>
-          <button class="biome-wanted-toggle ${wanted.has(p.id) ? 'is-wanted' : ''}"
-                  data-id="${p.id}" type="button">
-            ${wanted.has(p.id) ? '★ Wanted' : '+ Wanted'}
-          </button>
-        </div>
-        ${(() => {
-          const merged = mergeSpawns(p.spawns || []);
-          return merged.length
-            ? merged.map(s => `
-              <div class="biome-spawn-block">
-                <div class="biome-spawn-label">${s.label || 'Spawn'}</div>
-                ${renderSpawnContent(s)}
-              </div>
-            `).join('')
-            : '<div class="biome-spawn-empty">No spawn data for this Pokémon.</div>';
-        })()}
-      </section>
-    `).join('');
-
-    root.querySelectorAll('.biome-wanted-toggle').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const id = Number(btn.dataset.id);
-        toggleWanted(id);
-        renderPokemonView();
-      });
-    });
-
-    root.querySelectorAll('.biome-pill[data-biome]').forEach(pill => {
-      pill.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openBiome(pill.dataset.biome);
-      });
-    });
   }
 
   // ── Biome search mode ───────────────────────────
