@@ -6,8 +6,10 @@
 const Academy = (() => {
   let inited = false;
   let allItems = [];           // [{ id?, name, category, description, icon? }]
+  let itemsById = new Map();   // 'cobblemon:foo' -> item
   let recipes = [];            // raw recipes.json
   let recipesByResult = new Map();   // 'cobblemon:foo' -> recipe
+  let recipesByIngredient = new Map(); // 'cobblemon:foo' -> [recipe, ...]
   let tmIndex = [];            // [{ name, type, category, power, accuracy, pp, learnerIds }]
   let dropIndex = new Map();   // displayName -> [{ pokemon, amount }]
   let activeCategory = 'all';
@@ -27,6 +29,17 @@ const Academy = (() => {
     { key: 'raw',      label: 'Raw',       emoji: '⛏' },
   ];
 
+  // Recipe ingredient tags don't resolve to single items; show a labelled cell + tooltip.
+  // Q11 says raw materials with no recipe + no drops get text-only cells with hover.
+  const TAG_LABELS = {
+    'cobblemon:tier_1_poke_ball_materials': { short: 'Tier 1', desc: 'Tier 1 Poké Ball materials — e.g. iron / copper ingots.' },
+    'cobblemon:tier_2_poke_ball_materials': { short: 'Tier 2', desc: 'Tier 2 Poké Ball materials — e.g. gold-tier ingots.' },
+    'cobblemon:tier_3_poke_ball_materials': { short: 'Tier 3', desc: 'Tier 3 Poké Ball materials — e.g. diamond-tier.' },
+    'cobblemon:tier_4_poke_ball_materials': { short: 'Tier 4', desc: 'Tier 4 Poké Ball materials — e.g. netherite-tier.' },
+    'c:ingots/gold':       { short: 'Gold', desc: 'Any gold ingot (vanilla or modded — Common tag).' },
+    'c:ingots/netherite':  { short: 'Netherite', desc: 'Any netherite ingot (vanilla or modded — Common tag).' },
+  };
+
   async function init() {
     if (inited) return;
     inited = true;
@@ -37,6 +50,7 @@ const Academy = (() => {
 
     recipes = recipesRes;
     recipesByResult = new Map(recipes.map(r => [r.result, r]));
+    buildIngredientIndex();
 
     const allMon = PokeNavData.getPokemon();
     buildTmIndex(allMon);
@@ -51,9 +65,24 @@ const Academy = (() => {
       .map(dropAsItem);
 
     allItems = [...baseItems, ...tmItems, ...orphanDropItems];
+    itemsById = new Map(allItems.filter(i => i.id).map(i => [i.id, i]));
 
     renderShell();
     renderActive();
+  }
+
+  function buildIngredientIndex() {
+    recipesByIngredient = new Map();
+    for (const r of recipes) {
+      const seen = new Set();
+      for (const v of Object.values(r.key || {})) {
+        const id = v.item;
+        if (!id || seen.has(id)) continue;
+        seen.add(id);
+        if (!recipesByIngredient.has(id)) recipesByIngredient.set(id, []);
+        recipesByIngredient.get(id).push(r);
+      }
+    }
   }
 
   function normalizeItem(raw) {
@@ -255,6 +284,13 @@ const Academy = (() => {
     `;
 
     body.querySelector('.academy-back-btn').addEventListener('click', back);
+
+    body.querySelectorAll('[data-ingredient-id]').forEach(el => {
+      el.addEventListener('click', () => openItem(el.dataset.ingredientId));
+    });
+    body.querySelectorAll('[data-result-id]').forEach(el => {
+      el.addEventListener('click', () => openItem(el.dataset.resultId));
+    });
   }
 
   function renderDetailSections(item) {
@@ -262,22 +298,10 @@ const Academy = (() => {
 
     const parts = [];
     const recipe = item.id ? recipesByResult.get(item.id) : null;
-    if (recipe) {
-      parts.push(`
-        <section class="academy-section">
-          <div class="academy-section-head">🍳 Crafting recipe</div>
-          <div class="academy-section-placeholder">3×3 grid renderer ships in Session 6.</div>
-        </section>
-      `);
-    }
+    if (recipe) parts.push(renderRecipeSection(item, recipe));
 
-    if (item.id && itemUsedInRecipes(item.id).length) {
-      parts.push(`
-        <section class="academy-section">
-          <div class="academy-section-head">🧬 Used in recipes</div>
-          <div class="academy-section-placeholder">"Used in" linker ships in Session 6.</div>
-        </section>
-      `);
+    if (item.id && (recipesByIngredient.get(item.id) || []).length) {
+      parts.push(renderUsedInSection(item));
     }
 
     if (dropIndex.has(item.name)) {
@@ -294,6 +318,130 @@ const Academy = (() => {
       parts.push(`<div class="academy-section-placeholder academy-section-placeholder--standalone">No additional info yet for this item.</div>`);
     }
     return parts.join('');
+  }
+
+  function renderRecipeSection(item, recipe) {
+    // Pad pattern rows to width 3 in case of irregular input.
+    const rows = [0, 1, 2].map(i => (recipe.pattern[i] || '   ').padEnd(3, ' '));
+    const cells = [];
+    for (let r = 0; r < 3; r++) {
+      for (let c = 0; c < 3; c++) {
+        cells.push(renderRecipeCell(rows[r][c], recipe.key));
+      }
+    }
+    const legend = renderRecipeLegend(recipe.key);
+    const outIcon = item.icon
+      ? `<img src="${item.icon}" alt="${item.name}" onerror="this.style.display='none'">`
+      : `<div class="academy-recipe-result-emoji">◆</div>`;
+    const count = recipe.count && recipe.count > 1 ? `<div class="academy-recipe-count">×${recipe.count}</div>` : '';
+    return `
+      <section class="academy-section">
+        <div class="academy-section-head">🍳 Crafting recipe</div>
+        <div class="academy-recipe">
+          <div class="academy-recipe-grid">
+            ${cells.join('')}
+          </div>
+          <div class="academy-recipe-arrow">→</div>
+          <div class="academy-recipe-result">
+            ${outIcon}
+            ${count}
+          </div>
+        </div>
+        ${legend}
+      </section>
+    `;
+  }
+
+  function renderRecipeCell(letter, key) {
+    if (!letter || letter === ' ') {
+      return `<div class="academy-recipe-cell academy-recipe-cell--empty"></div>`;
+    }
+    const entry = key && key[letter];
+    if (!entry) {
+      return `<div class="academy-recipe-cell academy-recipe-cell--empty" data-key="${letter}"></div>`;
+    }
+    if (entry.item) {
+      const ing = itemsById.get(entry.item);
+      const name = ing ? ing.name : prettyId(entry.item);
+      const icon = ing && ing.icon ? ing.icon : iconPathFromId(entry.item);
+      const clickable = ing ? `data-ingredient-id="${entry.item}"` : '';
+      const iconHtml = icon
+        ? `<img src="${icon}" alt="${name}" onerror="this.parentElement.classList.add('academy-recipe-cell--noicon')">`
+        : `<div class="academy-recipe-cell-fallback">⛏</div>`;
+      return `
+        <div class="academy-recipe-cell ${clickable ? 'academy-recipe-cell--clickable' : ''}"
+             ${clickable} title="${escapeAttr(name)}">
+          ${iconHtml}
+        </div>
+      `;
+    }
+    if (entry.tag) {
+      const tag = TAG_LABELS[entry.tag] || { short: entry.tag.split(':').pop().slice(0, 8), desc: entry.tag };
+      return `
+        <div class="academy-recipe-cell academy-recipe-cell--tag" title="${escapeAttr(tag.desc)}">
+          <span class="academy-recipe-tag-label">${tag.short}</span>
+        </div>
+      `;
+    }
+    return `<div class="academy-recipe-cell academy-recipe-cell--empty"></div>`;
+  }
+
+  function renderRecipeLegend(key) {
+    if (!key) return '';
+    const entries = Object.entries(key).map(([letter, v]) => {
+      if (v.item) {
+        const ing = itemsById.get(v.item);
+        const name = ing ? ing.name : prettyId(v.item);
+        const clickable = ing ? `data-ingredient-id="${v.item}"` : '';
+        return `
+          <div class="academy-recipe-legend-row ${clickable ? 'academy-recipe-legend-row--clickable' : ''}" ${clickable}>
+            <span class="academy-recipe-legend-letter">${letter}</span>
+            <span class="academy-recipe-legend-name">${name}</span>
+          </div>
+        `;
+      }
+      if (v.tag) {
+        const tag = TAG_LABELS[v.tag] || { short: v.tag, desc: v.tag };
+        return `
+          <div class="academy-recipe-legend-row academy-recipe-legend-row--tag" title="${escapeAttr(tag.desc)}">
+            <span class="academy-recipe-legend-letter">${letter}</span>
+            <span class="academy-recipe-legend-name">${tag.short}</span>
+            <span class="academy-recipe-legend-tag-hint">tag</span>
+          </div>
+        `;
+      }
+      return '';
+    });
+    return `<div class="academy-recipe-legend">${entries.join('')}</div>`;
+  }
+
+  function renderUsedInSection(item) {
+    const list = recipesByIngredient.get(item.id) || [];
+    const tiles = list.map(r => {
+      const result = itemsById.get(r.result);
+      const name = result ? result.name : prettyId(r.result);
+      const icon = result && result.icon ? result.icon : iconPathFromId(r.result);
+      const iconHtml = icon
+        ? `<img src="${icon}" alt="${name}" onerror="this.style.display='none'">`
+        : `<div class="academy-usedin-icon-fallback">◆</div>`;
+      return `
+        <div class="academy-usedin-tile" data-result-id="${r.result}">
+          ${iconHtml}
+          <span class="academy-usedin-name">${name}</span>
+        </div>
+      `;
+    });
+    return `
+      <section class="academy-section">
+        <div class="academy-section-head">🧬 Used in recipes — ${list.length}</div>
+        <div class="academy-usedin-grid">${tiles.join('')}</div>
+      </section>
+    `;
+  }
+
+  function prettyId(id) {
+    const base = (id.split(':').pop() || id).replace(/_/g, ' ');
+    return base.replace(/\b\w/g, c => c.toUpperCase());
   }
 
   function renderTmSection(item) {
@@ -318,15 +466,6 @@ const Academy = (() => {
         </div>
       </section>
     `;
-  }
-
-  function itemUsedInRecipes(id) {
-    return recipes.filter(r => {
-      for (const k of Object.values(r.key || {})) {
-        if (k.item === id) return true;
-      }
-      return false;
-    });
   }
 
   // ── Per-tab back stack ──────────────────────────────────

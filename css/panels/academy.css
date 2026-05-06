@@ -223,6 +223,207 @@
   margin-top: 0;
 }
 
+/* ── Recipe grid (3×3 + arrow + result + legend) ───── */
+
+.academy-recipe {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.academy-recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 56px);
+  grid-template-rows: repeat(3, 56px);
+  gap: 4px;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 6px;
+}
+.academy-recipe-cell {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.academy-recipe-cell--empty {
+  background: transparent;
+  border-style: dashed;
+  opacity: 0.35;
+}
+.academy-recipe-cell img {
+  width: 40px;
+  height: 40px;
+  image-rendering: pixelated;
+  object-fit: contain;
+}
+.academy-recipe-cell--noicon img { display: none; }
+.academy-recipe-cell--noicon::after {
+  content: '⛏';
+  font-size: 1.4rem;
+}
+.academy-recipe-cell-fallback {
+  font-size: 1.4rem;
+}
+.academy-recipe-cell--clickable {
+  cursor: pointer;
+  transition: border-color 0.1s, transform 0.1s;
+}
+.academy-recipe-cell--clickable:hover {
+  border-color: var(--accent-red);
+  transform: scale(1.06);
+}
+.academy-recipe-cell--tag {
+  background: var(--bg-tile);
+  border-style: dashed;
+  border-color: var(--accent-red);
+}
+.academy-recipe-tag-label {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--accent-red);
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding: 2px;
+  line-height: 1.1;
+}
+
+.academy-recipe-arrow {
+  font-size: 1.6rem;
+  color: var(--text-muted);
+}
+
+.academy-recipe-result {
+  position: relative;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.academy-recipe-result img {
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
+  object-fit: contain;
+}
+.academy-recipe-result-emoji {
+  font-size: 1.8rem;
+}
+.academy-recipe-count {
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  text-shadow: 0 0 3px var(--bg-panel), 0 0 3px var(--bg-panel);
+}
+
+.academy-recipe-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 4px 12px;
+  margin-top: 8px;
+}
+.academy-recipe-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  font-size: 0.82rem;
+}
+.academy-recipe-legend-row--clickable {
+  cursor: pointer;
+  transition: border-color 0.1s;
+}
+.academy-recipe-legend-row--clickable:hover {
+  border-color: var(--accent-red);
+}
+.academy-recipe-legend-letter {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent-red);
+  width: 16px;
+  text-align: center;
+  flex: 0 0 auto;
+}
+.academy-recipe-legend-name {
+  flex: 1;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.academy-recipe-legend-tag-hint {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  flex: 0 0 auto;
+}
+
+/* ── Used-in-recipes tile grid ─────────────────────── */
+
+.academy-usedin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 6px;
+}
+.academy-usedin-tile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: border-color 0.1s, transform 0.1s;
+}
+.academy-usedin-tile:hover {
+  border-color: var(--accent-red);
+  transform: translateY(-1px);
+}
+.academy-usedin-tile img {
+  width: 28px;
+  height: 28px;
+  image-rendering: pixelated;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+.academy-usedin-icon-fallback {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex: 0 0 auto;
+}
+.academy-usedin-name {
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* ── TM detail ─────────────────────────────────────── */
 
 .academy-tm-meta {
