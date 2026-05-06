@@ -55306,8 +55306,16 @@
     ],
     "drops": [
       {
-        "item": "Lucky Egg 25% OR Oval Stone 25% OR Egg",
-        "chance": "50%"
+        "item": "Lucky Egg",
+        "chance": "25%"
+      },
+      {
+        "item": "Oval Stone",
+        "chance": "25%"
+      },
+      {
+        "item": "Egg",
+        "quantity": "1"
       }
     ],
     "spawns": [

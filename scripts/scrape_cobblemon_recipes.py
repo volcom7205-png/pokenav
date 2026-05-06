@@ -53,6 +53,13 @@ THROTTLE_SEC = 0.2
 RECIPE_DIR = "common/src/main/resources/data/cobblemon/recipe"
 TEXTURE_DIR = "common/src/main/resources/assets/cobblemon/textures/item"
 
+# Drops appear in pokemon_gen*.json as plain English ("Up-Grade", "Light Ball").
+# Snake-cased they line up with cobblemon's PNG basenames — except when the
+# in-game item name diverges from the texture filename. Map slug → repo basename.
+DROP_BASENAME_ALIASES = {
+    "up_grade": "upgrade",
+}
+
 # Maps Minecraft / Cobblemon recipe type strings to our normalized type.
 TYPE_MAP = {
     "minecraft:crafting_shaped":    "shaped",
@@ -278,6 +285,24 @@ def collect_referenced_items(recipes: list[dict]) -> tuple[set[str], set[str]]:
     return cobblemon, other
 
 
+def collect_drop_slugs() -> set[str]:
+    """Snake-case every Pokémon drop name across data/pokemon_gen*.json."""
+    slugs: set[str] = set()
+    for path in sorted(DATA.glob("pokemon_gen*.json")):
+        for p in json.loads(path.read_text(encoding="utf-8")):
+            for d in p.get("drops", []):
+                name = d.get("item", "") or ""
+                if not name:
+                    continue
+                slug = re.sub(r"_+", "_",
+                              re.sub(r"[^a-z0-9]+", "_",
+                                     name.lower().replace("'", "").replace(".", ""))
+                              ).strip("_")
+                if slug:
+                    slugs.add(slug)
+    return slugs
+
+
 def build_texture_index() -> dict[str, str]:
     """Map basename → repo path for every PNG under textures/item/.
 
@@ -363,6 +388,34 @@ def main() -> None:
 
     if missing:
         print(f"[scraper] {len(missing)} cobblemon items had no texture: {missing}",
+              file=sys.stderr)
+
+    # Second pass: cobblemon textures referenced as drop names in
+    # data/pokemon_gen*.json. Recipes don't mention every held/evolution item
+    # (Light Ball, Razor Claw, Up-Grade, etc.) so a roster-driven sweep
+    # is needed to keep the Academy drop tiles iconned.
+    drop_extra = 0
+    drop_missing: list[str] = []
+    for slug in sorted(collect_drop_slugs()):
+        target = ASSETS / f"{slug}.png"
+        if target.exists() and target.stat().st_size > 0:
+            continue
+        actual = DROP_BASENAME_ALIASES.get(slug, slug)
+        if actual not in tex_index:
+            drop_missing.append(slug)
+            continue
+        try:
+            download_texture(slug, tex_index[actual])
+            drop_extra += 1
+        except Exception as e:
+            print(f"[scraper] drop texture {slug}.png failed: {e}", file=sys.stderr)
+            drop_missing.append(slug)
+
+    print(f"[scraper] downloaded {drop_extra} extra drop textures from cobblemon",
+          file=sys.stderr)
+    if drop_missing:
+        print(f"[scraper] {len(drop_missing)} drop slugs not in cobblemon textures "
+              f"(likely vanilla — fetch_minecraft_icons.py picks them up): {drop_missing}",
               file=sys.stderr)
 
     vanilla = sorted(r for r in other_refs if not r.startswith("tag:"))

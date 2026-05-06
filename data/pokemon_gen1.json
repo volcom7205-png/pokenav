@@ -14762,7 +14762,7 @@
   },
   {
     "id": 29,
-    "name": "Nidoran♀",
+    "name": "Nidoran\u2640",
     "types": [
       "Poison"
     ],
@@ -16540,7 +16540,7 @@
   },
   {
     "id": 32,
-    "name": "Nidoran♂",
+    "name": "Nidoran\u2642",
     "types": [
       "Poison"
     ],
@@ -43138,8 +43138,9 @@
         "quantity": "1-3"
       },
       {
-        "item": "Glow Ink Sac 1-3",
-        "chance": "10%"
+        "item": "Glow Ink Sac",
+        "chance": "10%",
+        "quantity": "1-3"
       },
       {
         "item": "Poison Barb",
@@ -43826,8 +43827,9 @@
         "quantity": "2-4"
       },
       {
-        "item": "Glow Ink Sac 2-4",
-        "chance": "10%"
+        "item": "Glow Ink Sac",
+        "chance": "10%",
+        "quantity": "2-4"
       },
       {
         "item": "Poison Barb",
@@ -68941,8 +68943,16 @@
     ],
     "drops": [
       {
-        "item": "Lucky Egg 10% OR Oval Stone 10% OR Egg",
-        "chance": "50%"
+        "item": "Lucky Egg",
+        "chance": "10%"
+      },
+      {
+        "item": "Oval Stone",
+        "chance": "10%"
+      },
+      {
+        "item": "Egg",
+        "quantity": "1"
       }
     ],
     "spawns": [
@@ -87607,7 +87617,7 @@
         "biomes": [],
         "time": "any",
         "weather": "any",
-        "notes": "No standard spawn data — may require special conditions or events."
+        "notes": "No standard spawn data \u2014 may require special conditions or events."
       }
     ]
   },
@@ -88146,7 +88156,7 @@
         "biomes": [],
         "time": "any",
         "weather": "any",
-        "notes": "No standard spawn data — may require special conditions or events."
+        "notes": "No standard spawn data \u2014 may require special conditions or events."
       }
     ]
   },
@@ -88673,7 +88683,7 @@
         "biomes": [],
         "time": "any",
         "weather": "any",
-        "notes": "No standard spawn data — may require special conditions or events."
+        "notes": "No standard spawn data \u2014 may require special conditions or events."
       }
     ]
   },
@@ -91834,7 +91844,7 @@
         "biomes": [],
         "time": "any",
         "weather": "any",
-        "notes": "No standard spawn data — may require special conditions or events."
+        "notes": "No standard spawn data \u2014 may require special conditions or events."
       }
     ]
   },
@@ -94008,7 +94018,7 @@
         "biomes": [],
         "time": "any",
         "weather": "any",
-        "notes": "No standard spawn data — may require special conditions or events."
+        "notes": "No standard spawn data \u2014 may require special conditions or events."
       }
     ]
   }

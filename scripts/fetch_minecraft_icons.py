@@ -46,6 +46,8 @@ ALIASES = {
     "prismarine_crystal":"prismarine_crystals",
     "glow_ink_sac_1_3":  "glow_ink_sac",
     "glow_ink_sac_2_4":  "glow_ink_sac",
+    "dragons_breath":   "dragon_breath",
+    "rose":             "poppy",
 }
 
 # Items that don't have a flat texture (3D blocks/entities). We pick a sensible
@@ -130,6 +132,11 @@ SUBSTITUTE = {
     "pink_petals":    "block/pink_petals",
     "moss_block":     "block/moss_block",
     "glow_lichen":    "block/glow_lichen",
+    # Froglights are tall blocks — pick the top texture as a representative.
+    "ochre_froglight":       "block/ochre_froglight_top",
+    "pearlescent_froglight": "block/pearlescent_froglight_top",
+    "verdant_froglight":     "block/verdant_froglight_top",
+    "sunflower":             "block/sunflower_front",
 }
 
 def needed_basenames():

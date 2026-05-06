@@ -2744,5 +2744,233 @@
         "source": "cobblemon"
       }
     ]
+  },
+  "bamboo": {
+    "dimension": "overworld",
+    "group": "forest",
+    "underlying": [
+      {
+        "name": "Bamboo Jungle",
+        "source": "vanilla"
+      }
+    ]
+  },
+  "cherry_blossom": {
+    "dimension": "overworld",
+    "group": "forest",
+    "underlying": [
+      {
+        "name": "Cherry Grove",
+        "source": "vanilla"
+      }
+    ]
+  },
+  "muddy": {
+    "dimension": "overworld",
+    "group": "forest",
+    "underlying": [
+      {
+        "name": "Mangrove Swamp",
+        "source": "vanilla"
+      },
+      {
+        "name": "Mud-themed Cobblemon biomes",
+        "source": "cobblemon"
+      }
+    ]
+  },
+  "snowy": {
+    "dimension": "overworld",
+    "group": "cold",
+    "underlying": [
+      {
+        "name": "Snowy Plains",
+        "source": "vanilla"
+      }
+    ]
+  },
+  "snowy_taiga": {
+    "dimension": "overworld",
+    "group": "cold",
+    "underlying": [
+      {
+        "name": "Snowy Taiga",
+        "source": "vanilla"
+      }
+    ]
+  },
+  "cold_ocean": {
+    "dimension": "overworld",
+    "group": "aquatic",
+    "underlying": [
+      {
+        "name": "Cold Ocean",
+        "source": "vanilla"
+      },
+      {
+        "name": "Deep Cold Ocean",
+        "source": "vanilla"
+      }
+    ]
+  },
+  "frozen_river": {
+    "dimension": "overworld",
+    "group": "aquatic",
+    "underlying": [
+      {
+        "name": "Frozen River",
+        "source": "vanilla"
+      }
+    ]
+  },
+  "snowy_beach": {
+    "dimension": "overworld",
+    "group": "aquatic",
+    "underlying": [
+      {
+        "name": "Snowy Beach",
+        "source": "vanilla"
+      }
+    ]
+  },
+  "sunflower_plains": {
+    "dimension": "overworld",
+    "group": "plains",
+    "underlying": [
+      {
+        "name": "Sunflower Plains",
+        "source": "vanilla"
+      }
+    ]
+  },
+  "floral_meadow": {
+    "dimension": "aether",
+    "group": "aether",
+    "underlying": [
+      {
+        "name": "Floral Meadow",
+        "source": "aether"
+      }
+    ]
+  },
+  "shrubland": {
+    "dimension": "overworld",
+    "group": "plains",
+    "underlying": [
+      {
+        "name": "Shrubland",
+        "source": "terralith"
+      }
+    ]
+  },
+  "mushroom_fields": {
+    "dimension": "overworld",
+    "group": "overworld_special",
+    "underlying": [
+      {
+        "name": "Mushroom Fields",
+        "source": "vanilla"
+      }
+    ]
+  },
+  "aether": {
+    "dimension": "aether",
+    "group": "aether",
+    "underlying": [
+      {
+        "name": "All Aether dimension biomes",
+        "source": "aether"
+      }
+    ]
+  },
+  "skyroot_forest": {
+    "dimension": "aether",
+    "group": "aether",
+    "underlying": [
+      {
+        "name": "Skyroot Forest",
+        "source": "aether"
+      }
+    ]
+  },
+  "skyroot_woodland": {
+    "dimension": "aether",
+    "group": "aether",
+    "underlying": [
+      {
+        "name": "Skyroot Woodland",
+        "source": "aether"
+      }
+    ]
+  },
+  "skyroot_grove": {
+    "dimension": "aether",
+    "group": "aether",
+    "underlying": [
+      {
+        "name": "Skyroot Grove",
+        "source": "aether"
+      }
+    ]
+  },
+  "skyroot_meadow": {
+    "dimension": "aether",
+    "group": "aether",
+    "underlying": [
+      {
+        "name": "Skyroot Meadow",
+        "source": "aether"
+      }
+    ]
+  },
+  "crystal_canyon": {
+    "dimension": "aether",
+    "group": "aether",
+    "underlying": [
+      {
+        "name": "Crystal Canyon",
+        "source": "aether"
+      }
+    ]
+  },
+  "howling_constructs": {
+    "dimension": "aether",
+    "group": "aether",
+    "underlying": [
+      {
+        "name": "Howling Constructs",
+        "source": "aether"
+      }
+    ]
+  },
+  "pollinated_fields": {
+    "dimension": "aether",
+    "group": "aether",
+    "underlying": [
+      {
+        "name": "Pollinated Fields",
+        "source": "aether"
+      }
+    ]
+  },
+  "crystalline_chasm": {
+    "dimension": "end",
+    "group": "end",
+    "underlying": [
+      {
+        "name": "Crystalline Chasm",
+        "source": "terralith"
+      }
+    ]
+  },
+  "warped_desert": {
+    "dimension": "end",
+    "group": "end",
+    "underlying": [
+      {
+        "name": "Warped Desert",
+        "source": "terralith"
+      }
+    ]
   }
 }

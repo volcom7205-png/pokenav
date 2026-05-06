@@ -81,11 +81,24 @@ python3 scripts/scrape_cobbledex.py
 python3 scripts/import_cobblemon_xlsx.py
 # (defaults to /mnt/c/Users/Dickie/Downloads/drive-download-…zip; takes --zip / --spawns / --drops)
 
+# Recipes + cobblemon item icons — re-run after a Cobblemon update; also walks
+# pokemon_gen*.json drops and pulls held_items/, evolution/, medicine/ textures:
+python3 scripts/scrape_cobblemon_recipes.py
+
+# Vanilla minecraft icons referenced as ingredients or drops:
+python3 scripts/fetch_minecraft_icons.py
+
+# After ANY icon-pack change, regenerate data/icons.js (the manifest the
+# Academy uses to namespace plain drop names → cobblemon: vs minecraft:):
+python3 scripts/build_icon_manifest.py
+
 # After ANY data refresh, regenerate the .js mirrors so file:// still works:
 python3 scripts/build_data_js.py
 ```
 
 The xlsx importer **preserves** existing spawns/drops when the xlsx has no row for a mon — protects hand-curated legendary entries (Mew, etc.).
+
+`update-shay.sh` runs the icon manifest + data .js build automatically and syncs `assets/items/` to Shay's copy before rebuilding the zip.
 
 **Why `data/*.js`?** The app loads data from `window.POKENAV_*` globals (set by the inlined `<script src="data/*.js">` tags in `index.html`), not via `fetch()`. This lets non-technical users (e.g., Shay) double-click `index.html` and have it run — `fetch()` of local JSON is blocked under `file://`. Edit JSON, run `build_data_js.py`, then commit both. `update-shay.sh` runs the build automatically.
 

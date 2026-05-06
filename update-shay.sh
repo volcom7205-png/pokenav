@@ -26,11 +26,18 @@ if [ ! -d "$SRC_ROOT/data" ]; then
   exit 1
 fi
 
+echo "→ Rebuilding icon manifest from assets/items/"
+python3 "$SRC_ROOT/scripts/build_icon_manifest.py"
+
 echo "→ Building data/*.js (so file:// works without a server)"
 python3 "$SRC_ROOT/scripts/build_data_js.py" "$SRC_ROOT"
 
 echo "→ Syncing data/ → $DST_ROOT/data/"
 cp -r "$SRC_ROOT/data/." "$DST_ROOT/data/"
+
+echo "→ Syncing assets/items/ → $DST_ROOT/assets/items/"
+mkdir -p "$DST_ROOT/assets/items"
+cp -r "$SRC_ROOT/assets/items/." "$DST_ROOT/assets/items/"
 
 echo "→ Rebuilding $ZIP_PATH"
 python3 - "$DST_ROOT" "$ZIP_PATH" <<'PY'

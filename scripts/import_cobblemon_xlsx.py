@@ -117,6 +117,11 @@ def num_or_none(s: str) -> int | None:
         return None
 
 
+# `<item> <qty> <chance%>` — both qty and trailing chance (e.g. "Glow Ink Sac 1-3 10%")
+DROP_TOKEN_QTY_CHANCE_RE = re.compile(
+    r"^\s*(?P<item>.+?)\s+(?P<qty>\d+(?:-\d+)?)\s+(?P<chance>\d+(?:\.\d+)?%)\s*$"
+)
+# `<item> <chance%>` or `<item> <qty>`
 DROP_TOKEN_RE = re.compile(
     r"""
     ^\s*
@@ -137,13 +142,24 @@ def parse_drops(cell: str) -> list[dict]:
     if not cell:
         return []
     out = []
-    for chunk in re.split(r",\s*", cell):
+    # Tokens may be comma-separated OR " OR "-separated (Chansey/Blissey style).
+    raw_chunks = []
+    for c in re.split(r",\s*", cell):
+        raw_chunks.extend(re.split(r"\s+OR\s+", c))
+    for chunk in raw_chunks:
         chunk = chunk.strip()
         if not chunk:
             continue
+        m = DROP_TOKEN_QTY_CHANCE_RE.match(chunk)
+        if m:
+            out.append({
+                "item": m.group("item").strip(),
+                "chance": m.group("chance"),
+                "quantity": m.group("qty"),
+            })
+            continue
         m = DROP_TOKEN_RE.match(chunk)
         if not m:
-            # No trailing number — treat whole token as item with qty 1
             out.append({"item": chunk, "quantity": "1"})
             continue
         item = m.group("item").strip()
