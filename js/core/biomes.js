@@ -96,14 +96,10 @@ const PokeNavBiomes = (() => {
 
   function load() {
     if (loadPromise) return loadPromise;
-    loadPromise = fetch(TAXONOMY_URL)
-      .then(r => r.json())
-      .then(json => { taxonomy = json; loadEnabledMods(); })
-      .catch(err => {
-        console.warn('PokeNavBiomes: taxonomy load failed', err);
-        taxonomy = {};
-        loadEnabledMods();
-      });
+    loadPromise = Promise.resolve().then(() => {
+      taxonomy = window.POKENAV_BIOME_TAXONOMY || {};
+      loadEnabledMods();
+    });
     return loadPromise;
   }
 

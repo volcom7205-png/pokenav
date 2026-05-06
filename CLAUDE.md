@@ -37,11 +37,15 @@ css/
   panels/*.css          # One per panel
 data/
   pokemon_gen{1..9}.json  # Roster + types + sprite + learnableMoves (cobbledex) + spawns + drops (xlsx)
-  moves.json              # 954 moves with type/category/power/accuracy/pp
-  items.json              # Hand-curated berries / battle items / vitamins
+  pokemon_gen{1..9}.js    # Build output: window.POKENAV_POKEMON_GEN<n> = [...]
+  moves.json / moves.js   # 954 moves; .js is build output (window.POKENAV_MOVES)
+  items.json / items.js   # Hand-curated berries / battle items / vitamins
+  biome_taxonomy.json/.js # Biome metadata (window.POKENAV_BIOME_TAXONOMY)
+  recipes.json / recipes.js # Academy recipes (window.POKENAV_RECIPES)
 scripts/
   scrape_cobbledex.py        # Roster scraper (cobbledex.info RSC payloads)
   import_cobblemon_xlsx.py   # Spawns + drops importer (Cobblemon 1.7.3 XLSX → per-gen JSON)
+  build_data_js.py           # Wraps each data/*.json as data/*.js for file:// loading
 assets/types/*.png      # 18 type icons
 ```
 
@@ -76,9 +80,14 @@ python3 scripts/scrape_cobbledex.py
 # Spawns + drops — when the user provides a new Cobblemon 1.7.3+ XLSX export:
 python3 scripts/import_cobblemon_xlsx.py
 # (defaults to /mnt/c/Users/Dickie/Downloads/drive-download-…zip; takes --zip / --spawns / --drops)
+
+# After ANY data refresh, regenerate the .js mirrors so file:// still works:
+python3 scripts/build_data_js.py
 ```
 
 The xlsx importer **preserves** existing spawns/drops when the xlsx has no row for a mon — protects hand-curated legendary entries (Mew, etc.).
+
+**Why `data/*.js`?** The app loads data from `window.POKENAV_*` globals (set by the inlined `<script src="data/*.js">` tags in `index.html`), not via `fetch()`. This lets non-technical users (e.g., Shay) double-click `index.html` and have it run — `fetch()` of local JSON is blocked under `file://`. Edit JSON, run `build_data_js.py`, then commit both. `update-shay.sh` runs the build automatically.
 
 ## What's working now (Stage 7 + plan-purring-raccoon)
 

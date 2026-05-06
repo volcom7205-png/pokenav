@@ -11,15 +11,9 @@ const PokeNavData = (() => {
   async function load() {
     if (loadingPromise) return loadingPromise;
     loadingPromise = (async () => {
-      const movesRes = fetch('data/moves.json').then(r => r.json());
-      const genRes = GENS.map(g =>
-        fetch(`data/pokemon_gen${g}.json`)
-          .then(r => r.ok ? r.json() : [])
-          .catch(() => [])
-      );
-      const [moves, ...gens] = await Promise.all([movesRes, ...genRes]);
-      allMoves = moves;
-      movesByName = new Map(moves.map(m => [m.name, m]));
+      allMoves = window.POKENAV_MOVES || [];
+      movesByName = new Map(allMoves.map(m => [m.name, m]));
+      const gens = GENS.map(g => window[`POKENAV_POKEMON_GEN${g}`] || []);
       allPokemon = gens.flat().sort((a, b) => a.id - b.id);
       pokemonById = new Map(allPokemon.map(p => [p.id, p]));
     })();

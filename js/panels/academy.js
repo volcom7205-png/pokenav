@@ -32,10 +32,8 @@ const Academy = (() => {
     inited = true;
     await PokeNavData.load();
 
-    const [itemsRes, recipesRes] = await Promise.all([
-      fetch('data/items.json').then(r => r.json()).catch(e => { console.error('items.json load failed', e); return []; }),
-      fetch('data/recipes.json').then(r => r.json()).catch(e => { console.error('recipes.json load failed', e); return []; }),
-    ]);
+    const itemsRes = window.POKENAV_ITEMS || [];
+    const recipesRes = window.POKENAV_RECIPES || [];
 
     recipes = recipesRes;
     recipesByResult = new Map(recipes.map(r => [r.result, r]));
