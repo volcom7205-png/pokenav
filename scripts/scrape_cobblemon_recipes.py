@@ -279,14 +279,26 @@ def collect_referenced_items(recipes: list[dict]) -> tuple[set[str], set[str]]:
 
 
 def build_texture_index() -> dict[str, str]:
+    """Map basename → repo path for every PNG under textures/item/.
+
+    Subdirectories (poke_balls/, pokedexes/, …) hold the proper 16×16
+    inventory icons; other paths sometimes hold 3D entity textures that
+    happen to share a basename. Prefer subdirectory hits so we don't
+    accidentally grab a 64×32 entity texture.
+    """
     tree = list_tree(TEXTURE_DIR, recursive=True)
-    index: dict[str, str] = {}
+    candidates: dict[str, list[str]] = {}
     for entry in tree:
         if entry["type"] != "blob" or not entry["name"].endswith(".png"):
             continue
         short = entry["name"][:-4]
-        full_path = entry["path"]
-        index.setdefault(short, full_path)
+        candidates.setdefault(short, []).append(entry["path"])
+
+    index: dict[str, str] = {}
+    for short, paths in candidates.items():
+        # Deeper paths win — `item/poke_balls/ultra_ball.png` beats
+        # any same-named file at a shallower level.
+        index[short] = sorted(paths, key=lambda p: -p.count("/"))[0]
     return index
 
 

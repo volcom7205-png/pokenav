@@ -124,6 +124,82 @@ const Academy = (() => {
     'minecraft:enchantable/fishing': { short: 'Fishing Rod', desc: 'Any fishing rod.' },
   };
 
+  // Tag → representative item id (rendered as the cell icon so users see a
+  // concrete thing — diamond instead of "Tier 3", iron ingot instead of "Iron").
+  // The "TAG" corner badge stays so it's still visually distinct from a
+  // literal-item slot.
+  const TAG_REPRESENTATIVES = {
+    'cobblemon:tier_1_poke_ball_materials': 'minecraft:iron_ingot',
+    'cobblemon:tier_2_poke_ball_materials': 'minecraft:gold_ingot',
+    'cobblemon:tier_3_poke_ball_materials': 'minecraft:diamond',
+    'cobblemon:tier_4_poke_ball_materials': 'minecraft:netherite_ingot',
+    'cobblemon:apples':                     'minecraft:apple',
+    'cobblemon:apricorns':                  'cobblemon:red_apricorn',
+    'cobblemon:apricorn_logs':              'cobblemon:apricorn_sign',
+    'cobblemon:saccharine_logs':            'cobblemon:saccharine_sign',
+    'cobblemon:berries':                    'cobblemon:cheri_berry',
+    'cobblemon:remedy_berries':             'cobblemon:cheri_berry',
+    'cobblemon:full_heal_ingredients':      'cobblemon:pecha_berry',
+    'cobblemon:super_potion_ingredients':   'cobblemon:oran_berry',
+    'cobblemon:full_heal_bottles':          'minecraft:glass_bottle',
+    'cobblemon:pokedex_screen':             'cobblemon:pokedex_red',
+    'cobblemon:sandwich_veggies':           'minecraft:carrot',
+    'c:ingots/iron':       'minecraft:iron_ingot',
+    'c:ingots/gold':       'minecraft:gold_ingot',
+    'c:ingots/copper':     'minecraft:copper_ingot',
+    'c:ingots/netherite':  'minecraft:netherite_ingot',
+    'c:gems/diamond':      'minecraft:diamond',
+    'c:gems/amethyst':     'minecraft:amethyst_shard',
+    'c:gems/lapis':        'minecraft:lapis_lazuli',
+    'c:gems/quartz':       'minecraft:quartz',
+    'c:gems/prismarine':   'minecraft:prismarine_shard',
+    'c:nuggets/iron':      'minecraft:iron_nugget',
+    'c:nuggets/gold':      'minecraft:gold_nugget',
+    'c:rods/blaze':        'minecraft:blaze_rod',
+    'c:rods/wooden':       'minecraft:stick',
+    'c:bones':             'minecraft:bone',
+    'c:strings':           'minecraft:string',
+    'c:slime_balls':       'minecraft:slime_ball',
+    'c:storage_blocks/iron': 'minecraft:iron_block',
+    'c:bricks/normal':     'minecraft:brick',
+    'c:foods/bread':       'minecraft:bread',
+    'c:foods/raw_meat':    'minecraft:beef',
+    'c:crops/wheat':       'minecraft:wheat',
+    'c:seeds':             'minecraft:wheat_seeds',
+    'c:mushrooms':         'minecraft:red_mushroom',
+    'c:dyes/red':          'minecraft:red_dye',
+    'c:dyes/blue':         'minecraft:blue_dye',
+    'c:dyes/green':        'minecraft:green_dye',
+    'c:dyes/yellow':       'minecraft:yellow_dye',
+    'c:dyes/white':        'minecraft:white_dye',
+    'c:dyes/black':        'minecraft:black_dye',
+    'c:dyes/orange':       'minecraft:orange_dye',
+    'c:dyes/pink':         'minecraft:pink_dye',
+    'c:dyes/purple':       'minecraft:purple_dye',
+    'c:dyes/cyan':         'minecraft:cyan_dye',
+    'c:dyes/magenta':      'minecraft:magenta_dye',
+    'c:dyes/brown':        'minecraft:brown_dye',
+    'c:dyes/lime':         'minecraft:lime_dye',
+    'c:dyes/light_blue':   'minecraft:light_blue_dye',
+    'c:dyes/light_gray':   'minecraft:light_gray_dye',
+    'c:dyes/gray':         'minecraft:gray_dye',
+    'c:concretes':         'minecraft:white_concrete',
+    'c:fertilizers':       'minecraft:bone_meal',
+    'c:dusts/redstone':    'minecraft:redstone',
+    'c:chests/wooden':     'minecraft:chest',
+    'c:chains':            'minecraft:chain',
+    'c:leathers':          'minecraft:leather',
+    'c:drinks/milk':       'minecraft:milk_bucket',
+    'c:buckets/empty':     'minecraft:bucket',
+    // 'c:tools/shield': no flat shield texture — falls back to text "Shield".
+    'c:raw_materials/gold':'minecraft:raw_gold',
+    'minecraft:planks':    'minecraft:oak_planks',
+    'minecraft:wooden_slabs': 'minecraft:oak_slab',
+    'minecraft:wool':      'minecraft:white_wool',
+    'minecraft:buttons':   'minecraft:oak_button',
+    'minecraft:enchantable/fishing': 'minecraft:fishing_rod',
+  };
+
   async function init() {
     if (inited) return;
     inited = true;
@@ -316,11 +392,37 @@ const Academy = (() => {
   }
 
   function dropAsItem(name) {
+    const { id, icon } = resolveIconForName(name);
     return {
+      id,
       name,
       category: 'drop',
       description: `Dropped by ${dropIndex.get(name).length} Pokémon`,
+      icon,
     };
+  }
+
+  // Pick the correct namespace + icon for a plain item name. Vanilla drops
+  // (Apple, Bone, Feather) live under minecraft:, cobblemon items under
+  // cobblemon:. Falls back to cobblemon: with null icon when no PNG exists,
+  // letting the in-cell text fallback take over.
+  let _iconLookup = null;
+  function resolveIconForName(name) {
+    if (!_iconLookup) {
+      const m = window.POKENAV_ICON_MANIFEST || { cobblemon: [], minecraft: [] };
+      _iconLookup = {
+        cobblemon: new Set(m.cobblemon),
+        minecraft: new Set(m.minecraft),
+      };
+    }
+    const sk = snakeify(name);
+    if (_iconLookup.cobblemon.has(sk)) {
+      return { id: `cobblemon:${sk}`, icon: `assets/items/cobblemon/${sk}.png` };
+    }
+    if (_iconLookup.minecraft.has(sk)) {
+      return { id: `minecraft:${sk}`, icon: `assets/items/minecraft/${sk}.png` };
+    }
+    return { id: `cobblemon:${sk}`, icon: null };
   }
 
   // ── Rendering ────────────────────────────────────────────
@@ -623,8 +725,9 @@ const Academy = (() => {
       const icon = ing && ing.icon ? ing.icon : iconPathFromId(ref.item);
       const clickable = ing ? `data-ingredient-id="${ref.item}"` : '';
       const iconHtml = icon
-        ? `<img src="${icon}" alt="${escapeAttr(name)}" onerror="this.parentElement.classList.add('academy-recipe-cell--noicon')">`
-        : `<div class="academy-recipe-cell-fallback">⛏</div>`;
+        ? `<img src="${icon}" alt="${escapeAttr(name)}" onerror="this.parentElement.classList.add('academy-recipe-cell--noicon')">
+           <span class="academy-recipe-cell-name">${escapeAttr(name)}</span>`
+        : `<span class="academy-recipe-cell-name">${escapeAttr(name)}</span>`;
       return `
         <div class="academy-recipe-cell ${clickable ? 'academy-recipe-cell--clickable' : ''}"
              ${clickable} title="${escapeAttr(tipOverride || name)}">
@@ -633,10 +736,19 @@ const Academy = (() => {
       `;
     }
     if (ref.tag) {
-      const tag = TAG_LABELS[ref.tag] || { short: ref.tag.split(':').pop().slice(0, 8), desc: ref.tag };
+      const tag = TAG_LABELS[ref.tag] || { short: prettyTagShort(ref.tag), desc: ref.tag };
+      const repId = TAG_REPRESENTATIVES[ref.tag];
+      const repName = repId ? prettyId(repId) : tag.short;
+      const repIcon = repId ? iconPathFromId(repId) : null;
+      const tip = tipOverride || `${tag.short} — ${tag.desc}`;
+      const inner = repIcon
+        ? `<img src="${repIcon}" alt="${escapeAttr(repName)}" onerror="this.parentElement.classList.add('academy-recipe-cell--noicon')">
+           <span class="academy-recipe-cell-name">${escapeAttr(tag.short)}</span>`
+        : `<span class="academy-recipe-cell-name">${escapeAttr(tag.short)}</span>`;
       return `
-        <div class="academy-recipe-cell academy-recipe-cell--tag" title="${escapeAttr(tipOverride || tag.desc)}">
-          <span class="academy-recipe-tag-label">${tag.short}</span>
+        <div class="academy-recipe-cell academy-recipe-cell--tag" title="${escapeAttr(tip)}">
+          ${inner}
+          <span class="academy-recipe-tag-badge">TAG</span>
         </div>
       `;
     }
@@ -665,8 +777,9 @@ const Academy = (() => {
     const outItem = itemsById.get(recipe.result) || item;
     const icon = outItem.icon || iconPathFromId(recipe.result);
     const iconHtml = icon
-      ? `<img src="${icon}" alt="${escapeAttr(outItem.name)}" onerror="this.style.display='none'">`
-      : `<div class="academy-recipe-result-emoji">◆</div>`;
+      ? `<img src="${icon}" alt="${escapeAttr(outItem.name)}" onerror="this.parentElement.classList.add('academy-recipe-result--noicon')">
+         <span class="academy-recipe-result-name">${escapeAttr(outItem.name)}</span>`
+      : `<span class="academy-recipe-result-name">${escapeAttr(outItem.name)}</span>`;
     const count = recipe.count && recipe.count > 1 ? `<div class="academy-recipe-count">×${recipe.count}</div>` : '';
     return `
       <div class="academy-recipe-result" title="${escapeAttr(outItem.name)}">
@@ -692,11 +805,14 @@ const Academy = (() => {
         `;
       }
       if (v && v.tag) {
-        const tag = TAG_LABELS[v.tag] || { short: v.tag, desc: v.tag };
+        const tag = TAG_LABELS[v.tag] || { short: prettyTagShort(v.tag), desc: v.tag };
         return `
-          <div class="academy-recipe-legend-row academy-recipe-legend-row--tag" title="${escapeAttr(tag.desc)}">
+          <div class="academy-recipe-legend-row academy-recipe-legend-row--tag">
             <span class="academy-recipe-legend-letter">${letter}</span>
-            <span class="academy-recipe-legend-name">${tag.short}</span>
+            <div class="academy-recipe-legend-tag-text">
+              <span class="academy-recipe-legend-name">${escapeAttr(tag.short)}</span>
+              <span class="academy-recipe-legend-tag-desc">${escapeAttr(tag.desc)}</span>
+            </div>
             <span class="academy-recipe-legend-tag-hint">tag</span>
           </div>
         `;
@@ -765,6 +881,10 @@ const Academy = (() => {
   function prettyId(id) {
     const base = (id.split(':').pop() || id).replace(/_/g, ' ');
     return base.replace(/\b\w/g, c => c.toUpperCase());
+  }
+
+  function prettyTagShort(tag) {
+    return prettyId(tag.replace(/^c:/, '').replace(/\//g, ' '));
   }
 
   function renderTmSection(item) {
