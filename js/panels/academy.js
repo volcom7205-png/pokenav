@@ -291,6 +291,9 @@ const Academy = (() => {
     body.querySelectorAll('[data-result-id]').forEach(el => {
       el.addEventListener('click', () => openItem(el.dataset.resultId));
     });
+    body.querySelectorAll('[data-mon-id]').forEach(el => {
+      el.addEventListener('click', () => goToPokedex(Number(el.dataset.monId)));
+    });
   }
 
   function renderDetailSections(item) {
@@ -305,13 +308,7 @@ const Academy = (() => {
     }
 
     if (dropIndex.has(item.name)) {
-      const droppers = dropIndex.get(item.name);
-      parts.push(`
-        <section class="academy-section">
-          <div class="academy-section-head">💧 Dropped by — ${droppers.length} Pokémon</div>
-          <div class="academy-section-placeholder">Reverse-drop list ships in Session 7.</div>
-        </section>
-      `);
+      parts.push(renderDroppedBySection(item));
     }
 
     if (!parts.length) {
@@ -439,6 +436,33 @@ const Academy = (() => {
     `;
   }
 
+  function renderDroppedBySection(item) {
+    const droppers = dropIndex.get(item.name) || [];
+    const rows = droppers.map(({ pokemon, amount }) => `
+      <div class="academy-dropper" data-mon-id="${pokemon.id}">
+        <img class="academy-dropper-sprite"
+             src="${spriteUrl(pokemon.id)}"
+             onerror="${spriteFallbackOnError(pokemon.id)}"
+             alt="${pokemon.name}">
+        <div class="academy-dropper-info">
+          <div class="academy-dropper-name">${pokemon.name}</div>
+          <div class="academy-dropper-meta">
+            <span class="academy-dropper-num">#${String(pokemon.id).padStart(4, '0')}</span>
+            <span class="academy-dropper-types">${pokemon.types.map(t => typeIconHTMLCompact(t)).join('')}</span>
+          </div>
+        </div>
+        <span class="academy-dropper-amount">${amount}</span>
+        <span class="academy-dropper-arrow">→</span>
+      </div>
+    `).join('');
+    return `
+      <section class="academy-section">
+        <div class="academy-section-head">💧 Dropped by — ${droppers.length} Pokémon</div>
+        <div class="academy-droppers-list">${rows}</div>
+      </section>
+    `;
+  }
+
   function prettyId(id) {
     const base = (id.split(':').pop() || id).replace(/_/g, ' ');
     return base.replace(/\b\w/g, c => c.toUpperCase());
@@ -470,12 +494,13 @@ const Academy = (() => {
 
   // ── Per-tab back stack ──────────────────────────────────
 
-  function openItem(itemOrName) {
+  function openItem(itemOrName, opts = {}) {
     const item = typeof itemOrName === 'string'
       ? allItems.find(i => i.name === itemOrName) ||
         allItems.find(i => i.id === itemOrName)
       : itemOrName;
     if (!item) return;
+    if (opts.fresh) itemHistory.length = 0;
     itemHistory.push(item);
     detailItem = item;
     renderActive();

@@ -424,6 +424,72 @@
   text-overflow: ellipsis;
 }
 
+/* ── Dropped-by list ───────────────────────────────── */
+
+.academy-droppers-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 6px;
+}
+.academy-dropper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.1s, transform 0.1s;
+}
+.academy-dropper:hover {
+  border-color: var(--accent-red);
+  transform: translateY(-1px);
+}
+.academy-dropper-sprite {
+  width: 44px;
+  height: 44px;
+  image-rendering: pixelated;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+.academy-dropper-info { flex: 1; min-width: 0; }
+.academy-dropper-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+.academy-dropper-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.academy-dropper-num {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+.academy-dropper-types {
+  display: inline-flex;
+  gap: 3px;
+}
+.academy-dropper-amount {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-yellow);
+  flex: 0 0 auto;
+}
+.academy-dropper-arrow {
+  color: var(--text-muted);
+  font-size: 1rem;
+  flex: 0 0 auto;
+}
+
 /* ── TM detail ─────────────────────────────────────── */
 
 .academy-tm-meta {

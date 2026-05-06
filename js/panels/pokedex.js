@@ -187,7 +187,7 @@ function renderPokedexCard(pokemon, spawnIdx) {
   const dropsHTML = (pokemon.drops && pokemon.drops.length)
     ? `<div class="drops-list">
         ${pokemon.drops.map(d => `
-          <div class="drop-item">
+          <div class="drop-item" data-drop-item="${escapeAttr(d.item)}" role="button" tabindex="0">
             <span class="drop-item-name">${d.item}</span>
             <span class="drop-item-amount">${d.chance || (d.quantity ? '×' + d.quantity : '×1')}</span>
           </div>
@@ -245,6 +245,19 @@ function renderPokedexCard(pokemon, spawnIdx) {
       goToBiome(pill.dataset.biome);
     });
   });
+
+  card.querySelectorAll('.drop-item[data-drop-item]').forEach(row => {
+    row.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goToAcademy(row.dataset.dropItem);
+    });
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        goToAcademy(row.dataset.dropItem);
+      }
+    });
+  });
 }
 
 function renderSpawnContent(spawn) {
@@ -298,6 +311,16 @@ function renderSpawnContent(spawn) {
 
     ${spawn.notes ? `<div class="spawn-notes">${spawn.notes}</div>` : ''}
   `;
+}
+
+async function goToAcademy(itemName) {
+  const overlay = document.getElementById('pokedex-card-overlay');
+  if (overlay) overlay.classList.add('hidden');
+  switchPanel('academy', false);
+  if (typeof Academy !== 'undefined') {
+    await Academy.init();
+    Academy.openItem(itemName, { fresh: true });
+  }
 }
 
 // Cross-panel nav: clicking a Pokémon in Poké Drops jumps to Pokédex and opens its card.

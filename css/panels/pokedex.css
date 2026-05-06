@@ -275,6 +275,18 @@
   padding: 8px 12px;
 }
 
+.drop-item[data-drop-item] {
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border-color 0.1s, transform 0.1s;
+}
+.drop-item[data-drop-item]:hover,
+.drop-item[data-drop-item]:focus-visible {
+  border-color: var(--accent-red);
+  transform: translateY(-1px);
+  outline: none;
+}
+
 .drop-item-name {
   font-size: 0.875rem;
   color: var(--text-primary);
