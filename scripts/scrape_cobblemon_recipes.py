@@ -1,33 +1,33 @@
 #!/usr/bin/env python3
 """
-Scrape Cobblemon's shaped crafting recipes from the GitLab repo.
+Scrape Cobblemon's crafting recipes from the GitLab repo.
 
-v1 scope (Decision log Q9): only `minecraft:crafting_shaped` recipes whose
-result item id ends in `_ball` (Pokéball variants).
+Session 8 (recipe scale-up): no longer filtered to Pokéballs. Pulls every
+recipe in the recipe directory and normalizes each into a uniform schema
+the Academy renderer can dispatch on.
 
 Outputs:
     data/recipes.json — list of normalized recipes (see schema below)
     assets/items/cobblemon/*.png — texture for every Cobblemon item that
         appears as a result or ingredient
 
-Schema per recipe:
-    {
-      "result": "cobblemon:poke_ball",
-      "count":  4,
-      "type":   "shaped",
-      "pattern": [" t ", "lcr", " b "],
-      "key": {
-        "t": {"item": "cobblemon:red_apricorn"},
-        "c": {"tag":  "cobblemon:tier_1_poke_ball_materials"}
-      }
-    }
+Schemas per recipe (one of):
+    shaped         {result, count, type:'shaped',     pattern, key}
+    shapeless      {result, count, type:'shapeless',  ingredients:[ref,...]}
+    smelting       {result, count, type:'smelting'|'blasting'|'smoking'|'campfire',
+                    ingredient:ref, time:secs, xp:float}
+    stonecutting   {result, count, type:'stonecutting', ingredient:ref}
+    brewing        {result, count, type:'brewing', input:ref, reagent:ref}
+    cooking_pot    {result, count, type:'cooking_pot', ingredients:[ref,...], time:secs}
+
+`ref` is one of: {item:'ns:foo'} | {tag:'ns:foo'} | [refs...] (option list).
 
 Source: https://gitlab.com/cable-mc/cobblemon
-  recipes:  common/src/main/resources/data/cobblemon/recipe/*.json
+  recipes:  common/src/main/resources/data/cobblemon/recipe/*.json (recursive)
   textures: common/src/main/resources/assets/cobblemon/textures/item/**/*.png
 
-Re-runnable. Cache lives in /tmp/cobblemon_repo/. Unhandled recipe types,
-shapeless recipes, and missing textures get logged to stderr.
+Re-runnable. Cache lives in /tmp/cobblemon_repo/. Unhandled recipe types and
+missing textures get logged to stderr.
 """
 import json
 import re
@@ -53,6 +53,23 @@ THROTTLE_SEC = 0.2
 RECIPE_DIR = "common/src/main/resources/data/cobblemon/recipe"
 TEXTURE_DIR = "common/src/main/resources/assets/cobblemon/textures/item"
 
+# Maps Minecraft / Cobblemon recipe type strings to our normalized type.
+TYPE_MAP = {
+    "minecraft:crafting_shaped":    "shaped",
+    "minecraft:crafting_shapeless": "shapeless",
+    "minecraft:smelting":           "smelting",
+    "minecraft:blasting":           "blasting",
+    "minecraft:smoking":            "smoking",
+    "minecraft:campfire_cooking":   "campfire",
+    "minecraft:stonecutting":       "stonecutting",
+    "minecraft:smithing_transform": "smithing",
+    "cobblemon:brewing_stand":         "brewing",
+    "cobblemon:cooking_pot":           "cooking_pot",
+    "cobblemon:cooking_pot_shapeless": "cooking_pot",
+    "cobblemon:cooking_pot_shaped":    "cooking_pot",
+    "cobblemon:apricorn_cooking":      "cooking_pot",
+}
+
 
 def http_get(url: str, binary: bool = False) -> bytes | str:
     time.sleep(THROTTLE_SEC)
@@ -75,7 +92,6 @@ def fetch_cached(url: str, cache_path: Path, binary: bool = False) -> bytes | st
 
 
 def list_tree(path: str, recursive: bool = False) -> list[dict]:
-    """Page through GitLab's tree listing for `path`."""
     out: list[dict] = []
     page = 1
     while True:
@@ -100,55 +116,162 @@ def list_tree(path: str, recursive: bool = False) -> list[dict]:
     return out
 
 
-def fetch_recipe(name: str) -> dict:
-    url = f"{RAW}/{RECIPE_DIR}/{name}"
-    body = fetch_cached(url, CACHE / "recipe" / name)
+def fetch_recipe(repo_path: str) -> dict:
+    url = f"{RAW}/{repo_path}"
+    safe = re.sub(r'[^a-zA-Z0-9]', '_', repo_path)
+    body = fetch_cached(url, CACHE / "recipe" / f"{safe}.json")
     return json.loads(body)
+
+
+def normalize_ref(slot):
+    """Normalize a single ingredient slot into one of:
+       {item: 'ns:foo'}, {tag: 'ns:foo'}, or a list of those for an option list."""
+    if isinstance(slot, dict):
+        if "item" in slot:
+            return {"item": slot["item"]}
+        if "tag" in slot:
+            return {"tag": slot["tag"]}
+        if "id" in slot:
+            return {"item": slot["id"]}
+        return None
+    if isinstance(slot, list):
+        opts = [normalize_ref(o) for o in slot]
+        opts = [o for o in opts if o]
+        return opts if opts else None
+    if isinstance(slot, str):
+        return {"item": slot}
+    return None
+
+
+def normalize_result(result):
+    if isinstance(result, str):
+        return result, 1
+    if isinstance(result, dict):
+        return (result.get("id") or result.get("item")), result.get("count", 1)
+    return None, 1
 
 
 def normalize_recipe(name: str, raw: dict) -> dict | None:
     rtype = raw.get("type", "")
-    if rtype != "minecraft:crafting_shaped":
-        print(f"[scraper] skipping {name}: type={rtype} (not shaped)", file=sys.stderr)
+    norm_type = TYPE_MAP.get(rtype)
+    if not norm_type:
+        print(f"[scraper] skipping {name}: unhandled type={rtype}", file=sys.stderr)
         return None
 
-    result = raw.get("result", {})
-    if isinstance(result, str):
-        result_id, count = result, 1
-    else:
-        result_id = result.get("id") or result.get("item")
-        count = result.get("count", 1)
+    result_id, count = normalize_result(raw.get("result", {}))
     if not result_id:
         print(f"[scraper] skipping {name}: no result id", file=sys.stderr)
         return None
 
-    return {
-        "result": result_id,
-        "count": count,
-        "type": "shaped",
-        "pattern": raw.get("pattern", []),
-        "key": raw.get("key", {}),
-    }
+    base = {"result": result_id, "count": count, "type": norm_type}
+
+    if norm_type == "shaped":
+        return {**base, "pattern": raw.get("pattern", []), "key": raw.get("key", {})}
+
+    if norm_type == "shapeless":
+        ings = [normalize_ref(i) for i in raw.get("ingredients", [])]
+        ings = [i for i in ings if i]
+        return {**base, "ingredients": ings}
+
+    if norm_type in ("smelting", "blasting", "smoking", "campfire"):
+        ing = normalize_ref(raw.get("ingredient"))
+        if not ing:
+            return None
+        return {
+            **base,
+            "ingredient": ing,
+            "time": raw.get("cookingtime", 0),
+            "xp": raw.get("experience", 0),
+        }
+
+    if norm_type == "stonecutting":
+        ing = normalize_ref(raw.get("ingredient"))
+        if not ing:
+            return None
+        return {**base, "ingredient": ing}
+
+    if norm_type == "cooking_pot":
+        # Two shapes: 3×3 patterned (cobblemon:cooking_pot) or shapeless ingredient list.
+        # Preserve pattern+key when present so the grid renders like JEI;
+        # always also emit an `ingredients` list of unique refs for compact contexts.
+        out = {**base, "time": raw.get("cookingtime", 0)}
+        if "key" in raw and "pattern" in raw:
+            out["pattern"] = raw.get("pattern", [])
+            out["key"] = raw.get("key", {})
+            seen = set()
+            ings = []
+            for row in raw.get("pattern", []):
+                for ch in row:
+                    if ch == " " or ch in seen:
+                        continue
+                    seen.add(ch)
+                    ref = normalize_ref(raw["key"].get(ch))
+                    if ref:
+                        ings.append(ref)
+            out["ingredients"] = ings
+        else:
+            ings = [normalize_ref(i) for i in raw.get("ingredients", [])]
+            out["ingredients"] = [i for i in ings if i]
+        return out
+
+    if norm_type == "brewing":
+        # Cobblemon brewing-stand recipes: `input` is the catalyst (above the bottle),
+        # `bottle` is the base potion/bottle (in one of the 3 bottle slots).
+        input_ref = normalize_ref(raw.get("input"))
+        bottle_ref = normalize_ref(raw.get("bottle"))
+        if not input_ref or not bottle_ref:
+            return None
+        return {**base, "input": input_ref, "bottle": bottle_ref}
+
+    if norm_type == "smithing":
+        base_ref = normalize_ref(raw.get("base"))
+        addition_ref = normalize_ref(raw.get("addition"))
+        template_ref = normalize_ref(raw.get("template"))
+        if not base_ref or not addition_ref:
+            return None
+        out = {**base, "base": base_ref, "addition": addition_ref}
+        if template_ref:
+            out["template"] = template_ref
+        return out
+
+    return None
 
 
 def collect_referenced_items(recipes: list[dict]) -> tuple[set[str], set[str]]:
     """Return (cobblemon_item_ids, other_refs). other_refs holds tags + non-cobblemon items."""
     items: set[str] = set()
     other: set[str] = set()
+
+    def walk(ref):
+        if ref is None:
+            return
+        if isinstance(ref, list):
+            for r in ref:
+                walk(r)
+            return
+        if "item" in ref:
+            items.add(ref["item"])
+        elif "tag" in ref:
+            other.add(f"tag:{ref['tag']}")
+
     for r in recipes:
         items.add(r["result"])
-        for slot in r["key"].values():
-            if isinstance(slot, dict):
-                if "item" in slot:
-                    items.add(slot["item"])
-                elif "tag" in slot:
-                    other.add(f"tag:{slot['tag']}")
-            elif isinstance(slot, list):
-                for opt in slot:
-                    if isinstance(opt, dict) and "item" in opt:
-                        items.add(opt["item"])
-            elif isinstance(slot, str):
-                items.add(slot)
+        t = r["type"]
+        if t == "shaped" or (t == "cooking_pot" and "key" in r):
+            for slot in r.get("key", {}).values():
+                walk(normalize_ref(slot))
+        elif t in ("shapeless", "cooking_pot"):
+            for ing in r.get("ingredients", []):
+                walk(ing)
+        elif t in ("smelting", "blasting", "smoking", "campfire", "stonecutting"):
+            walk(r.get("ingredient"))
+        elif t == "brewing":
+            walk(r.get("input"))
+            walk(r.get("bottle"))
+        elif t == "smithing":
+            walk(r.get("base"))
+            walk(r.get("addition"))
+            walk(r.get("template"))
 
     cobblemon = {i for i in items if i.startswith("cobblemon:")}
     other.update(i for i in items if not i.startswith("cobblemon:"))
@@ -156,17 +279,13 @@ def collect_referenced_items(recipes: list[dict]) -> tuple[set[str], set[str]]:
 
 
 def build_texture_index() -> dict[str, str]:
-    """Map cobblemon short item name → repo path of its PNG texture."""
     tree = list_tree(TEXTURE_DIR, recursive=True)
     index: dict[str, str] = {}
     for entry in tree:
         if entry["type"] != "blob" or not entry["name"].endswith(".png"):
             continue
-        short = entry["name"][:-4]  # strip .png
+        short = entry["name"][:-4]
         full_path = entry["path"]
-        # If multiple subdirs share a name, prefer the most specific later
-        # match (poke_balls/ over a top-level duplicate). Cobblemon's tree
-        # doesn't actually have collisions in practice but be defensive.
         index.setdefault(short, full_path)
     return index
 
@@ -186,30 +305,29 @@ def download_texture(short: str, repo_path: str) -> bool:
 def main() -> None:
     ASSETS.mkdir(parents=True, exist_ok=True)
 
-    # Collect all *_ball.json filenames
-    print("[scraper] listing recipe directory...", file=sys.stderr)
-    listing = list_tree(RECIPE_DIR)
-    ball_files = sorted(
-        e["name"] for e in listing
-        if e["type"] == "blob" and e["name"].endswith("_ball.json")
+    print("[scraper] listing recipe directory recursively...", file=sys.stderr)
+    listing = list_tree(RECIPE_DIR, recursive=True)
+    recipe_files = sorted(
+        e["path"] for e in listing
+        if e["type"] == "blob" and e["name"].endswith(".json")
     )
-    print(f"[scraper] found {len(ball_files)} *_ball.json recipe files", file=sys.stderr)
+    print(f"[scraper] found {len(recipe_files)} recipe json files", file=sys.stderr)
 
-    # Fetch + normalize
     recipes: list[dict] = []
-    for name in ball_files:
+    type_counts: dict[str, int] = {}
+    for repo_path in recipe_files:
         try:
-            raw = fetch_recipe(name)
+            raw = fetch_recipe(repo_path)
         except Exception as e:
-            print(f"[scraper] failed to fetch {name}: {e}", file=sys.stderr)
+            print(f"[scraper] failed to fetch {repo_path}: {e}", file=sys.stderr)
             continue
-        norm = normalize_recipe(name, raw)
+        norm = normalize_recipe(repo_path, raw)
         if norm:
             recipes.append(norm)
+            type_counts[norm["type"]] = type_counts.get(norm["type"], 0) + 1
 
-    print(f"[scraper] kept {len(recipes)} shaped recipes", file=sys.stderr)
+    print(f"[scraper] kept {len(recipes)} recipes by type: {type_counts}", file=sys.stderr)
 
-    # Collect referenced items + textures
     cobblemon_items, other_refs = collect_referenced_items(recipes)
     print(f"[scraper] {len(cobblemon_items)} cobblemon items, "
           f"{len(other_refs)} other refs (tags + vanilla)", file=sys.stderr)
@@ -235,8 +353,6 @@ def main() -> None:
         print(f"[scraper] {len(missing)} cobblemon items had no texture: {missing}",
               file=sys.stderr)
 
-    # Non-cobblemon refs (vanilla items + item tags) — log so the user knows what
-    # icon assets we still need to source.
     vanilla = sorted(r for r in other_refs if not r.startswith("tag:"))
     tags = sorted(r for r in other_refs if r.startswith("tag:"))
     if vanilla:
@@ -245,8 +361,7 @@ def main() -> None:
     if tags:
         print(f"[scraper] {len(tags)} tag refs (resolve later): {tags}", file=sys.stderr)
 
-    # Write output. Sort recipes by result id for stable diffs.
-    recipes.sort(key=lambda r: r["result"])
+    recipes.sort(key=lambda r: (r["type"], r["result"]))
     out_path = DATA / "recipes.json"
     out_path.write_text(json.dumps(recipes, indent=2) + "\n", encoding="utf-8")
     print(f"[scraper] wrote {out_path.relative_to(ROOT)}: {len(recipes)} recipes", file=sys.stderr)

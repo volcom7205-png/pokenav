@@ -161,5 +161,42 @@
 
   { "id": "minecraft:echo_shard",        "name": "Echo Shard",       "category": "raw", "description": "Vanilla Minecraft drop from Sculk Catalysts in Ancient Cities." },
   { "id": "minecraft:nether_star",       "name": "Nether Star",      "category": "raw", "description": "Vanilla Minecraft Wither drop. Master Ball ingredient." },
-  { "id": "minecraft:shulker_shell",     "name": "Shulker Shell",    "category": "raw", "description": "Vanilla Minecraft drop from Shulkers in End cities." }
+  { "id": "minecraft:shulker_shell",     "name": "Shulker Shell",    "category": "raw", "description": "Vanilla Minecraft drop from Shulkers in End cities." },
+
+  { "id": "cobblemon:fire_stone",      "name": "Fire Stone",     "category": "stone", "description": "Evolution stone. Triggers fire-affinity evolutions (Vulpix → Ninetales, Eevee → Flareon, Growlithe → Arcanine, etc.)." },
+  { "id": "cobblemon:water_stone",     "name": "Water Stone",    "category": "stone", "description": "Evolution stone. Triggers water-affinity evolutions (Eevee → Vaporeon, Poliwhirl → Poliwrath, Shellder → Cloyster, etc.)." },
+  { "id": "cobblemon:leaf_stone",      "name": "Leaf Stone",     "category": "stone", "description": "Evolution stone. Triggers grass-affinity evolutions (Gloom → Vileplume, Weepinbell → Victreebel, Exeggcute → Exeggutor, etc.)." },
+  { "id": "cobblemon:thunder_stone",   "name": "Thunder Stone",  "category": "stone", "description": "Evolution stone. Triggers electric evolutions (Pikachu → Raichu, Eevee → Jolteon, Eelektrik → Eelektross)." },
+  { "id": "cobblemon:sun_stone",       "name": "Sun Stone",      "category": "stone", "description": "Evolution stone. Triggers sun/light evolutions (Gloom → Bellossom, Sunkern → Sunflora, Cottonee → Whimsicott)." },
+  { "id": "cobblemon:moon_stone",      "name": "Moon Stone",     "category": "stone", "description": "Evolution stone. Triggers moon/night evolutions (Nidorina → Nidoqueen, Clefairy → Clefable, Skitty → Delcatty, Munna → Musharna)." },
+  { "id": "cobblemon:dawn_stone",      "name": "Dawn Stone",     "category": "stone", "description": "Evolution stone. Triggers dawn-tied evolutions (male Kirlia → Gallade, female Snorunt → Froslass)." },
+  { "id": "cobblemon:dusk_stone",      "name": "Dusk Stone",     "category": "stone", "description": "Evolution stone. Triggers dusk evolutions (Misdreavus → Mismagius, Murkrow → Honchkrow, Doublade → Aegislash)." },
+  { "id": "cobblemon:shiny_stone",     "name": "Shiny Stone",    "category": "stone", "description": "Evolution stone. Triggers shimmer evolutions (Togetic → Togekiss, Roselia → Roserade, Floette → Florges, Minccino → Cinccino)." },
+  { "id": "cobblemon:ice_stone",       "name": "Ice Stone",      "category": "stone", "description": "Evolution stone. Triggers ice-affinity evolutions (Eevee → Glaceon, Galarian Darumaka → Galarian Darmanitan, Crabrawler → Crabominable)." },
+  { "id": "cobblemon:hard_stone",      "name": "Hard Stone",     "category": "stone", "description": "Held item that boosts the power of Rock-type moves by 20%. Not an evolution stone — held only." },
+
+  { "id": "cobblemon:poke_cake",       "name": "Poké Cake",      "category": "food", "description": "Cooking-pot dessert. Restores HP and lifts friendship." },
+  { "id": "cobblemon:poke_snack",      "name": "Poké Snack",     "category": "food", "description": "Quick cooking-pot food. Mild HP heal + friendship bump." },
+  { "id": "cobblemon:ponigiri",        "name": "Ponigiri",       "category": "food", "description": "Cooked rice ball — staple Pokémon trail food. Restores HP." },
+  { "id": "cobblemon:sinister_tea",    "name": "Sinister Tea",   "category": "food", "description": "Spooky brew. Used in cooking and as an ingredient in dark-flavored dishes." },
+  { "id": "cobblemon:hearty_grains",   "name": "Hearty Grains",  "category": "food", "description": "Cobblemon-grown cereal. Used in Ponigiri and other cooking-pot recipes." },
+  { "id": "cobblemon:vivichoke",       "name": "Vivichoke",      "category": "food", "description": "Cobblemon vegetable. Used in Poké Cake and several pot recipes." },
+  { "id": "cobblemon:medicinal_brew",  "name": "Medicinal Brew", "category": "battle", "description": "Brewing-stand base. Catalyst for many healing-item brews (Antidote, Burn Heal, Awakening, etc.)." },
+  { "id": "cobblemon:revival_herb",    "name": "Revival Herb",   "category": "battle", "description": "Bitter herb. Revives a fainted Pokémon to full HP. Lowers friendship." },
+  { "id": "cobblemon:throat_spray",    "name": "Throat Spray",   "category": "battle", "description": "One-use held item. Boosts Sp. Atk by one stage when the holder uses a sound-based move." },
+
+  { "id": "cobblemon:health_candy",    "name": "Health Candy",   "category": "vitamin", "description": "Reduces HP IVs by 1 (use the larger variants for stronger drops)." },
+  { "id": "cobblemon:mighty_candy",    "name": "Mighty Candy",   "category": "vitamin", "description": "Reduces Attack IVs." },
+  { "id": "cobblemon:tough_candy",     "name": "Tough Candy",    "category": "vitamin", "description": "Reduces Defense IVs." },
+  { "id": "cobblemon:smart_candy",     "name": "Smart Candy",    "category": "vitamin", "description": "Reduces Sp. Atk IVs." },
+  { "id": "cobblemon:courage_candy",   "name": "Courage Candy",  "category": "vitamin", "description": "Reduces Sp. Def IVs." },
+  { "id": "cobblemon:quick_candy",     "name": "Quick Candy",    "category": "vitamin", "description": "Reduces Speed IVs." },
+  { "id": "cobblemon:weak_candy",      "name": "Weak Candy",     "category": "vitamin", "description": "Pushes Attack IV down. Counterpart to Mighty Candy." },
+  { "id": "cobblemon:slow_candy",      "name": "Slow Candy",     "category": "vitamin", "description": "Pushes Speed IV down. Counterpart to Quick Candy." },
+  { "id": "cobblemon:numb_candy",      "name": "Numb Candy",     "category": "vitamin", "description": "Pushes Sp. Def IV down. Counterpart to Courage Candy." },
+  { "id": "cobblemon:sickly_candy",    "name": "Sickly Candy",   "category": "vitamin", "description": "Pushes HP IV down. Counterpart to Health Candy." },
+  { "id": "cobblemon:coward_candy",    "name": "Coward Candy",   "category": "vitamin", "description": "Pushes Defense IV down. Counterpart to Tough Candy." },
+  { "id": "cobblemon:brittle_candy",   "name": "Brittle Candy",  "category": "vitamin", "description": "Pushes Sp. Atk IV down. Counterpart to Smart Candy." },
+  { "id": "cobblemon:rage_candy_bar",  "name": "Rage Candy Bar", "category": "vitamin", "description": "Vending-machine candy. Restores 20 HP and a small amount of friendship." },
+  { "id": "cobblemon:candied_berry",   "name": "Candied Berry",  "category": "berry",   "description": "Cooked berry candy. Heavy friendship gain." }
 ]

@@ -89,12 +89,12 @@ The xlsx importer **preserves** existing spawns/drops when the xlsx has no row f
 
 **Why `data/*.js`?** The app loads data from `window.POKENAV_*` globals (set by the inlined `<script src="data/*.js">` tags in `index.html`), not via `fetch()`. This lets non-technical users (e.g., Shay) double-click `index.html` and have it run — `fetch()` of local JSON is blocked under `file://`. Edit JSON, run `build_data_js.py`, then commit both. `update-shay.sh` runs the build automatically.
 
-## What's working now (Stage 7 + plan-purring-raccoon)
+## What's working now (biome-and-academy plan complete)
 
-- 851 mons across 9 gens; 1,952 drop entries; 2,583 spawn entries.
-- Tabs: Pokédex · Trainer's PC · Poké Drops · Stadium · Type Chart · **Items** (new) · **Biome Search** (new) · Settings.
-- Biome Search has 3 modes including a wanted-poster Most Wanted list with sort/filter.
-- Items tab covers Berries / Battle / Vitamins (with hover descriptions) / TMs (with learner mons).
+- 851 mons across 9 gens; 1,952 drop entries; 2,583 spawn entries; **774 recipes** across 10 types.
+- Tabs: Pokédex · Trainer's PC · Stadium · Type Chart · **🎓 Academy** · **Biome Search** · Settings.
+- Biome Search: collapsed two-level accordion picker, 3 modes (Pokémon / Biome / Most Wanted), Settings mod-pack toggles, cross-tab biome chips.
+- Academy: unified item / TM / drop / recipe hub. 13 category chips (incl. Stones, Rods, Foods, Materials). Renders shaped, shapeless, smelting (4 cookers), stonecutting, brewing, smithing, and cooking-pot recipes; auto-stubs every cobblemon: id referenced by a recipe so drill-through always works.
 
 ## Next up
 
@@ -104,4 +104,4 @@ The xlsx importer **preserves** existing spawns/drops when the xlsx has no row f
 
 ## Most recent plan
 
-`~/.claude/plans/ok-lets-use-plan-purring-raccoon.md` — the batch plan that delivered Items, Biome Search, the data backfill, and the party.js/stadium.js bug cleanup.
+`~/.claude/plans/biome-and-academy.md` — completed in 8 sessions: biome standardization (taxonomy scrape + shared module + accordion picker + Settings toggles + cross-tab links) and Pokémon Academy (item hub + 3×3 recipe grid + 10 recipe types + auto-stubbed item registry).

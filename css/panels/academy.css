@@ -66,59 +66,72 @@
 
 .academy-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 5px;
 }
 
 .academy-tile {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: var(--bg-tile);
   border: 1px solid var(--border-color);
-  border-radius: 4px;
-  padding: 8px 10px;
+  border-radius: 3px;
+  padding: 5px 8px;
   cursor: pointer;
   transition: border-color 0.1s, transform 0.1s;
+  min-height: 38px;
 }
 .academy-tile:hover {
   border-color: var(--accent-red);
   transform: translateY(-1px);
 }
 .academy-tile-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   flex: 0 0 auto;
   image-rendering: pixelated;
   object-fit: contain;
 }
+.academy-tile-icon-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  font-size: 0.95rem;
+}
+.academy-tile-icon-fallback--hidden { display: none; }
 .academy-tile-icon--placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--bg-panel);
   border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 1.1rem;
+  border-radius: 3px;
+  font-size: 0.95rem;
 }
 .academy-tile-info {
   flex: 1;
   min-width: 0;
 }
 .academy-tile-name {
-  font-size: 0.9rem;
+  font-size: 0.83rem;
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.15;
 }
 .academy-tile-cat {
-  font-size: 0.7rem;
+  font-size: 0.62rem;
   color: var(--text-muted);
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   font-family: 'Roboto Mono', monospace;
+  margin-top: 1px;
 }
 
 /* ── Detail view ───────────────────────────────────── */
@@ -538,3 +551,97 @@
   gap: 4px;
   flex: 0 0 auto;
 }
+
+/* ── Section heading suffix (recipe station) ──────── */
+
+.academy-section-station {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.6px;
+  text-transform: none;
+  margin-left: 4px;
+}
+
+/* ── Shapeless / smelting / smithing list rows ────── */
+
+.academy-shapeless-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 6px;
+  min-width: 60px;
+}
+.academy-shapeless-cell .academy-recipe-cell {
+  width: 56px;
+  height: 56px;
+}
+.academy-empty-mini {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  padding: 6px;
+}
+
+/* Cooker meta line (time / xp), hangs to the right */
+.academy-recipe-station-meta {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-left: auto;
+  align-self: center;
+  letter-spacing: 0.5px;
+}
+
+/* ── Brewing layout ───────────────────────────────── */
+
+.academy-recipe--brewing { align-items: flex-start; }
+.academy-brewing-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 6px;
+}
+.academy-brewing-input,
+.academy-brewing-bottle { display: flex; }
+.academy-brewing-input .academy-recipe-cell,
+.academy-brewing-bottle .academy-recipe-cell {
+  width: 56px;
+  height: 56px;
+}
+.academy-brewing-arrow {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+/* ── C8 polish: tighten section + dropper cards ───── */
+
+.academy-detail { padding: 12px 16px; }
+.academy-section { padding-top: 10px; }
+.academy-section-head { font-size: 0.88rem; margin-bottom: 6px; }
+.academy-detail-sections { gap: 12px; }
+.academy-detail-name { font-size: 1.25rem; margin-bottom: 2px; letter-spacing: 1px; }
+.academy-detail-cat { font-size: 0.7rem; margin-bottom: 4px; }
+.academy-detail-desc { font-size: 0.82rem; line-height: 1.35; }
+.academy-detail-head { gap: 12px; padding-bottom: 10px; margin-bottom: 12px; }
+
+.academy-recipe-legend { gap: 3px 10px; margin-top: 6px; }
+.academy-recipe-legend-row { padding: 3px 6px; font-size: 0.78rem; }
+
+.academy-droppers-list { gap: 4px; }
+.academy-dropper { padding: 6px 10px; }
+.academy-dropper-sprite { width: 38px; height: 38px; }
+.academy-dropper-name { font-size: 0.85rem; }
+
+.academy-usedin-grid { gap: 4px; }
+.academy-usedin-tile { padding: 4px 8px; }
+.academy-usedin-tile img { width: 24px; height: 24px; }
+.academy-usedin-name { font-size: 0.78rem; }
