@@ -481,6 +481,15 @@
         "notes": "Not in: Spooky",
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 388,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 18"
+        ]
+      }
     ]
   },
   {
@@ -964,6 +973,15 @@
         ],
         "notes": "Not in: Spooky",
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 389,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 32"
+        ]
       }
     ]
   },
@@ -2218,6 +2236,15 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 391,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 14"
+        ]
+      }
     ]
   },
   {
@@ -2896,6 +2923,15 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 392,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 36"
+        ]
       }
     ]
   },
@@ -4290,6 +4326,15 @@
         ],
         "label": "Overworld 5"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 394,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -4909,6 +4954,15 @@
           "fishing"
         ],
         "label": "Overworld 5"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 395,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 36"
+        ]
       }
     ]
   },
@@ -6142,6 +6196,15 @@
         "notes": "Not in: Arid",
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 397,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 14"
+        ]
+      }
     ]
   },
   {
@@ -6561,6 +6624,15 @@
         ],
         "notes": "Not in: Arid",
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 398,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 34"
+        ]
       }
     ]
   },
@@ -7538,6 +7610,15 @@
         ],
         "label": "Overworld 5"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 400,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 15"
+        ]
+      }
     ]
   },
   {
@@ -8274,6 +8355,15 @@
         ],
         "notes": "Not in: Freezing",
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 402,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 10"
+        ]
       }
     ]
   },
@@ -9198,6 +9288,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 404,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 15"
+        ]
+      }
     ]
   },
   {
@@ -9659,6 +9758,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 405,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 30"
+        ]
       }
     ]
   },
@@ -10554,6 +10662,16 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 315,
+        "method": "level_up",
+        "requirements": [
+          "Must reach friendship amount of 160",
+          "Must evolve during day"
+        ]
       }
     ]
   },
@@ -11617,6 +11735,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 409,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 30"
+        ]
       }
     ]
   },
@@ -12752,6 +12879,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 411,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 30"
+        ]
+      }
     ]
   },
   {
@@ -13539,6 +13675,16 @@
           "grounded"
         ],
         "label": "Overworld 4"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 416,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 21",
+          "Must have properties gender=female"
+        ]
       }
     ]
   },
@@ -15300,6 +15446,15 @@
         "notes": "Not in: Freezing",
         "label": "Overworld 4"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 419,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 26"
+        ]
+      }
     ]
   },
   {
@@ -16492,6 +16647,15 @@
           "fishing"
         ],
         "label": "Overworld 8"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 423,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 30"
+        ]
       }
     ]
   },
@@ -18471,6 +18635,15 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 426,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 28"
+        ]
+      }
     ]
   },
   {
@@ -19702,6 +19875,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 428,
+        "method": "level_up",
+        "requirements": [
+          "Must reach friendship amount of 160"
+        ]
       }
     ]
   },
@@ -22338,6 +22520,15 @@
         ],
         "label": "Overworld 5"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 432,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 38"
+        ]
+      }
     ]
   },
   {
@@ -23437,6 +23628,16 @@
         ],
         "label": "Overworld 3"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 358,
+        "method": "level_up",
+        "requirements": [
+          "Must reach friendship amount of 160",
+          "Must evolve during night"
+        ]
+      }
     ]
   },
   {
@@ -24043,6 +24244,15 @@
           "grounded"
         ],
         "label": "Overworld 5"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 437,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 33"
+        ]
       }
     ]
   },
@@ -25227,6 +25437,15 @@
         "notes": "Not in: Spooky",
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 185,
+        "method": "level_up",
+        "requirements": [
+          "Must know mimic"
+        ]
+      }
     ]
   },
   {
@@ -25870,6 +26089,15 @@
         ],
         "label": "Overworld 5"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 122,
+        "method": "level_up",
+        "requirements": [
+          "Must know mimic"
+        ]
+      }
     ]
   },
   {
@@ -26319,6 +26547,16 @@
           "grounded"
         ],
         "label": "Overworld 3"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 113,
+        "method": "level_up",
+        "requirements": [
+          "Must be holding oval stone",
+          "Must evolve during day"
+        ]
       }
     ]
   },
@@ -27976,6 +28214,15 @@
         ],
         "label": "Overworld 6"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 444,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 24"
+        ]
+      }
     ]
   },
   {
@@ -28566,6 +28813,15 @@
           "grounded"
         ],
         "label": "Overworld 6"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 445,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 48"
+        ]
       }
     ]
   },
@@ -29905,6 +30161,15 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 143,
+        "method": "level_up",
+        "requirements": [
+          "Must reach friendship amount of 160"
+        ]
+      }
     ]
   },
   {
@@ -30493,6 +30758,16 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 448,
+        "method": "level_up",
+        "requirements": [
+          "Must reach friendship amount of 160",
+          "Must evolve during day"
+        ]
       }
     ]
   },
@@ -31710,6 +31985,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 450,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 34"
+        ]
+      }
     ]
   },
   {
@@ -32690,6 +32974,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 452,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 40"
+        ]
       }
     ]
   },
@@ -34001,6 +34294,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 454,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 37"
+        ]
       }
     ]
   },
@@ -35732,6 +36034,15 @@
         ],
         "label": "Overworld 6"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 457,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 31"
+        ]
+      }
     ]
   },
   {
@@ -36792,6 +37103,15 @@
         ],
         "notes": "Not in: Cold Ocean, Frozen Ocean",
         "label": "Overworld 6"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 226,
+        "method": "level_up",
+        "requirements": [
+          "Party must include remoraid"
+        ]
       }
     ]
   },

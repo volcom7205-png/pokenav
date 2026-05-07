@@ -232,6 +232,8 @@ function renderPokedexCard(pokemon, spawnIdx) {
       </div>
     </div>
 
+    ${renderEvolutionSection(pokemon)}
+
     <hr class="poke-card-divider" />
     <div class="poke-card-section-label">Spawn Locations</div>
     ${tabsHTML}
@@ -289,6 +291,23 @@ function renderPokedexCard(pokemon, spawnIdx) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         goToAcademy(row.dataset.dropItem);
+      }
+    });
+  });
+
+  card.querySelectorAll('.poke-card-evo-tile[data-evo-id]').forEach(tile => {
+    tile.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = parseInt(tile.dataset.evoId, 10);
+      const target = PokeNavData.getPokemonById(id);
+      if (!target) return;
+      selectedPokemon = target;
+      renderPokedexCard(target, 0);
+      const cardEl = document.getElementById('pokedex-card');
+      if (cardEl) {
+        cardEl.classList.remove('pop-in');
+        cardEl.offsetHeight;
+        cardEl.classList.add('pop-in');
       }
     });
   });
@@ -371,6 +390,213 @@ function renderMatchupSection(pokemon) {
       <div class="poke-card-matchup-subhead">🛡️ Incoming attacks vs ${pokemon.name}</div>
       <div class="typechart-tile-grid poke-card-matchup-grid">${defenseTiles}</div>
     </div>
+  `;
+}
+
+/* Evolution chain ----------------------------------------------------- */
+
+const EVO_ITEM_LABELS = {
+  thunder_stone: 'Thunder Stone',
+  water_stone: 'Water Stone',
+  fire_stone: 'Fire Stone',
+  leaf_stone: 'Leaf Stone',
+  ice_stone: 'Ice Stone',
+  sun_stone: 'Sun Stone',
+  moon_stone: 'Moon Stone',
+  shiny_stone: 'Shiny Stone',
+  dusk_stone: 'Dusk Stone',
+  dawn_stone: 'Dawn Stone',
+  oval_stone: 'Oval Stone',
+  link_cable: 'Link Cable',
+  kings_rock: "King's Rock",
+  metal_coat: 'Metal Coat',
+  dragon_scale: 'Dragon Scale',
+  upgrade: 'Up-Grade',
+  dubious_disc: 'Dubious Disc',
+  electirizer: 'Electirizer',
+  magmarizer: 'Magmarizer',
+  protector: 'Protector',
+  reaper_cloth: 'Reaper Cloth',
+  razor_claw: 'Razor Claw',
+  razor_fang: 'Razor Fang',
+  prism_scale: 'Prism Scale',
+  whipped_dream: 'Whipped Dream',
+  sachet: 'Sachet',
+  tart_apple: 'Tart Apple',
+  sweet_apple: 'Sweet Apple',
+  cracked_pot: 'Cracked Pot',
+  chipped_pot: 'Chipped Pot',
+  galarica_cuff: 'Galarica Cuff',
+  galarica_wreath: 'Galarica Wreath',
+  black_augurite: 'Black Augurite',
+  peat_block: 'Peat Block',
+  auspicious_armor: 'Auspicious Armor',
+  malicious_armor: 'Malicious Armor',
+  syrupy_apple: 'Syrupy Apple',
+  scroll_of_darkness: 'Scroll of Darkness',
+  scroll_of_waters: 'Scroll of Waters',
+  metal_alloy: 'Metal Alloy',
+};
+
+function prettyEvoItem(slug) {
+  if (!slug) return '';
+  const bare = String(slug).replace(/^cobblemon:/, '').replace(/\s+/g, '_').toLowerCase();
+  if (EVO_ITEM_LABELS[bare]) return EVO_ITEM_LABELS[bare];
+  return bare.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
+function shortenRequirement(raw) {
+  // The cobbledex page emits localized English; convert the common shapes
+  // to short chip-friendly labels, fall back to the raw string for the rest.
+  if (!raw) return '';
+  let m;
+  if ((m = raw.match(/^Must reach level (\d+)/i)))
+    return `Lv ${m[1]}`;
+  if ((m = raw.match(/^Must reach friendship amount of (\d+)/i)))
+    return `Friendship ${m[1]}`;
+  if ((m = raw.match(/^Must evolve during (\w+)/i)))
+    return m[1].charAt(0).toUpperCase() + m[1].slice(1).toLowerCase();
+  if ((m = raw.match(/^Must know a (\w+) type move/i)))
+    return `Know ${m[1].toLowerCase()}-type move`;
+  if ((m = raw.match(/^Must know (.+)/i)))
+    return `Know ${m[1]}`;
+  if ((m = raw.match(/^Must be holding (.+)/i)))
+    return `Hold ${prettyEvoItem(m[1])}`;
+  if ((m = raw.match(/^Must be in (.+?)\s*biome\s*$/i))) {
+    const biome = m[1].replace(/^#evolution\/regional\//, '').replace(/_/g, ' ').trim();
+    return `In ${biome}`;
+  }
+  if ((m = raw.match(/^Must be in (.+)/i))) return `At ${m[1]}`;
+  if ((m = raw.match(/^Must be (.+)/i)))    return m[1];
+  if (/^Stat comparison/i.test(raw))   return 'Atk vs Def';
+  if (/^Stats must be equal/i.test(raw)) return 'Atk = Def';
+  return raw;
+}
+
+function methodLabel(edge) {
+  // Cobbledex's level_up edges with a level requirement → "Lv N"; edges
+  // with friendship → "Friendship"; etc. Without a requirement list, fall
+  // back to the bare method name.
+  const reqs = edge.requirements || [];
+  if (edge.method === 'item_interact' && edge.item) return prettyEvoItem(edge.item);
+  if (edge.method === 'trade') return 'Trade';
+  return null;
+}
+
+function buildEvolutionChain(rootMon) {
+  // Find chain root by walking backward via reverse lookup, then collect
+  // all reachable mons forward. Returns { stages, edges } where stages is
+  // an array of arrays of mons grouped by depth, and edges is the flat
+  // list of {from, to, method, item, requirements}.
+  const all = PokeNavData.getPokemon();
+  const incoming = new Map(); // dexId → [from-id]
+  for (const m of all) {
+    for (const e of m.evolutions || []) {
+      if (!incoming.has(e.to)) incoming.set(e.to, []);
+      incoming.get(e.to).push(m.id);
+    }
+  }
+  // Walk backward to find root(s). Use seen-set to handle cycles defensively.
+  const seen = new Set();
+  let frontier = [rootMon.id];
+  let roots = new Set();
+  while (frontier.length) {
+    const next = [];
+    for (const id of frontier) {
+      if (seen.has(id)) continue;
+      seen.add(id);
+      const parents = incoming.get(id) || [];
+      if (!parents.length) {
+        roots.add(id);
+      } else {
+        next.push(...parents);
+      }
+    }
+    frontier = next;
+  }
+  // BFS forward from roots, recording depth + edges.
+  const depth = new Map();
+  const edges = [];
+  const visited = new Set();
+  let frontier2 = [];
+  for (const r of roots) {
+    depth.set(r, 0);
+    frontier2.push(r);
+  }
+  while (frontier2.length) {
+    const next = [];
+    for (const id of frontier2) {
+      if (visited.has(id)) continue;
+      visited.add(id);
+      const mon = PokeNavData.getPokemonById(id);
+      if (!mon) continue;
+      const d = depth.get(id);
+      for (const e of mon.evolutions || []) {
+        edges.push({ from: id, ...e });
+        if (!depth.has(e.to) || depth.get(e.to) < d + 1) {
+          depth.set(e.to, d + 1);
+        }
+        next.push(e.to);
+      }
+    }
+    frontier2 = next;
+  }
+  // Group ids by depth.
+  const stages = [];
+  for (const [id, d] of depth) {
+    if (!stages[d]) stages[d] = [];
+    stages[d].push(id);
+  }
+  return { stages: stages.filter(s => s && s.length), edges, rootIds: [...roots] };
+}
+
+function renderEvolutionTile(mon, isCurrent) {
+  const cls = ['poke-card-evo-tile'];
+  if (isCurrent) cls.push('is-current');
+  return `
+    <div class="${cls.join(' ')}" data-evo-id="${mon.id}" role="button" tabindex="0" title="${mon.name}">
+      <img src="${mon.sprite}" alt="${mon.name}"
+           onerror="${spriteFallbackOnError(mon.id)}" />
+      <div class="poke-card-evo-name">${mon.name}</div>
+      <div class="poke-card-evo-num">#${String(mon.id).padStart(4, '0')}</div>
+    </div>
+  `;
+}
+
+function renderEvolutionEdgeRow(edge, currentId) {
+  const from = PokeNavData.getPokemonById(edge.from);
+  const to   = PokeNavData.getPokemonById(edge.to);
+  if (!from || !to) return '';
+  const chips = [];
+  const ml = methodLabel(edge);
+  if (ml) chips.push(ml);
+  for (const r of edge.requirements || []) {
+    const short = shortenRequirement(r);
+    if (short && !chips.includes(short)) chips.push(short);
+  }
+  if (!chips.length && edge.method) chips.push(edge.method.replace(/_/g, ' '));
+  return `
+    <div class="poke-card-evo-row">
+      ${renderEvolutionTile(from, from.id === currentId)}
+      <div class="poke-card-evo-arrow">
+        <div class="poke-card-evo-conds">
+          ${chips.map(c => `<span class="poke-card-evo-chip">${c}</span>`).join('')}
+        </div>
+        <div class="poke-card-evo-arrowhead">→</div>
+      </div>
+      ${renderEvolutionTile(to, to.id === currentId)}
+    </div>
+  `;
+}
+
+function renderEvolutionSection(pokemon) {
+  const chain = buildEvolutionChain(pokemon);
+  if (!chain.edges.length) return '';
+  const rows = chain.edges.map(e => renderEvolutionEdgeRow(e, pokemon.id)).join('');
+  return `
+    <hr class="poke-card-divider" />
+    <div class="poke-card-section-label">Evolution Chain</div>
+    <div class="poke-card-evo-list">${rows}</div>
   `;
 }
 

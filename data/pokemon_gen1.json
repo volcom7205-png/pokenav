@@ -517,6 +517,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 2,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -1040,6 +1049,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 3,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 32"
+        ]
       }
     ]
   },
@@ -2276,6 +2294,15 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 5,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -2901,6 +2928,15 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 6,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 36"
+        ]
       }
     ]
   },
@@ -4357,6 +4393,15 @@
         "notes": "Not in: Freezing",
         "label": "Overworld 5"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 8,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -5028,6 +5073,15 @@
         ],
         "notes": "Not in: Freezing",
         "label": "Overworld 5"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 9,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 36"
+        ]
       }
     ]
   },
@@ -5892,6 +5946,15 @@
         "notes": "Not in: Freezing, Spooky",
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 11,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 7"
+        ]
+      }
     ]
   },
   {
@@ -5980,6 +6043,15 @@
         ],
         "notes": "Not in: Freezing, Spooky",
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 12,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 10"
+        ]
       }
     ]
   },
@@ -6647,6 +6719,15 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 14,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 7"
+        ]
+      }
     ]
   },
   {
@@ -6753,6 +6834,15 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 15,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 10"
+        ]
       }
     ]
   },
@@ -7759,6 +7849,15 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 17,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 18"
+        ]
+      }
     ]
   },
   {
@@ -8180,6 +8279,15 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 18,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 36"
+        ]
       }
     ]
   },
@@ -9163,6 +9271,15 @@
         ],
         "notes": "Not in: Deep Dark",
         "label": "Overworld 3"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 20,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 20"
+        ]
       }
     ]
   },
@@ -10204,6 +10321,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 22,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 20"
+        ]
       }
     ]
   },
@@ -11279,6 +11405,15 @@
           "grounded"
         ],
         "label": "Overworld 3"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 24,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 22"
+        ]
       }
     ]
   },
@@ -12697,6 +12832,16 @@
         "notes": "Not in: Freezing",
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 26,
+        "method": "item_interact",
+        "item": "cobblemon:thunder_stone",
+        "requirements": [
+          "Must be in #evolution/regional/pikachu alolabiome biome"
+        ]
+      }
     ]
   },
   {
@@ -14084,6 +14229,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 28,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 22"
+        ]
+      }
     ]
   },
   {
@@ -15217,6 +15371,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 30,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -15714,6 +15877,13 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 31,
+        "method": "item_interact",
+        "item": "cobblemon:moon_stone"
       }
     ]
   },
@@ -17011,6 +17181,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 33,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -17520,6 +17699,13 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 34,
+        "method": "item_interact",
+        "item": "cobblemon:moon_stone"
       }
     ]
   },
@@ -19354,6 +19540,13 @@
         "notes": "Not in: Spooky",
         "label": "Overworld 4"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 36,
+        "method": "item_interact",
+        "item": "cobblemon:moon_stone"
+      }
     ]
   },
   {
@@ -20934,6 +21127,13 @@
         ],
         "notes": "Not in: Nether Frozen",
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 38,
+        "method": "item_interact",
+        "item": "cobblemon:fire_stone"
       }
     ]
   },
@@ -22527,6 +22727,13 @@
         ],
         "label": "Overworld 3"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 40,
+        "method": "item_interact",
+        "item": "cobblemon:moon_stone"
+      }
     ]
   },
   {
@@ -24117,6 +24324,15 @@
         ],
         "label": "Overworld 7"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 42,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 22"
+        ]
+      }
     ]
   },
   {
@@ -24728,6 +24944,15 @@
         ],
         "label": "Overworld 7"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 169,
+        "method": "level_up",
+        "requirements": [
+          "Must reach friendship amount of 160"
+        ]
+      }
     ]
   },
   {
@@ -25166,6 +25391,15 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 44,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 21"
+        ]
       }
     ]
   },
@@ -25635,6 +25869,18 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 45,
+        "method": "item_interact",
+        "item": "cobblemon:leaf_stone"
+      },
+      {
+        "to": 182,
+        "method": "item_interact",
+        "item": "cobblemon:sun_stone"
       }
     ]
   },
@@ -26696,6 +26942,15 @@
         "notes": "Not in: Lush",
         "label": "Overworld 4"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 47,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 24"
+        ]
+      }
     ]
   },
   {
@@ -27724,6 +27979,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 49,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 31"
+        ]
       }
     ]
   },
@@ -28825,6 +29089,15 @@
         ],
         "notes": "Not in: Deep Dark",
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 51,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 26"
+        ]
       }
     ]
   },
@@ -30085,6 +30358,15 @@
           "grounded"
         ],
         "label": "Overworld 4"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 53,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 28"
+        ]
       }
     ]
   },
@@ -31584,6 +31866,15 @@
         ],
         "notes": "Not in: Freezing",
         "label": "Overworld 4"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 55,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 33"
+        ]
       }
     ]
   },
@@ -33107,6 +33398,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 57,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 28"
+        ]
+      }
     ]
   },
   {
@@ -33852,6 +34152,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 979,
+        "method": "level_up",
+        "requirements": [
+          "Must use ragefist 20 times"
+        ]
+      }
     ]
   },
   {
@@ -34350,6 +34659,13 @@
         ],
         "notes": "Not in: Desert",
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 59,
+        "method": "item_interact",
+        "item": "cobblemon:fire_stone"
       }
     ]
   },
@@ -35619,6 +35935,15 @@
         "notes": "Not in: Lush",
         "label": "Overworld 14"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 61,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 25"
+        ]
+      }
     ]
   },
   {
@@ -36371,6 +36696,20 @@
         ],
         "notes": "Not in: Lush",
         "label": "Overworld 14"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 62,
+        "method": "item_interact",
+        "item": "cobblemon:water_stone"
+      },
+      {
+        "to": 186,
+        "method": "trade",
+        "requirements": [
+          "Must be holding kings rock"
+        ]
       }
     ]
   },
@@ -37882,6 +38221,15 @@
         ],
         "label": "Overworld 3"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 64,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -38567,6 +38915,12 @@
           "grounded"
         ],
         "label": "Overworld 3"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 65,
+        "method": "trade"
       }
     ]
   },
@@ -39866,6 +40220,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 67,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 28"
+        ]
+      }
     ]
   },
   {
@@ -40455,6 +40818,12 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 68,
+        "method": "trade"
       }
     ]
   },
@@ -41577,6 +41946,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 70,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 21"
+        ]
+      }
     ]
   },
   {
@@ -42070,6 +42448,13 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 71,
+        "method": "item_interact",
+        "item": "cobblemon:leaf_stone"
       }
     ]
   },
@@ -43253,6 +43638,15 @@
           "fishing"
         ],
         "label": "Overworld 8"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 73,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 30"
+        ]
       }
     ]
   },
@@ -44513,6 +44907,15 @@
         "notes": "Not in: Deep Dark",
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 75,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 25"
+        ]
+      }
     ]
   },
   {
@@ -45106,6 +45509,12 @@
         ],
         "notes": "Not in: Deep Dark",
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 76,
+        "method": "trade"
       }
     ]
   },
@@ -46160,6 +46569,15 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 78,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 40"
+        ]
       }
     ]
   },
@@ -47421,6 +47839,22 @@
         ],
         "notes": "Not in: Freezing",
         "label": "Overworld 6"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 80,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 37"
+        ]
+      },
+      {
+        "to": 199,
+        "method": "trade",
+        "requirements": [
+          "Must be holding kings rock"
+        ]
       }
     ]
   },
@@ -48749,6 +49183,15 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 82,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 30"
+        ]
+      }
     ]
   },
   {
@@ -49278,6 +49721,13 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 462,
+        "method": "item_interact",
+        "item": "cobblemon:thunder_stone"
       }
     ]
   },
@@ -50380,6 +50830,15 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 85,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 31"
+        ]
       }
     ]
   },
@@ -51490,6 +51949,15 @@
           "fishing"
         ],
         "label": "Overworld 5"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 87,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 34"
+        ]
       }
     ]
   },
@@ -52776,6 +53244,15 @@
         ],
         "notes": "Not in: Swamp",
         "label": "Overworld 9"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 89,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 38"
+        ]
       }
     ]
   },
@@ -54076,6 +54553,13 @@
         ],
         "label": "Overworld 8"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 91,
+        "method": "item_interact",
+        "item": "cobblemon:water_stone"
+      }
     ]
   },
   {
@@ -55350,6 +55834,15 @@
         ],
         "label": "Overworld 4"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 93,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 25"
+        ]
+      }
     ]
   },
   {
@@ -56035,6 +56528,12 @@
           "grounded"
         ],
         "label": "Overworld 4"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 94,
+        "method": "trade"
       }
     ]
   },
@@ -57458,6 +57957,15 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 208,
+        "method": "trade",
+        "requirements": [
+          "Must be holding metal coat"
+        ]
+      }
     ]
   },
   {
@@ -58161,6 +58669,15 @@
         ],
         "notes": "Not in: Freezing",
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 97,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 26"
+        ]
       }
     ]
   },
@@ -59479,6 +59996,15 @@
         ],
         "label": "Overworld 6"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 99,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 28"
+        ]
+      }
     ]
   },
   {
@@ -60572,6 +61098,15 @@
         ],
         "label": "Overworld 3"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 101,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 30"
+        ]
+      }
     ]
   },
   {
@@ -61649,6 +62184,13 @@
         ],
         "notes": "Not in: Freezing",
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 103,
+        "method": "item_interact",
+        "item": "cobblemon:leaf_stone"
       }
     ]
   },
@@ -62958,6 +63500,17 @@
           "grounded"
         ],
         "label": "Overworld 3"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 105,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 28",
+          "Must be in #evolution/regional/cubone alolabiome biome",
+          "Must be in #is nether biome"
+        ]
       }
     ]
   },
@@ -65613,6 +66166,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 463,
+        "method": "level_up",
+        "requirements": [
+          "Must know rollout"
+        ]
+      }
     ]
   },
   {
@@ -66118,6 +66680,15 @@
           "grounded"
         ],
         "label": "Overworld 5"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 110,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 35"
+        ]
       }
     ]
   },
@@ -67282,6 +67853,15 @@
         "notes": "Not in: Cold",
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 112,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 42"
+        ]
+      }
     ]
   },
   {
@@ -68128,6 +68708,15 @@
         ],
         "notes": "Not in: Cold",
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 464,
+        "method": "trade",
+        "requirements": [
+          "Must be holding protector"
+        ]
       }
     ]
   },
@@ -68995,6 +69584,15 @@
         ],
         "label": "Overworld 3"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 242,
+        "method": "level_up",
+        "requirements": [
+          "Must reach friendship amount of 160"
+        ]
+      }
     ]
   },
   {
@@ -69478,6 +70076,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 465,
+        "method": "level_up",
+        "requirements": [
+          "Must know ancientpower"
+        ]
       }
     ]
   },
@@ -70732,6 +71339,15 @@
         ],
         "label": "Overworld 6"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 117,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 32"
+        ]
+      }
     ]
   },
   {
@@ -71270,6 +71886,15 @@
         ],
         "label": "Overworld 6"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 230,
+        "method": "trade",
+        "requirements": [
+          "Must be holding dragon scale"
+        ]
+      }
     ]
   },
   {
@@ -71794,6 +72419,15 @@
           "fishing"
         ],
         "label": "Overworld 4"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 119,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 33"
+        ]
       }
     ]
   },
@@ -72932,6 +73566,13 @@
           "fishing"
         ],
         "label": "Overworld 10"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 121,
+        "method": "item_interact",
+        "item": "cobblemon:water_stone"
       }
     ]
   },
@@ -75042,6 +75683,20 @@
         ],
         "label": "Overworld 3"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 212,
+        "method": "trade",
+        "requirements": [
+          "Must be holding metal coat"
+        ]
+      },
+      {
+        "to": 900,
+        "method": "item_interact",
+        "item": "cobblemon:black_augurite"
+      }
     ]
   },
   {
@@ -76405,6 +77060,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 466,
+        "method": "trade",
+        "requirements": [
+          "Must be holding electirizer"
+        ]
+      }
     ]
   },
   {
@@ -77016,6 +77680,15 @@
           "grounded"
         ],
         "label": "Overworld 3"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 467,
+        "method": "trade",
+        "requirements": [
+          "Must be holding magmarizer"
+        ]
       }
     ]
   },
@@ -78577,6 +79250,15 @@
           "fishing"
         ],
         "label": "Overworld 24"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 130,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 20"
+        ]
       }
     ]
   },
@@ -80596,6 +81278,57 @@
           "grounded"
         ],
         "label": "Overworld 5"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 135,
+        "method": "item_interact",
+        "item": "cobblemon:thunder_stone"
+      },
+      {
+        "to": 134,
+        "method": "item_interact",
+        "item": "cobblemon:water_stone"
+      },
+      {
+        "to": 136,
+        "method": "item_interact",
+        "item": "cobblemon:fire_stone"
+      },
+      {
+        "to": 196,
+        "method": "level_up",
+        "requirements": [
+          "Must reach friendship amount of 160",
+          "Must evolve during day"
+        ]
+      },
+      {
+        "to": 197,
+        "method": "level_up",
+        "requirements": [
+          "Must reach friendship amount of 160",
+          "Must evolve during night"
+        ]
+      },
+      {
+        "to": 700,
+        "method": "level_up",
+        "requirements": [
+          "Must reach friendship amount of 160",
+          "Must know a fairy type move"
+        ]
+      },
+      {
+        "to": 470,
+        "method": "item_interact",
+        "item": "cobblemon:leaf_stone"
+      },
+      {
+        "to": 471,
+        "method": "item_interact",
+        "item": "cobblemon:ice_stone"
       }
     ]
   },
@@ -83244,6 +83977,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 233,
+        "method": "trade",
+        "requirements": [
+          "Must be holding upgrade"
+        ]
+      }
     ]
   },
   {
@@ -83752,6 +84494,15 @@
           "submerged"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 139,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 40"
+        ]
       }
     ]
   },
@@ -84855,6 +85606,15 @@
           "submerged"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 141,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 40"
+        ]
       }
     ]
   },
@@ -89298,6 +90058,15 @@
         "notes": "Not in: Frozen Ocean",
         "label": "Overworld 7"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 148,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 30"
+        ]
+      }
     ]
   },
   {
@@ -89918,6 +90687,15 @@
         ],
         "notes": "Not in: Frozen Ocean",
         "label": "Overworld 7"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 149,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 55"
+        ]
       }
     ]
   },

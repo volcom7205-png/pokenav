@@ -372,6 +372,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 811,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -759,6 +768,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 812,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 35"
+        ]
       }
     ]
   },
@@ -1669,6 +1687,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 814,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -2057,6 +2084,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 815,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 35"
+        ]
       }
     ]
   },
@@ -2910,6 +2946,15 @@
         ],
         "label": "Overworld 4"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 817,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -3253,6 +3298,15 @@
           "fishing"
         ],
         "label": "Overworld 4"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 818,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 35"
+        ]
       }
     ]
   },
@@ -4062,6 +4116,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 820,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 24"
+        ]
+      }
     ]
   },
   {
@@ -4826,6 +4889,15 @@
         "notes": "Not in: Arid",
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 822,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 18"
+        ]
+      }
     ]
   },
   {
@@ -5179,6 +5251,15 @@
         ],
         "notes": "Not in: Arid",
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 823,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 38"
+        ]
       }
     ]
   },
@@ -5943,6 +6024,15 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 828,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 18"
+        ]
+      }
     ]
   },
   {
@@ -6618,6 +6708,15 @@
         ],
         "label": "Overworld 3"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 830,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 20"
+        ]
+      }
     ]
   },
   {
@@ -7171,6 +7270,15 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 832,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 24"
+        ]
       }
     ]
   },
@@ -7802,6 +7910,15 @@
         ],
         "notes": "Not in: Freezing",
         "label": "Overworld 4"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 834,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 22"
+        ]
       }
     ]
   },
@@ -8653,6 +8770,15 @@
         "notes": "Not in: Freezing",
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 836,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 25"
+        ]
+      }
     ]
   },
   {
@@ -9318,6 +9444,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 844,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 36"
+        ]
       }
     ]
   },
@@ -10585,6 +10720,15 @@
         "notes": "Not in: Freezing",
         "label": "Overworld 4"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 847,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 26"
+        ]
+      }
     ]
   },
   {
@@ -11136,6 +11280,16 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 849,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 30",
+          "Must have properties toxel nature=hardy"
+        ]
       }
     ]
   },
@@ -11961,6 +12115,15 @@
         ],
         "label": "Overworld 3"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 851,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 28"
+        ]
+      }
     ]
   },
   {
@@ -12756,6 +12919,15 @@
         ],
         "notes": "Not in: Freezing",
         "label": "Overworld 9"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 853,
+        "method": "level_up",
+        "requirements": [
+          "Must know taunt"
+        ]
       }
     ]
   },
@@ -13667,6 +13839,13 @@
         ],
         "label": "Overworld 6"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 855,
+        "method": "item_interact",
+        "item": "cobblemon:cracked_pot"
+      }
     ]
   },
   {
@@ -14501,6 +14680,15 @@
         ],
         "label": "Overworld 3"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 857,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 32"
+        ]
+      }
     ]
   },
   {
@@ -14884,6 +15072,15 @@
           "grounded"
         ],
         "label": "Overworld 3"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 858,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 42"
+        ]
       }
     ]
   },
@@ -15740,6 +15937,15 @@
         "notes": "Not in: Nether Desert",
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 860,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 32"
+        ]
+      }
     ]
   },
   {
@@ -16112,6 +16318,15 @@
         ],
         "notes": "Not in: Nether Desert",
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 861,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 42"
+        ]
       }
     ]
   },
@@ -19699,6 +19914,16 @@
         ],
         "label": "Overworld 4"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 869,
+        "method": "level_up",
+        "requirements": [
+          "Must be holding strawberry sweet",
+          "Must evolve during day"
+        ]
+      }
     ]
   },
   {
@@ -22710,6 +22935,15 @@
         "notes": "Not in: Freezing",
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 879,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 34"
+        ]
+      }
     ]
   },
   {
@@ -24880,6 +25114,15 @@
         "notes": "Not in: Freezing",
         "label": "Overworld 5"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 886,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 50"
+        ]
+      }
     ]
   },
   {
@@ -25370,6 +25613,15 @@
         ],
         "notes": "Not in: Freezing",
         "label": "Overworld 5"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 887,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 60"
+        ]
       }
     ]
   },

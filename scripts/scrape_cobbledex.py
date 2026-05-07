@@ -157,6 +157,124 @@ def parse_sprite(rsc_payload: str) -> str | None:
     return m.group(1) if m else None
 
 
+def _find_balanced(s: str, start: int, open_ch: str = "[", close_ch: str = "]") -> int:
+    """Return idx after the matching close bracket, given s[start] == open_ch."""
+    depth = 0
+    in_str = False
+    esc = False
+    for i, ch in enumerate(s[start:], start):
+        if esc:
+            esc = False
+            continue
+        if ch == "\\":
+            esc = True
+            continue
+        if ch == '"':
+            in_str = not in_str
+            continue
+        if in_str:
+            continue
+        if ch == open_ch:
+            depth += 1
+        elif ch == close_ch:
+            depth -= 1
+            if depth == 0:
+                return i + 1
+    return -1
+
+
+def _build_label_table(payload: str) -> dict[str, str]:
+    """Map RSC labels (e.g. '3a') to their array body. Cobbledex inlines
+    deduplicated JSX subtrees later in the stream; resolving them lets the
+    parser see the same content the browser renders."""
+    out: dict[str, str] = {}
+    for m in re.finditer(r'(?:^|[\n,])([0-9a-f]+):\[', payload):
+        bracket = m.end() - 1
+        end = _find_balanced(payload, bracket, "[", "]")
+        if end > 0:
+            out[m.group(1)] = payload[bracket:end]
+    return out
+
+
+def _resolve_refs(s: str, labels: dict[str, str], depth: int = 0, seen: frozenset = frozenset()) -> str:
+    if depth > 5:
+        return s
+
+    def rep(m: re.Match) -> str:
+        ref = m.group(1)
+        if ref in seen or ref not in labels:
+            return m.group(0)
+        return _resolve_refs(labels[ref], labels, depth + 1, seen | {ref})
+
+    return re.sub(r'"\$L([0-9a-f]+)"', rep, s)
+
+
+def _normalize_method(s: str) -> str:
+    return {"level up": "level_up", "item interact": "item_interact", "trade": "trade"}.get(
+        s, s.replace(" ", "_")
+    )
+
+
+def parse_evolutions(rsc_payload: str) -> list[dict]:
+    """Pull outgoing evolution edges from the rendered evolution-section JSX.
+
+    Returns a list of `{ to, method, item?, requirements: [str] }`. Pre-evolution
+    blocks (incoming edges) are skipped; chains are reassembled client-side via
+    reverse lookup so each mon stores only its own outgoing edges.
+
+    The condition strings are kept as the localized English the page shows
+    ("Must reach level 16", "Must evolve during day"); the UI converts these
+    to short chips.
+    """
+    labels = _build_label_table(rsc_payload)
+    out: list[dict] = []
+    seen_to: set[tuple[int, str, str | None]] = set()
+    for m in re.finditer(
+        r'\["\$","div","\d+",\{"className":"group flex flex-col items-center"',
+        rsc_payload,
+    ):
+        block_end = _find_balanced(rsc_payload, m.start(), "[", "]")
+        if block_end < 0:
+            continue
+        block = _resolve_refs(rsc_payload[m.start():block_end], labels)
+        img = re.search(
+            r'/3dmons/previews/large/(\d+)\.webp"[^]]*alt":"([^"]+)"',
+            block,
+        )
+        if not img:
+            continue
+        if "Evolution of" not in img.group(2):
+            continue  # skip pre-evo and current-mon tiles
+        to = int(img.group(1))
+        meth = re.search(r'"Method:"\}\]," ","([^"]+)"', block)
+        method = _normalize_method(meth.group(1)) if meth else None
+        ri = re.search(r'"Required Item:"\}\]," ","([^"]+)"', block)
+        item = ri.group(1) if ri else None
+        reqs: list[str] = []
+        rh = re.search(r'"Requirements:"\}', block)
+        if rh:
+            tail = block[rh.end():]
+            ul_close = re.search(r'\}\]\}\]', tail)
+            scope = tail[: ul_close.end()] if ul_close else tail
+            for r in re.findall(r'"li","\d+",\{"children":"([^"]+)"\}', scope):
+                r = r.strip()
+                if r and r not in reqs:
+                    reqs.append(r)
+        # Same target + same method + same item could repeat for branched
+        # forms (Pikachu → Raichu rendered twice). Dedupe on that triple.
+        key = (to, method, item)
+        if key in seen_to:
+            continue
+        seen_to.add(key)
+        edge: dict = {"to": to, "method": method}
+        if item:
+            edge["item"] = item
+        if reqs:
+            edge["requirements"] = reqs
+        out.append(edge)
+    return out
+
+
 def scrape_one(mon: dict, slug_to_name: dict[str, str]) -> dict | None:
     # Cobbledex's `slug` field is broken for special-character names
     # (Nidoran♀ → "nidoran", Iron Treads → "iron"), but the actual URLs
@@ -179,19 +297,23 @@ def scrape_one(mon: dict, slug_to_name: dict[str, str]) -> dict | None:
     payload = extract_rsc_payload(html)
     moves = parse_moves(payload, slug_to_name, mon["name"])
     sprite = parse_sprite(payload)
+    evolutions = parse_evolutions(payload)
     types = [mon["primaryType"]]
     secondary = mon.get("secondaryType")
     # "$undefined" is the Next.js RSC sentinel for an undefined value;
     # for single-type mons it should be omitted entirely.
     if secondary and secondary != "$undefined":
         types.append(secondary)
-    return {
+    entry = {
         "id": mon["nationalPokedexNumber"],
         "name": mon["name"],
         "types": types,
         "sprite": sprite,
         "learnableMoves": moves,
     }
+    if evolutions:
+        entry["evolutions"] = evolutions
+    return entry
 
 
 def merge_gen1(new_entries: list[dict]) -> list[dict]:

@@ -602,6 +602,15 @@
         "notes": "Not in: Spooky",
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 651,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -1220,6 +1229,15 @@
         ],
         "notes": "Not in: Spooky",
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 652,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 36"
+        ]
       }
     ]
   },
@@ -2435,6 +2453,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 654,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -2992,6 +3019,15 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 655,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 36"
+        ]
       }
     ]
   },
@@ -4243,6 +4279,15 @@
         "notes": "Not in: Freezing",
         "label": "Overworld 5"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 657,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 16"
+        ]
+      }
     ]
   },
   {
@@ -4811,6 +4856,15 @@
         ],
         "notes": "Not in: Freezing",
         "label": "Overworld 5"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 658,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 36"
+        ]
       }
     ]
   },
@@ -5925,6 +5979,15 @@
         ],
         "label": "Overworld"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 660,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 20"
+        ]
+      }
     ]
   },
   {
@@ -6953,6 +7016,15 @@
         ],
         "label": "Overworld 3"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 662,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 17"
+        ]
+      }
     ]
   },
   {
@@ -7401,6 +7473,15 @@
           "grounded"
         ],
         "label": "Overworld 3"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 663,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 35"
+        ]
       }
     ]
   },
@@ -8012,6 +8093,15 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 665,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 9"
+        ]
+      }
     ]
   },
   {
@@ -8134,6 +8224,18 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 666,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 12",
+          "Must be in #evolution/vivillon/archipelago biome",
+          "Must be in #evolution/vivillon/archipelago anti biome",
+          "Must be near specific structure"
+        ]
       }
     ]
   },
@@ -9326,6 +9428,15 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 668,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 35"
+        ]
+      }
     ]
   },
   {
@@ -9828,7 +9939,7 @@
   },
   {
     "id": 669,
-    "name": "Flabébé",
+    "name": "Flab\u00e9b\u00e9",
     "types": [
       "Fairy"
     ],
@@ -10244,7 +10355,16 @@
         "chance": "2.5%"
       }
     ],
-    "spawns": []
+    "spawns": [],
+    "evolutions": [
+      {
+        "to": 670,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 19"
+        ]
+      }
+    ]
   },
   {
     "id": 670,
@@ -10788,6 +10908,13 @@
           "grounded"
         ],
         "label": "Overworld 8"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 671,
+        "method": "item_interact",
+        "item": "cobblemon:shiny_stone"
       }
     ]
   },
@@ -11844,6 +11971,15 @@
         ],
         "notes": "Not in: Volcanic",
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 673,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 32"
+        ]
       }
     ]
   },
@@ -13342,6 +13478,16 @@
         ],
         "label": "Overworld 5"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 678,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 25",
+          "Must have properties gender=male"
+        ]
+      }
     ]
   },
   {
@@ -14439,6 +14585,15 @@
         ],
         "label": "Overworld 4"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 680,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 35"
+        ]
+      }
     ]
   },
   {
@@ -14872,6 +15027,13 @@
           "grounded"
         ],
         "label": "Overworld 4"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 681,
+        "method": "item_interact",
+        "item": "cobblemon:dusk_stone"
       }
     ]
   },
@@ -15788,6 +15950,15 @@
           "grounded"
         ],
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 683,
+        "method": "trade",
+        "requirements": [
+          "Must be holding sachet"
+        ]
       }
     ]
   },
@@ -16716,6 +16887,15 @@
           "grounded"
         ],
         "label": "Overworld 4"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 685,
+        "method": "trade",
+        "requirements": [
+          "Must be holding whipped dream"
+        ]
       }
     ]
   },
@@ -17875,6 +18055,16 @@
           "fishing"
         ],
         "label": "Overworld 12"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 687,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 30",
+          "Must know topsyturvy"
+        ]
       }
     ]
   },
@@ -19186,6 +19376,15 @@
         ],
         "label": "Overworld 4"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 689,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 39"
+        ]
+      }
     ]
   },
   {
@@ -20383,6 +20582,15 @@
         ],
         "label": "Overworld 6"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 691,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 48"
+        ]
+      }
     ]
   },
   {
@@ -21387,6 +21595,15 @@
           "fishing"
         ],
         "label": "Overworld 3"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 693,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 37"
+        ]
       }
     ]
   },
@@ -22408,6 +22625,16 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 697,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 39",
+          "Must evolve during day"
+        ]
       }
     ]
   },
@@ -23490,6 +23717,16 @@
           "grounded"
         ],
         "label": "Overworld"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 699,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 39",
+          "Must evolve during night"
+        ]
       }
     ]
   },
@@ -27011,6 +27248,15 @@
         "notes": "Not in: Dripstone, Lush",
         "label": "Overworld 16"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 705,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 40"
+        ]
+      }
     ]
   },
   {
@@ -27431,6 +27677,16 @@
         ],
         "notes": "Not in: Arid, Coast, Ocean, Freezing, Swamp",
         "label": "Overworld 6"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 706,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 50",
+          "Must be in raining weather"
+        ]
       }
     ]
   },
@@ -29073,6 +29329,12 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 709,
+        "method": "trade"
+      }
     ]
   },
   {
@@ -30246,6 +30508,12 @@
         ],
         "label": "Overworld 2"
       }
+    ],
+    "evolutions": [
+      {
+        "to": 711,
+        "method": "trade"
+      }
     ]
   },
   {
@@ -31253,6 +31521,15 @@
           "fishing"
         ],
         "label": "Overworld 5"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 713,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 37"
+        ]
       }
     ]
   },
@@ -32295,6 +32572,15 @@
         ],
         "notes": "Not in: Deep Dark",
         "label": "Overworld 2"
+      }
+    ],
+    "evolutions": [
+      {
+        "to": 715,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 48"
+        ]
       }
     ]
   },
