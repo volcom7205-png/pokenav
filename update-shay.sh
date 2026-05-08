@@ -7,8 +7,8 @@
 #
 # What it overwrites in pokenav-shay/ (kept in sync with main):
 #   data/                                      — Pokémon, moves, recipes, biomes
-#   js/core/{biomes,data,nav,picker,types,utils}.js  — non-customized core
-#   js/panels/{academy,biome,party,pokedex,stadium,typechart}.js — non-customized panels
+#   js/core/{biomes,data,element-filter,nav,picker,types,utils,wanted}.js
+#   js/panels/{academy,biome,party,pokedex,stadium,typechart}.js
 #   assets/items/                              — except *_ball.png in cobblemon/ (her custom art)
 #   index.html                                 — sync from main, then patch in
 #                                                Shay's title + subtitle + letter-modal
@@ -21,10 +21,12 @@
 #   README.md                  — Shay's README
 #   assets/items/cobblemon/*_ball.png  — her custom ball art (16 files)
 #
-# What it patches without overwriting (idempotent append):
-#   css/panels/pokedex.css     — appends Phase 1 rules (collection chips,
-#                                move rows, matchup blocks) below a sentinel
-#                                comment if not already present.
+# What it patches without overwriting (idempotent — sentinel-protected appends):
+#   css/panels/pokedex.css     — Phase 1 rules (collection chips, move rows,
+#                                matchup blocks) and Phase 5 rule (.pokedex-sort)
+#   css/base.css               — Phase 4 rules (.settings-gear-btn, .tab-badge)
+#   css/panels/party.css       — Phase 3 rules (.pc-mode-row/btn/count, .pc-view,
+#                                .pc-wanted-* tile poster styles)
 
 set -euo pipefail
 
@@ -53,7 +55,7 @@ cp -r "$SRC_ROOT/data/." "$DST_ROOT/data/"
 
 echo "→ Syncing js/core/ (skipping trainer.js, her letter modal lives there)"
 mkdir -p "$DST_ROOT/js/core"
-for f in biomes data nav picker types utils; do
+for f in biomes data element-filter nav picker types utils wanted; do
   cp "$SRC_ROOT/js/core/$f.js" "$DST_ROOT/js/core/$f.js"
 done
 
@@ -81,6 +83,29 @@ mkdir -p "$DST_ROOT/assets/items"
       ;;
   esac
 done
+
+echo "→ Patching js/core/trainer.js (preserve tab-badge across name updates)"
+python3 - "$DST_ROOT/js/core/trainer.js" <<'PY'
+import sys, pathlib
+
+p = pathlib.Path(sys.argv[1])
+src = p.read_text()
+
+OLD = '  if (pcTab) pcTab.textContent = name ? `${name.toUpperCase()}\'S PC` : "TRAINER\'S PC";'
+NEW = '''  if (pcTab) {
+    const badge = pcTab.querySelector('.tab-badge');
+    pcTab.textContent = name ? `${name}'s PC` : "Trainer's PC";
+    if (badge) pcTab.appendChild(badge);
+  }'''
+
+if OLD in src:
+    p.write_text(src.replace(OLD, NEW))
+    print('  patched applyTrainerName to preserve .tab-badge span')
+elif "pcTab.querySelector('.tab-badge')" in src:
+    print('  already patched, skipping')
+else:
+    print('  ⚠ pcTab line not found in expected form — Shay\'s trainer.js may have diverged further; skipping')
+PY
 
 echo "→ Patching index.html (main's structure + Shay's branding + letter-modal)"
 python3 - "$SRC_ROOT/index.html" "$DST_ROOT/index.html" <<'PY'
@@ -123,60 +148,25 @@ dst_path.write_text(out)
 print(f"  wrote {len(out)} chars")
 PY
 
-echo "→ Patching css/panels/pokedex.css (appending Phase 1 rules if absent)"
-python3 - "$SRC_ROOT/css/panels/pokedex.css" "$DST_ROOT/css/panels/pokedex.css" <<'PY'
-import sys, pathlib, re
+echo "→ Patching Shay's CSS (idempotent, sentinel-protected)"
+python3 - "$SRC_ROOT" "$DST_ROOT" <<'PY'
+import sys, pathlib
 
-main_css = pathlib.Path(sys.argv[1]).read_text()
-shay_path = pathlib.Path(sys.argv[2])
-shay_css = shay_path.read_text() if shay_path.exists() else ''
+src_root = pathlib.Path(sys.argv[1])
+dst_root = pathlib.Path(sys.argv[2])
 
-SENTINEL = '/* === SHAY-PATCH-PHASE-1 === */'
-
-if SENTINEL in shay_css:
-    print('  already patched, skipping')
-    sys.exit(0)
-
-# Pull every rule that uses one of these selectors from main's CSS.
-SELECTORS = [
-    '.poke-card-matchup-grid',
-    '.poke-card-matchup-block',
-    '.poke-card-matchup-subhead',
-    '.poke-card-move-filter-row',
-    '.poke-card-move-filter',
-    '.poke-card-move-block',
-    '.poke-card-move-subhead',
-    '.poke-card-move-row',
-    '.poke-card-move-type',
-    '.poke-card-move-name',
-    '.poke-card-move-stab',
-    '.poke-card-move-cat',
-    '.poke-card-move-stat',
-    '.poke-card-move-score',
-    '.poke-card-move-empty',
-    '.pokedex-collection-row',
-    '.collection-chip',
-    '.tile-wanted-star',
-]
-
-# Greedy: grab any rule (selector ... { ... }) whose selector mentions one of the new classes.
-# Also grab @media blocks containing those.
 def extract_rules(css, selectors):
+    """Pull every top-level rule whose selector references any of `selectors`.
+    Also grabs @media blocks containing those rules."""
     out_blocks = []
     i = 0
     n = len(css)
     while i < n:
-        # find next "{"
         brace = css.find('{', i)
         if brace == -1:
             break
-        # selector is everything from i (after preceding '}' or start) to brace
-        # but we may be at top level — find the start of this rule
-        # simpler: scan back from brace to last '}' or start
         rule_start = max(css.rfind('}', 0, brace), css.rfind('*/', 0, brace), -1) + 1
-        # also handle @media/@supports — they have nested braces
         selector_block = css[rule_start:brace]
-        # find matching closing brace, accounting for nesting (for @media)
         depth = 1
         j = brace + 1
         while j < n and depth > 0:
@@ -191,14 +181,74 @@ def extract_rules(css, selectors):
         i = j
     return out_blocks
 
-blocks = extract_rules(main_css, SELECTORS)
-if not blocks:
-    print('  no Phase 1 rules found in main CSS — nothing to append')
-    sys.exit(0)
+def patch_css(main_path, shay_path, sentinel, selectors, label):
+    main_css = pathlib.Path(main_path).read_text()
+    shay_p = pathlib.Path(shay_path)
+    shay_css = shay_p.read_text() if shay_p.exists() else ''
+    if sentinel in shay_css:
+        print(f'  {label}: already patched, skipping')
+        return
+    blocks = extract_rules(main_css, selectors)
+    if not blocks:
+        print(f'  {label}: no matching rules found in main CSS')
+        return
+    patch = '\n\n' + sentinel + '\n' + '\n\n'.join(blocks) + '\n'
+    shay_p.write_text(shay_css + patch)
+    print(f'  {label}: appended {len(blocks)} rule blocks ({len(patch)} chars)')
 
-patch = '\n\n' + SENTINEL + '\n' + '\n\n'.join(blocks) + '\n'
-shay_path.write_text(shay_css + patch)
-print(f'  appended {len(blocks)} rule blocks ({len(patch)} chars)')
+# Phase 1 — Pokédex card enrichment (collection chips, move rows, matchup blocks)
+patch_css(
+    src_root / 'css/panels/pokedex.css',
+    dst_root / 'css/panels/pokedex.css',
+    '/* === SHAY-PATCH-PHASE-1 === */',
+    [
+        '.poke-card-matchup-grid', '.poke-card-matchup-block', '.poke-card-matchup-subhead',
+        '.poke-card-move-filter-row', '.poke-card-move-filter', '.poke-card-move-block',
+        '.poke-card-move-subhead', '.poke-card-move-row', '.poke-card-move-type',
+        '.poke-card-move-name', '.poke-card-move-stab', '.poke-card-move-cat',
+        '.poke-card-move-stat', '.poke-card-move-score', '.poke-card-move-empty',
+        '.pokedex-collection-row', '.collection-chip', '.tile-wanted-star',
+    ],
+    'pokedex.css P1',
+)
+
+# Phase 3 — PC sub-mode toggle + Most Wanted tile poster styles
+patch_css(
+    src_root / 'css/panels/party.css',
+    dst_root / 'css/panels/party.css',
+    '/* === SHAY-PATCH-PHASE-3 === */',
+    [
+        '.pc-mode-row', '.pc-mode-btn', '.pc-mode-count', '.pc-view',
+        '.pc-wanted-toolbar', '#pc-wanted-search', '#pc-wanted-sort',
+        '.pc-wanted-grid', '.pc-wanted-tile', '.wanted-poster-stamp',
+        '.pc-wanted-remove', '.pc-wanted-sprite', '.pc-wanted-num',
+        '.pc-wanted-name', '.pc-wanted-types', '.pc-wanted-rarity',
+        '.pc-wanted-biomes', '.pc-wanted-biome', '.pc-wanted-more',
+    ],
+    'party.css P3',
+)
+
+# Phase 4 — gear button + tab badge
+patch_css(
+    src_root / 'css/base.css',
+    dst_root / 'css/base.css',
+    '/* === SHAY-PATCH-PHASE-4 === */',
+    [
+        '.settings-gear-btn', '.tab-badge',
+    ],
+    'base.css P4',
+)
+
+# Phase 5 — Pokédex sort dropdown
+patch_css(
+    src_root / 'css/panels/pokedex.css',
+    dst_root / 'css/panels/pokedex.css',
+    '/* === SHAY-PATCH-PHASE-5 === */',
+    [
+        '.pokedex-sort',
+    ],
+    'pokedex.css P5',
+)
 PY
 
 echo "→ Rebuilding $ZIP_PATH"
