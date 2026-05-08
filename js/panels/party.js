@@ -752,40 +752,14 @@ const PartyStorage = (() => {
       renderPC();
     });
 
-    // Element panel toggle
-    document.getElementById('pc-element-btn')?.addEventListener('click', () => {
-      const panel = document.getElementById('pc-element-panel');
-      const btn   = document.getElementById('pc-element-btn');
-      panel?.classList.toggle('hidden');
-      btn?.classList.toggle('active');
+    ElementFilter.wire({
+      panelId: 'pc-element-panel',
+      btnId: 'pc-element-btn',
+      clearId: 'pc-clear-types',
+      countId: 'pc-filter-count',
+      selected: pcSelectedTypes,
+      onChange: renderPC,
     });
-
-    // Element items — render PNG icons + bind toggles
-    document.querySelectorAll('#pc-element-panel .element-item').forEach(item => {
-      const type = item.dataset.type;
-      if (type) item.innerHTML = typeIconHTML(type);
-      item.addEventListener('click', () => {
-        if (!type) return;
-        if (pcSelectedTypes.has(type)) {
-          pcSelectedTypes.delete(type);
-          item.classList.remove('active');
-        } else {
-          pcSelectedTypes.add(type);
-          item.classList.add('active');
-        }
-        updatePcFilterCount();
-        renderPC();
-      });
-    });
-
-    document.getElementById('pc-clear-types')?.addEventListener('click', () => {
-      pcSelectedTypes.clear();
-      document.querySelectorAll('#pc-element-panel .element-item.active').forEach(el => el.classList.remove('active'));
-      updatePcFilterCount();
-      renderPC();
-    });
-
-    updatePcFilterCount();
 
     document.getElementById('add-poke-btn')?.addEventListener('click', () => {
       openAddPicker();
@@ -793,11 +767,6 @@ const PartyStorage = (() => {
 
     // "Add to Storage" button hook — fires when Pokédex panel sends a pokemon over
     window.pokeNavAddToStorage = addToStorage;
-  }
-
-  function updatePcFilterCount() {
-    const el = document.getElementById('pc-filter-count');
-    if (el) el.textContent = `${pcSelectedTypes.size} active`;
   }
 
   // Bootstrap: load saved state immediately so owned indicators

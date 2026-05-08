@@ -4,6 +4,7 @@ let pokedexSearchQuery = '';
 let pokedexSelectedTypes = new Set();
 let pokedexSelectedGen = 'all';
 let pokedexSelectedCollection = 'all'; // 'all' | 'owned' | 'wanted' | 'missing'
+let pokedexSort = 'id';                 // 'id' | 'name' | 'type' | 'owned' | 'wanted'
 let pokedexCardMoveCategory = 'damage'; // 'all' | 'damage' | 'status'
 
 function buildPokedexPanel() {
@@ -17,32 +18,13 @@ function buildPokedexPanel() {
     renderPokedexTiles();
   });
 
-  document.getElementById('pokedex-element-btn')?.addEventListener('click', () => {
-    const panel = document.getElementById('pokedex-element-panel');
-    const btn   = document.getElementById('pokedex-element-btn');
-    panel?.classList.toggle('hidden');
-    btn?.classList.toggle('active');
-  });
-
-  document.querySelectorAll('#pokedex-element-panel .element-item').forEach(item => {
-    const type = item.dataset.type;
-    if (type) item.innerHTML = typeIconHTML(type);
-    item.addEventListener('click', () => {
-      if (!type) return;
-      if (pokedexSelectedTypes.has(type)) {
-        pokedexSelectedTypes.delete(type);
-        item.classList.remove('active');
-      } else {
-        pokedexSelectedTypes.add(type);
-        item.classList.add('active');
-      }
-      updatePokedexFilterCount();
-      renderPokedexTiles();
-    });
-  });
-
-  document.getElementById('pokedex-clear-types')?.addEventListener('click', () => {
-    clearPokedexTypeFilters();
+  ElementFilter.wire({
+    panelId: 'pokedex-element-panel',
+    btnId: 'pokedex-element-btn',
+    clearId: 'pokedex-clear-types',
+    countId: 'pokedex-filter-count',
+    selected: pokedexSelectedTypes,
+    onChange: renderPokedexTiles,
   });
 
   document.querySelectorAll('#pokedex-gen-row .gen-chip').forEach(chip => {
@@ -65,7 +47,14 @@ function buildPokedexPanel() {
     });
   });
 
-  updatePokedexFilterCount();
+  document.getElementById('pokedex-sort')?.addEventListener('change', e => {
+    pokedexSort = e.target.value;
+    renderPokedexTiles();
+  });
+
+  if (typeof WantedList !== 'undefined') {
+    WantedList.onChanged(() => renderPokedexTiles());
+  }
 }
 
 function renderPokedexTiles() {
@@ -103,6 +92,31 @@ function renderPokedexTiles() {
     return true;
   });
 
+  // Sort modes that bucket by ownership/wanted use dex# as the secondary
+  // sort so the in-bucket order remains stable.
+  filtered.sort((a, b) => {
+    if (pokedexSort === 'name') return a.name.localeCompare(b.name);
+    if (pokedexSort === 'type') {
+      const at = (a.types[0] || '').toLowerCase();
+      const bt = (b.types[0] || '').toLowerCase();
+      if (at !== bt) return at.localeCompare(bt);
+      return a.id - b.id;
+    }
+    if (pokedexSort === 'owned') {
+      const ao = ownedIds.has(a.id) ? 0 : 1;
+      const bo = ownedIds.has(b.id) ? 0 : 1;
+      if (ao !== bo) return ao - bo;
+      return a.id - b.id;
+    }
+    if (pokedexSort === 'wanted') {
+      const aw = wantedFn(a.id) ? 0 : 1;
+      const bw = wantedFn(b.id) ? 0 : 1;
+      if (aw !== bw) return aw - bw;
+      return a.id - b.id;
+    }
+    return a.id - b.id;
+  });
+
   if (!filtered.length) {
     grid.innerHTML = '<div class="no-results">No Pokémon found</div>';
     return;
@@ -128,19 +142,6 @@ function renderPokedexTiles() {
       selectPokemon(id);
     });
   });
-}
-
-function updatePokedexFilterCount() {
-  const el = document.getElementById('pokedex-filter-count');
-  if (!el) return;
-  el.textContent = `${pokedexSelectedTypes.size} active`;
-}
-
-function clearPokedexTypeFilters() {
-  pokedexSelectedTypes.clear();
-  document.querySelectorAll('#pokedex-element-panel .element-item.active').forEach(el => el.classList.remove('active'));
-  updatePokedexFilterCount();
-  renderPokedexTiles();
 }
 
 function addPokemonToStorageById(id, event) {

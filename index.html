@@ -54,6 +54,13 @@
       <div class="panel active" id="panel-pokedex">
         <div class="pokedex-search-row">
           <input type="text" id="pokedex-search" placeholder="Search by name or number..." autocomplete="off" />
+          <select id="pokedex-sort" class="pokedex-sort">
+            <option value="id">Sort: Dex #</option>
+            <option value="name">Sort: Name</option>
+            <option value="type">Sort: Primary type</option>
+            <option value="owned">Sort: Owned first</option>
+            <option value="wanted">Sort: Wanted first</option>
+          </select>
           <button id="pokedex-element-btn" class="pokedex-element-btn" type="button">◆ ELEMENTS ◀</button>
         </div>
         <div class="pokedex-gen-row" id="pokedex-gen-row">
@@ -83,28 +90,7 @@
               <span class="element-panel-title">◆ ELEMENTS</span>
               <span id="pokedex-filter-count" class="element-panel-count">0 active</span>
             </div>
-
-            <div class="element-icon-grid">
-              <div class="element-item" data-type="normal"><img src="assets/types/normal.png" alt="normal"><span class="element-item-label">Normal</span></div>
-              <div class="element-item" data-type="fire"><img src="assets/types/fire.png" alt="fire"><span class="element-item-label">Fire</span></div>
-              <div class="element-item" data-type="water"><img src="assets/types/water.png" alt="water"><span class="element-item-label">Water</span></div>
-              <div class="element-item" data-type="grass"><img src="assets/types/grass.png" alt="grass"><span class="element-item-label">Grass</span></div>
-              <div class="element-item" data-type="electric"><img src="assets/types/electric.png" alt="electric"><span class="element-item-label">Electric</span></div>
-              <div class="element-item" data-type="ice"><img src="assets/types/ice.png" alt="ice"><span class="element-item-label">Ice</span></div>
-              <div class="element-item" data-type="fighting"><img src="assets/types/fighting.png" alt="fighting"><span class="element-item-label">Fighting</span></div>
-              <div class="element-item" data-type="poison"><img src="assets/types/poison.png" alt="poison"><span class="element-item-label">Poison</span></div>
-              <div class="element-item" data-type="ground"><img src="assets/types/ground.png" alt="ground"><span class="element-item-label">Ground</span></div>
-              <div class="element-item" data-type="flying"><img src="assets/types/flying.png" alt="flying"><span class="element-item-label">Flying</span></div>
-              <div class="element-item" data-type="psychic"><img src="assets/types/psychic.png" alt="psychic"><span class="element-item-label">Psychic</span></div>
-              <div class="element-item" data-type="bug"><img src="assets/types/bug.png" alt="bug"><span class="element-item-label">Bug</span></div>
-              <div class="element-item" data-type="rock"><img src="assets/types/rock.png" alt="rock"><span class="element-item-label">Rock</span></div>
-              <div class="element-item" data-type="ghost"><img src="assets/types/ghost.png" alt="ghost"><span class="element-item-label">Ghost</span></div>
-              <div class="element-item" data-type="dragon"><img src="assets/types/dragon.png" alt="dragon"><span class="element-item-label">Dragon</span></div>
-              <div class="element-item" data-type="dark"><img src="assets/types/dark.png" alt="dark"><span class="element-item-label">Dark</span></div>
-              <div class="element-item" data-type="steel"><img src="assets/types/steel.png" alt="steel"><span class="element-item-label">Steel</span></div>
-              <div class="element-item" data-type="fairy"><img src="assets/types/fairy.png" alt="fairy"><span class="element-item-label">Fairy</span></div>
-            </div>
-
+            <div class="element-icon-grid"></div>
             <div class="element-panel-footer">
               <button id="pokedex-clear-types" class="element-clear-all" type="button">Clear all</button>
             </div>
@@ -147,28 +133,7 @@
                 <span class="element-panel-title">◆ ELEMENTS</span>
                 <span id="pc-filter-count" class="element-panel-count">0 active</span>
               </div>
-
-              <div class="element-icon-grid">
-                <div class="element-item" data-type="normal"></div>
-                <div class="element-item" data-type="fire"></div>
-                <div class="element-item" data-type="water"></div>
-                <div class="element-item" data-type="grass"></div>
-                <div class="element-item" data-type="electric"></div>
-                <div class="element-item" data-type="ice"></div>
-                <div class="element-item" data-type="fighting"></div>
-                <div class="element-item" data-type="poison"></div>
-                <div class="element-item" data-type="ground"></div>
-                <div class="element-item" data-type="flying"></div>
-                <div class="element-item" data-type="psychic"></div>
-                <div class="element-item" data-type="bug"></div>
-                <div class="element-item" data-type="rock"></div>
-                <div class="element-item" data-type="ghost"></div>
-                <div class="element-item" data-type="dragon"></div>
-                <div class="element-item" data-type="dark"></div>
-                <div class="element-item" data-type="steel"></div>
-                <div class="element-item" data-type="fairy"></div>
-              </div>
-
+              <div class="element-icon-grid"></div>
               <div class="element-panel-footer">
                 <button id="pc-clear-types" class="element-clear-all" type="button">Clear all</button>
               </div>
@@ -293,6 +258,7 @@
   <script src="js/core/data.js"></script>
   <script src="js/core/biomes.js"></script>
   <script src="js/core/wanted.js"></script>
+  <script src="js/core/element-filter.js"></script>
   <script src="js/core/picker.js"></script>
   <script src="js/core/nav.js"></script>
   <script src="js/core/trainer.js"></script>

@@ -21,17 +21,20 @@ js/
     data.js             # PokeNavData IIFE: load(), getPokemon(), getMoves(), getPokemonById(), getMoveByName()
     types.js            # TYPE_CHART, getMul, multiplyTypes, getDefenseMultipliers, typeIconHTML(Compact)
     utils.js            # formatTime/Weather, escape helpers, spriteUrl/spriteFallbackOnError
-    nav.js              # switchPanel + back stack
+    biomes.js           # PokeNavBiomes: dimension/group order, color, sortBiomes, mod-pack state
+    wanted.js           # WantedList: isWanted, toggleWanted, getAll, onChanged subscribers
+    element-filter.js   # ElementFilter.wire({panelId,btnId,clearId,countId,selected,onChange})
+    picker.js           # PokeNavPicker.openPokemonPicker — shared Pokémon picker modal
+    nav.js              # switchPanel + back stack + ESC + tab badges + gear button
     trainer.js          # Trainer name + first-run modal
   panels/               # One file per tab; each is self-contained
-    pokedex.js          # Tile grid + detail modal (renderSpawnContent is reused by biome.js)
-    party.js            # Trainer's PC: party + storage + drag/drop + IV/EV/move editor
-    items.js            # Poké Drops (item → droppers reverse index)
-    typechart.js        # Type Chart panel
-    stadium.js          # Battle Planning + Best Moveset
-    itemsguide.js       # Items / TM tracker (Berries/Battle/Vitamins/TMs)
-    biome.js            # Biome Search (Pokémon / Biome / Most Wanted)
-    settings.js
+    pokedex.js          # Tile grid + detail modal (the centre-of-gravity card)
+    party.js            # Trainer's PC: 🎒 Party+Storage / ★ Most Wanted sub-modes
+    typechart.js        # Type Chart Quick Lookup
+    stadium.js          # Battle Planning
+    biome.js            # Biome Search (single mode: picker → results)
+    academy.js          # 🎓 Academy: items / TMs / drops / recipes
+    settings.js         # Trainer name + mod packs + danger zone (rendered into #panel-settings on demand)
 css/
   base.css, theme.css   # Shared
   panels/*.css          # One per panel
@@ -105,17 +108,20 @@ The xlsx importer **preserves** existing spawns/drops when the xlsx has no row f
 ## What's working now
 
 - 851 mons across 9 gens; 1,952 drop entries; 2,583 spawn entries; 774 recipes across 10 types; 432 evolution edges.
-- Tabs: Pokédex · Trainer's PC · Stadium · Type Chart · 🎓 Academy · Biome Search · Settings (target: 6 tabs + ⚙ once Phase 4 lands).
-- **Pokédex card** is now the centre of gravity: header + types + spawns + drops + learnable moves (DAMAGE/STATUS/ALL filters, STAB-highlighted) + defensive matchups + evolution chain (clickable mini-tiles, chip-style condition labels).
-- Biome Search: collapsed two-level accordion picker, 2 modes (Biome / Most Wanted), Settings mod-pack toggles, cross-tab biome chips. Pokémon mode was deleted in Phase 1 (subsumed by enriched card).
-- Stadium: single Battle Planning view (Best Moveset mode deleted in Phase 1).
-- Type Chart: single Quick Lookup view (Pokémon Search mode deleted in Phase 1).
-- Academy: unified item / TM / drop / recipe hub. 13 category chips. Renders shaped, shapeless, smelting (4 cookers), stonecutting, brewing, smithing, and cooking-pot recipes; auto-stubs every cobblemon: id referenced by a recipe.
-- Shared `js/core/picker.js` replaces three near-duplicate Pokémon-picker lists.
+- Tabs: Pokédex · Trainer's PC · Stadium · Type Chart · 🎓 Academy · Biome Search, plus ⚙ gear (top-right) for Settings.
+- **Pokédex card** is the centre of gravity: header + types + spawns + drops + learnable moves (DAMAGE/STATUS/ALL filters, STAB-highlighted) + defensive matchups + evolution chain (clickable mini-tiles, chip-style condition labels).
+- **Pokédex grid** has search + element filter + gen chips + collection chips (All/Owned/Wanted/Missing) + sort dropdown (Dex# / Name / Type / Owned-first / Wanted-first).
+- **Trainer's PC** has two sub-modes via toggle: 🎒 Party + Storage, ★ Most Wanted. Mode buttons carry live count badges; the PC nav tab shows total owned count.
+- Biome Search: single mode (collapsed two-level accordion picker → results), Settings mod-pack toggles, cross-tab biome chips.
+- Stadium: single Battle Planning view.
+- Type Chart: single Quick Lookup view.
+- Academy: unified item / TM / drop / recipe hub. 13 category chips. Shaped, shapeless, smelting (4 cookers), stonecutting, brewing, smithing, cooking-pot recipes; auto-stubs every cobblemon: id referenced by a recipe.
+- Shared core helpers: `picker.js` (Pokémon picker), `wanted.js` (Most Wanted state + subscriber API), `element-filter.js` (the 18-icon type filter).
+- Global ESC closes any open Pokédex modal / reset confirm.
 
 ## Active plan
 
-`~/.claude/plans/pokenav-restructure.md` — 5-phase consolidation. Phases 1 (Pokédex card enrichment + redundancy purge) and 2 (Stage 8 evolutions) shipped. Phase 3 (Wanted → Trainer's PC), Phase 4 (Settings → ⚙ + label casing + count badges + ESC), Phase 5 (polish) ahead.
+`~/.claude/plans/pokenav-restructure.md` — 5-phase consolidation, all phases shipped. Punch list of optional follow-ups in [memory/project_punch_list_followups.md](~/.claude/projects/-home-dickie-projects-pokenav/memory/project_punch_list_followups.md).
 
 ## Carryover backlog
 
