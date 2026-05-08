@@ -28,6 +28,23 @@
   color: var(--btn-text);
   border-color: var(--accent-red);
 }
+.pc-mode-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  min-width: 22px;
+  padding: 1px 6px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 10px;
+  color: inherit;
+  text-transform: none;
+}
+.pc-mode-count.hidden { display: none; }
 .pc-view.hidden { display: none; }
 
 /* PC tab layout — sticky party left + scrolling storage right */

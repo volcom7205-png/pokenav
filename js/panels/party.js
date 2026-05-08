@@ -27,6 +27,7 @@ const PartyStorage = (() => {
   // ── localStorage ───────────────────────────────────
   function save() {
     localStorage.setItem(LS_KEY, JSON.stringify(state));
+    if (typeof updateTabBadges === 'function') updateTabBadges();
   }
 
   function load() {

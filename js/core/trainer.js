@@ -17,7 +17,11 @@ function applyTrainerName() {
   if (display) display.textContent = name ? name.toUpperCase() : 'TRAINER';
 
   const pcTab = document.querySelector('.nav-tab[data-panel="party"]');
-  if (pcTab) pcTab.textContent = name ? `${name.toUpperCase()}'S PC` : "TRAINER'S PC";
+  if (pcTab) {
+    const badge = pcTab.querySelector('.tab-badge');
+    pcTab.textContent = name ? `${name}'s PC` : "Trainer's PC";
+    if (badge) pcTab.appendChild(badge);
+  }
 }
 
 function initTrainer() {

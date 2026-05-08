@@ -35,15 +35,15 @@
 
       <div class="nav-zone nav-zone--center">
         <button class="nav-tab active" data-panel="pokedex">Pokédex</button>
-        <button class="nav-tab" data-panel="party" id="tab-party">TRAINER'S PC</button>
+        <button class="nav-tab" data-panel="party" id="tab-party">Trainer's PC<span class="tab-badge hidden" id="tab-badge-party"></span></button>
         <button class="nav-tab" data-panel="battle">Stadium</button>
         <button class="nav-tab" data-panel="types">Type Chart</button>
-        <button class="nav-tab" data-panel="academy">🎓 ACADEMY</button>
+        <button class="nav-tab" data-panel="academy">🎓 Academy</button>
         <button class="nav-tab" data-panel="biome">Biome Search</button>
-        <button class="nav-tab" data-panel="settings">Settings</button>
       </div>
 
       <div class="nav-zone nav-zone--right">
+        <button id="settings-gear-btn" class="settings-gear-btn" type="button" title="Settings" aria-label="Settings">⚙</button>
         <div id="trainer-display">TRAINER</div>
       </div>
     </nav>
@@ -114,8 +114,8 @@
 
       <div id="panel-party" class="panel">
         <div class="pc-mode-row">
-          <button class="pc-mode-btn active" data-mode="party" type="button">🎒 PARTY + STORAGE</button>
-          <button class="pc-mode-btn" data-mode="wanted" type="button">★ MOST WANTED</button>
+          <button class="pc-mode-btn active" data-mode="party" type="button">🎒 Party + Storage<span class="pc-mode-count hidden" id="pc-mode-count-party"></span></button>
+          <button class="pc-mode-btn" data-mode="wanted" type="button">★ Most Wanted<span class="pc-mode-count hidden" id="pc-mode-count-wanted"></span></button>
         </div>
 
         <div class="pc-view" id="pc-party-view">

@@ -144,6 +144,60 @@ body {
   text-transform: uppercase;
   border-left: 1px solid #2a2a2a;
   padding-left: 12px;
+  margin-left: 12px;
+}
+
+/* Settings gear icon (replaces the old "Settings" tab) */
+.settings-gear-btn {
+  background: none;
+  border: 1px solid transparent;
+  color: #888;
+  font-size: 22px;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease, transform 0.4s ease;
+}
+.settings-gear-btn:hover {
+  color: #ff3333;
+  border-color: #2a2a2a;
+  transform: rotate(45deg);
+}
+.settings-gear-btn.active {
+  color: #ff3333;
+  border-color: #ff3333;
+  background: #1a0000;
+}
+
+/* Count badge inside a tab label, e.g. "Trainer's PC ●12" */
+.tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  min-width: 22px;
+  padding: 1px 6px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: #ff3333;
+  background: rgba(255, 51, 51, 0.12);
+  border: 1px solid rgba(255, 51, 51, 0.45);
+  border-radius: 10px;
+  text-transform: none;
+}
+.tab-badge.hidden { display: none; }
+.nav-tab.active .tab-badge {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .back-btn {
