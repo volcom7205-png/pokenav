@@ -348,17 +348,6 @@ body {
   margin-bottom: 8px;
 }
 
-.coming-soon {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 4px 12px;
-  background-color: var(--bg-panel);
-  border: 1px solid var(--accent-red);
-  border-radius: 12px;
-  color: var(--accent-red);
-  font-size: 0.8rem;
-}
-
 /* Mobile responsive base */
 @media (max-width: 600px) {
   body {
@@ -394,34 +383,7 @@ body {
   }
 }
 
-/* Shared panel search bar (legacy Poké Drops layout) */
-.panel-search {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 24px;
-}
-
-.panel-search input {
-  flex: 1;
-  background: var(--bg-panel);
-  border: 1px solid var(--border-input);
-  border-radius: 8px;
-  padding: 10px 14px;
-  color: var(--text-primary);
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.panel-search input:focus {
-  border-color: var(--accent-red);
-}
-
-.panel-search input::placeholder {
-  color: var(--text-muted);
-}
-
-/* No-results message (used by Pokédex grid + Poké Drops list) */
+/* No-results message (used by Pokédex grid) */
 .no-results {
   color: var(--text-muted);
   font-size: 0.9rem;

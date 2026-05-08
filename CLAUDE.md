@@ -46,7 +46,8 @@ data/
   biome_taxonomy.json/.js # Biome metadata (window.POKENAV_BIOME_TAXONOMY)
   recipes.json / recipes.js # Academy recipes (window.POKENAV_RECIPES)
 scripts/
-  scrape_cobbledex.py        # Roster scraper (cobbledex.info RSC payloads)
+  scrape_cobbledex.py        # Roster scraper (cobbledex.info RSC payloads — 851 mons)
+  backfill_pokeapi.py        # Fills gaps via PokeAPI (the 174 mons cobbledex misses)
   import_cobblemon_xlsx.py   # Spawns + drops importer (Cobblemon 1.7.3 XLSX → per-gen JSON)
   build_data_js.py           # Wraps each data/*.json as data/*.js for file:// loading
 assets/types/*.png      # 18 type icons
@@ -77,8 +78,12 @@ assets/types/*.png      # 18 type icons
 ## Refreshing data
 
 ```bash
-# Roster (id, name, types, sprite, learnableMoves) — usually only after a Cobblemon update:
+# Roster (id, name, types, sprite, learnableMoves, evolutions) from cobbledex.info:
 python3 scripts/scrape_cobbledex.py
+
+# Fill any missing dex# from PokeAPI (the 174 cobbledex misses — Audino, Arceus, etc.).
+# Idempotent: only adds entries whose id isn't already in the per-gen JSON.
+python3 scripts/backfill_pokeapi.py
 
 # Spawns + drops — when the user provides a new Cobblemon 1.7.3+ XLSX export:
 python3 scripts/import_cobblemon_xlsx.py
@@ -107,7 +112,7 @@ The xlsx importer **preserves** existing spawns/drops when the xlsx has no row f
 
 ## What's working now
 
-- 851 mons across 9 gens; 1,952 drop entries; 2,583 spawn entries; 774 recipes across 10 types; 432 evolution edges.
+- 1,025 mons (full national dex); 1,952 drop entries; 2,583 spawn entries; 774 recipes across 10 types; ~470 evolution edges.
 - Tabs: Pokédex · Trainer's PC · Stadium · Type Chart · 🎓 Academy · Biome Search, plus ⚙ gear (top-right) for Settings.
 - **Pokédex card** is the centre of gravity: header + types + spawns + drops + learnable moves (DAMAGE/STATUS/ALL filters, STAB-highlighted) + defensive matchups + evolution chain (clickable mini-tiles, chip-style condition labels).
 - **Pokédex grid** has search + element filter + gen chips + collection chips (All/Owned/Wanted/Missing) + sort dropdown (Dex# / Name / Type / Owned-first / Wanted-first).
@@ -125,7 +130,6 @@ The xlsx importer **preserves** existing spawns/drops when the xlsx has no row f
 
 ## Carryover backlog
 
-- **Roster gap**: 178 mons in Cobblemon 1.7.3 but not in our cobbledex-scraped roster (Audino, Arceus, Calyrex, etc.). Filling needs a non-cobbledex fallback for id/types/sprite. Importer logs them to stderr at `import_cobblemon_xlsx.py` runtime.
-- **Form variants** ([Galarian]/[Hisuian]/etc.) skipped during xlsx import — base species don't carry form data. ~118 form rows lost.
-- **37 mons missing spawns/drops** (legendaries Cobblemon doesn't ship spawn data for). Auto-fix not possible; needs hand-curation.
-- **Sacred Ash**: 1 cobblemon item with no texture in either cobblemon or vanilla; renders as text fallback.
+- ✅ **Roster gap CLOSED** — `scripts/backfill_pokeapi.py` filled all 174 mons missing from the cobbledex roster. id/name/types/sprite/learnableMoves/evolutions sourced from PokeAPI; spawns + drops still empty for these.
+- **Form variants** ([Galarian]/[Hisuian]/etc.) skipped during xlsx import — base species don't carry form data. ~118 form rows lost. Needs a schema decision (separate entries vs nested `forms[]`) before backfilling.
+- **37 legendaries with empty spawns/drops** (Cobblemon doesn't ship spawn data for them). Auto-fix not possible; needs hand-curation.

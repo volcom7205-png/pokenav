@@ -5743,6 +5743,475 @@
     ]
   },
   {
+    "id": 824,
+    "name": "Blipbug",
+    "types": [
+      "Bug"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/824.webp",
+    "learnableMoves": [
+      {
+        "name": "Struggle Bug",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Infestation",
+        "method": "egg"
+      },
+      {
+        "name": "Recover",
+        "method": "egg"
+      },
+      {
+        "name": "Sticky Web",
+        "method": "egg"
+      },
+      {
+        "name": "Supersonic",
+        "method": "egg"
+      }
+    ],
+    "drops": [],
+    "spawns": [],
+    "evolutions": [
+      {
+        "to": 825,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 10"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 825,
+    "name": "Dottler",
+    "types": [
+      "Bug",
+      "Psychic"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/825.webp",
+    "learnableMoves": [
+      {
+        "name": "Confusion",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Light Screen",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Reflect",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Struggle Bug",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Ally Switch",
+        "method": "tm"
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Body Press",
+        "method": "tm"
+      },
+      {
+        "name": "Bug Buzz",
+        "method": "tm"
+      },
+      {
+        "name": "Calm Mind",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Energy Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Future Sight",
+        "method": "tm"
+      },
+      {
+        "name": "Guard Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Helping Hand",
+        "method": "tm"
+      },
+      {
+        "name": "Imprison",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Defense",
+        "method": "tm"
+      },
+      {
+        "name": "Leech Life",
+        "method": "tm"
+      },
+      {
+        "name": "Magic Room",
+        "method": "tm"
+      },
+      {
+        "name": "Payback",
+        "method": "tm"
+      },
+      {
+        "name": "Power Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Psychic",
+        "method": "tm"
+      },
+      {
+        "name": "Psychic Terrain",
+        "method": "tm"
+      },
+      {
+        "name": "Psyshock",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Safeguard",
+        "method": "tm"
+      },
+      {
+        "name": "Shadow Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Skill Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Solar Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Stored Power",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Trick",
+        "method": "tm"
+      },
+      {
+        "name": "Trick Room",
+        "method": "tm"
+      },
+      {
+        "name": "Wonder Room",
+        "method": "tm"
+      },
+      {
+        "name": "Zen Headbutt",
+        "method": "tm"
+      },
+      {
+        "name": "Expanding Force",
+        "method": "tutor"
+      }
+    ],
+    "drops": [],
+    "spawns": [],
+    "evolutions": [
+      {
+        "to": 826,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 30"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 826,
+    "name": "Orbeetle",
+    "types": [
+      "Bug",
+      "Psychic"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/826.webp",
+    "learnableMoves": [
+      {
+        "name": "Confusion",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Light Screen",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Reflect",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Struggle Bug",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Confuse Ray",
+        "method": "level",
+        "level": 4
+      },
+      {
+        "name": "Magic Coat",
+        "method": "level",
+        "level": 8
+      },
+      {
+        "name": "Agility",
+        "method": "level",
+        "level": 12
+      },
+      {
+        "name": "Psybeam",
+        "method": "level",
+        "level": 16
+      },
+      {
+        "name": "Hypnosis",
+        "method": "level",
+        "level": 20
+      },
+      {
+        "name": "Ally Switch",
+        "method": "level",
+        "level": 24
+      },
+      {
+        "name": "Bug Buzz",
+        "method": "level",
+        "level": 28
+      },
+      {
+        "name": "Mirror Coat",
+        "method": "level",
+        "level": 32
+      },
+      {
+        "name": "Psychic",
+        "method": "level",
+        "level": 36
+      },
+      {
+        "name": "After You",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Calm Mind",
+        "method": "level",
+        "level": 44
+      },
+      {
+        "name": "Psychic Terrain",
+        "method": "level",
+        "level": 48
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Baton Pass",
+        "method": "tm"
+      },
+      {
+        "name": "Body Press",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Energy Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Future Sight",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Drain",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Guard Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Helping Hand",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Imprison",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Defense",
+        "method": "tm"
+      },
+      {
+        "name": "Leech Life",
+        "method": "tm"
+      },
+      {
+        "name": "Magic Room",
+        "method": "tm"
+      },
+      {
+        "name": "Payback",
+        "method": "tm"
+      },
+      {
+        "name": "Power Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Psycho Cut",
+        "method": "tm"
+      },
+      {
+        "name": "Psyshock",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Safeguard",
+        "method": "tm"
+      },
+      {
+        "name": "Shadow Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Skill Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Solar Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Stored Power",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Trick",
+        "method": "tm"
+      },
+      {
+        "name": "Trick Room",
+        "method": "tm"
+      },
+      {
+        "name": "U-turn",
+        "method": "tm"
+      },
+      {
+        "name": "Wonder Room",
+        "method": "tm"
+      },
+      {
+        "name": "Zen Headbutt",
+        "method": "tm"
+      },
+      {
+        "name": "Expanding Force",
+        "method": "tutor"
+      }
+    ],
+    "drops": [],
+    "spawns": []
+  },
+  {
     "id": 827,
     "name": "Nickit",
     "types": [
@@ -9143,6 +9612,1327 @@
         "label": "Overworld 2"
       }
     ]
+  },
+  {
+    "id": 837,
+    "name": "Rolycoly",
+    "types": [
+      "Rock"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/837.webp",
+    "learnableMoves": [
+      {
+        "name": "Smokescreen",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Tackle",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Rapid Spin",
+        "method": "level",
+        "level": 5
+      },
+      {
+        "name": "Smack Down",
+        "method": "level",
+        "level": 10
+      },
+      {
+        "name": "Rock Polish",
+        "method": "level",
+        "level": 15
+      },
+      {
+        "name": "Ancient Power",
+        "method": "level",
+        "level": 20
+      },
+      {
+        "name": "Incinerate",
+        "method": "level",
+        "level": 25
+      },
+      {
+        "name": "Stealth Rock",
+        "method": "level",
+        "level": 30
+      },
+      {
+        "name": "Heat Crash",
+        "method": "level",
+        "level": 35
+      },
+      {
+        "name": "Rock Blast",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Bulldoze",
+        "method": "tm"
+      },
+      {
+        "name": "Curse",
+        "method": "tm"
+      },
+      {
+        "name": "Dig",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Gyro Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Defense",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Head",
+        "method": "tm"
+      },
+      {
+        "name": "Meteor Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Power Gem",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Reflect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Slide",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Tomb",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Sand Tomb",
+        "method": "tm"
+      },
+      {
+        "name": "Sandstorm",
+        "method": "tm"
+      },
+      {
+        "name": "Self-Destruct",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Spikes",
+        "method": "tm"
+      },
+      {
+        "name": "Stone Edge",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Temper Flare",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "method": "tm"
+      },
+      {
+        "name": "Block",
+        "method": "egg"
+      },
+      {
+        "name": "Explosion",
+        "method": "egg"
+      },
+      {
+        "name": "Mud-Slap",
+        "method": "egg"
+      }
+    ],
+    "drops": [],
+    "spawns": [],
+    "evolutions": [
+      {
+        "to": 838,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 18"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 838,
+    "name": "Carkol",
+    "types": [
+      "Rock",
+      "Fire"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/838.webp",
+    "learnableMoves": [
+      {
+        "name": "Flame Charge",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Rapid Spin",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Smack Down",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Smokescreen",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Tackle",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Rock Polish",
+        "method": "level",
+        "level": 15
+      },
+      {
+        "name": "Ancient Power",
+        "method": "level",
+        "level": 20
+      },
+      {
+        "name": "Incinerate",
+        "method": "level",
+        "level": 27
+      },
+      {
+        "name": "Stealth Rock",
+        "method": "level",
+        "level": 35
+      },
+      {
+        "name": "Heat Crash",
+        "method": "level",
+        "level": 41
+      },
+      {
+        "name": "Rock Blast",
+        "method": "level",
+        "level": 48
+      },
+      {
+        "name": "Burn Up",
+        "method": "level",
+        "level": 55
+      },
+      {
+        "name": "Stone Edge",
+        "method": "level",
+        "level": 55
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Body Press",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Bulldoze",
+        "method": "tm"
+      },
+      {
+        "name": "Curse",
+        "method": "tm"
+      },
+      {
+        "name": "Dig",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Fire Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Fire Spin",
+        "method": "tm"
+      },
+      {
+        "name": "Flamethrower",
+        "method": "tm"
+      },
+      {
+        "name": "Flare Blitz",
+        "method": "tm"
+      },
+      {
+        "name": "Gyro Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Heat Wave",
+        "method": "tm"
+      },
+      {
+        "name": "Heavy Slam",
+        "method": "tm"
+      },
+      {
+        "name": "High Horsepower",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Defense",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Head",
+        "method": "tm"
+      },
+      {
+        "name": "Meteor Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Mud-Slap",
+        "method": "tm"
+      },
+      {
+        "name": "Overheat",
+        "method": "tm"
+      },
+      {
+        "name": "Power Gem",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Reflect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Slide",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Tomb",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Sand Tomb",
+        "method": "tm"
+      },
+      {
+        "name": "Sandstorm",
+        "method": "tm"
+      },
+      {
+        "name": "Scald",
+        "method": "tm"
+      },
+      {
+        "name": "Scorching Sands",
+        "method": "tm"
+      },
+      {
+        "name": "Self-Destruct",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Spikes",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Sunny Day",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Temper Flare",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "method": "tm"
+      }
+    ],
+    "drops": [],
+    "spawns": [],
+    "evolutions": [
+      {
+        "to": 839,
+        "method": "level_up",
+        "requirements": [
+          "Must reach level 34"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 839,
+    "name": "Coalossal",
+    "types": [
+      "Rock",
+      "Fire"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/839.webp",
+    "learnableMoves": [
+      {
+        "name": "Flame Charge",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Rapid Spin",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Smack Down",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Smokescreen",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Tackle",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Tar Shot",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Rock Polish",
+        "method": "level",
+        "level": 15
+      },
+      {
+        "name": "Ancient Power",
+        "method": "level",
+        "level": 20
+      },
+      {
+        "name": "Incinerate",
+        "method": "level",
+        "level": 27
+      },
+      {
+        "name": "Stealth Rock",
+        "method": "level",
+        "level": 37
+      },
+      {
+        "name": "Heat Crash",
+        "method": "level",
+        "level": 45
+      },
+      {
+        "name": "Rock Blast",
+        "method": "level",
+        "level": 54
+      },
+      {
+        "name": "Burn Up",
+        "method": "level",
+        "level": 63
+      },
+      {
+        "name": "Stone Edge",
+        "method": "level",
+        "level": 63
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Body Press",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Bulldoze",
+        "method": "tm"
+      },
+      {
+        "name": "Curse",
+        "method": "tm"
+      },
+      {
+        "name": "Dig",
+        "method": "tm"
+      },
+      {
+        "name": "Earth Power",
+        "method": "tm"
+      },
+      {
+        "name": "Earthquake",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Fire Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Fire Punch",
+        "method": "tm"
+      },
+      {
+        "name": "Fire Spin",
+        "method": "tm"
+      },
+      {
+        "name": "Flamethrower",
+        "method": "tm"
+      },
+      {
+        "name": "Flare Blitz",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Gyro Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Heat Wave",
+        "method": "tm"
+      },
+      {
+        "name": "Heavy Slam",
+        "method": "tm"
+      },
+      {
+        "name": "High Horsepower",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Defense",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Head",
+        "method": "tm"
+      },
+      {
+        "name": "Mega Kick",
+        "method": "tm"
+      },
+      {
+        "name": "Mega Punch",
+        "method": "tm"
+      },
+      {
+        "name": "Meteor Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Overheat",
+        "method": "tm"
+      },
+      {
+        "name": "Power Gem",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Reflect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Slide",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Tomb",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Sand Tomb",
+        "method": "tm"
+      },
+      {
+        "name": "Sandstorm",
+        "method": "tm"
+      },
+      {
+        "name": "Scald",
+        "method": "tm"
+      },
+      {
+        "name": "Scorching Sands",
+        "method": "tm"
+      },
+      {
+        "name": "Self-Destruct",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Solar Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Spikes",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Sunny Day",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Temper Flare",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "method": "tm"
+      }
+    ],
+    "drops": [],
+    "spawns": []
+  },
+  {
+    "id": 840,
+    "name": "Applin",
+    "types": [
+      "Grass",
+      "Dragon"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/840.webp",
+    "learnableMoves": [
+      {
+        "name": "Astonish",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Withdraw",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Pounce",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Defense Curl",
+        "method": "egg"
+      },
+      {
+        "name": "Recycle",
+        "method": "egg"
+      },
+      {
+        "name": "Rollout",
+        "method": "egg"
+      },
+      {
+        "name": "Sucker Punch",
+        "method": "egg"
+      },
+      {
+        "name": "Draco Meteor",
+        "method": "tutor"
+      },
+      {
+        "name": "Grassy Glide",
+        "method": "tutor"
+      }
+    ],
+    "drops": [],
+    "spawns": [],
+    "evolutions": [
+      {
+        "to": 841,
+        "method": "item_interact",
+        "item": "cobblemon:tart_apple"
+      },
+      {
+        "to": 842,
+        "method": "item_interact",
+        "item": "cobblemon:sweet_apple"
+      },
+      {
+        "to": 1011,
+        "method": "item_interact",
+        "item": "cobblemon:syrupy_apple"
+      }
+    ]
+  },
+  {
+    "id": 841,
+    "name": "Flapple",
+    "types": [
+      "Grass",
+      "Dragon"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/841.webp",
+    "learnableMoves": [
+      {
+        "name": "Astonish",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Growth",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Recycle",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Twister",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Wing Attack",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Withdraw",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Acid Spray",
+        "method": "level",
+        "level": 4
+      },
+      {
+        "name": "Acrobatics",
+        "method": "level",
+        "level": 8
+      },
+      {
+        "name": "Leech Seed",
+        "method": "level",
+        "level": 12
+      },
+      {
+        "name": "Protect",
+        "method": "level",
+        "level": 16
+      },
+      {
+        "name": "Dragon Breath",
+        "method": "level",
+        "level": 20
+      },
+      {
+        "name": "Dragon Dance",
+        "method": "level",
+        "level": 24
+      },
+      {
+        "name": "Dragon Pulse",
+        "method": "level",
+        "level": 28
+      },
+      {
+        "name": "Grav Apple",
+        "method": "level",
+        "level": 32
+      },
+      {
+        "name": "Iron Defense",
+        "method": "level",
+        "level": 36
+      },
+      {
+        "name": "Fly",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Dragon Rush",
+        "method": "level",
+        "level": 44
+      },
+      {
+        "name": "Aerial Ace",
+        "method": "tm"
+      },
+      {
+        "name": "Air Slash",
+        "method": "tm"
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Bullet Seed",
+        "method": "tm"
+      },
+      {
+        "name": "Draco Meteor",
+        "method": "tm"
+      },
+      {
+        "name": "Dual Wingbeat",
+        "method": "tm"
+      },
+      {
+        "name": "Endeavor",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Energy Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Focus Energy",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Drain",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Grass Knot",
+        "method": "tm"
+      },
+      {
+        "name": "Grassy Glide",
+        "method": "tm"
+      },
+      {
+        "name": "Grassy Terrain",
+        "method": "tm"
+      },
+      {
+        "name": "Heavy Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Leaf Storm",
+        "method": "tm"
+      },
+      {
+        "name": "Magical Leaf",
+        "method": "tm"
+      },
+      {
+        "name": "Outrage",
+        "method": "tm"
+      },
+      {
+        "name": "Pounce",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Scary Face",
+        "method": "tm"
+      },
+      {
+        "name": "Seed Bomb",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Solar Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Sunny Day",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Trailblaze",
+        "method": "tm"
+      },
+      {
+        "name": "U-turn",
+        "method": "tm"
+      }
+    ],
+    "drops": [],
+    "spawns": []
+  },
+  {
+    "id": 842,
+    "name": "Appletun",
+    "types": [
+      "Grass",
+      "Dragon"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/842.webp",
+    "learnableMoves": [
+      {
+        "name": "Astonish",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Growth",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Headbutt",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Recycle",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Sweet Scent",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Withdraw",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Curse",
+        "method": "level",
+        "level": 4
+      },
+      {
+        "name": "Stomp",
+        "method": "level",
+        "level": 8
+      },
+      {
+        "name": "Leech Seed",
+        "method": "level",
+        "level": 12
+      },
+      {
+        "name": "Protect",
+        "method": "level",
+        "level": 16
+      },
+      {
+        "name": "Bullet Seed",
+        "method": "level",
+        "level": 20
+      },
+      {
+        "name": "Recover",
+        "method": "level",
+        "level": 24
+      },
+      {
+        "name": "Apple Acid",
+        "method": "level",
+        "level": 28
+      },
+      {
+        "name": "Body Slam",
+        "method": "level",
+        "level": 32
+      },
+      {
+        "name": "Iron Defense",
+        "method": "level",
+        "level": 36
+      },
+      {
+        "name": "Dragon Pulse",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Energy Ball",
+        "method": "level",
+        "level": 44
+      },
+      {
+        "name": "Amnesia",
+        "method": "tm"
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Body Press",
+        "method": "tm"
+      },
+      {
+        "name": "Bulldoze",
+        "method": "tm"
+      },
+      {
+        "name": "Draco Meteor",
+        "method": "tm"
+      },
+      {
+        "name": "Dragon Tail",
+        "method": "tm"
+      },
+      {
+        "name": "Earthquake",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Drain",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Grass Knot",
+        "method": "tm"
+      },
+      {
+        "name": "Grassy Glide",
+        "method": "tm"
+      },
+      {
+        "name": "Grassy Terrain",
+        "method": "tm"
+      },
+      {
+        "name": "Gyro Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Heavy Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Helping Hand",
+        "method": "tm"
+      },
+      {
+        "name": "High Horsepower",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Head",
+        "method": "tm"
+      },
+      {
+        "name": "Leaf Storm",
+        "method": "tm"
+      },
+      {
+        "name": "Light Screen",
+        "method": "tm"
+      },
+      {
+        "name": "Magical Leaf",
+        "method": "tm"
+      },
+      {
+        "name": "Outrage",
+        "method": "tm"
+      },
+      {
+        "name": "Payback",
+        "method": "tm"
+      },
+      {
+        "name": "Pounce",
+        "method": "tm"
+      },
+      {
+        "name": "Rain Dance",
+        "method": "tm"
+      },
+      {
+        "name": "Reflect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Safeguard",
+        "method": "tm"
+      },
+      {
+        "name": "Seed Bomb",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Solar Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Stomping Tantrum",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Sunny Day",
+        "method": "tm"
+      },
+      {
+        "name": "Superpower",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Trailblaze",
+        "method": "tm"
+      },
+      {
+        "name": "Zen Headbutt",
+        "method": "tm"
+      }
+    ],
+    "drops": [],
+    "spawns": []
   },
   {
     "id": 843,
@@ -19672,6 +21462,305 @@
     ]
   },
   {
+    "id": 867,
+    "name": "Runerigus",
+    "types": [
+      "Ground",
+      "Ghost"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/867.webp",
+    "learnableMoves": [
+      {
+        "name": "Astonish",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Haze",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Night Shade",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Protect",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Scary Face",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Shadow Claw",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Disable",
+        "method": "level",
+        "level": 12
+      },
+      {
+        "name": "Brutal Swing",
+        "method": "level",
+        "level": 16
+      },
+      {
+        "name": "Crafty Shield",
+        "method": "level",
+        "level": 20
+      },
+      {
+        "name": "Hex",
+        "method": "level",
+        "level": 24
+      },
+      {
+        "name": "Mean Look",
+        "method": "level",
+        "level": 28
+      },
+      {
+        "name": "Slam",
+        "method": "level",
+        "level": 32
+      },
+      {
+        "name": "Curse",
+        "method": "level",
+        "level": 38
+      },
+      {
+        "name": "Shadow Ball",
+        "method": "level",
+        "level": 44
+      },
+      {
+        "name": "Earthquake",
+        "method": "level",
+        "level": 50
+      },
+      {
+        "name": "Guard Split",
+        "method": "level",
+        "level": 56
+      },
+      {
+        "name": "Power Split",
+        "method": "level",
+        "level": 56
+      },
+      {
+        "name": "Destiny Bond",
+        "method": "level",
+        "level": 62
+      },
+      {
+        "name": "Ally Switch",
+        "method": "tm"
+      },
+      {
+        "name": "Amnesia",
+        "method": "tm"
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Body Press",
+        "method": "tm"
+      },
+      {
+        "name": "Bulldoze",
+        "method": "tm"
+      },
+      {
+        "name": "Calm Mind",
+        "method": "tm"
+      },
+      {
+        "name": "Dark Pulse",
+        "method": "tm"
+      },
+      {
+        "name": "Dragon Pulse",
+        "method": "tm"
+      },
+      {
+        "name": "Earth Power",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Energy Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Fake Tears",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Grass Knot",
+        "method": "tm"
+      },
+      {
+        "name": "Guard Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Imprison",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Defense",
+        "method": "tm"
+      },
+      {
+        "name": "Nasty Plot",
+        "method": "tm"
+      },
+      {
+        "name": "Payback",
+        "method": "tm"
+      },
+      {
+        "name": "Phantom Force",
+        "method": "tm"
+      },
+      {
+        "name": "Power Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Psychic",
+        "method": "tm"
+      },
+      {
+        "name": "Rain Dance",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Revenge",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Slide",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Tomb",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Safeguard",
+        "method": "tm"
+      },
+      {
+        "name": "Sand Tomb",
+        "method": "tm"
+      },
+      {
+        "name": "Sandstorm",
+        "method": "tm"
+      },
+      {
+        "name": "Skill Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Stealth Rock",
+        "method": "tm"
+      },
+      {
+        "name": "Stone Edge",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Taunt",
+        "method": "tm"
+      },
+      {
+        "name": "Thief",
+        "method": "tm"
+      },
+      {
+        "name": "Toxic Spikes",
+        "method": "tm"
+      },
+      {
+        "name": "Trick",
+        "method": "tm"
+      },
+      {
+        "name": "Trick Room",
+        "method": "tm"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "method": "tm"
+      },
+      {
+        "name": "Wonder Room",
+        "method": "tm"
+      },
+      {
+        "name": "Zen Headbutt",
+        "method": "tm"
+      },
+      {
+        "name": "Poltergeist",
+        "method": "tutor"
+      }
+    ],
+    "drops": [],
+    "spawns": []
+  },
+  {
     "id": 868,
     "name": "Milcery",
     "types": [
@@ -21232,6 +23321,371 @@
     ]
   },
   {
+    "id": 872,
+    "name": "Snom",
+    "types": [
+      "Ice",
+      "Bug"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/872.webp",
+    "learnableMoves": [
+      {
+        "name": "Powder Snow",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Struggle Bug",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Bug Buzz",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Icicle Spear",
+        "method": "tm"
+      },
+      {
+        "name": "Icy Wind",
+        "method": "tm"
+      },
+      {
+        "name": "Lunge",
+        "method": "tm"
+      },
+      {
+        "name": "Pounce",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Skitter Smack",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Bug Bite",
+        "method": "egg"
+      },
+      {
+        "name": "Fairy Wind",
+        "method": "egg"
+      },
+      {
+        "name": "Mirror Coat",
+        "method": "egg"
+      }
+    ],
+    "drops": [],
+    "spawns": [],
+    "evolutions": [
+      {
+        "to": 873,
+        "method": "level_up",
+        "requirements": [
+          "Must reach friendship amount of 160",
+          "Must evolve during night"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 873,
+    "name": "Frosmoth",
+    "types": [
+      "Ice",
+      "Bug"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/873.webp",
+    "learnableMoves": [
+      {
+        "name": "Attract",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Helping Hand",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Icy Wind",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Powder Snow",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Struggle Bug",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Stun Spore",
+        "method": "level",
+        "level": 4
+      },
+      {
+        "name": "Infestation",
+        "method": "level",
+        "level": 8
+      },
+      {
+        "name": "Mist",
+        "method": "level",
+        "level": 12
+      },
+      {
+        "name": "Defog",
+        "method": "level",
+        "level": 16
+      },
+      {
+        "name": "Feather Dance",
+        "method": "level",
+        "level": 21
+      },
+      {
+        "name": "Aurora Beam",
+        "method": "level",
+        "level": 24
+      },
+      {
+        "name": "Hail",
+        "method": "level",
+        "level": 28
+      },
+      {
+        "name": "Snowscape",
+        "method": "level",
+        "level": 28
+      },
+      {
+        "name": "Bug Buzz",
+        "method": "level",
+        "level": 32
+      },
+      {
+        "name": "Aurora Veil",
+        "method": "level",
+        "level": 36
+      },
+      {
+        "name": "Blizzard",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Tailwind",
+        "method": "level",
+        "level": 44
+      },
+      {
+        "name": "Wide Guard",
+        "method": "level",
+        "level": 48
+      },
+      {
+        "name": "Quiver Dance",
+        "method": "level",
+        "level": 52
+      },
+      {
+        "name": "Acrobatics",
+        "method": "tm"
+      },
+      {
+        "name": "Air Slash",
+        "method": "tm"
+      },
+      {
+        "name": "Avalanche",
+        "method": "tm"
+      },
+      {
+        "name": "Bug Bite",
+        "method": "tm"
+      },
+      {
+        "name": "Calm Mind",
+        "method": "tm"
+      },
+      {
+        "name": "Dazzling Gleam",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Drain",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Hurricane",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Ice Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Ice Spinner",
+        "method": "tm"
+      },
+      {
+        "name": "Icicle Spear",
+        "method": "tm"
+      },
+      {
+        "name": "Imprison",
+        "method": "tm"
+      },
+      {
+        "name": "Leech Life",
+        "method": "tm"
+      },
+      {
+        "name": "Light Screen",
+        "method": "tm"
+      },
+      {
+        "name": "Lunge",
+        "method": "tm"
+      },
+      {
+        "name": "Play Rough",
+        "method": "tm"
+      },
+      {
+        "name": "Pounce",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Reflect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Safeguard",
+        "method": "tm"
+      },
+      {
+        "name": "Skitter Smack",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Swift",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Triple Axel",
+        "method": "tm"
+      },
+      {
+        "name": "U-turn",
+        "method": "tm"
+      },
+      {
+        "name": "Weather Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Dual Wingbeat",
+        "method": "tutor"
+      }
+    ],
+    "drops": [],
+    "spawns": []
+  },
+  {
     "id": 874,
     "name": "Stonjourner",
     "types": [
@@ -22051,6 +24505,261 @@
         "label": "Overworld 3"
       }
     ]
+  },
+  {
+    "id": 876,
+    "name": "Indeedee",
+    "types": [
+      "Psychic",
+      "Normal"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/876.webp",
+    "learnableMoves": [
+      {
+        "name": "Play Nice",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Stored Power",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Encore",
+        "method": "level",
+        "level": 5
+      },
+      {
+        "name": "Disarming Voice",
+        "method": "level",
+        "level": 10
+      },
+      {
+        "name": "Psybeam",
+        "method": "level",
+        "level": 15
+      },
+      {
+        "name": "Helping Hand",
+        "method": "level",
+        "level": 20
+      },
+      {
+        "name": "After You",
+        "method": "level",
+        "level": 25
+      },
+      {
+        "name": "Aromatherapy",
+        "method": "level",
+        "level": 30
+      },
+      {
+        "name": "Healing Wish",
+        "method": "level",
+        "level": 30
+      },
+      {
+        "name": "Psychic",
+        "method": "level",
+        "level": 35
+      },
+      {
+        "name": "Calm Mind",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Power Split",
+        "method": "level",
+        "level": 45
+      },
+      {
+        "name": "Psychic Terrain",
+        "method": "level",
+        "level": 50
+      },
+      {
+        "name": "Last Resort",
+        "method": "level",
+        "level": 55
+      },
+      {
+        "name": "Ally Switch",
+        "method": "tm"
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Dazzling Gleam",
+        "method": "tm"
+      },
+      {
+        "name": "Drain Punch",
+        "method": "tm"
+      },
+      {
+        "name": "Draining Kiss",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Energy Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Expanding Force",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Future Sight",
+        "method": "tm"
+      },
+      {
+        "name": "Gravity",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Voice",
+        "method": "tm"
+      },
+      {
+        "name": "Imprison",
+        "method": "tm"
+      },
+      {
+        "name": "Magic Room",
+        "method": "tm"
+      },
+      {
+        "name": "Magical Leaf",
+        "method": "tm"
+      },
+      {
+        "name": "Metronome",
+        "method": "tm"
+      },
+      {
+        "name": "Mystical Fire",
+        "method": "tm"
+      },
+      {
+        "name": "Pay Day",
+        "method": "tm"
+      },
+      {
+        "name": "Play Rough",
+        "method": "tm"
+      },
+      {
+        "name": "Power Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Psychic Noise",
+        "method": "tm"
+      },
+      {
+        "name": "Psyshock",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Shadow Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Skill Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Swift",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Tri Attack",
+        "method": "tm"
+      },
+      {
+        "name": "Trick",
+        "method": "tm"
+      },
+      {
+        "name": "Trick Room",
+        "method": "tm"
+      },
+      {
+        "name": "Wonder Room",
+        "method": "tm"
+      },
+      {
+        "name": "Zen Headbutt",
+        "method": "tm"
+      },
+      {
+        "name": "Extrasensory",
+        "method": "egg"
+      },
+      {
+        "name": "Fake Out",
+        "method": "egg"
+      },
+      {
+        "name": "Psych Up",
+        "method": "egg"
+      },
+      {
+        "name": "Terrain Pulse",
+        "method": "tutor"
+      }
+    ],
+    "drops": [],
+    "spawns": []
   },
   {
     "id": 877,
@@ -24863,6 +27572,280 @@
     "spawns": []
   },
   {
+    "id": 884,
+    "name": "Duraludon",
+    "types": [
+      "Steel",
+      "Dragon"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/884.webp",
+    "learnableMoves": [
+      {
+        "name": "Leer",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Metal Claw",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Rock Smash",
+        "method": "level",
+        "level": 6
+      },
+      {
+        "name": "Hone Claws",
+        "method": "level",
+        "level": 12
+      },
+      {
+        "name": "Metal Sound",
+        "method": "level",
+        "level": 18
+      },
+      {
+        "name": "Breaking Swipe",
+        "method": "level",
+        "level": 24
+      },
+      {
+        "name": "Dragon Tail",
+        "method": "level",
+        "level": 30
+      },
+      {
+        "name": "Iron Defense",
+        "method": "level",
+        "level": 36
+      },
+      {
+        "name": "Focus Energy",
+        "method": "level",
+        "level": 42
+      },
+      {
+        "name": "Laser Focus",
+        "method": "level",
+        "level": 42
+      },
+      {
+        "name": "Dragon Claw",
+        "method": "level",
+        "level": 48
+      },
+      {
+        "name": "Flash Cannon",
+        "method": "level",
+        "level": 54
+      },
+      {
+        "name": "Metal Burst",
+        "method": "level",
+        "level": 60
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "level",
+        "level": 66
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Body Press",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Brick Break",
+        "method": "tm"
+      },
+      {
+        "name": "Dark Pulse",
+        "method": "tm"
+      },
+      {
+        "name": "Double-Edge",
+        "method": "tm"
+      },
+      {
+        "name": "Draco Meteor",
+        "method": "tm"
+      },
+      {
+        "name": "Dragon Cheer",
+        "method": "tm"
+      },
+      {
+        "name": "Dragon Pulse",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Foul Play",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Gyro Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Heavy Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Head",
+        "method": "tm"
+      },
+      {
+        "name": "Light Screen",
+        "method": "tm"
+      },
+      {
+        "name": "Outrage",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Reflect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Roar",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Slide",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Tomb",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Scary Face",
+        "method": "tm"
+      },
+      {
+        "name": "Screech",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snarl",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Solar Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Stealth Rock",
+        "method": "tm"
+      },
+      {
+        "name": "Steel Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Stomping Tantrum",
+        "method": "tm"
+      },
+      {
+        "name": "Stone Edge",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Swords Dance",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Thunder",
+        "method": "tm"
+      },
+      {
+        "name": "Thunder Wave",
+        "method": "tm"
+      },
+      {
+        "name": "Thunderbolt",
+        "method": "tm"
+      },
+      {
+        "name": "Mirror Coat",
+        "method": "egg"
+      },
+      {
+        "name": "Night Slash",
+        "method": "egg"
+      },
+      {
+        "name": "Slash",
+        "method": "egg"
+      },
+      {
+        "name": "Steel Roller",
+        "method": "tutor"
+      }
+    ],
+    "drops": [],
+    "spawns": [],
+    "evolutions": [
+      {
+        "to": 1018,
+        "method": "item_interact",
+        "item": "cobblemon:metal_alloy"
+      }
+    ]
+  },
+  {
     "id": 885,
     "name": "Dreepy",
     "types": [
@@ -26158,6 +29141,1389 @@
     ]
   },
   {
+    "id": 888,
+    "name": "Zacian",
+    "types": [
+      "Fairy"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/888.webp",
+    "learnableMoves": [
+      {
+        "name": "Bite",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Howl",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Metal Claw",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Quick Attack",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Quick Guard",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Sacred Sword",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Slash",
+        "method": "level",
+        "level": 11
+      },
+      {
+        "name": "Swords Dance",
+        "method": "level",
+        "level": 22
+      },
+      {
+        "name": "Iron Head",
+        "method": "level",
+        "level": 33
+      },
+      {
+        "name": "Laser Focus",
+        "method": "level",
+        "level": 44
+      },
+      {
+        "name": "Noble Roar",
+        "method": "level",
+        "level": 44
+      },
+      {
+        "name": "Crunch",
+        "method": "level",
+        "level": 55
+      },
+      {
+        "name": "Moonblast",
+        "method": "level",
+        "level": 66
+      },
+      {
+        "name": "Close Combat",
+        "method": "level",
+        "level": 77
+      },
+      {
+        "name": "Giga Impact",
+        "method": "level",
+        "level": 88
+      },
+      {
+        "name": "Agility",
+        "method": "tm"
+      },
+      {
+        "name": "Air Slash",
+        "method": "tm"
+      },
+      {
+        "name": "Assurance",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Brick Break",
+        "method": "tm"
+      },
+      {
+        "name": "Brutal Swing",
+        "method": "tm"
+      },
+      {
+        "name": "Dazzling Gleam",
+        "method": "tm"
+      },
+      {
+        "name": "Dig",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "False Swipe",
+        "method": "tm"
+      },
+      {
+        "name": "Fire Fang",
+        "method": "tm"
+      },
+      {
+        "name": "Flash Cannon",
+        "method": "tm"
+      },
+      {
+        "name": "Focus Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Focus Energy",
+        "method": "tm"
+      },
+      {
+        "name": "Helping Hand",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Voice",
+        "method": "tm"
+      },
+      {
+        "name": "Ice Fang",
+        "method": "tm"
+      },
+      {
+        "name": "Imprison",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Defense",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Tail",
+        "method": "tm"
+      },
+      {
+        "name": "Misty Terrain",
+        "method": "tm"
+      },
+      {
+        "name": "Play Rough",
+        "method": "tm"
+      },
+      {
+        "name": "Poison Jab",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Psychic Fangs",
+        "method": "tm"
+      },
+      {
+        "name": "Psycho Cut",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Retaliate",
+        "method": "tm"
+      },
+      {
+        "name": "Revenge",
+        "method": "tm"
+      },
+      {
+        "name": "Reversal",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Scary Face",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snarl",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Solar Blade",
+        "method": "tm"
+      },
+      {
+        "name": "Steel Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Swift",
+        "method": "tm"
+      },
+      {
+        "name": "Tail Slap",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Thunder Fang",
+        "method": "tm"
+      },
+      {
+        "name": "Trailblaze",
+        "method": "tm"
+      },
+      {
+        "name": "Wild Charge",
+        "method": "tm"
+      },
+      {
+        "name": "Work Up",
+        "method": "tm"
+      }
+    ],
+    "drops": [],
+    "spawns": []
+  },
+  {
+    "id": 889,
+    "name": "Zamazenta",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/889.webp",
+    "learnableMoves": [
+      {
+        "name": "Bite",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Howl",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Metal Claw",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Quick Attack",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Wide Guard",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Slash",
+        "method": "level",
+        "level": 11
+      },
+      {
+        "name": "Iron Defense",
+        "method": "level",
+        "level": 22
+      },
+      {
+        "name": "Iron Head",
+        "method": "level",
+        "level": 33
+      },
+      {
+        "name": "Laser Focus",
+        "method": "level",
+        "level": 44
+      },
+      {
+        "name": "Metal Burst",
+        "method": "level",
+        "level": 44
+      },
+      {
+        "name": "Crunch",
+        "method": "level",
+        "level": 55
+      },
+      {
+        "name": "Moonblast",
+        "method": "level",
+        "level": 66
+      },
+      {
+        "name": "Close Combat",
+        "method": "level",
+        "level": 77
+      },
+      {
+        "name": "Giga Impact",
+        "method": "level",
+        "level": 88
+      },
+      {
+        "name": "Agility",
+        "method": "tm"
+      },
+      {
+        "name": "Body Press",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Brick Break",
+        "method": "tm"
+      },
+      {
+        "name": "Coaching",
+        "method": "tm"
+      },
+      {
+        "name": "Dazzling Gleam",
+        "method": "tm"
+      },
+      {
+        "name": "Dig",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Fire Fang",
+        "method": "tm"
+      },
+      {
+        "name": "Flash Cannon",
+        "method": "tm"
+      },
+      {
+        "name": "Focus Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Focus Energy",
+        "method": "tm"
+      },
+      {
+        "name": "Guard Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Heavy Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Helping Hand",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Voice",
+        "method": "tm"
+      },
+      {
+        "name": "Ice Fang",
+        "method": "tm"
+      },
+      {
+        "name": "Imprison",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Tail",
+        "method": "tm"
+      },
+      {
+        "name": "Light Screen",
+        "method": "tm"
+      },
+      {
+        "name": "Payback",
+        "method": "tm"
+      },
+      {
+        "name": "Play Rough",
+        "method": "tm"
+      },
+      {
+        "name": "Power Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Psychic Fangs",
+        "method": "tm"
+      },
+      {
+        "name": "Rain Dance",
+        "method": "tm"
+      },
+      {
+        "name": "Reflect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Retaliate",
+        "method": "tm"
+      },
+      {
+        "name": "Revenge",
+        "method": "tm"
+      },
+      {
+        "name": "Reversal",
+        "method": "tm"
+      },
+      {
+        "name": "Roar",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Safeguard",
+        "method": "tm"
+      },
+      {
+        "name": "Sandstorm",
+        "method": "tm"
+      },
+      {
+        "name": "Scary Face",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snarl",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Solar Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Steel Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Stone Edge",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Sunny Day",
+        "method": "tm"
+      },
+      {
+        "name": "Swift",
+        "method": "tm"
+      },
+      {
+        "name": "Tail Slap",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Thunder Fang",
+        "method": "tm"
+      },
+      {
+        "name": "Trailblaze",
+        "method": "tm"
+      },
+      {
+        "name": "Wild Charge",
+        "method": "tm"
+      },
+      {
+        "name": "Work Up",
+        "method": "tm"
+      }
+    ],
+    "drops": [],
+    "spawns": []
+  },
+  {
+    "id": 890,
+    "name": "Eternatus",
+    "types": [
+      "Poison",
+      "Dragon"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/890.webp",
+    "learnableMoves": [
+      {
+        "name": "Agility",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Confuse Ray",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Dragon Tail",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Poison Tail",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Toxic",
+        "method": "level",
+        "level": 8
+      },
+      {
+        "name": "Venoshock",
+        "method": "level",
+        "level": 16
+      },
+      {
+        "name": "Dragon Dance",
+        "method": "level",
+        "level": 24
+      },
+      {
+        "name": "Cross Poison",
+        "method": "level",
+        "level": 32
+      },
+      {
+        "name": "Dragon Pulse",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Flamethrower",
+        "method": "level",
+        "level": 48
+      },
+      {
+        "name": "Dynamax Cannon",
+        "method": "level",
+        "level": 56
+      },
+      {
+        "name": "Cosmic Power",
+        "method": "level",
+        "level": 64
+      },
+      {
+        "name": "Recover",
+        "method": "level",
+        "level": 72
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "level",
+        "level": 80
+      },
+      {
+        "name": "Eternabeam",
+        "method": "level",
+        "level": 88
+      },
+      {
+        "name": "Outrage",
+        "method": "level",
+        "level": 88
+      },
+      {
+        "name": "Assurance",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Brutal Swing",
+        "method": "tm"
+      },
+      {
+        "name": "Draco Meteor",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Fire Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Fire Spin",
+        "method": "tm"
+      },
+      {
+        "name": "Flash Cannon",
+        "method": "tm"
+      },
+      {
+        "name": "Fly",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Gravity",
+        "method": "tm"
+      },
+      {
+        "name": "Gunk Shot",
+        "method": "tm"
+      },
+      {
+        "name": "Light Screen",
+        "method": "tm"
+      },
+      {
+        "name": "Meteor Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Mystical Fire",
+        "method": "tm"
+      },
+      {
+        "name": "Payback",
+        "method": "tm"
+      },
+      {
+        "name": "Poison Jab",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Rain Dance",
+        "method": "tm"
+      },
+      {
+        "name": "Reflect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Scary Face",
+        "method": "tm"
+      },
+      {
+        "name": "Screech",
+        "method": "tm"
+      },
+      {
+        "name": "Shadow Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Sludge Bomb",
+        "method": "tm"
+      },
+      {
+        "name": "Sludge Wave",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Solar Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Sunny Day",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Toxic Spikes",
+        "method": "tm"
+      },
+      {
+        "name": "Venom Drench",
+        "method": "tm"
+      }
+    ],
+    "drops": [],
+    "spawns": []
+  },
+  {
+    "id": 891,
+    "name": "Kubfu",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/891.webp",
+    "learnableMoves": [
+      {
+        "name": "Leer",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Rock Smash",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Endure",
+        "method": "level",
+        "level": 4
+      },
+      {
+        "name": "Focus Energy",
+        "method": "level",
+        "level": 8
+      },
+      {
+        "name": "Aerial Ace",
+        "method": "level",
+        "level": 12
+      },
+      {
+        "name": "Scary Face",
+        "method": "level",
+        "level": 16
+      },
+      {
+        "name": "Headbutt",
+        "method": "level",
+        "level": 20
+      },
+      {
+        "name": "Brick Break",
+        "method": "level",
+        "level": 24
+      },
+      {
+        "name": "Detect",
+        "method": "level",
+        "level": 28
+      },
+      {
+        "name": "Bulk Up",
+        "method": "level",
+        "level": 32
+      },
+      {
+        "name": "Iron Head",
+        "method": "level",
+        "level": 36
+      },
+      {
+        "name": "Dynamic Punch",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Counter",
+        "method": "level",
+        "level": 44
+      },
+      {
+        "name": "Close Combat",
+        "method": "level",
+        "level": 48
+      },
+      {
+        "name": "Focus Punch",
+        "method": "level",
+        "level": 52
+      },
+      {
+        "name": "Acrobatics",
+        "method": "tm"
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Dig",
+        "method": "tm"
+      },
+      {
+        "name": "Double-Edge",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Fire Punch",
+        "method": "tm"
+      },
+      {
+        "name": "Fling",
+        "method": "tm"
+      },
+      {
+        "name": "Helping Hand",
+        "method": "tm"
+      },
+      {
+        "name": "Ice Punch",
+        "method": "tm"
+      },
+      {
+        "name": "Low Kick",
+        "method": "tm"
+      },
+      {
+        "name": "Low Sweep",
+        "method": "tm"
+      },
+      {
+        "name": "Mega Kick",
+        "method": "tm"
+      },
+      {
+        "name": "Mega Punch",
+        "method": "tm"
+      },
+      {
+        "name": "Metal Claw",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Retaliate",
+        "method": "tm"
+      },
+      {
+        "name": "Revenge",
+        "method": "tm"
+      },
+      {
+        "name": "Reversal",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Superpower",
+        "method": "tm"
+      },
+      {
+        "name": "Swords Dance",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Thunder Punch",
+        "method": "tm"
+      },
+      {
+        "name": "U-turn",
+        "method": "tm"
+      },
+      {
+        "name": "Work Up",
+        "method": "tm"
+      },
+      {
+        "name": "Zen Headbutt",
+        "method": "tm"
+      },
+      {
+        "name": "Coaching",
+        "method": "tutor"
+      }
+    ],
+    "drops": [],
+    "spawns": [],
+    "evolutions": [
+      {
+        "to": 892,
+        "method": "special"
+      },
+      {
+        "to": 892,
+        "method": "item_interact",
+        "item": "cobblemon:scroll_of_darkness"
+      },
+      {
+        "to": 892,
+        "method": "item_interact",
+        "item": "cobblemon:scroll_of_waters"
+      }
+    ]
+  },
+  {
+    "id": 892,
+    "name": "Urshifu",
+    "types": [
+      "Fighting",
+      "Dark"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/892.webp",
+    "learnableMoves": [
+      {
+        "name": "Endure",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Focus Energy",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Leer",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Rock Smash",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Sucker Punch",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Wicked Blow",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Aerial Ace",
+        "method": "level",
+        "level": 12
+      },
+      {
+        "name": "Scary Face",
+        "method": "level",
+        "level": 16
+      },
+      {
+        "name": "Headbutt",
+        "method": "level",
+        "level": 20
+      },
+      {
+        "name": "Brick Break",
+        "method": "level",
+        "level": 24
+      },
+      {
+        "name": "Detect",
+        "method": "level",
+        "level": 28
+      },
+      {
+        "name": "Bulk Up",
+        "method": "level",
+        "level": 32
+      },
+      {
+        "name": "Iron Head",
+        "method": "level",
+        "level": 36
+      },
+      {
+        "name": "Dynamic Punch",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Counter",
+        "method": "level",
+        "level": 44
+      },
+      {
+        "name": "Close Combat",
+        "method": "level",
+        "level": 48
+      },
+      {
+        "name": "Focus Punch",
+        "method": "level",
+        "level": 52
+      },
+      {
+        "name": "Acrobatics",
+        "method": "tm"
+      },
+      {
+        "name": "Assurance",
+        "method": "tm"
+      },
+      {
+        "name": "Attract",
+        "method": "tm"
+      },
+      {
+        "name": "Aura Sphere",
+        "method": "tm"
+      },
+      {
+        "name": "Beat Up",
+        "method": "tm"
+      },
+      {
+        "name": "Body Press",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Coaching",
+        "method": "tm"
+      },
+      {
+        "name": "Crunch",
+        "method": "tm"
+      },
+      {
+        "name": "Dark Pulse",
+        "method": "tm"
+      },
+      {
+        "name": "Darkest Lariat",
+        "method": "tm"
+      },
+      {
+        "name": "Dig",
+        "method": "tm"
+      },
+      {
+        "name": "Double-Edge",
+        "method": "tm"
+      },
+      {
+        "name": "Drain Punch",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "False Swipe",
+        "method": "tm"
+      },
+      {
+        "name": "Fire Punch",
+        "method": "tm"
+      },
+      {
+        "name": "Fling",
+        "method": "tm"
+      },
+      {
+        "name": "Focus Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Foul Play",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Helping Hand",
+        "method": "tm"
+      },
+      {
+        "name": "Ice Punch",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Defense",
+        "method": "tm"
+      },
+      {
+        "name": "Lash Out",
+        "method": "tm"
+      },
+      {
+        "name": "Low Kick",
+        "method": "tm"
+      },
+      {
+        "name": "Low Sweep",
+        "method": "tm"
+      },
+      {
+        "name": "Mega Kick",
+        "method": "tm"
+      },
+      {
+        "name": "Mega Punch",
+        "method": "tm"
+      },
+      {
+        "name": "Metal Claw",
+        "method": "tm"
+      },
+      {
+        "name": "Payback",
+        "method": "tm"
+      },
+      {
+        "name": "Poison Jab",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Retaliate",
+        "method": "tm"
+      },
+      {
+        "name": "Revenge",
+        "method": "tm"
+      },
+      {
+        "name": "Reversal",
+        "method": "tm"
+      },
+      {
+        "name": "Roar",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Slide",
+        "method": "tm"
+      },
+      {
+        "name": "Rock Tomb",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snarl",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Stone Edge",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Superpower",
+        "method": "tm"
+      },
+      {
+        "name": "Swift",
+        "method": "tm"
+      },
+      {
+        "name": "Swords Dance",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Taunt",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Throat Chop",
+        "method": "tm"
+      },
+      {
+        "name": "Thunder Punch",
+        "method": "tm"
+      },
+      {
+        "name": "Trailblaze",
+        "method": "tm"
+      },
+      {
+        "name": "U-turn",
+        "method": "tm"
+      },
+      {
+        "name": "Work Up",
+        "method": "tm"
+      },
+      {
+        "name": "Zen Headbutt",
+        "method": "tm"
+      }
+    ],
+    "drops": [],
+    "spawns": []
+  },
+  {
     "id": 893,
     "name": "Zarude",
     "types": [
@@ -27255,6 +31621,784 @@
       {
         "name": "Snore",
         "method": "legacy"
+      }
+    ],
+    "drops": [],
+    "spawns": []
+  },
+  {
+    "id": 896,
+    "name": "Glastrier",
+    "types": [
+      "Ice"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/896.webp",
+    "learnableMoves": [
+      {
+        "name": "Tackle",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Tail Whip",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Double Kick",
+        "method": "level",
+        "level": 6
+      },
+      {
+        "name": "Avalanche",
+        "method": "level",
+        "level": 12
+      },
+      {
+        "name": "Stomp",
+        "method": "level",
+        "level": 18
+      },
+      {
+        "name": "Torment",
+        "method": "level",
+        "level": 24
+      },
+      {
+        "name": "Mist",
+        "method": "level",
+        "level": 30
+      },
+      {
+        "name": "Icicle Crash",
+        "method": "level",
+        "level": 36
+      },
+      {
+        "name": "Take Down",
+        "method": "level",
+        "level": 42
+      },
+      {
+        "name": "Iron Defense",
+        "method": "level",
+        "level": 48
+      },
+      {
+        "name": "Thrash",
+        "method": "level",
+        "level": 54
+      },
+      {
+        "name": "Taunt",
+        "method": "level",
+        "level": 60
+      },
+      {
+        "name": "Double-Edge",
+        "method": "level",
+        "level": 66
+      },
+      {
+        "name": "Swords Dance",
+        "method": "level",
+        "level": 72
+      },
+      {
+        "name": "Assurance",
+        "method": "tm"
+      },
+      {
+        "name": "Blizzard",
+        "method": "tm"
+      },
+      {
+        "name": "Body Press",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Bulldoze",
+        "method": "tm"
+      },
+      {
+        "name": "Close Combat",
+        "method": "tm"
+      },
+      {
+        "name": "Crunch",
+        "method": "tm"
+      },
+      {
+        "name": "Curse",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Hail",
+        "method": "tm"
+      },
+      {
+        "name": "Heavy Slam",
+        "method": "tm"
+      },
+      {
+        "name": "High Horsepower",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Ice Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Icicle Spear",
+        "method": "tm"
+      },
+      {
+        "name": "Icy Wind",
+        "method": "tm"
+      },
+      {
+        "name": "Lash Out",
+        "method": "tm"
+      },
+      {
+        "name": "Megahorn",
+        "method": "tm"
+      },
+      {
+        "name": "Mud Shot",
+        "method": "tm"
+      },
+      {
+        "name": "Outrage",
+        "method": "tm"
+      },
+      {
+        "name": "Payback",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Roar",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Scary Face",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Smart Strike",
+        "method": "tm"
+      },
+      {
+        "name": "Snarl",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Snowscape",
+        "method": "tm"
+      },
+      {
+        "name": "Stomping Tantrum",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Superpower",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Throat Chop",
+        "method": "tm"
+      },
+      {
+        "name": "Trailblaze",
+        "method": "tm"
+      },
+      {
+        "name": "Uproar",
+        "method": "tm"
+      },
+      {
+        "name": "Zen Headbutt",
+        "method": "tm"
+      }
+    ],
+    "drops": [],
+    "spawns": []
+  },
+  {
+    "id": 897,
+    "name": "Spectrier",
+    "types": [
+      "Ghost"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/897.webp",
+    "learnableMoves": [
+      {
+        "name": "Tackle",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Tail Whip",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Double Kick",
+        "method": "level",
+        "level": 6
+      },
+      {
+        "name": "Hex",
+        "method": "level",
+        "level": 12
+      },
+      {
+        "name": "Stomp",
+        "method": "level",
+        "level": 18
+      },
+      {
+        "name": "Confuse Ray",
+        "method": "level",
+        "level": 24
+      },
+      {
+        "name": "Haze",
+        "method": "level",
+        "level": 30
+      },
+      {
+        "name": "Shadow Ball",
+        "method": "level",
+        "level": 36
+      },
+      {
+        "name": "Take Down",
+        "method": "level",
+        "level": 42
+      },
+      {
+        "name": "Agility",
+        "method": "level",
+        "level": 48
+      },
+      {
+        "name": "Thrash",
+        "method": "level",
+        "level": 54
+      },
+      {
+        "name": "Disable",
+        "method": "level",
+        "level": 60
+      },
+      {
+        "name": "Double-Edge",
+        "method": "level",
+        "level": 66
+      },
+      {
+        "name": "Nasty Plot",
+        "method": "level",
+        "level": 72
+      },
+      {
+        "name": "Assurance",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Bulldoze",
+        "method": "tm"
+      },
+      {
+        "name": "Calm Mind",
+        "method": "tm"
+      },
+      {
+        "name": "Crunch",
+        "method": "tm"
+      },
+      {
+        "name": "Curse",
+        "method": "tm"
+      },
+      {
+        "name": "Dark Pulse",
+        "method": "tm"
+      },
+      {
+        "name": "Draining Kiss",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Foul Play",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Lash Out",
+        "method": "tm"
+      },
+      {
+        "name": "Mud Shot",
+        "method": "tm"
+      },
+      {
+        "name": "Night Shade",
+        "method": "tm"
+      },
+      {
+        "name": "Pain Split",
+        "method": "tm"
+      },
+      {
+        "name": "Payback",
+        "method": "tm"
+      },
+      {
+        "name": "Phantom Force",
+        "method": "tm"
+      },
+      {
+        "name": "Poltergeist",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Psychic",
+        "method": "tm"
+      },
+      {
+        "name": "Psycho Cut",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Scary Face",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snarl",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Stomping Tantrum",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Swift",
+        "method": "tm"
+      },
+      {
+        "name": "Taunt",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Uproar",
+        "method": "tm"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "method": "tm"
+      }
+    ],
+    "drops": [],
+    "spawns": []
+  },
+  {
+    "id": 898,
+    "name": "Calyrex",
+    "types": [
+      "Psychic",
+      "Grass"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/898.webp",
+    "learnableMoves": [
+      {
+        "name": "Confusion",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Growth",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Mega Drain",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Pound",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Life Dew",
+        "method": "level",
+        "level": 8
+      },
+      {
+        "name": "Giga Drain",
+        "method": "level",
+        "level": 16
+      },
+      {
+        "name": "Psyshock",
+        "method": "level",
+        "level": 24
+      },
+      {
+        "name": "Helping Hand",
+        "method": "level",
+        "level": 32
+      },
+      {
+        "name": "Aromatherapy",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Grassy Terrain",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Psychic Terrain",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Energy Ball",
+        "method": "level",
+        "level": 48
+      },
+      {
+        "name": "Psychic",
+        "method": "level",
+        "level": 56
+      },
+      {
+        "name": "Leech Seed",
+        "method": "level",
+        "level": 64
+      },
+      {
+        "name": "Heal Pulse",
+        "method": "level",
+        "level": 72
+      },
+      {
+        "name": "Solar Beam",
+        "method": "level",
+        "level": 80
+      },
+      {
+        "name": "Future Sight",
+        "method": "level",
+        "level": 88
+      },
+      {
+        "name": "Agility",
+        "method": "tm"
+      },
+      {
+        "name": "Ally Switch",
+        "method": "tm"
+      },
+      {
+        "name": "Baton Pass",
+        "method": "tm"
+      },
+      {
+        "name": "Body Press",
+        "method": "tm"
+      },
+      {
+        "name": "Bullet Seed",
+        "method": "tm"
+      },
+      {
+        "name": "Calm Mind",
+        "method": "tm"
+      },
+      {
+        "name": "Draining Kiss",
+        "method": "tm"
+      },
+      {
+        "name": "Encore",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Expanding Force",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Grass Knot",
+        "method": "tm"
+      },
+      {
+        "name": "Gravity",
+        "method": "tm"
+      },
+      {
+        "name": "Guard Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Imprison",
+        "method": "tm"
+      },
+      {
+        "name": "Leaf Storm",
+        "method": "tm"
+      },
+      {
+        "name": "Light Screen",
+        "method": "tm"
+      },
+      {
+        "name": "Magic Room",
+        "method": "tm"
+      },
+      {
+        "name": "Magical Leaf",
+        "method": "tm"
+      },
+      {
+        "name": "Metronome",
+        "method": "tm"
+      },
+      {
+        "name": "Mud Shot",
+        "method": "tm"
+      },
+      {
+        "name": "Pay Day",
+        "method": "tm"
+      },
+      {
+        "name": "Pollen Puff",
+        "method": "tm"
+      },
+      {
+        "name": "Power Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Psybeam",
+        "method": "tm"
+      },
+      {
+        "name": "Psych Up",
+        "method": "tm"
+      },
+      {
+        "name": "Reflect",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Round",
+        "method": "tm"
+      },
+      {
+        "name": "Safeguard",
+        "method": "tm"
+      },
+      {
+        "name": "Scary Face",
+        "method": "tm"
+      },
+      {
+        "name": "Seed Bomb",
+        "method": "tm"
+      },
+      {
+        "name": "Skill Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Snarl",
+        "method": "tm"
+      },
+      {
+        "name": "Snore",
+        "method": "tm"
+      },
+      {
+        "name": "Solar Blade",
+        "method": "tm"
+      },
+      {
+        "name": "Speed Swap",
+        "method": "tm"
+      },
+      {
+        "name": "Stored Power",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Sunny Day",
+        "method": "tm"
+      },
+      {
+        "name": "Swift",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Tri Attack",
+        "method": "tm"
+      },
+      {
+        "name": "Trick",
+        "method": "tm"
+      },
+      {
+        "name": "Trick Room",
+        "method": "tm"
+      },
+      {
+        "name": "Wonder Room",
+        "method": "tm"
+      },
+      {
+        "name": "Zen Headbutt",
+        "method": "tm"
       }
     ],
     "drops": [],
@@ -30721,5 +35865,254 @@
         "label": "Overworld 13"
       }
     ]
+  },
+  {
+    "id": 905,
+    "name": "Enamorus",
+    "types": [
+      "Fairy",
+      "Flying"
+    ],
+    "sprite": "https://cobbledex.b-cdn.net/3dmons/previews/large/905.webp",
+    "learnableMoves": [
+      {
+        "name": "Astonish",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Fairy Wind",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Tackle",
+        "method": "level",
+        "level": 1
+      },
+      {
+        "name": "Torment",
+        "method": "level",
+        "level": 5
+      },
+      {
+        "name": "Bite",
+        "method": "level",
+        "level": 7
+      },
+      {
+        "name": "Flatter",
+        "method": "level",
+        "level": 10
+      },
+      {
+        "name": "Twister",
+        "method": "level",
+        "level": 15
+      },
+      {
+        "name": "Draining Kiss",
+        "method": "level",
+        "level": 20
+      },
+      {
+        "name": "Iron Defense",
+        "method": "level",
+        "level": 25
+      },
+      {
+        "name": "Imprison",
+        "method": "level",
+        "level": 30
+      },
+      {
+        "name": "Mystical Fire",
+        "method": "level",
+        "level": 35
+      },
+      {
+        "name": "Dazzling Gleam",
+        "method": "level",
+        "level": 40
+      },
+      {
+        "name": "Crunch",
+        "method": "level",
+        "level": 41
+      },
+      {
+        "name": "Extrasensory",
+        "method": "level",
+        "level": 45
+      },
+      {
+        "name": "Uproar",
+        "method": "level",
+        "level": 50
+      },
+      {
+        "name": "Superpower",
+        "method": "level",
+        "level": 55
+      },
+      {
+        "name": "Healing Wish",
+        "method": "level",
+        "level": 60
+      },
+      {
+        "name": "Moonblast",
+        "method": "level",
+        "level": 65
+      },
+      {
+        "name": "Outrage",
+        "method": "level",
+        "level": 70
+      },
+      {
+        "name": "Springtide Storm",
+        "method": "level",
+        "level": 75
+      },
+      {
+        "name": "Agility",
+        "method": "tm"
+      },
+      {
+        "name": "Alluring Voice",
+        "method": "tm"
+      },
+      {
+        "name": "Body Slam",
+        "method": "tm"
+      },
+      {
+        "name": "Calm Mind",
+        "method": "tm"
+      },
+      {
+        "name": "Disarming Voice",
+        "method": "tm"
+      },
+      {
+        "name": "Earth Power",
+        "method": "tm"
+      },
+      {
+        "name": "Endure",
+        "method": "tm"
+      },
+      {
+        "name": "Facade",
+        "method": "tm"
+      },
+      {
+        "name": "Fly",
+        "method": "tm"
+      },
+      {
+        "name": "Focus Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Giga Impact",
+        "method": "tm"
+      },
+      {
+        "name": "Grass Knot",
+        "method": "tm"
+      },
+      {
+        "name": "Grassy Terrain",
+        "method": "tm"
+      },
+      {
+        "name": "Hyper Beam",
+        "method": "tm"
+      },
+      {
+        "name": "Iron Head",
+        "method": "tm"
+      },
+      {
+        "name": "Misty Explosion",
+        "method": "tm"
+      },
+      {
+        "name": "Misty Terrain",
+        "method": "tm"
+      },
+      {
+        "name": "Play Rough",
+        "method": "tm"
+      },
+      {
+        "name": "Protect",
+        "method": "tm"
+      },
+      {
+        "name": "Psych Up",
+        "method": "tm"
+      },
+      {
+        "name": "Psychic",
+        "method": "tm"
+      },
+      {
+        "name": "Rain Dance",
+        "method": "tm"
+      },
+      {
+        "name": "Rest",
+        "method": "tm"
+      },
+      {
+        "name": "Scary Face",
+        "method": "tm"
+      },
+      {
+        "name": "Sleep Talk",
+        "method": "tm"
+      },
+      {
+        "name": "Sludge Bomb",
+        "method": "tm"
+      },
+      {
+        "name": "Substitute",
+        "method": "tm"
+      },
+      {
+        "name": "Sunny Day",
+        "method": "tm"
+      },
+      {
+        "name": "Tailwind",
+        "method": "tm"
+      },
+      {
+        "name": "Take Down",
+        "method": "tm"
+      },
+      {
+        "name": "Taunt",
+        "method": "tm"
+      },
+      {
+        "name": "Tera Blast",
+        "method": "tm"
+      },
+      {
+        "name": "Weather Ball",
+        "method": "tm"
+      },
+      {
+        "name": "Zen Headbutt",
+        "method": "tm"
+      }
+    ],
+    "drops": [],
+    "spawns": []
   }
 ]
