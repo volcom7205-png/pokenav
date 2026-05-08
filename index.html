@@ -113,60 +113,80 @@
       </div>
 
       <div id="panel-party" class="panel">
-        <div class="pokedex-search-row">
-          <input type="text" id="pc-search" placeholder="Search by name or number..." autocomplete="off" />
-          <button id="pc-element-btn" class="pokedex-element-btn" type="button">◆ ELEMENTS ◀</button>
+        <div class="pc-mode-row">
+          <button class="pc-mode-btn active" data-mode="party" type="button">🎒 PARTY + STORAGE</button>
+          <button class="pc-mode-btn" data-mode="wanted" type="button">★ MOST WANTED</button>
         </div>
 
-        <div class="pokedex-main">
-          <div class="pc-content">
-            <div class="pc-party-column">
-              <section class="party-section">
-                <div class="pc-section-header">PARTY</div>
-                <div class="party-grid" id="party-grid"></div>
-              </section>
-            </div>
-
-            <div class="pc-storage-column">
-              <button class="add-poke-btn" id="add-poke-btn">＋ Add Pokémon</button>
-              <section class="storage-section">
-                <div class="pc-section-header">PC STORAGE</div>
-                <div class="storage-grid" id="storage-grid"></div>
-              </section>
-            </div>
+        <div class="pc-view" id="pc-party-view">
+          <div class="pokedex-search-row">
+            <input type="text" id="pc-search" placeholder="Search by name or number..." autocomplete="off" />
+            <button id="pc-element-btn" class="pokedex-element-btn" type="button">◆ ELEMENTS ◀</button>
           </div>
 
-          <aside id="pc-element-panel" class="pokedex-element-panel hidden">
-            <div class="element-panel-header">
-              <span class="element-panel-title">◆ ELEMENTS</span>
-              <span id="pc-filter-count" class="element-panel-count">0 active</span>
+          <div class="pokedex-main">
+            <div class="pc-content">
+              <div class="pc-party-column">
+                <section class="party-section">
+                  <div class="pc-section-header">PARTY</div>
+                  <div class="party-grid" id="party-grid"></div>
+                </section>
+              </div>
+
+              <div class="pc-storage-column">
+                <button class="add-poke-btn" id="add-poke-btn">＋ Add Pokémon</button>
+                <section class="storage-section">
+                  <div class="pc-section-header">PC STORAGE</div>
+                  <div class="storage-grid" id="storage-grid"></div>
+                </section>
+              </div>
             </div>
 
-            <div class="element-icon-grid">
-              <div class="element-item" data-type="normal"></div>
-              <div class="element-item" data-type="fire"></div>
-              <div class="element-item" data-type="water"></div>
-              <div class="element-item" data-type="grass"></div>
-              <div class="element-item" data-type="electric"></div>
-              <div class="element-item" data-type="ice"></div>
-              <div class="element-item" data-type="fighting"></div>
-              <div class="element-item" data-type="poison"></div>
-              <div class="element-item" data-type="ground"></div>
-              <div class="element-item" data-type="flying"></div>
-              <div class="element-item" data-type="psychic"></div>
-              <div class="element-item" data-type="bug"></div>
-              <div class="element-item" data-type="rock"></div>
-              <div class="element-item" data-type="ghost"></div>
-              <div class="element-item" data-type="dragon"></div>
-              <div class="element-item" data-type="dark"></div>
-              <div class="element-item" data-type="steel"></div>
-              <div class="element-item" data-type="fairy"></div>
-            </div>
+            <aside id="pc-element-panel" class="pokedex-element-panel hidden">
+              <div class="element-panel-header">
+                <span class="element-panel-title">◆ ELEMENTS</span>
+                <span id="pc-filter-count" class="element-panel-count">0 active</span>
+              </div>
 
-            <div class="element-panel-footer">
-              <button id="pc-clear-types" class="element-clear-all" type="button">Clear all</button>
-            </div>
-          </aside>
+              <div class="element-icon-grid">
+                <div class="element-item" data-type="normal"></div>
+                <div class="element-item" data-type="fire"></div>
+                <div class="element-item" data-type="water"></div>
+                <div class="element-item" data-type="grass"></div>
+                <div class="element-item" data-type="electric"></div>
+                <div class="element-item" data-type="ice"></div>
+                <div class="element-item" data-type="fighting"></div>
+                <div class="element-item" data-type="poison"></div>
+                <div class="element-item" data-type="ground"></div>
+                <div class="element-item" data-type="flying"></div>
+                <div class="element-item" data-type="psychic"></div>
+                <div class="element-item" data-type="bug"></div>
+                <div class="element-item" data-type="rock"></div>
+                <div class="element-item" data-type="ghost"></div>
+                <div class="element-item" data-type="dragon"></div>
+                <div class="element-item" data-type="dark"></div>
+                <div class="element-item" data-type="steel"></div>
+                <div class="element-item" data-type="fairy"></div>
+              </div>
+
+              <div class="element-panel-footer">
+                <button id="pc-clear-types" class="element-clear-all" type="button">Clear all</button>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <div class="pc-view hidden" id="pc-wanted-view">
+          <div class="pc-wanted-toolbar">
+            <input type="text" id="pc-wanted-search" placeholder="Search Most Wanted..." autocomplete="off" />
+            <select id="pc-wanted-sort">
+              <option value="id">Sort: Dex #</option>
+              <option value="name">Sort: Name</option>
+              <option value="type">Sort: Primary type</option>
+              <option value="rarity">Sort: Rarity</option>
+            </select>
+          </div>
+          <div id="pc-wanted-grid" class="pc-wanted-grid"></div>
         </div>
       </div>
 
@@ -213,34 +233,14 @@
       <div class="panel" id="panel-academy"></div>
 
       <div class="panel" id="panel-biome">
-        <div class="biome-mode-row">
-          <button class="biome-mode-btn active" data-mode="biome" type="button">◆ BIOME</button>
-          <button class="biome-mode-btn" data-mode="wanted" type="button">★ MOST WANTED</button>
-        </div>
-
-        <div class="biome-view" id="biome-biome-view">
-          <div class="biome-biome-grid">
-            <aside class="biome-picker-section">
-              <input type="text" id="biome-biome-search" placeholder="Filter biomes..." autocomplete="off" />
-              <div id="biome-picker" class="biome-picker"></div>
-            </aside>
-            <div id="biome-biome-results" class="biome-biome-results">
-              <div class="biome-empty">Pick a biome to see what spawns there.</div>
-            </div>
+        <div class="biome-biome-grid">
+          <aside class="biome-picker-section">
+            <input type="text" id="biome-biome-search" placeholder="Filter biomes..." autocomplete="off" />
+            <div id="biome-picker" class="biome-picker"></div>
+          </aside>
+          <div id="biome-biome-results" class="biome-biome-results">
+            <div class="biome-empty">Pick a biome to see what spawns there.</div>
           </div>
-        </div>
-
-        <div class="biome-view hidden" id="biome-wanted-view">
-          <div class="biome-wanted-toolbar">
-            <input type="text" id="biome-wanted-search" placeholder="Search Most Wanted..." autocomplete="off" />
-            <select id="biome-wanted-sort">
-              <option value="id">Sort: Dex #</option>
-              <option value="name">Sort: Name</option>
-              <option value="type">Sort: Primary type</option>
-              <option value="rarity">Sort: Rarity</option>
-            </select>
-          </div>
-          <div id="biome-wanted-grid" class="biome-wanted-grid"></div>
         </div>
       </div>
 
@@ -292,6 +292,7 @@
   <script src="js/core/utils.js"></script>
   <script src="js/core/data.js"></script>
   <script src="js/core/biomes.js"></script>
+  <script src="js/core/wanted.js"></script>
   <script src="js/core/picker.js"></script>
   <script src="js/core/nav.js"></script>
   <script src="js/core/trainer.js"></script>

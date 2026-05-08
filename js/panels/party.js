@@ -17,6 +17,13 @@ const PartyStorage = (() => {
   let pcSearchQuery = '';
   let pcSelectedTypes = new Set();
 
+  // PC sub-mode: 'party' (party + storage) or 'wanted' (Most Wanted list)
+  let pcMode = 'party';
+
+  // Wanted view filter/sort state
+  let wantedQuery = '';
+  let wantedSort = 'id';
+
   // ── localStorage ───────────────────────────────────
   function save() {
     localStorage.setItem(LS_KEY, JSON.stringify(state));
@@ -599,6 +606,128 @@ const PartyStorage = (() => {
     return ids;
   }
 
+  // ── Wanted view (sub-mode) ─────────────────────────
+  const RARITY_ORDER = { 'common': 0, 'uncommon': 1, 'rare': 2, 'ultra-rare': 3, 'unknown': 4 };
+  const prettyBiome = b => (typeof PokeNavBiomes !== 'undefined') ? PokeNavBiomes.prettyBiome(b) : b;
+
+  function setMode(m) {
+    pcMode = m;
+    document.querySelectorAll('.pc-mode-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.mode === m);
+    });
+    document.getElementById('pc-party-view')?.classList.toggle('hidden', m !== 'party');
+    document.getElementById('pc-wanted-view')?.classList.toggle('hidden', m !== 'wanted');
+    if (m === 'wanted') renderWantedView();
+  }
+
+  function renderWantedView() {
+    const root = document.getElementById('pc-wanted-grid');
+    if (!root) return;
+
+    const wanted = WantedList.getAll();
+    if (!wanted.size) {
+      root.innerHTML = `<div class="biome-empty">
+        Your Most Wanted list is empty. Open a Pokémon's detail card and click "+ Wanted" to track it.
+      </div>`;
+      return;
+    }
+
+    let list = [...wanted].map(id => allPokemon.find(p => p.id === id)).filter(Boolean);
+
+    if (wantedQuery) {
+      list = list.filter(p =>
+        p.name.toLowerCase().includes(wantedQuery) ||
+        String(p.id).includes(wantedQuery) ||
+        p.types.some(t => t.toLowerCase().includes(wantedQuery))
+      );
+    }
+    list.sort((a, b) => {
+      if (wantedSort === 'name') return a.name.localeCompare(b.name);
+      if (wantedSort === 'type') return (a.types[0] || '').localeCompare(b.types[0] || '');
+      if (wantedSort === 'rarity') {
+        const ar = Math.min(...(a.spawns || []).map(s => RARITY_ORDER[s.bucket] ?? 9), 9);
+        const br = Math.min(...(b.spawns || []).map(s => RARITY_ORDER[s.bucket] ?? 9), 9);
+        return ar - br;
+      }
+      return a.id - b.id;
+    });
+
+    if (!list.length) {
+      root.innerHTML = '<div class="biome-empty">No matches in your Most Wanted list.</div>';
+      return;
+    }
+
+    root.innerHTML = list.map(p => {
+      const biomeSet = new Set();
+      for (const s of (p.spawns || [])) for (const b of (s.biomes || [])) biomeSet.add(b);
+      const biomes = (typeof PokeNavBiomes !== 'undefined')
+        ? PokeNavBiomes.sortBiomes([...biomeSet])
+        : [...biomeSet];
+      const bestBucket = (p.spawns || [])
+        .map(s => s.bucket)
+        .filter(Boolean)
+        .sort((a, b) => (RARITY_ORDER[a] ?? 9) - (RARITY_ORDER[b] ?? 9))[0] || 'unknown';
+
+      return `
+        <div class="pc-wanted-tile" data-id="${p.id}">
+          <button class="pc-wanted-remove" data-id="${p.id}" type="button" title="Remove from list">✕</button>
+          <div class="wanted-poster-stamp">★ WANTED ★</div>
+          <img class="pc-wanted-sprite" src="${p.sprite}" alt="${p.name}"
+               onerror="this.style.opacity='0.3'">
+          <div class="pc-wanted-num">#${String(p.id).padStart(4,'0')}</div>
+          <div class="pc-wanted-name">${p.name}</div>
+          <div class="pc-wanted-types">${p.types.map(t => typeIconHTMLCompact(t)).join('')}</div>
+          <div class="pc-wanted-rarity rarity-${bestBucket}">${bestBucket.toUpperCase()}</div>
+          <div class="pc-wanted-biomes">
+            ${biomes.length
+              ? biomes.slice(0, 8).map(b => {
+                  const color = (typeof PokeNavBiomes !== 'undefined') ? PokeNavBiomes.getGroupColor(b) : '#888';
+                  const group = (typeof PokeNavBiomes !== 'undefined') ? PokeNavBiomes.getGroup(b) : '';
+                  return `<span class="pc-wanted-biome" data-biome="${b}" data-group="${group}" role="button" tabindex="0" style="border-left-color:${color}">${prettyBiome(b)}</span>`;
+                }).join('')
+              : '<span class="pc-wanted-biome pc-wanted-biome--none">No spawn data</span>'}
+            ${biomes.length > 8 ? `<span class="pc-wanted-more">+${biomes.length - 8} more</span>` : ''}
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    root.querySelectorAll('.pc-wanted-remove').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        WantedList.toggleWanted(Number(btn.dataset.id));
+      });
+    });
+    root.querySelectorAll('.pc-wanted-biome[data-biome]').forEach(chip => {
+      chip.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (typeof goToBiome === 'function') goToBiome(chip.dataset.biome);
+      });
+    });
+    root.querySelectorAll('.pc-wanted-tile').forEach(tile => {
+      tile.addEventListener('click', (e) => {
+        if (e.target.closest('.pc-wanted-remove')) return;
+        if (e.target.closest('.pc-wanted-biome[data-biome]')) return;
+        const id = Number(tile.dataset.id);
+        if (typeof selectPokemon === 'function') selectPokemon(id);
+      });
+    });
+  }
+
+  function wireWantedView() {
+    document.querySelectorAll('.pc-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => setMode(btn.dataset.mode));
+    });
+    document.getElementById('pc-wanted-search')?.addEventListener('input', e => {
+      wantedQuery = e.target.value.trim().toLowerCase();
+      renderWantedView();
+    });
+    document.getElementById('pc-wanted-sort')?.addEventListener('change', e => {
+      wantedSort = e.target.value;
+      renderWantedView();
+    });
+  }
+
   // ── Init ───────────────────────────────────────────
   async function init() {
     load();
@@ -611,6 +740,10 @@ const PartyStorage = (() => {
 
     renderPC();
     bindStorageGridDrop();
+    wireWantedView();
+    WantedList.onChanged(() => {
+      if (pcMode === 'wanted') renderWantedView();
+    });
 
     // Search input
     document.getElementById('pc-search')?.addEventListener('input', (e) => {

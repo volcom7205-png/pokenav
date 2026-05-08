@@ -1,40 +1,15 @@
-/* PokeNav — Biome Search: per-biome lookup, Pokémon spawn lookup, Most Wanted */
+/* PokeNav — Biome Search: per-biome lookup of what spawns where */
 
 const BiomeSearch = (() => {
-  const LS_KEY = 'pokenav_wanted_list';
-
-  // ── State ────────────────────────────────────────
   let inited = false;
   let allPokemon = [];
   let biomeIndex = new Map();   // biome -> [{ pokemon, spawn }]
-  let wanted = new Set();        // Set<dexId>
-  let mode = 'biome';
   let biomeFilter = '';
   let biomeSelected = null;
   let pickerOpen = new Set();   // 'dim:overworld', 'group:aquatic', …
-  let wantedQuery = '';
-  let wantedSort = 'id';
 
   const prettyBiome = b => PokeNavBiomes.prettyBiome(b);
 
-  // ── Most Wanted localStorage ─────────────────────
-  function loadWanted() {
-    try {
-      const raw = localStorage.getItem(LS_KEY);
-      if (raw) wanted = new Set(JSON.parse(raw));
-    } catch (e) { /* corrupt — ignore */ }
-  }
-  function saveWanted() {
-    localStorage.setItem(LS_KEY, JSON.stringify([...wanted]));
-  }
-  function isWanted(id) { return wanted.has(id); }
-  function toggleWanted(id) {
-    if (wanted.has(id)) wanted.delete(id); else wanted.add(id);
-    saveWanted();
-    if (mode === 'wanted') renderWantedView();
-  }
-
-  // ── Reverse index ────────────────────────────────
   function buildIndex() {
     biomeIndex = new Map();
     for (const p of allPokemon) {
@@ -57,45 +32,17 @@ const BiomeSearch = (() => {
     return tax.sortBiomes([...set]);
   }
 
-  // ── Init / mode toggle ───────────────────────────
   async function init() {
     if (inited) return;
     inited = true;
     await Promise.all([PokeNavData.load(), PokeNavBiomes.load()]);
     allPokemon = PokeNavData.getPokemon();
     buildIndex();
-    loadWanted();
-    wireModeToggle();
     wireBiomeView();
-    wireWantedView();
-    PokeNavBiomes.onModsChanged(() => {
-      if (mode === 'biome') renderBiomePicker();
-    });
-    renderMode();
+    PokeNavBiomes.onModsChanged(() => renderBiomePicker());
+    renderBiomeView();
   }
 
-  function wireModeToggle() {
-    document.querySelectorAll('.biome-mode-btn').forEach(btn => {
-      btn.addEventListener('click', () => setMode(btn.dataset.mode));
-    });
-  }
-
-  function setMode(m) {
-    mode = m;
-    document.querySelectorAll('.biome-mode-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.mode === m);
-    });
-    document.getElementById('biome-biome-view').classList.toggle('hidden', m !== 'biome');
-    document.getElementById('biome-wanted-view').classList.toggle('hidden', m !== 'wanted');
-    renderMode();
-  }
-
-  function renderMode() {
-    if (mode === 'biome') renderBiomeView();
-    else if (mode === 'wanted') renderWantedView();
-  }
-
-  // ── Biome search mode ───────────────────────────
   function wireBiomeView() {
     document.getElementById('biome-biome-search')?.addEventListener('input', e => {
       biomeFilter = e.target.value.trim().toLowerCase();
@@ -121,7 +68,6 @@ const BiomeSearch = (() => {
       (byGroup[g] = byGroup[g] || []).push(b);
     }
 
-    // Bucket non-empty groups by dimension, preserving canonical order.
     const dimToGroups = {};
     for (const dim of PokeNavBiomes.getDimensionOrder()) dimToGroups[dim] = [];
     for (const g of PokeNavBiomes.getGroupOrder()) {
@@ -130,8 +76,6 @@ const BiomeSearch = (() => {
       dimToGroups[meta.dimension].push(g);
     }
 
-    // Active search forces every section open so the user can see what survived
-    // the filter. Selection alone respects user-toggled state.
     const forceOpen = !!biomeFilter;
     const isOpen = key => forceOpen || pickerOpen.has(key);
 
@@ -274,8 +218,6 @@ const BiomeSearch = (() => {
       return;
     }
 
-    // Group by Pokémon so each mon shows once even if multiple spawn
-    // entries reference the same biome.
     const byMon = new Map();
     for (const { pokemon, spawn } of entries) {
       if (!byMon.has(pokemon.id)) byMon.set(pokemon.id, { pokemon, spawns: [] });
@@ -322,121 +264,12 @@ const BiomeSearch = (() => {
     root.querySelectorAll('.biome-result-tile').forEach(tile => {
       tile.addEventListener('click', () => {
         const id = Number(tile.dataset.id);
-        // Re-use Pokédex modal so users can act on the result
-        if (typeof selectPokemon === 'function') {
-          selectPokemon(id);
-        }
-      });
-    });
-  }
-
-  // ── Most Wanted mode ────────────────────────────
-  function wireWantedView() {
-    document.getElementById('biome-wanted-search')?.addEventListener('input', e => {
-      wantedQuery = e.target.value.trim().toLowerCase();
-      renderWantedView();
-    });
-    document.getElementById('biome-wanted-sort')?.addEventListener('change', e => {
-      wantedSort = e.target.value;
-      renderWantedView();
-    });
-  }
-
-  function renderWantedView() {
-    const root = document.getElementById('biome-wanted-grid');
-    if (!root) return;
-
-    if (!wanted.size) {
-      root.innerHTML = `<div class="biome-empty">
-        Your Most Wanted list is empty. Open a Pokémon's detail card and click "+ Wanted" to track it.
-      </div>`;
-      return;
-    }
-
-    const RARITY_ORDER = { 'common': 0, 'uncommon': 1, 'rare': 2, 'ultra-rare': 3, 'unknown': 4 };
-    let list = [...wanted].map(id => allPokemon.find(p => p.id === id)).filter(Boolean);
-
-    if (wantedQuery) {
-      list = list.filter(p =>
-        p.name.toLowerCase().includes(wantedQuery) ||
-        String(p.id).includes(wantedQuery) ||
-        p.types.some(t => t.toLowerCase().includes(wantedQuery))
-      );
-    }
-    list.sort((a, b) => {
-      if (wantedSort === 'name') return a.name.localeCompare(b.name);
-      if (wantedSort === 'type') return (a.types[0] || '').localeCompare(b.types[0] || '');
-      if (wantedSort === 'rarity') {
-        const ar = Math.min(...(a.spawns || []).map(s => RARITY_ORDER[s.bucket] ?? 9), 9);
-        const br = Math.min(...(b.spawns || []).map(s => RARITY_ORDER[s.bucket] ?? 9), 9);
-        return ar - br;
-      }
-      return a.id - b.id;
-    });
-
-    if (!list.length) {
-      root.innerHTML = '<div class="biome-empty">No matches in your Most Wanted list.</div>';
-      return;
-    }
-
-    root.innerHTML = list.map(p => {
-      // Aggregate biomes across all spawn entries
-      const biomeSet = new Set();
-      for (const s of (p.spawns || [])) for (const b of (s.biomes || [])) biomeSet.add(b);
-      const biomes = PokeNavBiomes.sortBiomes([...biomeSet]);
-      const bestBucket = (p.spawns || [])
-        .map(s => s.bucket)
-        .filter(Boolean)
-        .sort((a, b) => (RARITY_ORDER[a] ?? 9) - (RARITY_ORDER[b] ?? 9))[0] || 'unknown';
-
-      return `
-        <div class="biome-wanted-tile" data-id="${p.id}">
-          <button class="biome-wanted-remove" data-id="${p.id}" type="button" title="Remove from list">✕</button>
-          <div class="wanted-poster-stamp">★ WANTED ★</div>
-          <img class="biome-wanted-sprite" src="${p.sprite}" alt="${p.name}"
-               onerror="this.style.opacity='0.3'">
-          <div class="biome-wanted-num">#${String(p.id).padStart(4,'0')}</div>
-          <div class="biome-wanted-name">${p.name}</div>
-          <div class="biome-wanted-types">${p.types.map(t => typeIconHTMLCompact(t)).join('')}</div>
-          <div class="biome-wanted-rarity rarity-${bestBucket}">${bestBucket.toUpperCase()}</div>
-          <div class="biome-wanted-biomes">
-            ${biomes.length
-              ? biomes.slice(0, 8).map(b => {
-                  const color = PokeNavBiomes.getGroupColor(b);
-                  return `<span class="biome-wanted-biome" data-biome="${b}" data-group="${PokeNavBiomes.getGroup(b)}" role="button" tabindex="0" style="border-left-color:${color}">${prettyBiome(b)}</span>`;
-                }).join('')
-              : '<span class="biome-wanted-biome biome-wanted-biome--none">No spawn data</span>'}
-            ${biomes.length > 8 ? `<span class="biome-wanted-more">+${biomes.length - 8} more</span>` : ''}
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    root.querySelectorAll('.biome-wanted-remove').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleWanted(Number(btn.dataset.id));
-      });
-    });
-    root.querySelectorAll('.biome-wanted-biome[data-biome]').forEach(chip => {
-      chip.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openBiome(chip.dataset.biome);
-      });
-    });
-
-    root.querySelectorAll('.biome-wanted-tile').forEach(tile => {
-      tile.addEventListener('click', (e) => {
-        if (e.target.closest('.biome-wanted-remove')) return;
-        if (e.target.closest('.biome-wanted-biome[data-biome]')) return;
-        const id = Number(tile.dataset.id);
         if (typeof selectPokemon === 'function') selectPokemon(id);
       });
     });
   }
 
-  // Public surface — Pokédex panel calls these to add the "+ Wanted"
-  // button on its detail modal.
+  // Public — Pokédex card / Wanted list call this to deep-link into a biome
   async function openBiome(tag) {
     await init();
     const group = PokeNavBiomes.getGroup(tag);
@@ -447,14 +280,14 @@ const BiomeSearch = (() => {
     biomeFilter = '';
     const search = document.getElementById('biome-biome-search');
     if (search) search.value = '';
-    setMode('biome');
+    renderBiomeView();
     setTimeout(() => {
       const chip = document.querySelector(`.biome-chip[data-biome="${tag}"]`);
       if (chip) chip.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 60);
   }
 
-  return { init, isWanted, toggleWanted, openBiome };
+  return { init, openBiome };
 })();
 
 function goToBiome(tag) {

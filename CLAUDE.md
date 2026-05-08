@@ -53,9 +53,9 @@ assets/types/*.png      # 18 type icons
 
 **Pokémon** — `data/pokemon_gen{N}.json`:
 ```js
-{ id, name, types: ["Grass","Poison"], sprite, learnableMoves: [{name, method, level?}], drops: [{item, chance?|quantity?}], spawns: [{label, bucket, levelRange, time, weather, biomes:[..], context:[..], notes?}] }
+{ id, name, types: ["Grass","Poison"], sprite, learnableMoves: [{name, method, level?}], drops: [{item, chance?|quantity?}], spawns: [{label, bucket, levelRange, time, weather, biomes:[..], context:[..], notes?}], evolutions: [{to: <dexId>, method: 'level_up'|'item_interact'|'trade', item?, requirements?: [str]}] }
 ```
-`method` ∈ `level | tm | hm | egg | tutor | special | legacy | evolution`. `bucket` ∈ `common | uncommon | rare | ultra-rare | unknown`. `time` ∈ `any | day | night | dusk | morning`. `weather` ∈ `any | clear | rain | thunder`. Biomes are lowercase + underscores (`tropical_island`, `nether_basalt`).
+`method` ∈ `level | tm | hm | egg | tutor | special | legacy | evolution`. `bucket` ∈ `common | uncommon | rare | ultra-rare | unknown`. `time` ∈ `any | day | night | dusk | morning`. `weather` ∈ `any | clear | rain | thunder`. Biomes are lowercase + underscores (`tropical_island`, `nether_basalt`). Evolutions: 413 mons / 432 edges; chain reassembled client-side via reverse-incoming lookup so any node shows the full lineage.
 
 **Moves** — `data/moves.json`: `{name, type, category, power, accuracy, pp}`.
 
@@ -102,19 +102,24 @@ The xlsx importer **preserves** existing spawns/drops when the xlsx has no row f
 
 **Why `data/*.js`?** The app loads data from `window.POKENAV_*` globals (set by the inlined `<script src="data/*.js">` tags in `index.html`), not via `fetch()`. This lets non-technical users (e.g., Shay) double-click `index.html` and have it run — `fetch()` of local JSON is blocked under `file://`. Edit JSON, run `build_data_js.py`, then commit both. `update-shay.sh` runs the build automatically.
 
-## What's working now (biome-and-academy plan complete)
+## What's working now
 
-- 851 mons across 9 gens; 1,952 drop entries; 2,583 spawn entries; **774 recipes** across 10 types.
-- Tabs: Pokédex · Trainer's PC · Stadium · Type Chart · **🎓 Academy** · **Biome Search** · Settings.
-- Biome Search: collapsed two-level accordion picker, 3 modes (Pokémon / Biome / Most Wanted), Settings mod-pack toggles, cross-tab biome chips.
-- Academy: unified item / TM / drop / recipe hub. 13 category chips (incl. Stones, Rods, Foods, Materials). Renders shaped, shapeless, smelting (4 cookers), stonecutting, brewing, smithing, and cooking-pot recipes; auto-stubs every cobblemon: id referenced by a recipe so drill-through always works.
+- 851 mons across 9 gens; 1,952 drop entries; 2,583 spawn entries; 774 recipes across 10 types; 432 evolution edges.
+- Tabs: Pokédex · Trainer's PC · Stadium · Type Chart · 🎓 Academy · Biome Search · Settings (target: 6 tabs + ⚙ once Phase 4 lands).
+- **Pokédex card** is now the centre of gravity: header + types + spawns + drops + learnable moves (DAMAGE/STATUS/ALL filters, STAB-highlighted) + defensive matchups + evolution chain (clickable mini-tiles, chip-style condition labels).
+- Biome Search: collapsed two-level accordion picker, 2 modes (Biome / Most Wanted), Settings mod-pack toggles, cross-tab biome chips. Pokémon mode was deleted in Phase 1 (subsumed by enriched card).
+- Stadium: single Battle Planning view (Best Moveset mode deleted in Phase 1).
+- Type Chart: single Quick Lookup view (Pokémon Search mode deleted in Phase 1).
+- Academy: unified item / TM / drop / recipe hub. 13 category chips. Renders shaped, shapeless, smelting (4 cookers), stonecutting, brewing, smithing, and cooking-pot recipes; auto-stubs every cobblemon: id referenced by a recipe.
+- Shared `js/core/picker.js` replaces three near-duplicate Pokémon-picker lists.
 
-## Next up
+## Active plan
 
-- **Stage 8 — Evolutions** (deferred). See `~/.claude/projects/-home-dickie-projects-pokenav/memory/project_stage8_evolutions.md`.
+`~/.claude/plans/pokenav-restructure.md` — 5-phase consolidation. Phases 1 (Pokédex card enrichment + redundancy purge) and 2 (Stage 8 evolutions) shipped. Phase 3 (Wanted → Trainer's PC), Phase 4 (Settings → ⚙ + label casing + count badges + ESC), Phase 5 (polish) ahead.
+
+## Carryover backlog
+
 - **Roster gap**: 178 mons in Cobblemon 1.7.3 but not in our cobbledex-scraped roster (Audino, Arceus, Calyrex, etc.). Filling needs a non-cobbledex fallback for id/types/sprite. Importer logs them to stderr at `import_cobblemon_xlsx.py` runtime.
 - **Form variants** ([Galarian]/[Hisuian]/etc.) skipped during xlsx import — base species don't carry form data. ~118 form rows lost.
-
-## Most recent plan
-
-`~/.claude/plans/biome-and-academy.md` — completed in 8 sessions: biome standardization (taxonomy scrape + shared module + accordion picker + Settings toggles + cross-tab links) and Pokémon Academy (item hub + 3×3 recipe grid + 10 recipe types + auto-stubbed item registry).
+- **37 mons missing spawns/drops** (legendaries Cobblemon doesn't ship spawn data for). Auto-fix not possible; needs hand-curation.
+- **Sacred Ash**: 1 cobblemon item with no texture in either cobblemon or vanilla; renders as text fallback.

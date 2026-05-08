@@ -75,8 +75,8 @@ function renderPokedexTiles() {
   const ownedIds = (typeof PartyStorage !== 'undefined' && PartyStorage.getOwnedDexIds)
     ? PartyStorage.getOwnedDexIds()
     : new Set();
-  const wantedFn = (typeof BiomeSearch !== 'undefined' && BiomeSearch.isWanted)
-    ? id => BiomeSearch.isWanted(id)
+  const wantedFn = (typeof WantedList !== 'undefined' && WantedList.isWanted)
+    ? id => WantedList.isWanted(id)
     : () => false;
 
   const filtered = allPokemon.filter(p => {
@@ -214,7 +214,7 @@ function renderPokedexCard(pokemon, spawnIdx) {
       </div>`
     : '<p style="color:var(--text-muted);font-size:0.85rem">No drops recorded.</p>';
 
-  const isWanted = typeof BiomeSearch !== 'undefined' && BiomeSearch.isWanted?.(pokemon.id);
+  const isWanted = typeof WantedList !== 'undefined' && WantedList.isWanted?.(pokemon.id);
   card.innerHTML = `
     <button class="card-close-btn" id="card-close-btn">✕</button>
     <button class="add-storage-btn" id="detail-add-storage-btn" style="position:absolute;top:14px;right:46px;">+ Storage</button>
@@ -265,9 +265,8 @@ function renderPokedexCard(pokemon, spawnIdx) {
 
   document.getElementById('detail-add-wanted-btn')?.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (typeof BiomeSearch === 'undefined') return;
-    BiomeSearch.toggleWanted(pokemon.id);
-    // Re-render so button label flips
+    if (typeof WantedList === 'undefined') return;
+    WantedList.toggleWanted(pokemon.id);
     renderPokedexCard(pokemon, spawnIdx);
   });
 
